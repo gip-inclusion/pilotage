@@ -1,0 +1,19 @@
+{% load static %}
+{% load i18n %}
+{% load theme_inclusion %}
+
+<ul>
+    <li><a href="{% url 'home' %}" class="{% if request.path == '/' %}is-active{% endif %}">Accueil</a></li>
+    <li>
+        <a href="{% url 'tableaux_de_bord_publics' %}" class="{% if request.path == '/tableaux-de-bord/' %}is-active{% endif %}">Tableaux de bord publics</a>
+    </li>
+    <li>
+        <a href="{% url 'tableaux_de_bord_prives' %}" class="{% if request.path == '/tableaux-de-bord-prives/' %}is-active{% endif %}">Tableaux de bord privés</a>
+    </li>
+    <li>
+        <a href="https://plateforme-inclusion.notion.site/Actualit-s-du-service-pilotage-de-l-inclusion-bc33815555874210b161063b203639c8?mtm_campaign=Notion-Page-Actualités-accueil&mtm_kwd=Page-Actualités-accueil" rel="noopener" target="_blank" aria-label="Accéder à l'espace de documentation (nouvel onglet)">
+            <span>Actualités</span>
+            <i class="ri-arrow-right-up-line ri-lg"></i>
+        </a>
+    </li>
+</ul>

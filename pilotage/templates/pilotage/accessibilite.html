@@ -1,0 +1,109 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}Accessibilité - {{ block.super }}{% endblock %}
+
+{% block content %}
+    <main id="main" role="main" class="s-main" tabindex="-1">
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="c-breadcrumb" aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="{% url 'home' %}">Accueil</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Accessibilité</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="s-title-01">
+            <div class="s-title-01__container container">
+                <div class="s-title-01__row row">
+                    <div class="s-title-01__col  col-12">
+                        <h1 class="h1"><strong>Accessibilité</strong></h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="s-section">
+            <div class="s-section__container container">
+                <div class="s-section__row row">
+                    <div class="s-section__col col-12 col-lg-11">
+                        <article>
+                            <h2>Déclaration d’accessibilité</h2>
+                            <p><strong>Le GIP Plateforme de l’inclusion</strong> s’engage à rendre ses sites internet et applications accessibles conformément à l’article 47 de la loi n°2005-102 du 11 février 2005. </p>
+                            <p>Son schéma pluriannuel décrit les points importants sur lesquels le GIP de la plateforme de l’inclusion s’appuiera pour améliorer l’accessibilité numérique de l’ensemble de ses sites internet et applications. Ce schéma s’accompagne du plans d’action annuels (<a href="https://inclusion.beta.gouv.fr/documents/86/GIP_plateforme_de_linclusion_-_Plan_annuel_daccessibilite_2023.pdf" target="_blank" class="has-external-link">2023</a>) qui détaillent les opérations programmées et mises en œuvre pour l'année courante, ainsi que l’état de suivis de ces actions, détaillé dans le <a href="https://inclusion.beta.gouv.fr/documents/87/GIP_plateforme_de_linclusion_-_Schema_pluriannuel_daccessibilite_2023-2026.pdf" target="_blank" class="has-external-link">schéma pluriannuel d’accessibilité 2023-2026</a>.</p>
+                            <p>Cette déclaration d’accessibilité s’applique au <strong>Pilotage de l'inclusion</strong>.</p>
+                            <br>
+                            <h3>État de conformité</h3>
+                            <p><strong>Le site <a href="https://pilotage.inclusion.beta.gouv.fr/">pilotage de l'inclusion</a></strong> est <strong>partiellement</strong> conforme avec le référentiel général d’amélioration de l’accessibilité (RGAA), version 4 en raison des non-conformités et des dérogations énumérées ci-dessous. </p>
+                            <br>
+                            <h3>Résultats des tests</h3>
+                            <p>L’audit de conformité réalisé par <strong>Le GIP Plateforme de l’inclusion</strong> révèle que <strong>78%</strong> des critères du RGAA version 4 sont respectés.</p>
+                            <br>
+                            <h4>Établissement de cette déclaration d’accessibilité</h4>
+                            <p> Cette déclaration a été établie le <strong>23 décembre 2022</strong>.</p>
+                            <br>
+                            <h4>Technologies utilisées pour la réalisation l’audit</h4>
+                            <ul>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                            </ul>
+                            <br>
+                            <h4>Environnement de test</h4>
+                            <p>Les vérifications de restitution de contenus ont été réalisées sur la base de la combinaison fournie par la base de référence du RGAA, avec les versions suivantes : </p>
+                            <ul>
+                                <li>Sur ordinateur MacOS Ventura avec Firefox et VoiceOver</li>
+                            </ul>
+                            <br>
+                            <h4>Outils pour évaluer l’accessibilité</h4>
+                            <ul>
+                                <li>HeadingsMap</li>
+                                <li>NVDA</li>
+                                <li>Validateur en ligne W3C</li>
+                                <li>WCAG Contrast checker</li>
+                                <li>Web Accessibility Toolbar</li>
+                            </ul>
+                            <br>
+                            <h4>Pages du site ayant fait l’objet de la vérification de conformité </h4>
+                            <ul>
+                                <li><a href="{% url 'home' %}">Accueil</a></li>
+                                <li><a href="{% url 'accessibilite' %}">Accessibilité</a></li>
+                                <li><a href="{% url 'tableaux_de_bord_publics' %}">Tableaux de bord publics</a></li>
+                            </ul>
+                            <br>
+                            <h3>Retour d’information et contact</h3>
+                            <p>Si vous n'arrivez pas à accéder à un contenu ou à un service, vous pouvez nous contacter pour être orienté vers une alternative accessible ou obtenir le contenu sous une autre forme.</p>
+                            <ul>
+                                <li>Envoyer <a href="https://aide.pilotage.inclusion.beta.gouv.fr/" target="_blank" class="has-external-link">un message</a></li>
+                                <li>Contacter <a href="https://aide.pilotage.inclusion.beta.gouv.fr/" target="_blank" class="has-external-link">Le GIP Plateforme de l’inclusion</a>.</li>
+                            </ul>
+                            <br>
+                            <h3>Voies de recours</h3>
+                            <p> Si vous constatez un défaut d’accessibilité vous empêchant d’accéder à un contenu ou une fonctionnalité du site, que vous nous le signalez et que vous ne parvenez pas à obtenir une réponse de notre part, vous êtes en droit de faire parvenir vos doléances ou une demande de saisine au Défenseur des droits. </p>
+                            <p>Plusieurs moyens sont à votre disposition :</p>
+                            <ul>
+                                <li>Écrire un message au Défenseur des droits</li>
+                                <li>Contacter le délégué du Défenseur des droits dans votre région</li>
+                            </ul>
+                            <p>Envoyer un courrier par la poste (gratuit, ne pas mettre de timbre) <br>
+                                Défenseur des droits <br>
+                                Libre réponse 71120 <br>
+                                75342 Paris CEDEX 07</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+{% endblock %}

@@ -1,0 +1,41 @@
+# Project specific
+pilotage/static_collected/
+pilotage/static/vendor
+
+# Database
+db.sqlite3
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+/.local/
+
+# Mac Os
+.DS_Store
+
+# Installer logs
+pip-log.txt
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# dotenv
+.env
+
+# virtualenv
+.venv*
+venv/
+ENV/
+Pipfile*
+
+# Jetbrains / Pycharm
+*.iml
+.idea
+
+# Clever Cloud
+.clever.json

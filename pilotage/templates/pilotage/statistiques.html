@@ -1,0 +1,50 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}Statistiques du pilotage de l'inclusion - {{ block.super }}{% endblock %}
+
+{% block content %}
+    <main id="main" role="main" class="s-main" tabindex="-1">
+
+        <section>
+            <div class="container">
+                <div class="row">
+                <div class="col-12">
+                    <nav class="c-breadcrumb" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'home' %}">Accueil</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Statistiques du pilotage de l'inclusion</li>
+                        </ol>
+                    </nav>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="s-title-01">
+            <div class="s-title-01__container container">
+                <div class="s-title-01__row row">
+                    <div class="s-title-01__col  col-12">
+                        <h1 class="h1"><strong>Statistiques du pilotage de l'inclusion</strong></h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="s-embed">
+            <div class="s-embed__container container">
+                <div class="s-embed__row row">
+                    <div class="s-embed__col col-12" id="embedMetabase">
+                        <iframe src="https://emplois.inclusion.beta.gouv.fr/stats/pilotage/63" title="Statistiques du pilotage de l'inclusion" id="iframeMetabase" allowtransparency></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% include 'sections/testimonial.html' %}
+        {% include 'sections/guide-tdb.html' %}
+
+    </main>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}Tableaux de bord publics - {{ block.super }}{% endblock %}
+
+{% block content %}
+    <h1>Tableaux de bord publics</h1>
+    <p>il y a {{ dashboards|length }} tableau de bord.</p>
+    <ul>
+    {% for dashboard in dashboards %}
+        <li>{{ dashboard.title }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
