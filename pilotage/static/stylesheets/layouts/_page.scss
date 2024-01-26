@@ -1,0 +1,22 @@
+.l-tableaux-de-bord {
+  .s-main {
+    position: relative;
+
+    @media (min-width: 1280px) {
+      &:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: 50%;
+        top: 160px;
+        width: 99px;
+        height: 120px;
+        background-image: url('../images/pilotage/tableaux-visuel-01.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        transform: translateX(500px);
+      }
+    }
+  }
+}

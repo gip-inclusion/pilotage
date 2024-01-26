@@ -1,0 +1,170 @@
+/* CSS for tarteaucitron.js
+---------------------------------------------------------------------------- */
+/* line 4, static/stylesheets/itou_pilotage.scss */
+.tac_visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0; }
+
+/* line 17, static/stylesheets/itou_pilotage.scss */
+.p-homepage .s-main::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 260px;
+  background-image: url('data:image/svg+xml;utf8,%3csvg xmlns="http://www.w3.org/2000/svg" width="416" height="416"%3e%3cpath fill="%23D1EDE5" fill-rule="evenodd" d="M237.285 413.902C123.557 430.077 18.239 350.982 2.1 237.26-14.08 123.57 64.977 18.245 178.699 2.107c113.734-16.211 219.015 62.877 235.19 176.605 16.18 113.691-62.907 218.972-176.604 235.19z"/%3e%3c/svg%3e');
+  background-repeat: no-repeat;
+  background-size: 554px;
+  background-position: bottom right; }
+
+/* line 33, static/stylesheets/itou_pilotage.scss */
+.card-header .topic-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  overflow: hidden; }
+  /* line 43, static/stylesheets/itou_pilotage.scss */
+  .card-header .topic-thumbnail > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1 / 1; }
+
+/* line 51, static/stylesheets/itou_pilotage.scss */
+.card-header .topic-icon {
+  width: auto;
+  height: auto;
+  line-height: 1;
+  text-align: left; }
+
+/* line 59, static/stylesheets/itou_pilotage.scss */
+.card.forumlist .card-body .forum-icon {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  line-height: 1;
+  text-align: left; }
+  /* line 66, static/stylesheets/itou_pilotage.scss */
+  .card.forumlist .card-body .forum-icon i {
+    font-size: 42px; }
+
+/* line 71, static/stylesheets/itou_pilotage.scss */
+.btn-post-reply[aria-expanded='true'] {
+  color: #fff !important;
+  background-color: var(--bs-disabled-color) !important;
+  border-color: var(--bs-disabled-color) !important; }
+
+/* line 77, static/stylesheets/itou_pilotage.scss */
+.btn-poster {
+  padding: 0 !important;
+  background-color: transparent !important;
+  border: 0 !important; }
+
+/* line 83, static/stylesheets/itou_pilotage.scss */
+#communautesDropdown.dropdown-menu {
+  max-height: 75vh;
+  overflow-y: auto; }
+
+/* line 88, static/stylesheets/itou_pilotage.scss */
+blockquote {
+  padding: 1rem;
+  border: 0px solid var(--bs-secondary);
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  background-color: #f2f3f5; }
+
+/* line 97, static/stylesheets/itou_pilotage.scss */
+span.highlighted {
+  font-weight: 500; }
+
+/* line 101, static/stylesheets/itou_pilotage.scss */
+.input-group-rounded-pill {
+  border-radius: 50rem !important; }
+  /* line 104, static/stylesheets/itou_pilotage.scss */
+  .input-group-rounded-pill > input {
+    border-top-left-radius: 50rem !important;
+    border-bottom-left-radius: 50rem !important; }
+  /* line 109, static/stylesheets/itou_pilotage.scss */
+  .input-group-rounded-pill .input-group-text,
+  .input-group-rounded-pill button {
+    border-top-right-radius: 50rem !important;
+    border-bottom-right-radius: 50rem !important; }
+
+/* line 116, static/stylesheets/itou_pilotage.scss */
+.funnel {
+  position: relative;
+  overflow: hidden;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: var(--bs-white); }
+  /* line 125, static/stylesheets/itou_pilotage.scss */
+  .funnel:before, .funnel:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    height: 0;
+    width: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 450px solid var(--bs-white); }
+  /* line 138, static/stylesheets/itou_pilotage.scss */
+  .funnel:before {
+    left: 0;
+    border-right: 50px solid transparent; }
+    @media (min-width: 992px) {
+      /* line 138, static/stylesheets/itou_pilotage.scss */
+      .funnel:before {
+        border-right: 100px solid transparent; } }
+  /* line 147, static/stylesheets/itou_pilotage.scss */
+  .funnel:after {
+    right: 0;
+    border-left: 50px solid transparent; }
+    @media (min-width: 992px) {
+      /* line 147, static/stylesheets/itou_pilotage.scss */
+      .funnel:after {
+        border-left: 100px solid transparent; } }
+  /* line 156, static/stylesheets/itou_pilotage.scss */
+  .funnel > div {
+    padding: 16px 8px;
+    margin: 0;
+    margin-bottom: 8px;
+    min-height: 140px; }
+    /* line 162, static/stylesheets/itou_pilotage.scss */
+    .funnel > div > span {
+      display: block; }
+    /* line 166, static/stylesheets/itou_pilotage.scss */
+    .funnel > div:nth-child(1) {
+      color: var(--bs-primary);
+      background-color: #d8ede3; }
+    /* line 171, static/stylesheets/itou_pilotage.scss */
+    .funnel > div:nth-child(2) {
+      background-color: #60a47c; }
+    /* line 175, static/stylesheets/itou_pilotage.scss */
+    .funnel > div:nth-child(3) {
+      background-color: #3e7152; }
+
+/* line 182, static/stylesheets/itou_pilotage.scss */
+.definition > div {
+  padding: 16px 8px 0 16px;
+  margin-bottom: 8px; }
+  @media (min-width: 992px) {
+    /* line 182, static/stylesheets/itou_pilotage.scss */
+    .definition > div {
+      min-height: 140px; } }

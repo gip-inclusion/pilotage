@@ -2,9 +2,14 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %}S’abonner à la lettre d’information du Pilotage de l’inclusion - {{ block.super }}{% endblock %}
 
+{% block title %}
+    TitleDuTableau - Tableaux de bord publics - {{ block.super }}
+{% endblock %}
+
+{% block body_class %}l-tableaux-de-bord{% endblock %}
 {% block content %}
+
     <section>
         <div class="container">
             <div class="row">
@@ -14,8 +19,11 @@
                             <li class="breadcrumb-item">
                                 <a href="{% url 'home' %}">Accueil</a>
                             </li>
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'dashboards:tableaux_de_bord_publics' %}">Tableaux de bord publics</a>
+                            </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                S’abonner à la lettre d’information du Pilotage de l’inclusion
+                                TitleDuTableau
                             </li>
                         </ol>
                     </nav>
@@ -29,7 +37,7 @@
             <div class="s-title-01__row row">
                 <div class="s-title-01__col  col-12">
                     <h1 class="h1">
-                        <strong>S’abonner à la lettre d’information du Pilotage de l’inclusion</strong>
+                        <strong>TitleDuTableau</strong>
                     </h1>
                 </div>
             </div>
@@ -38,22 +46,15 @@
 
     <section class="s-embed">
         <div class="s-embed__container container">
-            <div class="s-embed__row row">
-                <div class="s-embed__col col-12">
-                    <iframe src="https://e60d439d.sibforms.com/serve/MUIFAG4HqP3M-hARD3AG0G1QcAHeeMU3ZHHfZnWp3SSHaDFhj6XiRPcpWuhW9p8fO--J6jaNQJQq1BnK8ouUrg9ghvcW8o6HnVTtGYWRGj2NbatXm9LQ01tHOmd8X8cheTK3H4n8VMXTsVv6mP5TFSqgqx_nkDCP7e4t7VSN-5bP-jJiSSvXCTEV3HhadMN_MfUm0xtNUdhA_iTf"
-                            frameborder="0"
-                            allowfullscreen
-                            style="height: 620px"
-                            title="S’abonner à la lettre d’information du Pilotage de l’inclusion"></iframe>
-                </div>
-            </div>
+          <div class="s-embed__row row">
+            EMBED
+          </div>
         </div>
     </section>
 
 {% endblock %}
 
-
 {% block js %}
     {{ block.super }}
-    {% include 'partials/footer-scripts.html' with hasTracking=True %}
+    {% include 'partials/footer-scripts.html' with hasTracking=True hasIframeResizer=True hasTallyEmbed=True hasTallyPopup='22000' %}
 {% endblock %}

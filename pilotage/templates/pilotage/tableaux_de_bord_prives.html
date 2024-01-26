@@ -2,9 +2,125 @@
 {% load static %}
 {% load i18n %}
 
+{% block title %} Tableaux de bord privés - {{ block.super }} {% endblock %}
 
-{% block title %}Tableaux de bord privés - {{ block.super }}{% endblock %}
-
+{% block body_class %}l-tableaux-de-bord{% endblock %}
 {% block content %}
-    <h1>Tableaux de bord privés</h1>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="c-breadcrumb" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'home' %}">Accueil</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Tableaux de bord privés
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s-section mb-0">
+        <div class="s-section__container container">
+            <div class="row mb-1">
+                <div class="col-12 col-lg-11">
+                    <h1 class="h1">
+                        <strong>Tableaux de bord privés</strong>
+                    </h1>
+                    <p>
+                        Les tableaux de bord privés que nous déployons sont des outils de pilotage co-construits avec et pour les acteurs de l’inclusion en fonction de leurs besoins.
+                        Les données présentées dans ces outils sont des données affinées à l’échelle d’une organisation ou d’un partenaire.
+                        Ces tableaux de bord sont accessibles via votre espace privé sur le site des emplois de l’inclusion.
+                                <br>
+                        Ils sont visibles dans l’onglet “Tableau de bord” dans l’espace “Services partenaires” et dans la rubrique “Pilotage de l’inclusion”.
+                    </p>
+                    <p>
+                        Accéder au guide d’accès à vos tableaux de bord privés <a href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/articles/16882353292817--Acc%C3%A9der-aux-tableaux-de-bord-priv%C3%A9s" target="_blank" class="has-external-link">en cliquant ici</a>.
+                    </p>
+                    <p class="h3">
+                        Cliquer sur le lien correspondant à votre profil utilisateur et consulter vos tableaux de bord privés de pilotage.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s-section mt-md-6">
+        <div class="s-section__container container">
+            <div class="s-section__row row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <div class="col mb-3 mb-md-5">
+                    <div class="card c-card c-card--emploi has-one-link-inside h-100 w-100">
+                        <div class="card-header">
+                            <h3 class="h3">
+                                Institutions partenaires
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Je travaille pour la DGEFP, une DREETS, une DDETS
+                            </p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="https://emplois.inclusion.beta.gouv.fr/login/labor_inspector" target="_blank" class="btn btn-ico btn-link stretched-link">
+                                <span>Accéder à mes statistiques</span>
+                                <i class="ri-external-link-line ri-lg" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3 mb-md-5">
+                    <div class="card c-card c-card--emploi has-one-link-inside h-100 w-100">
+                        <div class="card-header">
+                            <h3 class="h3">
+                                Prescripteurs
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Je travaille pour un Conseil Départemental ou un Pôle emploi
+                            </p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="https://emplois.inclusion.beta.gouv.fr/login/prescriber" target="_blank" class="btn btn-ico btn-link stretched-link">
+                                <span>Accéder à mes statistiques</span>
+                                <i class="ri-external-link-line ri-lg" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col mb-3 mb-md-5">
+                    <div class="card c-card c-card--emploi has-one-link-inside h-100 w-100">
+                        <div class="card-header">
+                            <h3 class="h3">
+                                Employeur solidaire et réseaux
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Je travaille pour une SIAE, un réseau de l’IAE
+                            </p>
+                        </div>
+                        <div class="card-footer text-end">
+                            <a href="https://emplois.inclusion.beta.gouv.fr/login/siae_staff" target="_blank" class="btn btn-ico btn-link stretched-link">
+                                <span>Accéder à mes statistiques</span>
+                                <i class="ri-external-link-line ri-lg" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    {% include 'partials/footer-scripts.html' with hasTracking=True %}
 {% endblock %}

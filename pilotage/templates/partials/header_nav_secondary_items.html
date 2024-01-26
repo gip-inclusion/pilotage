@@ -5,7 +5,7 @@
 <ul>
     <li><a href="{% url 'home' %}" class="{% if request.path == '/' %}is-active{% endif %}">Accueil</a></li>
     <li>
-        <a href="{% url 'tableaux_de_bord_publics' %}" class="{% if request.path == '/tableaux-de-bord/' %}is-active{% endif %}">Tableaux de bord publics</a>
+        <a href="{% url 'dashboards:tableaux_de_bord_publics' %}" class="{% if request.path == '/tableaux-de-bord/' %}is-active{% endif %}">Tableaux de bord publics</a>
     </li>
     <li>
         <a href="{% url 'tableaux_de_bord_prives' %}" class="{% if request.path == '/tableaux-de-bord-prives/' %}is-active{% endif %}">Tableaux de bord privés</a>

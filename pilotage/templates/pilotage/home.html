@@ -2,9 +2,209 @@
 {% load static %}
 {% load i18n %}
 
-
 {% block title %}Accueil - {{ block.super }}{% endblock %}
 
 {% block content %}
-    <h1>Home</h1>
+
+    <section class="s-hero-title-01 s-hero-title-01--pilotage mb-md-5">
+        <div class="s-hero-title-01__container container">
+        <div class="s-hero-title-01__row row align-items-center">
+            <div class="s-hero-title-01__col s-hero-title-01__col--article col-12 col-md-8">
+            <article>
+                <h1 class="s-hero-title-01__col--article__title">
+                Comprendre et analyser l’inclusion
+                <br class="d-none d-lg-inline">
+                dans l'emploi
+                </h1>
+                <h2>
+                Accédez à des ressources prêtes à l'emploi
+                </h2>
+                <ul class="list-unstyled p-0 mb-5">
+                <li class="d-flex mb-2">
+                    <i class="text-success ri-checkbox-circle-fill display-2"></i>
+                    <span class="ms-2">Prenez des décisions mieux éclairées</span>
+                </li>
+                <li class="d-flex mb-2">
+                    <i class="text-success ri-checkbox-circle-fill display-2"></i>
+                    <span class="ms-2">Gagnez du temps dans la collecte et le traitement des données</span>
+                </li>
+                <li class="d-flex mb-2">
+                    <i class="text-success ri-checkbox-circle-fill display-2"></i>
+                    <span class="ms-2">Facilitez vos échanges avec vos partenaires</span>
+                </li>
+                </ul>
+                <p class="mb-0 mt-5">
+                <a href="{% url 'dashboards:tableaux_de_bord_publics' %}" rel="noopener" class="btn d-block d-md-inline-block btn-primary">
+                    <span>Accéder aux tableaux de bord publics</span>
+                </a>
+                </p>
+            </article>
+            </div>
+            <div class="s-hero-title-01__col col-12 d-none d-md-inline-flex col-md-4">
+            <div>
+                <img src="{% static 'images/pilotage/hp-illustration-01.svg' %}" class="img-fluid" alt="">
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="s-section m-0 bg-nuance-09">
+        <div class="s-section__container container">
+        <div class="s-section__row row">
+            <div class="s-section__col col-12 pt-5 pb-4 text-center">
+            <h2 class="h3 mb-0">
+                Notre équipe est à l'écoute de vos besoins, n'hésitez pas à nous les partager
+            </h2>
+            <a href="https://tally.so/r/3la8PB" target="_blank" class="btn btn-lg btn-link has-external-link">
+                Partagez vos suggestions !
+            </a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="s-section my-md-7">
+        <div class="s-section__container container">
+        <div class="row mb-1 mb-md-3">
+            <div class="col-12">
+            <h2>
+                Les tableaux de bord privés
+            </h2>
+            <p>
+                Nous déployons également des tableaux de bord privés. Ces outils de pilotage sont co-construits avec et pour les acteurs de l’inclusion en fonction de leurs besoins. Cliquez sur votre rôle ci-dessous pour les consulter (vous serez redirigé vers votre compte sur le site des emplois de l’inclusion).
+            </p>
+            </div>
+        </div>
+        <div class="s-section__row row row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <div class="col mb-3 mb-md-5">
+            <div class="card c-card c-card--emploi has-one-link-inside h-100 w-100">
+                <div class="card-header">
+                <h3 class="h3">
+                    Institutions partenaires
+                </h3>
+                </div>
+                <div class="card-body">
+                <p>
+                    Je travaille pour la DGEFP, une DREETS, une DDETS
+                </p>
+                </div>
+                <div class="card-footer text-end">
+                <a href="https://emplois.inclusion.beta.gouv.fr/login/labor_inspector" target="_blank" class="btn btn-ico btn-link stretched-link">
+                    <span>Accéder à mes statistiques</span>
+                    <i class="ri-external-link-line ri-lg" aria-hidden="true"></i>
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col mb-3 mb-md-5">
+            <div class="card c-card c-card--emploi has-one-link-inside h-100 w-100">
+                <div class="card-header">
+                <h3 class="h3">
+                    Prescripteurs
+                </h3>
+                </div>
+                <div class="card-body">
+                <p>
+                    Je travaille pour un Conseil Départemental ou un Pôle emploi
+                </p>
+                </div>
+                <div class="card-footer text-end">
+                <a href="https://emplois.inclusion.beta.gouv.fr/login/prescriber" target="_blank" class="btn btn-ico btn-link stretched-link">
+                    <span>Accéder à mes statistiques</span>
+                    <i class="ri-external-link-line ri-lg" aria-hidden="true"></i>
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col mb-3 mb-md-5">
+            <div class="card c-card c-card--emploi has-one-link-inside h-100 w-100">
+                <div class="card-header">
+                <h3 class="h3">
+                    Employeur solidaire
+                </h3>
+                </div>
+                <div class="card-body">
+                <p>
+                    Je travaille pour une SIAE, GEIQ, EA, …
+                </p>
+                </div>
+                <div class="card-footer text-end">
+                <a href="https://emplois.inclusion.beta.gouv.fr/login/siae_staff" target="_blank" class="btn btn-ico btn-link stretched-link">
+                    <span>Accéder à mes statistiques</span>
+                    <i class="ri-external-link-line ri-lg" aria-hidden="true"></i>
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    {% include 'sections/testimonial.html' %}
+
+    <section class="s-section my-md-7">
+        <div class="s-section__container container">
+        <div class="row mb-1 mb-md-3">
+            <div class="col-12">
+            <h2>
+                Communauté
+            </h2>
+            <p>
+                Posez vos questions et proposez des suggestions, échangez avec la communauté Pilotage de l’inclusion et participez à nos prochains événements.
+            </p>
+            </div>
+        </div>
+        <div class="s-section__row row row-cols-1 row-cols-md-2">
+            <div class="col mb-3 mb-md-5">
+            <div class="card c-card c-card--communaute has-one-link-inside h-100 w-100">
+                <div class="card-header">
+                <h3 class="h3">
+                    Actualités et nouveautés
+                </h3>
+                </div>
+                <div class="card-body">
+                <p>
+                    Retrouvez les évolutions apportées à vos outils (fonctionnalités, indicateurs), les publications de l'équipe Pilotage (newsletters, contenus) et les nouveaux tableaux de bord développés
+                </p>
+                </div>
+                <div class="card-footer text-end">
+                <a href="https://plateforme-inclusion.notion.site/Actualit-s-du-service-pilotage-de-l-inclusion-bc33815555874210b161063b203639c8?mtm_campaign=Notion-Page-Actualités-accueil&mtm_kwd=Page-Actualités-accueil"
+                    target="_blank"
+                    class="btn btn-ico btn-link stretched-link">
+                    <span>Accéder au groupe</span>
+                    <i class="ri-external-link-line ri-lg" aria-hidden="true"></i>
+                </a>
+                </div>
+            </div>
+            </div>
+            <div class="col mb-3 mb-md-5">
+            <div class="card c-card c-card--communaute has-one-link-inside h-100 w-100">
+                <div class="card-header">
+                <h3 class="h3">
+                    Événements
+                </h3>
+                </div>
+                <div class="card-body">
+                <p>
+                    Découvrez et prennez en main vos outils statistiques et pilotage lors de nos webinaires
+                </p>
+                </div>
+                <div class="card-footer text-end">
+                <a href="https://plateforme-inclusion.notion.site/83971e19fd384244837c31f2eae2e66b?v=7ca759d104f649399bb7b211f51f0d24" target="_blank" class="btn btn-ico btn-link stretched-link">
+                    <span>Accéder à nos événements</span>
+                    <i class="ri-external-link-line ri-lg" aria-hidden="true"></i>
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    {% include 'partials/footer-scripts.html' with hasTracking=True hasTestimonial=True %}
 {% endblock %}

@@ -1,0 +1,20 @@
+.s-embed {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+
+  @media (min-width: 992px) {
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+  }
+
+  iframe {
+    height: 100%;
+    width: 100%;
+    border: 0;
+  }
+
+  &--tally {
+    padding-top: 0;
+    display: none;
+  }
+}
