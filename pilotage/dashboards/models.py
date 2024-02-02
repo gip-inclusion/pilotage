@@ -2,6 +2,10 @@ from django.db import models
 
 
 class Category(models.Model):
+    class Meta:
+        verbose_name = "Categorie"
+        verbose_name_plural = "Categories"
+
     title = models.fields.CharField("Titre", max_length=100)
 
     def __str__(self):
@@ -9,6 +13,9 @@ class Category(models.Model):
 
 
 class Dashboard(models.Model):
+    class Meta:
+        verbose_name = "Tableau de bord"
+        verbose_name_plural = "Tableaux de bord"
 
     title = models.fields.CharField("Titre", max_length=100)
     baseline = models.fields.CharField(max_length=100)
