@@ -17,3 +17,5 @@ Pour l'accès à l'admin et pour récupérer la db (en sqlite3 pour l'instant), 
 - [ ] Dockeriser la db postgres
 - [ ] Passer la db en postgres (grace à la dockerisation)
 - [ ] Réintégrer les `<iframe>` metabase directement dans le site, sans passer par le C1
+- [ ] Créer une instance CC et héberger le site
+- [ ] Créer le nécessaire pour un déploiement auto (via cmd Makefile ?)
