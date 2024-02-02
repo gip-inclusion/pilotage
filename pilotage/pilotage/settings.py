@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+
 import os
 
 from pathlib import Path
@@ -30,6 +31,8 @@ SECRET_KEY = "django-insecure-)4-5u$x8-hcosa*l6w!*9e*&x$lwh5s+tmd)ve_(ft+v04gvhn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+SITE_URL = "https://pilotage.inclusion.beta.gouv.fr/"
+
 ALLOWED_HOSTS = []
 
 
@@ -42,9 +45,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-	"dashboards",
-	"utils",
-	"compressor",
+    "dashboards",
+    "utils",
+    "compressor",
 ]
 
 MIDDLEWARE = [
@@ -126,9 +129,7 @@ USE_TZ = True
 # Static Files
 STATIC_URL = "/static/"
 
-STATICFILES_DIRS = [
-    os.path.join(APPS_DIR, "static")
-]
+STATICFILES_DIRS = [os.path.join(APPS_DIR, "static")]
 
 STATIC_ROOT = os.path.join(APPS_DIR, "staticfiles")
 

@@ -1,7 +1,7 @@
 {% extends "layouts/base.html" %}
 {% load static %}
 {% load i18n %}
-
+{% load markdown_extras %}
 
 {% block title %}
     {{ dashboard.title }} - Tableaux de bord publics - {{ block.super }}
@@ -39,9 +39,11 @@
                     <h1 class="h1">
                         <strong>{{ dashboard.title }}</strong>
                     </h1>
-                    <div>
-                        {{ dashboard.description }}
-                    </div>
+                    {% if dashboard.description %}
+                        <div>
+                            {{ dashboard.description | markdown | safe }}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -63,5 +65,5 @@
 
 {% block js %}
     {{ block.super }}
-    {% include 'partials/footer-scripts.html' with hasTracking=True hasIframeResizer=True hasTallyEmbed=True hasTallyPopup='22000' %}
+    {% include 'partials/footer-scripts.html' with hasTracking=True hasIframeResizer=True hasTallyEmbed=True hasTallyPopup=dashboard.tally_id %}
 {% endblock %}

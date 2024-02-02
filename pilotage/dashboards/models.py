@@ -9,16 +9,20 @@ class Category(models.Model):
 
 
 class Dashboard(models.Model):
+
     title = models.fields.CharField("Titre", max_length=100)
     baseline = models.fields.CharField(max_length=100)
     slug = models.fields.SlugField()
     description = models.fields.TextField(null=True, blank=True)
     metabase_db_id = models.fields.IntegerField("Metabase ID")
+    tally_id = models.fields.CharField(
+        "Tally Popup ID", null=True, blank=True, max_length=10
+    )
     category = models.ForeignKey(
         Category,
         null=True,
         on_delete=models.SET_NULL,
-        verbose_name="Catégorie",
+        verbose_name="Categorie",
     )
     active = models.fields.BooleanField("Actif", default=True)
 

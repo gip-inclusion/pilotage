@@ -20,7 +20,7 @@ from . import views
 
 app_name = 'pilotage'
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('pilotadmin/', admin.site.urls),
     path('', views.home, name="home"),
 	path('dashboards/', include('dashboards.urls')),
     path('stats/', views.stats, name="statistiques"),
