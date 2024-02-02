@@ -54,9 +54,6 @@
                     <h2 class="text-secondary">
                         Vue d’ensemble
                     </h2>
-                    <p>
-                        il y a {{ dashboards|length }} tableau de bord.
-                    </p>
                 </div>
             </div>
             <div class="s-tableaux__row row">
@@ -68,11 +65,14 @@
                                     <strong>{{ dashboard.title }}</strong>
                                 </h3>
                                 <p>
-                                    dashboard.description
+                                    {{ dashboard.baseline }}
+                                </p>
+                                <p>
+                                    {{ dashboard.category }}
                                 </p>
                             </div>
                             <p class="s-tableaux__col__cta">
-                                <a href="" rel="noopener" class="btn btn-outline-primary stretched-link">Voir le tableau de bord</a>
+                                <a href="{% url 'dashboards:tableau_de_bord_public' dashboard.slug %}" rel="noopener" class="btn btn-outline-primary stretched-link">Voir le tableau de bord</a>
                             </p>
                         </div>
                     {% endfor %}

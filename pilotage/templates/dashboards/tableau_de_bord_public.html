@@ -4,7 +4,7 @@
 
 
 {% block title %}
-    TitleDuTableau - Tableaux de bord publics - {{ block.super }}
+    {{ dashboard.title }} - Tableaux de bord publics - {{ block.super }}
 {% endblock %}
 
 {% block body_class %}l-tableaux-de-bord{% endblock %}
@@ -23,7 +23,7 @@
                                 <a href="{% url 'dashboards:tableaux_de_bord_publics' %}">Tableaux de bord publics</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                TitleDuTableau
+                                {{ dashboard.title }}
                             </li>
                         </ol>
                     </nav>
@@ -37,8 +37,11 @@
             <div class="s-title-01__row row">
                 <div class="s-title-01__col  col-12">
                     <h1 class="h1">
-                        <strong>TitleDuTableau</strong>
+                        <strong>{{ dashboard.title }}</strong>
                     </h1>
+                    <div>
+                        {{ dashboard.description }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,10 +50,14 @@
     <section class="s-embed">
         <div class="s-embed__container container">
           <div class="s-embed__row row">
-            EMBED
+            <div class="col-12">
+                <iframe src="https://emplois.inclusion.beta.gouv.fr/stats/pilotage/{{ dashboard.metabase_db_id }}" title="{{ dashboard.baseline }}" id="iframeMetabase" allowtransparency></iframe>
+            </div>
           </div>
         </div>
     </section>
+
+    {% include 'sections/guide-tdb.html' %}
 
 {% endblock %}
 
