@@ -9,10 +9,10 @@
 				<div class="s-footer-quick__col col-12 col-md-6 col-lg-auto">
 					<strong>Accès rapides</strong>
 					<ul>
-						<li><a href="{% url 'home' %}">Accueil</a></li>
+						<li><a href="{% url 'pilotage:home' %}">Accueil</a></li>
 						<li><a href="{% url 'dashboards:tableaux_de_bord_publics' %}">Tableaux de bord publics</a></li>
-						<li><a href="{% url 'tableaux_de_bord_prives' %}">Tableaux de bord privés</a></li>
-						<li><a href="{% url 'inscription_lettre_information' %}">Infolettre</a></li>
+						<li><a href="{% url 'pilotage:tableaux_de_bord_prives' %}">Tableaux de bord privés</a></li>
+						<li><a href="{% url 'pilotage:inscription_lettre_information' %}">Infolettre</a></li>
 					</ul>
 				</div>
 				<div class="s-footer-quick__col col-12 col-md-6 col-lg-auto">
@@ -66,10 +66,10 @@
 			<div class="s-footer-legal__row row">
 				<div class="s-footer-legal__col col-12">
 					<ul>
-						<li><a href="{% url 'mentions_legales' %}">Mentions légales</a></li>
-						<li><a href="{% url 'politique_de_confidentialite' %}">Politique de confidentialité</a></li>
-						<li><a href="{% url 'accessibilite' %}">Accessibilité : partiellement conforme</a></li>
-						<li><a href="{% url 'statistiques' %}">Statistiques</a></li>
+						<li><a href="{% url 'pilotage:mentions_legales' %}">Mentions légales</a></li>
+						<li><a href="{% url 'pilotage:politique_de_confidentialite' %}">Politique de confidentialité</a></li>
+						<li><a href="{% url 'pilotage:accessibilite' %}">Accessibilité : partiellement conforme</a></li>
+						<li><a href="{% url 'pilotage:statistiques' %}">Statistiques</a></li>
 					</ul>
 					<p>Sauf mention contraire, tous les contenus de ce site sont sous licence <a href="https://github.com/etalab/licence-ouverte/blob/master/LO.md" target="_blank" aria-label="Licence ouverte Etalab (lien externe)">etalab-2.0</a></p>
 				</div>

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from dashboards.models import Category, Dashboard
+from pilotage.dashboards.models import Category, Dashboard
 
 
 class DashboardAdmin(admin.ModelAdmin):

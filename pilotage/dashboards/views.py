@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from dashboards.models import Category, Dashboard
+from pilotage.dashboards.models import Category, Dashboard
 
 
 def tableaux_de_bord_publics(request):

@@ -12,7 +12,6 @@ Pour l'accès à l'admin et pour récupérer la db (en sqlite3 pour l'instant), 
 
 ## ToDo
 
-- Déplacer manage.py et les settings
 - Changer slug admin et mettre la var du slug dans constante .env
 - Fixer le pb local de CORD sur Tally
 - Améliorer [ces boucles imbriquées](https://github.com/hellodeloo/pilotage-django/blob/main/pilotage/templates/dashboards/tableaux_de_bord_publics.html#L50)
