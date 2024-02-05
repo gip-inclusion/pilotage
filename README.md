@@ -2,9 +2,8 @@
 
 ## Démarrer le projet
 
-1. `cd pilotage`
-2. `source .venv/bin/activate`
-3. `python manage.py runserver`
+1. `source .venv/bin/activate`
+2. `python manage.py runserver`
 
 ## Acces admin et DB
 
