@@ -17,8 +17,8 @@ class Dashboard(models.Model):
         verbose_name = "Tableau de bord"
         verbose_name_plural = "Tableaux de bord"
 
-    title = models.fields.CharField("Titre", max_length=100)
-    baseline = models.fields.CharField(max_length=100)
+    title = models.fields.CharField("Titre", max_length=150)
+    baseline = models.fields.CharField(max_length=250)
     slug = models.fields.SlugField()
     description = models.fields.TextField(null=True, blank=True)
     metabase_db_id = models.fields.IntegerField("Metabase ID")
@@ -27,8 +27,7 @@ class Dashboard(models.Model):
     )
     category = models.ForeignKey(
         Category,
-        null=True,
-        on_delete=models.SET_NULL,
+        on_delete=models.DO_NOTHING,
         verbose_name="Categorie",
     )
     active = models.fields.BooleanField("Actif", default=True)
