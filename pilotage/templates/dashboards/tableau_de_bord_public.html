@@ -59,11 +59,23 @@
         </div>
     </section>
 
+    {% if dashboard.tally_embed_id %}
+        <section class="s-embed s-embed--tally">
+            <div class="s-embed__container container">
+            <div class="s-embed__row row">
+                <div class="s-embed__col col-12">
+                <iframe data-tally-src="https://tally.so/embed/{{ dashboard.tally_embed_id }}?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="189" title="Aidez-nous à améliorer votre outil !"></iframe>
+                </div>
+            </div>
+            </div>
+        </section>
+    {% endif %}
+
     {% include 'sections/guide-tdb.html' %}
 
 {% endblock %}
 
 {% block js %}
     {{ block.super }}
-    {% include 'partials/footer-scripts.html' with hasTracking=True hasIframeResizer=True hasTallyEmbed=True hasTallyPopup=dashboard.tally_id %}
+    {% include 'partials/footer-scripts.html' with hasTracking=True hasIframeResizer=True hasTallyEmbed=dashboard.tally_embed_id hasTallyPopup=dashboard.tally_popup_id %}
 {% endblock %}

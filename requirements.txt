@@ -1,5 +1,6 @@
 asgiref==3.7.2
 bleach==6.1.0
+build==1.0.3
 click==8.1.7
 colorama==0.4.6
 cssbeautifier==1.14.11
@@ -15,7 +16,11 @@ jsbeautifier==1.14.11
 json5==0.9.14
 libsass==0.23.0
 Markdown==3.5.2
+packaging==23.2
 pathspec==0.12.1
+pip-tools==7.3.0
+pyproject_hooks==1.0.0
+python-dotenv==1.0.1
 PyYAML==6.0.1
 rcssmin==1.1.1
 regex==2023.12.25

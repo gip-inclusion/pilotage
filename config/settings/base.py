@@ -14,8 +14,12 @@ import os
 
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 _current_dir = os.path.dirname(os.path.realpath(__file__))
 ROOT_DIR = os.path.abspath(os.path.join(_current_dir, "../.."))
@@ -35,9 +39,10 @@ SESSION_COOKIE_SECURE = True
 
 CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = os.getenv(
-    "ALLOWED_HOSTS", "inclusion.beta.gouv.fr, pilotage.inclusion.beta.gouv.fr"
-).split(",")
+ALLOWED_HOSTS = ["inclusion.beta.gouv.fr", "pilotage.inclusion.beta.gouv.fr", "127.0.0.1"]
+
+# Custom variables
+PATH_TO_ADMIN = os.getenv("PATH_TO_ADMIN")
 
 
 # Application definition
