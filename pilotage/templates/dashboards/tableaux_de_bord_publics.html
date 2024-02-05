@@ -47,40 +47,40 @@
         </div>
     </section>
 
-    <section class="s-tableaux">
-        <div class="s-tableaux__container container">
-            <div class="s-tableaux__row row mb-3">
-                <div class="col-12">
-                    <h2 class="text-secondary">
-                        Vue d’ensemble
-                    </h2>
+    {% for categorie in categories %}
+        <section class="s-tableaux">
+            <div class="s-tableaux__container container">
+                <div class="s-tableaux__row row mb-3">
+                    <div class="col-12">
+                        <h2 class="text-secondary">
+                            {{ categorie.title }} - {{ categorie.pk }}
+                        </h2>
+                    </div>
+                </div>
+                <div class="s-tableaux__row row">
+                    <div class="s-tableaux__col s-tableaux__col--grid col-12">
+                        {% for dashboard in dashboards %}
+                            {% if dashboard.category.pk == categorie.pk %}
+                                <div class="d-flex flex-column justify-content-between position-relative">
+                                    <div>
+                                        <h3 class="h3">
+                                            <strong>{{ dashboard.title }}</strong>
+                                        </h3>
+                                        <p>
+                                            {{ dashboard.baseline }}
+                                        </p>
+                                    </div>
+                                    <p class="s-tableaux__col__cta">
+                                        <a href="{% url 'dashboards:tableau_de_bord_public' dashboard.slug %}" rel="noopener" class="btn btn-outline-primary stretched-link">Voir le tableau de bord</a>
+                                    </p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
-            <div class="s-tableaux__row row">
-                <div class="s-tableaux__col s-tableaux__col--grid col-12">
-                    {% for dashboard in dashboards %}
-                        <div class="d-flex flex-column justify-content-between position-relative">
-                            <div>
-                                <h3 class="h3">
-                                    <strong>{{ dashboard.title }}</strong>
-                                </h3>
-                                <p>
-                                    {{ dashboard.baseline }}
-                                </p>
-                                <p>
-                                    {{ dashboard.category }}
-                                </p>
-                            </div>
-                            <p class="s-tableaux__col__cta">
-                                <a href="{% url 'dashboards:tableau_de_bord_public' dashboard.slug %}" rel="noopener" class="btn btn-outline-primary stretched-link">Voir le tableau de bord</a>
-                            </p>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </section>
-
+        </section>
+    {% endfor %}
 {% endblock %}
 
 {% block js %}
