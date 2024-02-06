@@ -22,8 +22,11 @@ class Dashboard(models.Model):
     slug = models.fields.SlugField()
     description = models.fields.TextField(null=True, blank=True)
     metabase_db_id = models.fields.IntegerField("Metabase ID")
-    tally_id = models.fields.CharField(
+    tally_popup_id = models.fields.CharField(
         "Tally Popup ID", null=True, blank=True, max_length=10
+    )
+    tally_embed_id = models.fields.CharField(
+        "Tally Embed ID", null=True, blank=True, max_length=10
     )
     category = models.ForeignKey(
         Category,
