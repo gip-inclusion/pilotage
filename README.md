@@ -11,12 +11,12 @@ Pour l'accès à l'admin et pour récupérer la db (en sqlite3 pour l'instant), 
 
 ## ToDo
 
-- Changer slug admin et mettre la var du slug dans constante .env
-- Fixer le pb local de CORD sur Tally
-- Améliorer [ces boucles imbriquées](https://github.com/hellodeloo/pilotage-django/blob/main/pilotage/templates/dashboards/tableaux_de_bord_publics.html#L50)
+- Changer slug admin et mettre la var du slug dans constante .env (mais ça marche pas !?)
 - Dockeriser la db postgres
 - Passer la db en postgres (grace à la dockerisation)
 - Créer le role pour les users aux droits limités dans l'admin
+- Greffer Easy MDE sur le description.TextField
 - Réintégrer les `<iframe>` metabase directement dans le site, sans passer par le C1
 - Créer une instance CC et héberger le site
+- Créer une instance CC pour les recettes jetable ou la demo
 - Créer le nécessaire pour un déploiement auto (via cmd Makefile ?)
