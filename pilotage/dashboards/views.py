@@ -1,19 +1,21 @@
 from django.shortcuts import render
-from django.db.models import OuterRef
+from django.db.models import Prefetch
 
 from pilotage.dashboards.models import Category, Dashboard
 
 
 def tableaux_de_bord_publics(request):
-    dashboards = Dashboard.objects.filter(active=True)
     categories = Category.objects.all().prefetch_related(
-        to_attr="dashboards",
-        queryset=Dashboard.objects.filter(active=True, category=OuterRef("pk")),
+        Prefetch(
+            "dashboard_set",
+            to_attr="dashboards",
+            queryset=Dashboard.objects.filter(active=True),
+        ),
     )
     return render(
         request,
         "dashboards/tableaux_de_bord_publics.html",
-        context={"dashboards": dashboards, "categories": categories},
+        context={"categories": categories},
     )
 
 
