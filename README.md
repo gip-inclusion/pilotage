@@ -11,7 +11,6 @@ Pour l'accès à l'admin et pour récupérer la db (en sqlite3 pour l'instant), 
 
 ## ToDo
 
-- Dockeriser la db postgres
 - Créer le role pour les users aux droits limités dans l'admin
 - Greffer Easy MDE sur le description.TextField
 - Réintégrer les `<iframe>` metabase directement dans le site, sans passer par le C1

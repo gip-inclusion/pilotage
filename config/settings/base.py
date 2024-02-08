@@ -30,16 +30,16 @@ APPS_DIR = os.path.abspath(os.path.join(ROOT_DIR, "pilotage"))
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-)4-5u$x8-hcosa*l6w!*9e*&x$lwh5s+tmd)ve_(ft+v04gvhn"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = bool(os.environ.get("DEBUG", default=0))
 
 SESSION_COOKIE_SECURE = True
 
 CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = ["inclusion.beta.gouv.fr", "pilotage.inclusion.beta.gouv.fr", "127.0.0.1"]
+ALLOWED_HOSTS = ["inclusion.beta.gouv.fr", "pilotage.inclusion.beta.gouv.fr"]
 
 # Custom variables
 PATH_TO_ADMIN = os.getenv("PATH_TO_ADMIN")
@@ -95,8 +95,12 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": os.environ.get("django.db.backends.postgresql", "db"),
+        "NAME": os.environ.get("PG_DATABASE", BASE_DIR / "db.sqlite3"),
+        "USER": os.environ.get("PG_USER", "user"),
+        "PASSWORD": os.environ.get("PG_PASSWORD", "password"),
+        "HOST": os.environ.get("PG_HOST", "localhost"),
+        "PORT": os.environ.get("PG_PORT", "5432"),
     }
 }
 

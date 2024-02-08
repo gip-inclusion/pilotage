@@ -2,6 +2,10 @@
 pilotage/static_collected/
 pilotage/static/vendor
 
+# Config
+docker-compose-prod.yml
+docker/prod/
+
 # Database
 db.sqlite3
 

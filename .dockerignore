@@ -1,0 +1,6 @@
+*
+!docker
+!requirements
+.venv
+.git
+.gitignore
