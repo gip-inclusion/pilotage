@@ -6,8 +6,6 @@ services:
     image: postgres:15-alpine
     # Disable some safety switches for a faster postgres: https://www.postgresql.org/docs/current/non-durability.html
     command: -c fsync=off -c full_page_writes=off -c synchronous_commit=off
-    env_file:
-      - .env
     environment:
       - POSTGRES_USER=pilotage_user
       - POSTGRES_PASSWORD=pilotage_password

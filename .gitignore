@@ -2,10 +2,6 @@
 pilotage/static_collected/
 pilotage/static/vendor
 
-# Config
-docker-compose-prod.yml
-docker/prod/
-
 # Database
 db.sqlite3
 
@@ -30,6 +26,7 @@ pip-log.txt
 
 # dotenv
 .env
+.envrc
 
 # virtualenv
 .venv*

@@ -33,7 +33,7 @@ APPS_DIR = os.path.abspath(os.path.join(ROOT_DIR, "pilotage"))
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get("DEBUG", default=0))
+DEBUG = False
 
 SESSION_COOKIE_SECURE = True
 
@@ -96,11 +96,11 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("PG_DATABASE"),
-        "USER": os.environ.get("PG_USER", "user"),
-        "PASSWORD": os.environ.get("PG_PASSWORD", "password"),
-        "HOST": os.environ.get("PG_HOST", "localhost"),
-        "PORT": os.environ.get("PG_PORT", "5432"),
+        "NAME": os.environ.get("PGDATABASE"),
+        "USER": os.environ.get("PGUSER", "user"),
+        "PASSWORD": os.environ.get("PGPASSWORD", "password"),
+        "HOST": os.environ.get("PGHOST", "localhost"),
+        "PORT": os.environ.get("PGPORT", "5432"),
     }
 }
 
