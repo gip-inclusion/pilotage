@@ -2,7 +2,7 @@
 
 ## Démarrer le projet
 
-1. `docker-compose up -d --build`
+1. `docker-compose up --build`
 2. `python manage.py runserver`
 
 ## ToDo
