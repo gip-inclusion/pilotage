@@ -1,0 +1,13 @@
+{% extends 'admin/base_site.html' %}
+{% load static %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static "stylesheets/admin.css" %}">
+    <link rel="stylesheet" href="{% static "vendor/easymde/easymde.min.css" %}">
+{% endblock %}
+
+{% block footer %}
+    <div id="footer"></div>
+    <script src="{% static "vendor/easymde/easymde.min.js" %}" defer></script>
+    <script src="{% static "javascripts/admin.js" %}" defer></script>
+{% endblock %}

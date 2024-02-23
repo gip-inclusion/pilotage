@@ -6,7 +6,6 @@ from pilotage.dashboards import urls as dashboards_urls
 
 urlpatterns = [
     path(settings.PATH_TO_ADMIN, admin.site.urls),
-    # path("admin/", admin.site.urls),
     path("", include(pilotage_urls)),
     path("", include(dashboards_urls)),
 ]
