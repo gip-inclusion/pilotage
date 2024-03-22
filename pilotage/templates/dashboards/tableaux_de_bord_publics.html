@@ -64,6 +64,9 @@
                                 <div>
                                     <h3 class="h3">
                                         <strong>{{ dashboard.title }}</strong>
+                                        {% if dashboard.new %}
+                                            <span class="badge badge-sm rounded-pill bg-important">Nouveau</span>
+                                        {% endif %}
                                     </h3>
                                     <p>
                                         {{ dashboard.baseline }}

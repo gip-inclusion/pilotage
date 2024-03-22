@@ -34,6 +34,7 @@ class Dashboard(models.Model):
         verbose_name="Categorie",
     )
     active = models.fields.BooleanField("Actif", default=True)
+    new = models.fields.BooleanField("Nouveau", default=False)
 
     def __str__(self):
         return f"{self.title}"
