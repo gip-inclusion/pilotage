@@ -1,3 +1,5 @@
+{% load static %}
+
 <script type="text/javascript" src="//cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@1.11.0/tarteaucitron.js"></script>
 <script type="text/javascript">
   tarteaucitron.init({
@@ -39,7 +41,7 @@
     <!-- hasTracking -->
     <script type="text/javascript">
         tarteaucitron.user.matomoId = 146;
-        tarteaucitron.user.matomoHost = "https://matomo.inclusion.beta.gouv.fr/";
+        tarteaucitron.user.matomoHost = "//matomo.inclusion.beta.gouv.fr/";
         (tarteaucitron.job = tarteaucitron.job || []).push('matomo');
     </script>
 
@@ -47,21 +49,25 @@
         var _mtm = window._mtm = window._mtm || [];
         _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
         var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-        g.async=true; g.src='https://matomo.inclusion.beta.gouv.fr/js/container_czDcW7tH.js'; s.parentNode.insertBefore(g,s);
+        g.async=true; g.src='//matomo.inclusion.beta.gouv.fr/js/container_czDcW7tH.js'; s.parentNode.insertBefore(g,s);
     </script>
 {% endif %}
 
 {% if hasIframeResizer %}
     <!-- hasIframeResizer -->
+    <script src="{% static "vendor/iframe-resizer/iframeResizer.contentWindow.min.js" %}"></script>
     <script src="//stats.inclusion.beta.gouv.fr/app/iframeResizer.js"></script>
     <script>
+        window.iFrameResizer = {
+            targetOrigin: "//pilotage.inclusion.beta.gouv.fr"
+        }
         iFrameResize({}, '#iframeMetabase');
     </script>
 {% endif %}
 
 {% if hasTallyPopup or hasTallyEmbed %}
     <!-- hasTallyPopup or hasTallyEmbed -->
-    <script src="https://tally.so/widgets/embed.js"></script>
+    <script src="//tally.so/widgets/embed.js"></script>
 {% endif %}
 
 {% if hasTallyEmbed %}
@@ -142,7 +148,7 @@
 
 {% if hasTestimonial %}
     <!-- hasTestimonial -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
     <script>
     var slider = tns({
         container: '#tinySliderTestimonial',

@@ -3,7 +3,6 @@ from django.db.models import Prefetch
 
 from pilotage.dashboards.models import Category, Dashboard
 
-
 def tableaux_de_bord_publics(request):
     categories = Category.objects.all().prefetch_related(
         Prefetch(
@@ -21,6 +20,7 @@ def tableaux_de_bord_publics(request):
 
 def tableau_de_bord_public(request, slug):
     dashboard = Dashboard.objects.get(slug=slug)
+
     return render(
         request,
         "dashboards/tableau_de_bord_public.html",
