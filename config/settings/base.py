@@ -42,8 +42,7 @@ CSRF_COOKIE_SECURE = True
 ALLOWED_HOSTS = ["inclusion.beta.gouv.fr", "pilotage.inclusion.beta.gouv.fr"]
 
 # Custom variables
-PATH_TO_ADMIN = os.getenv("PATH_TO_ADMIN")
-
+METABASE_SECRET_KEY = os.getenv("METABASE_SECRET_KEY")
 
 # Application definition
 
