@@ -41,6 +41,14 @@ CSRF_COOKIE_SECURE = True
 
 ALLOWED_HOSTS = ["inclusion.beta.gouv.fr", "pilotage.inclusion.beta.gouv.fr"]
 
+SECURE_HSTS_SECONDS = 31536000
+
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+SECURE_SSL_REDIRECT = True
+
+SECURE_HSTS_PRELOAD = True
+
 # Custom variables
 METABASE_SECRET_KEY = os.getenv("METABASE_SECRET_KEY")
 

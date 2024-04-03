@@ -8,8 +8,6 @@ from .base import *  # pylint: disable=wildcard-import,unused-wildcard-import # 
 
 # Django settings
 # ---------------
-SECRET_KEY = "foobar"
-
 DEBUG = True
 
 SESSION_COOKIE_SECURE = False

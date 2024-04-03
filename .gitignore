@@ -1,5 +1,5 @@
 # Project specific
-pilotage/static_collected/
+pilotage/staticfiles/
 pilotage/static/vendor
 
 # Database
