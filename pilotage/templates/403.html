@@ -1,0 +1,43 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Erreur 403 - {{ block.super }}{% endblock %}
+
+{% block content %}
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="c-breadcrumb" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'pilotage:home' %}">Accueil</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Erreur 403</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s-title-01">
+        <div class="s-title-01__container container">
+            <div class="s-title-01__row row">
+                <div class="s-title-01__col  col-12">
+                    <h1 class="h1"><strong>Erreur 403</strong></h1>
+                    <h2>Vous ne pouvez pas continuer.</h2>
+                    {% if exception %}
+                        <p class="mb-0">{{ exception }}</p>
+                    {% else %}
+                        <p>Accès refusé</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    {% include 'partials/footer-scripts.html' with hasTracking=True %}
+{% endblock %}
