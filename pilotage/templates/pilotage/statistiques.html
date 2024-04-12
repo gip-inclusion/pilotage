@@ -1,7 +1,7 @@
 {% extends "layouts/base.html" %}
 {% load static %}
 {% load i18n %}
-
+{% load metabase_extras %}
 
 {% block title %}Statistiques du pilotage de l'inclusion - {{ block.super }}{% endblock %}
 
@@ -32,18 +32,17 @@
         </div>
     </section>
 
-    <section class="s-embed">
+    <section class="s-embed m-0">
         <div class="s-embed__container container">
             <div class="s-embed__row row">
                 <div class="s-embed__col col-12" id="embedMetabase">
-                    <iframe src="https://emplois.inclusion.beta.gouv.fr/stats/pilotage/63" title="Statistiques du pilotage de l'inclusion" id="iframeMetabase" allowtransparency></iframe>
+                    <iframe src="{{ 63 | iframeurl }}" title="Statistiques du pilotage de l'inclusion" id="iframeMetabase" allowtransparency></iframe>
                 </div>
             </div>
         </div>
     </section>
 
     {% include 'sections/testimonial.html' %}
-    {% include 'sections/guide-tdb.html' %}
 
 {% endblock %}
 

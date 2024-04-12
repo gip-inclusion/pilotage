@@ -1,0 +1,316 @@
+[
+  {
+    "model": "dashboards.category",
+    "pk": 1,
+    "fields": {
+      "title": "Statistiques des services de la Plateforme de l’inclusion"
+    }
+  },
+  {
+    "model": "dashboards.category",
+    "pk": 2,
+    "fields": {
+      "title": "Publics"
+    }
+  },
+  {
+    "model": "dashboards.category",
+    "pk": 3,
+    "fields": {
+      "title": "Employeurs inclusifs"
+    }
+  },
+  {
+    "model": "dashboards.category",
+    "pk": 4,
+    "fields": {
+      "title": "Prescripteurs"
+    }
+  },
+  {
+    "model": "dashboards.category",
+    "pk": 5,
+    "fields": {
+      "title": "Recrutement"
+    }
+  },
+  {
+    "model": "dashboards.category",
+    "pk": 6,
+    "fields": {
+      "title": "Vue d'ensemble"
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 1,
+    "fields": {
+      "title": "Stats du service \"emplois de l’inclusion\"",
+      "baseline": "Statistiques avancées de l’utilisation du service disponible à l’adresse https://emplois.inclusion.beta.gouv.fr",
+      "slug": "statistiques-emplois",
+      "description": "",
+      "metabase_db_id": 236,
+      "tally_popup_id": "mD4Eo5",
+      "tally_embed_id": null,
+      "category": 1,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 2,
+    "fields": {
+      "title": "Les femmes dans l’IAE",
+      "baseline": "Quelle est la place des femmes dans l’IAE ?",
+      "slug": "femmes-iae",
+      "description": "",
+      "metabase_db_id": 216,
+      "tally_popup_id": "w5XRod",
+      "tally_embed_id": "w5bGXM",
+      "category": 2,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 3,
+    "fields": {
+      "title": "Suivi des Pass IAE",
+      "baseline": "Combien de Pass IAE arrivent à expiration, semaine après semaine ?",
+      "slug": "suivi-pass-iae",
+      "description": "",
+      "metabase_db_id": 217,
+      "tally_popup_id": "w8NV2x",
+      "tally_embed_id": "nG6Jej",
+      "category": 2,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 4,
+    "fields": {
+      "title": "Zoom sur les ESAT",
+      "baseline": "Plan de transformation des ESAT : d’où partons-nous ?",
+      "slug": "zoom-esat",
+      "description": "",
+      "metabase_db_id": 306,
+      "tally_popup_id": "w7K14L",
+      "tally_embed_id": "wvMOMA",
+      "category": 3,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 5,
+    "fields": {
+      "title": "Zoom sur les employeur",
+      "baseline": "Quels employeurs inclusifs dynamisent mon territoire et comment ?",
+      "slug": "zoom-employeurs",
+      "description": "",
+      "metabase_db_id": 54,
+      "tally_popup_id": "wdW4oA",
+      "tally_embed_id": "wvMOMA",
+      "category": 3,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 6,
+    "fields": {
+      "title": "Accompagnement des prescripteurs habilités",
+      "baseline": "Quel est le taux de transformation des prescripteurs habilités ? L’analyse porte sur les candidats pour lesquels les prescripteurs habilités ont réalisé le diagnostic d’éligibilité.",
+      "slug": "prescripteurs-habilites",
+      "description": "",
+      "metabase_db_id": 136,
+      "tally_popup_id": "3jaqrE",
+      "tally_embed_id": "npr7rV",
+      "category": 4,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 7,
+    "fields": {
+      "title": "Zoom sur les prescripteurs",
+      "baseline": "Quels prescripteurs agissent sur mon territoire et comment ?",
+      "slug": "zoom-prescripteurs",
+      "description": "",
+      "metabase_db_id": 52,
+      "tally_popup_id": "mY5Kbd",
+      "tally_embed_id": "wL9J9G",
+      "category": 4,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 8,
+    "fields": {
+      "title": "Demandes de prolongation",
+      "baseline": "Combien de demandes de prolongation sont réalisées, et par qui ? Combien sont acceptées ?",
+      "slug": "suivi-demandes-prolongation",
+      "description": "",
+      "metabase_db_id": 336,
+      "tally_popup_id": "nrae2p",
+      "tally_embed_id": "3qD9j8",
+      "category": 5,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 9,
+    "fields": {
+      "title": "Suivi du contrôle a posteriori",
+      "baseline": "Quels sont les résultats des campagnes de contrôle a posteriori ?",
+      "slug": "suivi-controle-a-posteriori",
+      "description": "",
+      "metabase_db_id": 300,
+      "tally_popup_id": "3lb9jW",
+      "tally_embed_id": null,
+      "category": 5,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 10,
+    "fields": {
+      "title": "L'auto-prescription",
+      "baseline": "Comment les structures se saisissent de l’auto-prescription ? Quels critèrent remplissent les personnes recrutées en auto-prescription ?",
+      "slug": "auto-prescription",
+      "description": "",
+      "metabase_db_id": 32,
+      "tally_popup_id": "w5BgYd",
+      "tally_embed_id": "mVG5VE",
+      "category": 5,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 11,
+    "fields": {
+      "title": "Postes en tension",
+      "baseline": "Qu'est-ce qu'une fiche de poste en difficulté de recrutement ?",
+      "slug": "postes-en-tension",
+      "description": "",
+      "metabase_db_id": 150,
+      "tally_popup_id": "w81gYx",
+      "tally_embed_id": "n0dJdZ",
+      "category": 5,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 12,
+    "fields": {
+      "title": "Métiers",
+      "baseline": "Quels sont les métiers proposés et recherchés depuis fin 2019 ?",
+      "slug": "metiers",
+      "description": "",
+      "metabase_db_id": 90,
+      "tally_popup_id": "w7XOlA",
+      "tally_embed_id": "nW2M2J",
+      "category": 5,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 13,
+    "fields": {
+      "title": "État, suivi et résultat des candidatures orientées",
+      "baseline": "Combien de candidatures orientées ? Où en sont-ils ? Quels sont les résultats ?",
+      "slug": "etat-suivi-candidatures",
+      "description": "",
+      "metabase_db_id": 116,
+      "tally_popup_id": "3lb9jW",
+      "tally_embed_id": "wdEDEz",
+      "category": 5,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 14,
+    "fields": {
+      "title": "Analyses autour des conventionnements IAE",
+      "baseline": "Quel part du budget de l’IAE bénéficie aux femmes ? Combien d’heures sont réalisées en moyenne dans les structures ?",
+      "slug": "analyses-conventionnements-iae",
+      "description": "",
+      "metabase_db_id": 325,
+      "tally_popup_id": "mD7XBX",
+      "tally_embed_id": "wo20E5",
+      "category": 6,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 15,
+    "fields": {
+      "title": "Conventionnements IAE",
+      "baseline": "Combien d’ETP sont affectés aux structures de l’IAE et combien sont consommés ?",
+      "slug": "conventionnements-iae",
+      "description": "",
+      "metabase_db_id": 287,
+      "tally_popup_id": "n97dRQ",
+      "tally_embed_id": "meaB0e",
+      "category": 6,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 16,
+    "fields": {
+      "title": "Cartographies de l’IAE en France",
+      "baseline": "L'IAE dans les territoires, quelles données locales ?",
+      "slug": "cartographies-iae",
+      "description": "",
+      "metabase_db_id": 218,
+      "tally_popup_id": "wLD4lv",
+      "tally_embed_id": "3qLK52",
+      "category": 6,
+      "active": true,
+      "new": false
+    }
+  },
+  {
+    "model": "dashboards.dashboard",
+    "pk": 17,
+    "fields": {
+      "title": "Bilan de la phase de candidature en IAE",
+      "baseline": "Quel bilan annuel faire sur l’offre en IAE, les candidats, les candidatures et les réalisations des prescripteurs ? Où en sont les régions et les départements ?",
+      "slug": "bilan-candidatures-iae",
+      "description": "",
+      "metabase_db_id": 337,
+      "tally_popup_id": "mOGpzp",
+      "tally_embed_id": "mVJRZE",
+      "category": 6,
+      "active": true,
+      "new": true
+    }
+  }
+]
