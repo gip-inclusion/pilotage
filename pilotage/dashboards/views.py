@@ -5,12 +5,16 @@ from pilotage.dashboards.models import Category, Dashboard
 
 
 def tableaux_de_bord_publics(request):
-    categories = Category.objects.all().prefetch_related(
-        Prefetch(
-            "dashboard_set",
-            to_attr="dashboards",
-            queryset=Dashboard.objects.filter(active=True),
-        ),
+    categories = (
+        Category.objects.all()
+        .order_by("-id")
+        .prefetch_related(
+            Prefetch(
+                "dashboard_set",
+                to_attr="dashboards",
+                queryset=Dashboard.objects.filter(active=True).order_by("-id"),
+            ),
+        )
     )
     return render(
         request,
