@@ -20,18 +20,18 @@ class Dashboard(models.Model):
     title = models.fields.CharField("Titre", max_length=150)
     baseline = models.fields.CharField(max_length=250)
     slug = models.fields.SlugField()
-    description = models.fields.TextField(null=True, blank=True)
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.DO_NOTHING,
+        verbose_name="Categorie",
+    )
     metabase_db_id = models.fields.IntegerField("Metabase ID")
+    description = models.fields.TextField(null=True, blank=True)
     tally_popup_id = models.fields.CharField(
         "Tally Popup ID", null=True, blank=True, max_length=10
     )
     tally_embed_id = models.fields.CharField(
         "Tally Embed ID", null=True, blank=True, max_length=10
-    )
-    category = models.ForeignKey(
-        Category,
-        on_delete=models.DO_NOTHING,
-        verbose_name="Categorie",
     )
     active = models.fields.BooleanField("Actif", default=True)
     new = models.fields.BooleanField("Nouveau", default=False)

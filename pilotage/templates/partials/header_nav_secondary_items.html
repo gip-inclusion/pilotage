@@ -11,9 +11,22 @@
         <a href="{% url 'pilotage:tableaux_de_bord_prives' %}" class="{% if request.path == '/tableaux-de-bord-prives/' %}is-active{% endif %}">Tableaux de bord privés</a>
     </li>
     <li>
-        <a href="https://plateforme-inclusion.notion.site/Actualit-s-du-service-pilotage-de-l-inclusion-bc33815555874210b161063b203639c8?mtm_campaign=Notion-Page-Actualités-accueil&mtm_kwd=Page-Actualités-accueil" rel="noopener" target="_blank" aria-label="Accéder à l'espace de documentation (nouvel onglet)">
-            <span>Actualités</span>
-            <i class="ri-arrow-right-up-line ri-lg"></i>
-        </a>
+        <a href="" role="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-controls="ressourcesDropdown{% if is_mobile %}Mobile{% endif %}" aria-expanded="false">Ressources</a>
+        <div class="dropdown-menu" id="ressourcesDropdown{% if is_mobile %}Mobile{% endif %}">
+            <ul class="list-unstyled">
+                <li>
+                    <a class="dropdown-item has-external-link" target="_blank" href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/categories/16881943905297--Actualités-et-journal-des-évolutions-techniques" aria-label="Nouveautés (lien externe)">Nouveautés</a>
+                </li>
+                <li>
+                    <a class="dropdown-item has-external-link" target="_blank" href="https://youtube.com/playlist?list=PLbjxvanoh-KbY_ku7d_MbIhDLgLWBxDTp&feature=shared" aria-label="Tutoriels et replays (lien externe)">Tutoriels et replays</a>
+                </li>
+                <li>
+                    <a class="dropdown-item has-external-link" target="_blank" href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/categories/16881947647889--Webinaires-supports-et-replays" aria-label="Webinaires (lien externe)">Webinaires</a>
+                </li>
+                <li>
+                    <a class="dropdown-item has-external-link" target="_blank" href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/categories/15968315641745--Guides-d-utilisation-et-d-analyse-des-tableaux-de-bord" aria-label="Guides et fiches pratiques (lien externe)">Guides et fiches pratiques</a>
+                </li>
+            </ul>
+        </div>
     </li>
 </ul>

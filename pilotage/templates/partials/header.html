@@ -26,7 +26,7 @@
           <div id="burgerNav">
             <nav role="navigation" aria-label="Navigation principale pour mobile">
                 {% include 'partials/header_nav_primary_items.html' %}
-                {% include 'partials/header_nav_secondary_items.html' %}
+                {% include 'partials/header_nav_secondary_items.html' with is_mobile=True %}
             </nav>
           </div>
         </div>
