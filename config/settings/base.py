@@ -155,15 +155,18 @@ USE_TZ = True
 # Static Files
 STATIC_URL = "/static/"
 
-STATICFILES_DIRS = [os.path.join(APPS_DIR, "static")]
-
 STATIC_ROOT = os.path.join(APPS_DIR, "staticfiles")
+STATICFILES_DIRS = (os.path.join(APPS_DIR, "static"),)
 
 STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
     "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
+
 
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
@@ -177,3 +180,7 @@ COMPRESS_PRECOMPILERS = (("text/x-scss", "django_libsass.SassCompiler"),)
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# media files
+MEDIA_ROOT = os.path.join(APPS_DIR, "media")
+MEDIA_URL = "/media/"

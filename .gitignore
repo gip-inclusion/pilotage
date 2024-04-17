@@ -1,6 +1,6 @@
 # Project specific
 pilotage/staticfiles/
-pilotage/static/vendor
+pilotage/media/
 
 # Database
 db.sqlite3
