@@ -159,6 +159,12 @@ STATICFILES_DIRS = [os.path.join(APPS_DIR, "static")]
 
 STATIC_ROOT = os.path.join(APPS_DIR, "staticfiles")
 
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
+    },
+}
+
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
