@@ -106,11 +106,14 @@ WSGI_APPLICATION = "config.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("PGDATABASE"),
-        "USER": os.environ.get("PGUSER", "user"),
-        "PASSWORD": os.environ.get("PGPASSWORD", "password"),
-        "HOST": os.environ.get("PGHOST", "localhost"),
-        "PORT": os.environ.get("PGPORT", "5432"),
+        "NAME": os.getenv("POSTGRESQL_ADDON_DB"),
+        "HOST": os.getenv("POSTGRESQL_ADDON_HOST"),
+        "PORT": os.getenv("POSTGRESQL_ADDON_PORT"),
+        "USER": os.getenv("POSTGRESQL_ADDON_USER"),
+        "PASSWORD": os.getenv("POSTGRESQL_ADDON_PASSWORD"),
+        "OPTIONS": {
+            "connect_timeout": 5,
+        },
     }
 }
 
