@@ -39,7 +39,10 @@ SESSION_COOKIE_SECURE = True
 
 CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = ["inclusion.beta.gouv.fr", "pilotage.inclusion.beta.gouv.fr"]
+ALLOWED_HOSTS = [
+    "pilotage.inclusion.beta.gouv.fr",
+    "pilotage.cleverapps.io",
+]
 
 SECURE_HSTS_SECONDS = 31536000
 
