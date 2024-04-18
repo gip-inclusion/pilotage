@@ -42,6 +42,8 @@ CSRF_COOKIE_SECURE = True
 ALLOWED_HOSTS = [
     "pilotage.inclusion.beta.gouv.fr",
     "pilotage.cleverapps.io",
+    "pilotage-staging.cleverapps.io",
+    "pilotage-prod.cleverapps.io",
 ]
 
 SECURE_HSTS_SECONDS = 31536000
@@ -163,7 +165,7 @@ STORAGES = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+        "BACKEND": "django.contrib.staticfiles.storage.ManifestStaticFilesStorage",
     },
 }
 
