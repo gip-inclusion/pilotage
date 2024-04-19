@@ -145,32 +145,3 @@
         };
     </script>
 {% endif %}
-
-{% if hasTestimonial %}
-    <!-- hasTestimonial -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
-    <script>
-    var slider = tns({
-        container: '#tinySliderTestimonial',
-        items: 1,
-        mouseDrag: true,
-        gutter: 32,
-        controlsText: ['précédent', 'suivant'],
-        navPosition: 'bottom',
-        nav: true,
-        controls: false,
-        responsive: {
-            768: {
-                items: 2
-            },
-            992: {
-                items: 3
-            },
-            1200: {
-                nav: false,
-                controls: true
-            }
-        }
-    });
-    </script>
-{% endif %}

@@ -5,10 +5,10 @@
 <ul>
     <li><a href="{% url 'pilotage:home' %}" class="{% if request.path == '/' %}is-active{% endif %}">Accueil</a></li>
     <li>
-        <a href="{% url 'dashboards:tableaux_de_bord_publics' %}" class="{% if request.path == '/tableaux-de-bord/' %}is-active{% endif %}">Tableaux de bord publics</a>
+        <a href="{% url 'dashboards:tableaux_de_bord_publics' %}" class="{% if request.path == '/tableaux-de-bord/' %}is-active{% endif %}">Statistiques publiques</a>
     </li>
     <li>
-        <a href="{% url 'pilotage:tableaux_de_bord_prives' %}" class="{% if request.path == '/tableaux-de-bord-prives/' %}is-active{% endif %}">Tableaux de bord privés</a>
+        <a href="{% url 'pilotage:tableaux_de_bord_prives' %}" class="{% if request.path == '/tableaux-de-bord-prives/' %}is-active{% endif %}">Statistiques de mon organisation</a>
     </li>
     <li>
         <a href="" role="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-controls="ressourcesDropdown{% if is_mobile %}Mobile{% endif %}" aria-expanded="false">Ressources</a>

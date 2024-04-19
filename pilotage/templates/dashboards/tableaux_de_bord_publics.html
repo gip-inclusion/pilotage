@@ -4,12 +4,11 @@
 
 
 {% block title %}
-    Tableaux de bord publics - {{ block.super }}
+    Statistiques publiques - {{ block.super }}
 {% endblock %}
 
 {% block body_class %}l-tableaux-de-bord{% endblock %}
 {% block content %}
-
     <section>
         <div class="container">
             <div class="row">
@@ -20,7 +19,7 @@
                                 <a href="{% url 'pilotage:home' %}">Accueil</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                Tableaux de bord publics
+                                Statistiques publiques
                             </li>
                         </ol>
                     </nav>
@@ -33,14 +32,12 @@
         <div class="s-section__container container">
             <div class="row mb-1">
                 <div class="col-12 col-xl-11">
-                    <h1 class="h1">
-                        <strong>Tableaux de bord publics</strong>
-                    </h1>
+                    <h1>Statistiques publiques</h1>
                     <p>
                         Ces tableaux de bord sont ouverts à tous.
                     </p>
                     <p class="h3">
-                        Le détail du périmètre de nos données pour comprendre comment sont construits nos tableaux de bord est disponible <a href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/articles/17407896468113--P%C3%A9rim%C3%A8tre-de-nos-donn%C3%A9es" target="_blank" aria-label="Détail du périmètre de nos données">ici</a>.
+                        Le détail du périmètre de nos données pour comprendre comment sont construits nos tableaux de bord est <a href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/articles/17407896468113--P%C3%A9rim%C3%A8tre-de-nos-donn%C3%A9es" target="_blank" class="has-external-link" aria-label="Détail du périmètre de nos données">disponible ici</a>.
                     </p>
                 </div>
             </div>
@@ -62,8 +59,8 @@
                         {% for dashboard in categorie.dashboards %}
                             <div class="d-flex flex-column justify-content-between position-relative">
                                 <div>
-                                    <h3 class="h3">
-                                        <strong>{{ dashboard.title }}</strong>
+                                    <h3>
+                                        {{ dashboard.title }}
                                         {% if dashboard.new %}
                                             <span class="badge badge-sm rounded-pill bg-important">Nouveau</span>
                                         {% endif %}
