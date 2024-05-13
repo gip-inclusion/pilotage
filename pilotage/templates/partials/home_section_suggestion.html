@@ -19,10 +19,7 @@
                         <div class="input-group input-group-xl input-group-search">
                             <input type="text" class="form-control" placeholder="Dites-nous de quoi vous avez besoin" id="input-continuer" aria-label="Suggestions et idées">
                             <div class="input-group-text p-0 bg-white">
-                                <button class="btn btn-link btn-ico" type="button" disabled id="btn-continuer">
-                                    <i class="ri-search-line font-weight-bold" aria-hidden="true"></i>
-                                    <span>Continuer</span>
-                                </button>
+                                <button class="btn btn-link" type="button" disabled id="btn-continuer">Continuer</button>
                             </div>
                         </div>
                     </div>
@@ -47,6 +44,6 @@
     });
 
     btnContinuer.addEventListener("click", function (e) {
-        window.open(tallyUrl+"?text="+inputContinuer.value);
+        window.open(tallyUrl+"?suggestion="+inputContinuer.value);
     });
 </script>

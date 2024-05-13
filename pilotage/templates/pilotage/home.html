@@ -10,7 +10,7 @@
             <div class="s-hero-title-01__row row align-items-center">
                 <div class="s-hero-title-01__col s-hero-title-01__col--article col-12 col-md-8 col-xl-7">
                     <article>
-                        <h1 class="s-hero-title-01__col--article__title">
+                        <h1 class="mb-md-4">
                             Comprendre et analyser
                             <br class="d-none d-lg-inline">
                             l’inclusion dans l'emploi
@@ -48,6 +48,23 @@
     {% include 'partials/home_section_suggestion.html' %}
 
     {% include 'partials/home_section_accompagne.html' %}
+
+    <section class="s-section mt-md-0 mb-md-7">
+        <div class="s-section__container container container-max-lg">
+            <div class="row mb-1 mb-md-3">
+                <div class="col-12">
+                    <h2 class="mb-0">Événements à venir</h2>
+                </div>
+            </div>
+            <div class="s-section__row row">
+                <div class="s-section__col col-12">
+                    <div class="js-tac-livestorm w-100" data-url="https://app.livestorm.co/itou/upcoming?limit=3" title="Événements La Plateforme de l'inclusion | Livestorm">
+                        <iframe title="Événements des emplois de l'inclusion | Livestorm" src="https://app.livestorm.co/itou/upcoming?limit=3" style="min-height:365px;" allowtransparency allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     {% include 'sections/testimonial.html' %}
 {% endblock %}

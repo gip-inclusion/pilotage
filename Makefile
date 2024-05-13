@@ -36,5 +36,5 @@ fast_fix: $(VENV_REQUIREMENT)
 	find * -type f -name '*.sh' -exec shellcheck --external-sources --format=diff {} + | git apply --allow-empty
 
 fix: fast_fix
-	djlint --reformat itou
+	djlint --reformat pilotage
 
