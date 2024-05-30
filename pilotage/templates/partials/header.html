@@ -3,46 +3,50 @@
 {% load theme_inclusion %}
 
 <header role="banner" id="header">
-	<section class="s-header">
-		<div class="s-header__container container">
-			<div class="s-header__row row">
-				<div class="s-header__col s-header__col--logo-ministere col col-md-auto d-flex align-items-center pe-0">
-					<a href="/" class="s-header__logo-ministere"><img src="{% static_theme_images 'logo-republique-francaise.svg' %}" alt="Rébublique Française"></a>
-				</div>
-				<div class="s-header__col s-header__col--logo-service col-auto d-flex align-items-center px-0">
-					<a href="/"><img src="{% static_theme_images 'logo-pilotage-inclusion.svg' %}" alt="Le pilotage de l'inclusion"></a>
-				</div>
-				<div class="s-header__col s-header__col--nav col d-none d-md-inline-flex d-md-flex align-items-center justify-content-end">
-					<nav role="navigation" id="nav-primary" aria-label="Navigation principale">
-						{% include 'partials/header_nav_primary_items.html' %}
-					</nav>
-				</div>
-				<div class="s-header__col s-header__col--burger col d-flex align-items-center justify-content-end d-md-none">
+    <section class="s-header">
+        <div class="s-header__container container">
+            <div class="s-header__row row">
+                <div class="s-header__col s-header__col--logo-ministere col col-md-auto d-flex align-items-center pe-0">
+                    <a href="/" class="s-header__logo-ministere">
+                        <img src="{% static_theme_images 'logo-republique-francaise.svg' %}" alt="Rébublique Française">
+                    </a>
+                </div>
+                <div class="s-header__col s-header__col--logo-service col-auto d-flex align-items-center px-0">
+                    <a href="/">
+                        <img src="{% static_theme_images 'logo-pilotage-inclusion.svg' %}" alt="Le pilotage de l'inclusion">
+                    </a>
+                </div>
+                <div class="s-header__col s-header__col--nav col d-none d-md-inline-flex d-md-flex align-items-center justify-content-end">
+                    <nav role="navigation" id="nav-primary" aria-label="Navigation principale">
+                        {% include 'partials/header_nav_primary_items.html' %}
+                    </nav>
+                </div>
+                <div class="s-header__col s-header__col--burger col d-flex align-items-center justify-content-end d-md-none">
                     <button type="button" data-bs-toggle="offcanvas" data-bs-target="#burgerNav" aria-controls="burgerNav" aria-label="Ouvrir le menu de navigation principale pour mobile">
                         <i class="ri-menu-line" aria-hidden="true"></i>
                     </button>
-				</div>
-				<div id="burgerNav" class="offcanvas offcanvas-end" aria-label="Navigation principale pour mobile">
+                </div>
+                <div id="burgerNav" class="offcanvas offcanvas-end" aria-label="Navigation principale pour mobile">
                     <button type="button" data-bs-dismiss="offcanvas" aria-label="Fermer le menu de navigation principale pour mobile">
-                        <i class="ri-close-line" id="close" aria-hidden="true"></i>
+                        <i class="ri-close-line" aria-hidden="true"></i>
                     </button>
-					<nav role="navigation" aria-label="Menu de navigation principale pour mobile">
-						{% include 'partials/header_nav_primary_items.html' %}
-						{% include 'partials/header_nav_secondary_items.html' with is_mobile=True %}
-					</nav>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="s-postheader d-none d-md-block">
-		<div class="s-postheader__container container">
-			<div class="s-postheader__row row">
-				<div class="s-postheader__col col-12 d-flex align-items-center">
-					<nav role="navigation" aria-label="Navigation secondaire">
-						{% include 'partials/header_nav_secondary_items.html' %}
-					</nav>
-				</div>
-			</div>
-		</div>
-	</section>
+                    <nav role="navigation" aria-label="Menu de navigation principale pour mobile">
+                        {% include 'partials/header_nav_primary_items.html' %}
+                        {% include 'partials/header_nav_secondary_items.html' with is_mobile=True %}
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="s-postheader d-none d-md-block">
+        <div class="s-postheader__container container">
+            <div class="s-postheader__row row">
+                <div class="s-postheader__col col-12 d-flex align-items-center">
+                    <nav role="navigation" aria-label="Navigation secondaire">
+                        {% include 'partials/header_nav_secondary_items.html' %}
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
 </header>

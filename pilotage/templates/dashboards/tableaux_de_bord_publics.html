@@ -3,9 +3,7 @@
 {% load i18n %}
 
 
-{% block title %}
-    Statistiques publiques - {{ block.super }}
-{% endblock %}
+{% block title %}Statistiques publiques - {{ block.super }}{% endblock %}
 
 {% block body_class %}l-tableaux-de-bord{% endblock %}
 {% block content %}
@@ -18,9 +16,7 @@
                             <li class="breadcrumb-item">
                                 <a href="{% url 'pilotage:home' %}">Accueil</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">
-                                Statistiques publiques
-                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Statistiques publiques</li>
                         </ol>
                     </nav>
                 </div>
@@ -33,11 +29,12 @@
             <div class="s-title-01__row row">
                 <div class="s-title-01__col col-12 col-lg-11">
                     <h1>Statistiques publiques</h1>
-                    <p>
-                        Ces tableaux de bord sont ouverts à tous.
-                    </p>
+                    <p>Ces tableaux de bord sont ouverts à tous.</p>
                     <p class="h3">
-                        Le détail du périmètre de nos données pour comprendre comment sont construits nos tableaux de bord est <a href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/articles/17407896468113--P%C3%A9rim%C3%A8tre-de-nos-donn%C3%A9es" target="_blank" class="has-external-link text-nowrap" aria-label="Détail du périmètre de nos données">disponible ici</a>.
+                        Le détail du périmètre de nos données pour comprendre comment sont construits nos tableaux de bord est <a href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/articles/17407896468113--P%C3%A9rim%C3%A8tre-de-nos-donn%C3%A9es"
+    target="_blank"
+    class="has-external-link text-nowrap"
+    aria-label="Détail du périmètre de nos données">disponible ici</a>.
                     </p>
                 </div>
             </div>
@@ -49,9 +46,7 @@
             <div class="s-tableaux__container container">
                 <div class="s-tableaux__row row mb-3">
                     <div class="col-12">
-                        <h2 class="text-secondary">
-                            {{ categorie.title }}
-                        </h2>
+                        <h2 class="text-secondary">{{ categorie.title }}</h2>
                     </div>
                 </div>
                 <div class="s-tableaux__row row">
@@ -61,13 +56,9 @@
                                 <div>
                                     <h3>
                                         {{ dashboard.title }}
-                                        {% if dashboard.new %}
-                                            <span class="badge badge-sm rounded-pill bg-important">Nouveau</span>
-                                        {% endif %}
+                                        {% if dashboard.new %}<span class="badge badge-sm rounded-pill bg-important">Nouveau</span>{% endif %}
                                     </h3>
-                                    <p>
-                                        {{ dashboard.baseline }}
-                                    </p>
+                                    <p>{{ dashboard.baseline }}</p>
                                 </div>
                                 <p class="s-tableaux__col__cta">
                                     <a href="{% url 'dashboards:tableau_de_bord_public' dashboard.slug %}" rel="noopener" class="btn btn-outline-primary stretched-link">Voir le tableau de bord</a>
@@ -85,4 +76,3 @@
     {{ block.super }}
     {% include 'partials/footer-scripts.html' with hasTracking=True %}
 {% endblock %}
-

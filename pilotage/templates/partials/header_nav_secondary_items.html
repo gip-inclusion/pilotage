@@ -3,7 +3,9 @@
 {% load theme_inclusion %}
 
 <ul>
-    <li><a href="{% url 'pilotage:home' %}" class="{% if request.path == '/' %}is-active{% endif %}">Accueil</a></li>
+    <li>
+        <a href="{% url 'pilotage:home' %}" class="{% if request.path == '/' %}is-active{% endif %}">Accueil</a>
+    </li>
     <li>
         <a href="{% url 'dashboards:tableaux_de_bord_publics' %}" class="{% if request.path == '/tableaux-de-bord/' %}is-active{% endif %}">Statistiques publiques</a>
     </li>
@@ -15,16 +17,25 @@
         <div class="dropdown-menu" id="ressourcesDropdown{% if is_mobile %}Mobile{% endif %}">
             <ul class="list-unstyled">
                 <li>
-                    <a class="dropdown-item has-external-link" target="_blank" href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/categories/16881943905297--Actualités-et-journal-des-évolutions-techniques" aria-label="Nouveautés (lien externe)">Nouveautés</a>
+                    <a class="dropdown-item has-external-link"
+                       target="_blank"
+                       href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/categories/16881943905297--Actualités-et-journal-des-évolutions-techniques"
+                       aria-label="Nouveautés (lien externe)">Nouveautés</a>
                 </li>
                 <li>
                     <a class="dropdown-item has-external-link" target="_blank" href="https://youtube.com/playlist?list=PLbjxvanoh-KbY_ku7d_MbIhDLgLWBxDTp&feature=shared" aria-label="Tutoriels et replays (lien externe)">Tutoriels et replays</a>
                 </li>
                 <li>
-                    <a class="dropdown-item has-external-link" target="_blank" href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/categories/16881947647889--Webinaires-supports-et-replays" aria-label="Webinaires (lien externe)">Webinaires</a>
+                    <a class="dropdown-item has-external-link"
+                       target="_blank"
+                       href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/categories/16881947647889--Webinaires-supports-et-replays"
+                       aria-label="Webinaires (lien externe)">Webinaires</a>
                 </li>
                 <li>
-                    <a class="dropdown-item has-external-link" target="_blank" href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/categories/15968315641745--Guides-d-utilisation-et-d-analyse-des-tableaux-de-bord" aria-label="Guides et fiches pratiques (lien externe)">Guides et fiches pratiques</a>
+                    <a class="dropdown-item has-external-link"
+                       target="_blank"
+                       href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/categories/15968315641745--Guides-d-utilisation-et-d-analyse-des-tableaux-de-bord"
+                       aria-label="Guides et fiches pratiques (lien externe)">Guides et fiches pratiques</a>
                 </li>
             </ul>
         </div>

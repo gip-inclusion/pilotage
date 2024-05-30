@@ -6,7 +6,6 @@ from django import template
 from django.templatetags.static import static
 from django.utils.safestring import mark_safe
 
-
 """
 This template tags have for goal to mutualize all the dependencies and specifics component from the itou theme.
 
@@ -51,7 +50,7 @@ def static_theme(url_path):
         {% load theme_inclusion %}
         {% static_theme url_path %}
     """
-    static_path = "{base_url}{url_path}".format(base_url=URL_THEME, url_path=url_path)
+    static_path = f"{URL_THEME}{url_path}"
     return static(static_path)
 
 
@@ -62,9 +61,7 @@ def static_theme_images(url_path):
         {% load theme_inclusion %}
         {% static_theme_images url_path %}
     """
-    static_path = "{base_url}images/{url_path}".format(
-        base_url=URL_THEME, url_path=url_path
-    )
+    static_path = f"{URL_THEME}images/{url_path}"
     return static(static_path)
 
 

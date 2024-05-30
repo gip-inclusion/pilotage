@@ -1,8 +1,8 @@
-from django.conf import settings
-from django import template
+import time
 
 import jwt
-import time
+from django import template
+from django.conf import settings
 
 register = template.Library()
 
