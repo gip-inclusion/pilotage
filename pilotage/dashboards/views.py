@@ -1,5 +1,5 @@
-from django.shortcuts import render
 from django.db.models import Prefetch
+from django.shortcuts import render
 
 from pilotage.dashboards.models import Category, Dashboard
 

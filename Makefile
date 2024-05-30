@@ -37,4 +37,3 @@ fast_fix: $(VENV_REQUIREMENT)
 
 fix: fast_fix
 	djlint --reformat pilotage
-
