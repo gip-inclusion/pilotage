@@ -21,5 +21,5 @@ def iframeurl(value):
         "//stats.inclusion.beta.gouv.fr"
         + "/embed/dashboard/"
         + token
-        + "#bordered=true&titled=true"
+        + "#bordered=true&titled=false"
     )
