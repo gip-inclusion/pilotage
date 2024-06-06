@@ -1,25 +1,18 @@
-from django.db.models import Prefetch
 from django.shortcuts import render
 
-from pilotage.dashboards.models import Category, Dashboard
+from pilotage.dashboards.models import Dashboard
 
 
 def tableaux_de_bord_publics(request):
-    categories = (
-        Category.objects.all()
-        .order_by("-id")
-        .prefetch_related(
-            Prefetch(
-                "dashboard_set",
-                to_attr="dashboards",
-                queryset=Dashboard.objects.filter(active=True).order_by("-id"),
-            ),
-        )
+    dashboards = (
+        Dashboard.objects.filter(active=True)
+        .select_related("category")
+        .order_by("-category__pk", "-pk")
     )
     return render(
         request,
         "dashboards/tableaux_de_bord_publics.html",
-        context={"categories": categories},
+        context={"dashboards": dashboards},
     )
 
 

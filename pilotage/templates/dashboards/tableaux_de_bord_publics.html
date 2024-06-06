@@ -31,27 +31,29 @@
                     <h1>Statistiques publiques</h1>
                     <p>Ces tableaux de bord sont ouverts à tous.</p>
                     <p class="h3">
-                        Le détail du périmètre de nos données pour comprendre comment sont construits nos tableaux de bord est <a href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/articles/17407896468113--P%C3%A9rim%C3%A8tre-de-nos-donn%C3%A9es"
-    target="_blank"
-    class="has-external-link text-nowrap"
-    aria-label="Détail du périmètre de nos données">disponible ici</a>.
+                        Le détail du périmètre de nos données pour comprendre comment sont construits nos tableaux de bord est
+                        <a href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/articles/17407896468113--P%C3%A9rim%C3%A8tre-de-nos-donn%C3%A9es"
+                           target="_blank"
+                           class="has-external-link text-nowrap"
+                           aria-label="Détail du périmètre de nos données">disponible ici</a>.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    {% for categorie in categories %}
+    {% regroup dashboards by category as categorized_dashboards %}
+    {% for category in categorized_dashboards %}
         <section class="s-tableaux">
             <div class="s-tableaux__container container">
                 <div class="s-tableaux__row row mb-3">
                     <div class="col-12">
-                        <h2 class="text-secondary">{{ categorie.title }}</h2>
+                        <h2 class="text-secondary">{{ category.grouper.title }}</h2>
                     </div>
                 </div>
                 <div class="s-tableaux__row row">
                     <div class="s-tableaux__col s-tableaux__col--grid col-12">
-                        {% for dashboard in categorie.dashboards %}
+                        {% for dashboard in category.list %}
                             <div class="d-flex flex-column justify-content-between position-relative">
                                 <div>
                                     <h3>
