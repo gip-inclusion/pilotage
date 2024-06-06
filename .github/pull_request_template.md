@@ -1,4 +1,4 @@
-## :thinking: Pourquoi ?
+## :thinking: Quoi ?
 
 > _Indiquez le problème que nous sommes en train de résoudre. Renseignez l'url vers la carte notion si besoin._
 
