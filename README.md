@@ -23,8 +23,7 @@ make runserver
 ```
 
 
-## Lancer les tests
-Le projet utilise [pytest](https://docs.pytest.org/).
+## Outils
 
 Lancer le formatage du code :
 ```sh
