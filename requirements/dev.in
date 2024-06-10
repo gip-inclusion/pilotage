@@ -4,3 +4,7 @@
 # ------------------------------------------------------------------------------
 djlint  # https://www.djlint.com
 ruff  # https://github.com/charliermarsh/ruff
+
+# Django
+# ------------------------------------------------------------------------------
+django-debug-toolbar  # https://github.com/jazzband/django-debug-toolbar
