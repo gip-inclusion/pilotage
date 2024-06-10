@@ -23,6 +23,7 @@ django==5.0.6 \
     # via
     #   -r requirements/base.txt
     #   django-appconf
+    #   django-debug-toolbar
 django-appconf==1.0.6 \
     --hash=sha256:c3ae442fba1ff7ec830412c5184b17169a7a1e71cf0864a4c3f93cf4c98a1993 \
     --hash=sha256:cfe87ea827c4ee04b9a70fab90b86d704cb02f2981f89da8423cb0fabf88efbf
@@ -35,6 +36,10 @@ django-compressor==4.4 \
     # via
     #   -r requirements/base.txt
     #   django-libsass
+django-debug-toolbar==4.4.2 \
+    --hash=sha256:5d7afb2ea5f8730241e5b0735396e16cd1fd8c6b53a2f3e1e30bbab9abb23728 \
+    --hash=sha256:9204050fcb1e4f74216c5b024bc76081451926a6303993d6c513f5e142675927
+    # via -r requirements/dev.in
 django-libsass==0.9 \
     --hash=sha256:5234d29100889cac79e36a0f44207ec6d275adfd2da1acb6a94b55c89fe2bd97 \
     --hash=sha256:bfbbb55a8950bb40fa04dd416605f92da34ad1f303b10a41abc3232386ec27b5
@@ -393,6 +398,7 @@ sqlparse==0.5.0 \
     # via
     #   -r requirements/base.txt
     #   django
+    #   django-debug-toolbar
 tqdm==4.66.4 \
     --hash=sha256:b75ca56b413b030bc3f00af51fd2c1a1a5eac6a0c1cca83cbb37a5c52abce644 \
     --hash=sha256:e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb

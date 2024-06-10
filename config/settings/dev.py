@@ -1,5 +1,3 @@
-# Enable django-debug-toolbar with Docker.
-
 from .base import *  # pylint: disable=wildcard-import,unused-wildcard-import # noqa: F403 F401
 
 # Django settings
@@ -21,6 +19,16 @@ ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
 AUTH_PASSWORD_VALIDATORS = []  # Avoid password strength validation in DEV.
 
 SECRET_KEY = "foobar"
+
+INSTALLED_APPS.extend(  # noqa: F405
+    [
+        "debug_toolbar",
+    ]
+)
+
+INTERNAL_IPS = ["127.0.0.1"]
+
+MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]  # noqa F405
 
 DATABASES["default"]["HOST"] = os.getenv("PGHOST", "127.0.0.1")  # noqa: F405
 DATABASES["default"]["PORT"] = os.getenv("PGPORT", "5433")  # noqa: F405
