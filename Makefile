@@ -36,7 +36,7 @@ clean:
 	find . -type d -name "__pycache__" -depth -exec rm -rf '{}' \;
 
 fast_fix: $(VENV_REQUIREMENT)
-	black $(LINTER_CHECKED_DIRS)
+	ruff format $(LINTER_CHECKED_DIRS)
 	ruff check --fix $(LINTER_CHECKED_DIRS)
 
 fix: fast_fix
