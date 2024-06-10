@@ -20,6 +20,8 @@ ALLOWED_HOSTS = ["localhost", "0.0.0.0", "127.0.0.1"]
 
 AUTH_PASSWORD_VALIDATORS = []  # Avoid password strength validation in DEV.
 
+SECRET_KEY = "foobar"
+
 DATABASES["default"]["HOST"] = os.getenv("PGHOST", "127.0.0.1")  # noqa: F405
 DATABASES["default"]["PORT"] = os.getenv("PGPORT", "5433")  # noqa: F405
 DATABASES["default"]["NAME"] = os.getenv("PGDATABASE", "pilotage_django")  # noqa: F405
