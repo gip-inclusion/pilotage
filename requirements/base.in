@@ -13,8 +13,3 @@ Markdown  # https://python-markdown.github.io/
 
 # Embedding Metabase signed dashboards
 PyJWT  # https://github.com/jpadilla/pyjwt
-
-# Production requirements
-# ------------------------------------------------------------------------------
-# To automatically load .env files at the root of the project
-python-dotenv  # https://github.com/theskumar/python-dotenv
