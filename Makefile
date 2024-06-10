@@ -4,20 +4,15 @@
 # > practice; so for compatibility, you must explicitly request it
 .DELETE_ON_ERROR:
 
-# Global tasks.
-# =============================================================================
 PYTHON_VERSION := python3.11
-LINTER_CHECKED_DIRS := config pilotage
-
 REQUIREMENTS_PATH ?= requirements/dev.txt
 
 VIRTUAL_ENV ?= .venv
 export PATH := $(VIRTUAL_ENV)/bin:$(PATH)
 
-VENV_REQUIREMENT := $(VIRTUAL_ENV)
-
-runserver: $(VIRTUAL_ENV)
-	python manage.py runserver $(RUNSERVER_DOMAIN)
+# Python dependencies
+# =============================================================================
+.PHONY: venv compile-deps
 
 $(VIRTUAL_ENV): $(REQUIREMENTS_PATH)
 	$(PYTHON_VERSION) -m venv $@
@@ -32,17 +27,30 @@ compile-deps: $(VIRTUAL_ENV)
 	uv pip compile $(PIP_COMPILE_FLAGS) -o requirements/base.txt requirements/base.in
 	uv pip compile $(PIP_COMPILE_FLAGS) -o requirements/dev.txt requirements/dev.in
 
+# Django
+# =============================================================================
+.PHONY: runserver
+
+runserver: $(VIRTUAL_ENV)
+	python manage.py runserver $(RUNSERVER_DOMAIN)
+
+# Quality
+# =============================================================================
+.PHONY: clean quality fast_fix fix
+
+LINTER_CHECKED_DIRS := config pilotage
+
 clean:
 	find . -type d -name "__pycache__" -depth -exec rm -rf '{}' \;
 
-quality: $(VENV_REQUIREMENT)
+quality: $(VIRTUAL_ENV)
 	ruff format --check $(LINTER_CHECKED_DIRS)
 	ruff check $(LINTER_CHECKED_DIRS)
 	djlint --lint --check $(LINTER_CHECKED_DIRS)
 	python manage.py makemigrations --check --dry-run --noinput || (echo "⚠ Missing migration ⚠"; exit 1)
 	python manage.py collectstatic --no-input
 
-fast_fix: $(VENV_REQUIREMENT)
+fast_fix: $(VIRTUAL_ENV)
 	ruff format $(LINTER_CHECKED_DIRS)
 	ruff check --fix $(LINTER_CHECKED_DIRS)
 
