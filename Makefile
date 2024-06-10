@@ -33,7 +33,6 @@ clean:
 fast_fix: $(VENV_REQUIREMENT)
 	black $(LINTER_CHECKED_DIRS)
 	ruff check --fix $(LINTER_CHECKED_DIRS)
-	find * -type f -name '*.sh' -exec shellcheck --external-sources --format=diff {} + | git apply --allow-empty
 
 fix: fast_fix
 	djlint --reformat pilotage
