@@ -24,8 +24,6 @@ pip-log.txt
 # Django stuff:
 *.log
 
-# dotenv
-.env
 # direnv
 .envrc.local
 
