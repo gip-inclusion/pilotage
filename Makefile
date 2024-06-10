@@ -35,6 +35,13 @@ compile-deps: $(VIRTUAL_ENV)
 clean:
 	find . -type d -name "__pycache__" -depth -exec rm -rf '{}' \;
 
+quality: $(VENV_REQUIREMENT)
+	ruff format --check $(LINTER_CHECKED_DIRS)
+	ruff check $(LINTER_CHECKED_DIRS)
+	djlint --lint --check $(LINTER_CHECKED_DIRS)
+	python manage.py makemigrations --check --dry-run --noinput || (echo "⚠ Missing migration ⚠"; exit 1)
+	python manage.py collectstatic --no-input
+
 fast_fix: $(VENV_REQUIREMENT)
 	ruff format $(LINTER_CHECKED_DIRS)
 	ruff check --fix $(LINTER_CHECKED_DIRS)
