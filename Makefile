@@ -9,7 +9,7 @@
 PYTHON_VERSION := python3.11
 LINTER_CHECKED_DIRS := config pilotage
 
-REQUIREMENTS_PATH ?= requirements.txt
+REQUIREMENTS_PATH ?= requirements/dev.txt
 
 VIRTUAL_ENV ?= .venv
 export PATH := $(VIRTUAL_ENV)/bin:$(PATH)
@@ -21,11 +21,16 @@ runserver: $(VIRTUAL_ENV)
 
 $(VIRTUAL_ENV): $(REQUIREMENTS_PATH)
 	$(PYTHON_VERSION) -m venv $@
-	$@/bin/pip install -r $^
-	$@/bin/pip-sync $^
+	$@/bin/pip install uv
+	$@/bin/uv pip sync --require-hashes $^
 	touch $@
 
 venv: $(VIRTUAL_ENV)
+
+PIP_COMPILE_FLAGS := --generate-hashes $(PIP_COMPILE_OPTIONS)
+compile-deps: $(VIRTUAL_ENV)
+	uv pip compile $(PIP_COMPILE_FLAGS) -o requirements/base.txt requirements/base.in
+	uv pip compile $(PIP_COMPILE_FLAGS) -o requirements/dev.txt requirements/dev.in
 
 clean:
 	find . -type d -name "__pycache__" -depth -exec rm -rf '{}' \;

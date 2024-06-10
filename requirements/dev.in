@@ -1,0 +1,7 @@
+-r base.txt
+
+# Code quality
+# ------------------------------------------------------------------------------
+black  # https://github.com/psf/black
+djlint  # https://www.djlint.com
+ruff  # https://github.com/charliermarsh/ruff
