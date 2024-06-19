@@ -26,22 +26,3 @@
         </div>
     </div>
 </section>
-
-
-<script>
-    let inputContinuer = document.getElementById("input-continuer");
-    let btnContinuer = document.getElementById("btn-continuer");
-    let tallyUrl = "https://tally.so/r/3la8PB";
-
-    inputContinuer.addEventListener("keydown", function(e) {
-        if (inputContinuer.value.length > 1) {
-            btnContinuer.removeAttribute("disabled");
-        } else {
-            btnContinuer.setAttribute("disabled", "");
-        }
-    });
-
-    btnContinuer.addEventListener("click", function(e) {
-        window.open(tallyUrl + "?suggestion=" + inputContinuer.value);
-    });
-</script>
