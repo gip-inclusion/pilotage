@@ -56,3 +56,10 @@ fast_fix: $(VIRTUAL_ENV)
 
 fix: fast_fix
 	djlint --reformat pilotage
+
+# Deployment
+# =============================================================================
+.PHONY: deploy_prod
+
+deploy_prod:
+	git fetch origin && git push origin origin/staging:main  # Deploy by pushing the latest `staging` to `main`
