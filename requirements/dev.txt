@@ -36,9 +36,9 @@ django-compressor==4.4 \
     # via
     #   -r requirements/base.txt
     #   django-libsass
-django-debug-toolbar==4.4.2 \
-    --hash=sha256:5d7afb2ea5f8730241e5b0735396e16cd1fd8c6b53a2f3e1e30bbab9abb23728 \
-    --hash=sha256:9204050fcb1e4f74216c5b024bc76081451926a6303993d6c513f5e142675927
+django-debug-toolbar==4.4.6 \
+    --hash=sha256:36e421cb908c2f0675e07f9f41e3d1d8618dc386392ec82d23bcfcd5d29c7044 \
+    --hash=sha256:3beb671c9ec44ffb817fad2780667f172bd1c067dbcabad6268ce39a81335f45
     # via -r requirements/dev.in
 django-libsass==0.9 \
     --hash=sha256:5234d29100889cac79e36a0f44207ec6d275adfd2da1acb6a94b55c89fe2bd97 \
