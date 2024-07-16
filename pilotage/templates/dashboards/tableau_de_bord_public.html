@@ -30,12 +30,19 @@
     <section class="s-title-01">
         <div class="s-title-01__container container">
             <div class="s-title-01__row row">
-                <div class="s-title-01__col col-12 col-lg-11">
+                <div class="s-title-01__col col-12 col-lg-12">
                     <h1>
                         {{ dashboard.title }}
                         {% if dashboard.new %}<span class="badge badge-base rounded-pill bg-important">Nouveau</span>{% endif %}
                     </h1>
                     {% if dashboard.description %}<div>{{ dashboard.description | markdown | safe }}</div>{% endif %}
+                    <div class="alert alert-warning mt-3 mt-md-4" role="status">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
+                        <p class="mb-2">
+                          <strong>Modifications dans vos tableaux de bord !</strong>
+                        </p>
+                        <p class="mb-0">Des changements cet été sur vos tableaux de bord pour améliorer votre expérience et renforcer votre satisfaction, notamment l'ajout d'onglets thématiques.</p>
+                    </div>
                 </div>
             </div>
         </div>
