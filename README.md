@@ -14,7 +14,7 @@
 
 Démarrez les dépendances de développement avec la commande :
 ```sh
-docker-compose up
+docker compose up
 ```
 
 Démarrer le serveur de développement avec la commande :
