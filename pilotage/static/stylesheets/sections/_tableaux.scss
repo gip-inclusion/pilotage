@@ -2,7 +2,7 @@
   margin-top: 1rem;
   margin-bottom: 2rem;
 
-  @media (min-width: 992px) {
+  @media (min-width: 960px) {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
@@ -15,7 +15,7 @@
       grid-column-gap: 0;
       grid-row-gap: 2rem;
 
-      @media (min-width: 992px) {
+      @media (min-width: 960px) {
         grid-template-columns: repeat(2, 1fr);
         grid-column-gap: 2rem;
         grid-row-gap: 2rem;
@@ -35,7 +35,7 @@
       margin-bottom: 0;
       text-align: center;
 
-      @media (min-width: 992px) {
+      @media (min-width: 960px) {
         text-align: right;
       }
 
