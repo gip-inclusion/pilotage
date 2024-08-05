@@ -13,40 +13,167 @@
                 </div>
                 <div class="s-header__col s-header__col--logo-service col-auto d-flex align-items-center px-0">
                     <a href="{% url "pilotage:home" %}">
-                        <img src="{% static_theme_images 'logo-pilotage-inclusion.svg' %}" alt="Le pilotage de l'inclusion">
+                        <img src="{% static_theme_images 'logo-pilotage-inclusion.svg' %}" alt="Le pilotage de l'inclusion" height="90">
                     </a>
                 </div>
-                <div class="s-header__col s-header__col--nav col d-none d-md-inline-flex d-md-flex align-items-center justify-content-end">
+                <div class="s-header__col s-header__col--nav col d-none d-lg-inline-flex d-lg-flex align-items-center justify-content-end pe-0 pe-xl-3">
                     <nav role="navigation" id="nav-primary" aria-label="Navigation principale">
-                        {% include 'partials/header_nav_primary_items.html' %}
+                        <ul>
+                            <li class="dropdown">
+                                <button type="button" class="btn btn-link dropdown-toggle mh-auto p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-controls="helpDropdown" aria-expanded="false">Besoin d'aide ?</button>
+                                <div class="dropdown-menu" id="helpDropdown">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/requests/new"
+                                               rel="noopener"
+                                               class="dropdown-item has-external-link"
+                                               target="_blank"
+                                               aria-label="Aide et assistance du pilotage de l'inclusion (lien externe)">Nous contacter</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr" rel="noopener" class="dropdown-item has-external-link" target="_blank" aria-label="Accéder à l'espace de documentation (lien externe)">Documentation</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="{% url 'pilotage:inscription_lettre_information' %}" class="btn btn-ico btn-outline-primary">
+                                    <i class="ri-mail-settings-line" aria-hidden="true"></i>
+                                    <span>Infolettre</span>
+                                </a>
+                            </li>
+                        </ul>
                     </nav>
                 </div>
-                <div class="s-header__col s-header__col--burger col d-flex align-items-center justify-content-end d-md-none">
-                    <button type="button" data-bs-toggle="offcanvas" data-bs-target="#burgerNav" aria-controls="burgerNav" aria-label="Ouvrir le menu de navigation principale pour mobile">
-                        <i class="ri-menu-line" aria-hidden="true"></i>
+                <div class="s-header__col s-header__col--burger col col-lg-auto d-flex align-items-center justify-content-end d-xl-none ps-0">
+                    <button type="button" class="btn btn-link btn-ico pe-0" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav" aria-controls="offcanvasNav" aria-label="Ouvrir le menu de navigation principale pour mobile">
+                        <i class="ri-menu-line" id="open" aria-hidden="true"></i>
+                        <span>Menu</span>
                     </button>
-                </div>
-                <div id="burgerNav" class="offcanvas offcanvas-end" aria-label="Navigation principale pour mobile">
-                    <button type="button" data-bs-dismiss="offcanvas" aria-label="Fermer le menu de navigation principale pour mobile">
-                        <i class="ri-close-line" aria-hidden="true"></i>
-                    </button>
-                    <nav role="navigation" aria-label="Menu de navigation principale pour mobile">
-                        {% include 'partials/header_nav_primary_items.html' %}
-                        {% include 'partials/header_nav_secondary_items.html' with is_mobile=True %}
-                    </nav>
                 </div>
             </div>
         </div>
     </section>
-    <section class="s-postheader d-none d-md-block">
+    <section class="s-postheader d-none d-xl-block">
         <div class="s-postheader__container container">
             <div class="s-postheader__row row">
                 <div class="s-postheader__col col-12 d-flex align-items-center">
                     <nav role="navigation" aria-label="Navigation secondaire">
-                        {% include 'partials/header_nav_secondary_items.html' %}
+                        <ul>
+                            <li>
+                                <a href="{% url 'pilotage:home' %}" class="{% if request.path == '/' %}is-active{% endif %}">Accueil</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'dashboards:tableaux_de_bord_publics' %}" class="{% if request.path == '/tableaux-de-bord/' %}is-active{% endif %}">Statistiques publiques</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'pilotage:tableaux_de_bord_prives' %}" class="{% if request.path == '/tableaux-de-bord-prives/' %}is-active{% endif %}">Statistiques de mon organisation</a>
+                            </li>
+                            <li>
+                                <a href="" role="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-controls="ressourcesDropdown" aria-expanded="false">Ressources</a>
+                                <div class="dropdown-menu" id="ressourcesDropdown">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a class="dropdown-item has-external-link"
+                                               target="_blank"
+                                               href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/categories/16881943905297--Actualités-et-journal-des-évolutions-techniques"
+                                               aria-label="Nouveautés (lien externe)">Nouveautés</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item has-external-link" target="_blank" href="https://youtube.com/playlist?list=PLbjxvanoh-KbY_ku7d_MbIhDLgLWBxDTp&feature=shared" aria-label="Tutoriels et replays (lien externe)">Tutoriels et replays</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item has-external-link"
+                                               target="_blank"
+                                               href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/categories/16881947647889--Webinaires-supports-et-replays"
+                                               aria-label="Webinaires (lien externe)">Webinaires</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item has-external-link" target="_blank" href="https://inclusion.beta.gouv.fr/kits-de-communication/pilotage-de-linclusion/" aria-label="Kit de communication (lien externe)">Kit de communication</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
                     </nav>
                 </div>
             </div>
         </div>
     </section>
+    <div class="offcanvas" id="offcanvasNav" aria-label="Navigation principale pour mobile">
+        <div class="offcanvas-header">
+            <h4 class="h5 mb-0 btn-ico align-items-center" id="offcanvasApplyFiltersLabel">
+                <i class="ri-menu-line" aria-hidden="true"></i>
+                <span>Menu</span>
+            </h4>
+            <button type="button" class="btn-link px-2 me-n2" data-bs-dismiss="offcanvas" aria-label="Fermer">
+                <i class="ri-close-line" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="offcanvas-body">
+            <nav role="navigation" aria-label="Navigation secondaire pour mobile">
+                <ul class="nav nav-tabs flex-column">
+                    <li class="nav-item">
+                        <a href="{% url 'pilotage:home' %}" class="nav-link{% if request.path == '/' %} active{% endif %}">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'dashboards:tableaux_de_bord_publics' %}" class="nav-link{% if request.path == '/tableaux-de-bord/' %} active{% endif %}">Statistiques publiques</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'pilotage:tableaux_de_bord_prives' %}" class="nav-link{% if request.path == '/tableaux-de-bord-prives/' %} active{% endif %}">Statistiques de mon organisation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" role="button" class="dropdown-toggle nav-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-controls="ressourcesDropdownMobile" aria-expanded="false">Ressources</a>
+                        <div class="dropdown-menu" id="ressourcesDropdownMobile">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a class="dropdown-item has-external-link"
+                                       target="_blank"
+                                       href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/categories/16881943905297--Actualités-et-journal-des-évolutions-techniques"
+                                       aria-label="Nouveautés (lien externe)">Nouveautés</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item has-external-link" target="_blank" href="https://youtube.com/playlist?list=PLbjxvanoh-KbY_ku7d_MbIhDLgLWBxDTp&feature=shared" aria-label="Tutoriels et replays (lien externe)">Tutoriels et replays</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item has-external-link"
+                                       target="_blank"
+                                       href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/categories/16881947647889--Webinaires-supports-et-replays"
+                                       aria-label="Webinaires (lien externe)">Webinaires</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item has-external-link" target="_blank" href="https://inclusion.beta.gouv.fr/kits-de-communication/pilotage-de-linclusion/" aria-label="Kit de communication (lien externe)">Kit de communication</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="offcanvas-footer flex-column align-items-stretch">
+            <nav role="navigation" aria-label="Menu de navigation principale pour mobile">
+                <a class="btn btn-block btn-ico btn-outline-primary my-3" href="{% url 'pilotage:inscription_lettre_information' %}">
+                    <i class="ri-mail-settings-line" aria-hidden="true"></i>
+                    <span>Infolettre</span>
+                </a>
+                <div class="dropdown-center">
+                    <button type="button" class="btn btn-link btn-block dropdown-toggle p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-controls="helpDropdownMobile" aria-expanded="false">Besoin d'aide ?</button>
+                    <div class="dropdown-menu" id="helpDropdownMobile">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/requests/new"
+                                   rel="noopener"
+                                   class="dropdown-item has-external-link"
+                                   target="_blank"
+                                   aria-label="Aide et assistance du pilotage de l'inclusion (lien externe)">Nous contacter</a>
+                            </li>
+                            <li>
+                                <a href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr" rel="noopener" class="dropdown-item has-external-link" target="_blank" aria-label="Accéder à l'espace de documentation (lien externe)">Documentation</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
 </header>
