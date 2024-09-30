@@ -40,7 +40,7 @@ jobs:
         PGPASSWORD: password
         PGHOST: localhost
         PGUSER: postgres
-    - uses: actions/checkout@v4.1.7
+    - uses: actions/checkout@v4.2.0
     - name: 💾 Create a database to check migrations
       run: |
         psql <<SQL
