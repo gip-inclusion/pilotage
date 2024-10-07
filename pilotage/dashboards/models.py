@@ -34,6 +34,18 @@ class Dashboard(models.Model):
         "Tally Embed ID", null=True, blank=True, max_length=10
     )
     active = models.fields.BooleanField("Actif", default=True)
+    com_alert = models.fields.BooleanField("Encart actif", default=False)
+    com_alert_description = models.fields.CharField(
+        max_length=250,
+        default="Enquête utilisateur : votre avis est précieux pour nous aider à améliorer nos tableaux de bord !",
+    )
+    com_alert_text = models.fields.CharField(
+        max_length=500,
+        default="Jusqu’au 20 octobre, prenez part à notre enquête sur l'usage des tableaux de bord dans vos missions et partagez vos suggestions d'amélioration.",
+    )
+    com_alert_link = models.fields.CharField(
+        max_length=150, default="https://tally.so/r/nPYGJd"
+    )
     new = models.fields.BooleanField("Nouveau", default=False)
 
     def __str__(self):
