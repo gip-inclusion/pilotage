@@ -36,18 +36,7 @@
                         {% if dashboard.new %}<span class="badge badge-base rounded-pill bg-important">Nouveau</span>{% endif %}
                     </h1>
                     {% if dashboard.description %}<div>{{ dashboard.description | markdown | safe }}</div>{% endif %}
-                    <!-- Quick win crassou pour permettre de modifier l'encart du TB 408 -->
-                    {% if dashboard.metabase_db_id == 408 %}
-                        <div class="alert alert-warning mt-3 mt-md-4" role="status">
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
-                            <p class="mb-2">
-                                <strong>Votre retour est précieux sur ce nouveau tableau de bord !</strong>
-                            </p>
-                            <p class="mb-0">
-                                Nous aimerions échanger avec quelques utilisateurs de ce nouveau tableau de bord pour collecter des retours sur son usage, ses points forts et ses points d’amélioration. Vous avez 30 minutes à nous accorder ? <a href="https://tally.so/r/3jL896">Je suis volontaire !</a>
-                            </p>
-                        </div>
-                    {% else %}
+                    {% if dashboard.com_alert %}
                         <div class="alert alert-info alert-dismissible fade show mt-3 mt-md-4" role="status">
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
                             <div class="row">
@@ -56,12 +45,12 @@
                                 </div>
                                 <div class="col">
                                     <p class="mb-2">
-                                        <strong>Enquête utilisateur : votre avis est précieux pour nous aider à améliorer nos tableaux de bord !</strong>
+                                        <strong>{{ dashboard.com_alert_description }}</strong>
                                     </p>
-                                    <p class="mb-0">Jusqu’au 20 octobre, prenez part à notre enquête sur l'usage des tableaux de bord dans vos missions et partagez vos suggestions d'amélioration.</p>
+                                    <p class="mb-0">{{ dashboard.com_alert_text }}</p>
                                 </div>
                                 <div class="col-12 col-md-auto mt-3 mt-md-0 d-flex align-items-center justify-content-center">
-                                    <a class="btn btn-sm btn-primary btn-block btn-ico" href="https://tally.so/r/nPYGJd" target="_blank" rel="noopener"><span>Je participe à l’enquête</span> <i class="ri-external-link-line font-weight-medium" aria-hidden="true"></i></a>
+                                    <a class="btn btn-sm btn-primary btn-block btn-ico" href="{{ dashboard.com_alert_link }}" target="_blank" rel="noopener"><span>Je participe !</span> <i class="ri-external-link-line font-weight-medium" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
