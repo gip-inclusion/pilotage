@@ -4,7 +4,7 @@ asgiref==3.8.1 \
     --hash=sha256:3e1e3ecc849832fe52ccf2cb6686b7a55f82bb1d6aee72a58826471390335e47 \
     --hash=sha256:c343bd80a0bec947a9860adb4c432ffa7db769836c64238fc34bdc3fec84d590
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django
 click==8.1.7 \
     --hash=sha256:ae74fb96c20a0277a1d615f1e4d73c8414f5a98db8b799a7931d1582f3390c28 \
@@ -17,33 +17,33 @@ colorama==0.4.6 \
 cssbeautifier==1.15.1 \
     --hash=sha256:9f7064362aedd559c55eeecf6b6bed65e05f33488dcbe39044f0403c26e1c006
     # via djlint
-django==5.0.9 \
-    --hash=sha256:6333870d342329b60174da3a60dbd302e533f3b0bb0971516750e974a99b5a39 \
-    --hash=sha256:f219576ba53be4e83f485130a7283f0efde06a9f2e3a7c3c5180327549f078fa
+django==5.0.10 \
+    --hash=sha256:0f6cbc56cc298b0451d20a5120c6a8731e9073330fb5d84295c23c151a1eb300 \
+    --hash=sha256:c8fab2c553750933c8e7f5f95e5507e138e6acf6c2b4581cb691e70fe3ed747b
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django-appconf
     #   django-debug-toolbar
 django-appconf==1.0.6 \
     --hash=sha256:c3ae442fba1ff7ec830412c5184b17169a7a1e71cf0864a4c3f93cf4c98a1993 \
     --hash=sha256:cfe87ea827c4ee04b9a70fab90b86d704cb02f2981f89da8423cb0fabf88efbf
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django-compressor
 django-compressor==4.4 \
     --hash=sha256:1b0acc9cfba9f69bc38e7c41da9b0d70a20bc95587b643ffef9609cf46064f67 \
     --hash=sha256:6e2b0c0becb9607f5099c2546a824c5b84a6918a34bc37a8a622ffa250313596
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django-libsass
 django-debug-toolbar==4.4.6 \
     --hash=sha256:36e421cb908c2f0675e07f9f41e3d1d8618dc386392ec82d23bcfcd5d29c7044 \
     --hash=sha256:3beb671c9ec44ffb817fad2780667f172bd1c067dbcabad6268ce39a81335f45
-    # via -r requirements/dev.in
+    # via -r dev.in
 django-libsass==0.9 \
     --hash=sha256:5234d29100889cac79e36a0f44207ec6d275adfd2da1acb6a94b55c89fe2bd97 \
     --hash=sha256:bfbbb55a8950bb40fa04dd416605f92da34ad1f303b10a41abc3232386ec27b5
-    # via -r requirements/base.txt
+    # via -r base.txt
 djlint==1.36.3 \
     --hash=sha256:01b2101c2d1b079e8d545e6d9d03487fcca14d2371e44cbfdedee15b0bf4567c \
     --hash=sha256:080c98714b55d8f0fef5c42beaee8247ebb2e3d46b0936473bd6c47808bb6302 \
@@ -67,7 +67,7 @@ djlint==1.36.3 \
     --hash=sha256:e66361a865e5e5a4bbcb40f56af7f256fd02cbf9d48b763a40172749cc294084 \
     --hash=sha256:e82266c28793cd15f97b93535d72bfbc77306eaaf6b210dd90910383a814ee6c \
     --hash=sha256:f65a80e0b5cb13d357ea51ca6570b34c2d9d18974c1e57142de760ea27d49ed0
-    # via -r requirements/dev.in
+    # via -r dev.in
 editorconfig==0.12.4 \
     --hash=sha256:24857fa1793917dd9ccf0c7810a07e05404ce9b823521c7dce22a4fb5d125f80
     # via
@@ -90,20 +90,20 @@ libsass==0.23.0 \
     --hash=sha256:a2ec85d819f353cbe807432d7275d653710d12b08ec7ef61c124a580a8352f3c \
     --hash=sha256:ea97d1b45cdc2fc3590cb9d7b60f1d8915d3ce17a98c1f2d4dd47ee0d9c68ce6
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django-libsass
 markdown==3.7 \
     --hash=sha256:2ae2471477cfd02dbbf038d5d9bc226d40def84b4fe2986e49b59b6b472bbed2 \
     --hash=sha256:7eb6df5690b81a1d7942992c97fad2938e956e79df20cbc6186e9c3a77b1c803
-    # via -r requirements/base.txt
+    # via -r base.txt
 pathspec==0.12.1 \
     --hash=sha256:a0d503e138a4c123b27490a4f7beda6a01c6f288df0e4a8b79c7eb0dc7b4cc08 \
     --hash=sha256:a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712
     # via djlint
-psycopg==3.1.19 \
+psycopg[binary]==3.1.19 \
     --hash=sha256:92d7b78ad82426cdcf1a0440678209faa890c6e1721361c2f8901f0dccd62961 \
     --hash=sha256:dca5e5521c859f6606686432ae1c94e8766d29cc91f2ee595378c510cc5b0731
-    # via -r requirements/base.txt
+    # via -r base.txt
 psycopg-binary==3.1.19 \
     --hash=sha256:00879d4c6be4b3afc510073f48a5e960f797200e261ab3d9bd9b7746a08c669d \
     --hash=sha256:0106e42b481677c41caa69474fe530f786dcef88b11b70000f0e45a03534bc8f \
@@ -168,11 +168,13 @@ psycopg-binary==3.1.19 \
     --hash=sha256:ed61e43bf5dc8d0936daf03a19fef3168d64191dbe66483f7ad08c4cea0bc36b \
     --hash=sha256:ef8de7a1d9fb3518cc6b58e3c80b75a824209ad52b90c542686c912db8553dad \
     --hash=sha256:fb9758473200384a04374d0e0cac6f451218ff6945a024f65a1526802c34e56e
-    # via -r requirements/base.txt
+    # via
+    #   -r base.txt
+    #   psycopg
 pyjwt==2.10.1 \
     --hash=sha256:3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953 \
     --hash=sha256:dcdd193e30abefd5debf142f9adfcdd2b58004e644f25406ffaebd50bd98dacb
-    # via -r requirements/base.txt
+    # via -r base.txt
 pyyaml==6.0.1 \
     --hash=sha256:04ac92ad1925b2cff1db0cfebffb6ffc43457495c9b3c39d3fcae417d7125dc5 \
     --hash=sha256:062582fca9fabdd2c8b54a3ef1c978d786e0f6b3a1510e0ac93ef59e0ddae2bc \
@@ -251,7 +253,7 @@ rcssmin==1.1.1 \
     --hash=sha256:f15673e97f0a68b4c378c4d15b088fe96d60bc106d278c88829923118833c20f \
     --hash=sha256:f7a1fcdbafaacac0530da04edca4a44303baab430ea42e7d59aece4b3f3e9a51
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django-compressor
 regex==2023.12.25 \
     --hash=sha256:0694219a1d54336fd0445ea382d49d36882415c0134ee1e8332afd1529f0baa5 \
@@ -373,7 +375,7 @@ rjsmin==1.2.1 \
     --hash=sha256:f0895b360dccf7e2d6af8762a52985e3fbaa56778de1bf6b20dbc96134253807 \
     --hash=sha256:f7cd33602ec0f393a0058e883284496bb4dbbdd34e0bbe23b594c8933ddf9b65
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django-compressor
 ruff==0.8.1 \
     --hash=sha256:2029b8c22da147c50ae577e621a5bfbc5d1fed75d86af53643d7a7aee1d23871 \
@@ -394,7 +396,7 @@ ruff==0.8.1 \
     --hash=sha256:cd054486da0c53e41e0086e1730eb77d1f698154f910e0cd9e0d64274979a209 \
     --hash=sha256:d2c16e3508c8cc73e96aa5127d0df8913d2290098f776416a4b157657bee44c5 \
     --hash=sha256:fae0805bd514066f20309f6742f6ee7904a773eb9e6c17c45d6b1600ca65c9b5
-    # via -r requirements/dev.in
+    # via -r dev.in
 six==1.16.0 \
     --hash=sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926 \
     --hash=sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254
@@ -405,7 +407,7 @@ sqlparse==0.5.0 \
     --hash=sha256:714d0a4932c059d16189f58ef5411ec2287a4360f17cdd0edd2d09d4c5087c93 \
     --hash=sha256:c204494cd97479d0e39f28c93d46c0b2d5959c7b9ab904762ea6c7af211c8663
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django
     #   django-debug-toolbar
 tqdm==4.66.4 \
@@ -416,5 +418,5 @@ typing-extensions==4.12.2 \
     --hash=sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d \
     --hash=sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   psycopg
