@@ -17,9 +17,9 @@ colorama==0.4.6 \
 cssbeautifier==1.15.1 \
     --hash=sha256:9f7064362aedd559c55eeecf6b6bed65e05f33488dcbe39044f0403c26e1c006
     # via djlint
-django==5.0.9 \
-    --hash=sha256:6333870d342329b60174da3a60dbd302e533f3b0bb0971516750e974a99b5a39 \
-    --hash=sha256:f219576ba53be4e83f485130a7283f0efde06a9f2e3a7c3c5180327549f078fa
+django==5.0.10 \
+    --hash=sha256:0f6cbc56cc298b0451d20a5120c6a8731e9073330fb5d84295c23c151a1eb300 \
+    --hash=sha256:c8fab2c553750933c8e7f5f95e5507e138e6acf6c2b4581cb691e70fe3ed747b
     # via
     #   -r requirements/base.txt
     #   django-appconf
