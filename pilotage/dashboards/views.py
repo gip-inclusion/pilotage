@@ -22,5 +22,5 @@ def tableau_de_bord_public(request, slug):
     return render(
         request,
         "dashboards/tableau_de_bord_public.html",
-        context={"dashboard": dashboard, "slug": slug},
+        context={"dashboard": dashboard, "slug": slug, "show_webinar_banner": False},
     )
