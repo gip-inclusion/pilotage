@@ -75,8 +75,9 @@ editorconfig==0.17.0 \
     # via
     #   cssbeautifier
     #   jsbeautifier
-jsbeautifier==1.15.1 \
-    --hash=sha256:ebd733b560704c602d744eafc839db60a1ee9326e30a2a80c4adb8718adc1b24
+jsbeautifier==1.15.3 \
+    --hash=sha256:5f1baf3d4ca6a615bb5417ee861b34b77609eeb12875555f8bbfabd9bf2f3457 \
+    --hash=sha256:b207a15ab7529eee4a35ae7790e9ec4e32a2b5026d51e2d0386c3a65e6ecfc91
     # via
     #   cssbeautifier
     #   djlint
