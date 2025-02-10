@@ -14,8 +14,9 @@ colorama==0.4.6 \
     --hash=sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44 \
     --hash=sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6
     # via djlint
-cssbeautifier==1.15.1 \
-    --hash=sha256:9f7064362aedd559c55eeecf6b6bed65e05f33488dcbe39044f0403c26e1c006
+cssbeautifier==1.15.3 \
+    --hash=sha256:0dcaf5ce197743a79b3a160b84ea58fcbd9e3e767c96df1171e428125b16d410 \
+    --hash=sha256:406b04d09e7d62c0be084fbfa2cba5126fe37359ea0d8d9f7b963a6354fc8303
     # via djlint
 django==5.0.11 \
     --hash=sha256:09e8128f717266bf382d82ffa4933f13da05d82579abf008ede86acb15dec88b \
