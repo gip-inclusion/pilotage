@@ -18,9 +18,9 @@ cssbeautifier==1.15.3 \
     --hash=sha256:0dcaf5ce197743a79b3a160b84ea58fcbd9e3e767c96df1171e428125b16d410 \
     --hash=sha256:406b04d09e7d62c0be084fbfa2cba5126fe37359ea0d8d9f7b963a6354fc8303
     # via djlint
-django==5.0.11 \
-    --hash=sha256:09e8128f717266bf382d82ffa4933f13da05d82579abf008ede86acb15dec88b \
-    --hash=sha256:e7d98fa05ce09cb3e8d5ad6472fb602322acd1740bfdadc29c8404182d664f65
+django==5.0.12 \
+    --hash=sha256:05097ea026cceb2db4db0655ecf77cc96b0753ac6a367280e458e603f6556f53 \
+    --hash=sha256:3566604af111f586a1c9d49cb14ba6c607a0ccbbf87f57d98872cd8aae7d48ad
     # via
     #   -r requirements/base.txt
     #   django-appconf
@@ -471,4 +471,6 @@ tqdm==4.67.1 \
 typing-extensions==4.12.2 \
     --hash=sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d \
     --hash=sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8
-    # via -r requirements/base.txt
+    # via
+    #   -r requirements/base.txt
+    #   psycopg
