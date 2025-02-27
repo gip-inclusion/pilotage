@@ -48,9 +48,6 @@ SECURE_SSL_REDIRECT = True
 
 SECURE_HSTS_PRELOAD = True
 
-# Custom variables
-METABASE_SECRET_KEY = os.getenv("METABASE_SECRET_KEY")
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -67,7 +64,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "django.middleware.gzip.GZipMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.http.ConditionalGetMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -173,3 +172,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # media files
 MEDIA_ROOT = os.path.join(APPS_DIR, "media")
 MEDIA_URL = "/media/"
+
+# Custom variables
+METABASE_URL = os.getenv("METABASE_URL")
+METABASE_SECRET_KEY = os.getenv("METABASE_SECRET_KEY")
+METABASE_API_KEY = os.getenv("METABASE_API_KEY")
