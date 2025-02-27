@@ -8,3 +8,11 @@ ruff  # https://github.com/charliermarsh/ruff
 # Django
 # ------------------------------------------------------------------------------
 django-debug-toolbar  # https://github.com/jazzband/django-debug-toolbar
+
+# Test & Mock
+# ------------------------------------------------------------------------------
+faker  # https://github.com/joke2k/faker
+pytest  # https://github.com/pytest-dev/pytest
+pytest-django # https://github.com/pytest-dev/pytest-django/
+pytest-mock  # https://github.com/pytest-dev/pytest-mock/
+pytest-randomly  # https://github.com/pytest-dev/pytest-randomly

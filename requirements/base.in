@@ -9,7 +9,8 @@ django-libsass  # https://github.com/torchbox/django-libsass
 
 # Third-party applications
 # ------------------------------------------------------------------------------
+# Requests alternative including a default time out
+httpx  # https://github.com/encode/httpx/
 Markdown  # https://python-markdown.github.io/
-
 # Embedding Metabase signed dashboards
 PyJWT  # https://github.com/jpadilla/pyjwt

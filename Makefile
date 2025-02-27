@@ -57,6 +57,14 @@ fast_fix: $(VIRTUAL_ENV)
 fix: fast_fix
 	djlint --reformat pilotage
 
+# Tests.
+# =============================================================================
+
+.PHONY: test
+
+test: $(VIRTUAL_ENV)
+	pytest --create-db $(TARGET)
+
 # Deployment
 # =============================================================================
 .PHONY: deploy_prod
