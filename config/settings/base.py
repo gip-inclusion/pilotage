@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "pilotage.dashboards",
     "pilotage.utils",
+    "pilotage.itoutils",
     "compressor",
 ]
 

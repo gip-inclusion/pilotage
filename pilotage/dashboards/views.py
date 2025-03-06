@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from pilotage.dashboards.models import Dashboard
 
@@ -13,8 +13,7 @@ def tableaux_de_bord_publics(request):
 
 
 def tableau_de_bord_public(request, slug):
-    dashboard = Dashboard.objects.get(slug=slug)
-
+    dashboard = get_object_or_404(Dashboard, slug=slug)
     return render(
         request,
         "dashboards/tableau_de_bord_public.html",
