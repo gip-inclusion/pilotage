@@ -1,0 +1,19 @@
+-r base.txt
+
+uv  # https://github.com/astral-sh/uv
+
+# Code quality
+# ------------------------------------------------------------------------------
+djlint  # https://www.djlint.com
+ruff  # https://github.com/charliermarsh/ruff
+
+# Test & Mock
+# ------------------------------------------------------------------------------
+beautifulsoup4  # https://code.launchpad.net/beautifulsoup
+factory-boy  # https://github.com/FactoryBoy/factory_boy
+freezegun  # https://github.com/spulec/freezegun
+html5lib  # https://github.com/html5lib/html5lib-python
+pytest  # https://github.com/pytest-dev/pytest
+pytest-django # https://github.com/pytest-dev/pytest-django/
+pytest-randomly  # https://github.com/pytest-dev/pytest-randomly
+syrupy  # https://github.com/tophat/syrupy

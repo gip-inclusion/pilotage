@@ -1,0 +1,439 @@
+# serializer version: 1
+# name: test_tableau_de_bord_public
+  '''
+  <main class="s-main" id="main" role="main">
+              
+                  
+      <section>
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <nav aria-label="breadcrumb" class="c-breadcrumb">
+                          <ol class="breadcrumb">
+                              <li class="breadcrumb-item">
+                                  <a href="/">Accueil</a>
+                              </li>
+                              <li class="breadcrumb-item">
+                                  <a href="/tableaux-de-bord/">Statistiques publiques</a>
+                              </li>
+                              <li aria-current="page" class="breadcrumb-item active">super duper title</li>
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-title-01">
+          <div class="s-title-01__container container">
+              <div class="s-title-01__row row">
+                  <div class="s-title-01__col col-12 col-lg-12">
+                      <h1>
+                          super duper title
+                          
+                      </h1>
+                      <div><p>super duper description</p></div>
+                      <!-- Quick win crassou pour permettre de modifier l'encart du TB 408 -->
+                      
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-embed m-0">
+          <div class="s-embed__container container">
+              <div class="s-embed__row row">
+                  <div class="col-12">
+                      <iframe allowtransparency="" id="iframeMetabase" src="//stats.inclusion.beta.gouv.fr/embed/dashboard/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZSI6eyJkYXNoYm9hcmQiOjB9LCJwYXJhbXMiOnt9LCJleHAiOjE3NDEyMTk4MDB9.eog3uHiTf9_syfFz2kUub0FUfLapUrCF5VhUGLOmdTg#bordered=true&amp;titled=false" title="super duper baseline"></iframe>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      
+          <section class="s-embed s-embed--tally">
+              <div class="s-embed__container container">
+                  <div class="s-embed__row row">
+                      <div class="s-embed__col col-12">
+                          <iframe data-tally-src="//tally.so/embed/5up3rdup3r?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1" height="189" loading="lazy" title="Aidez-nous à améliorer votre outil !" width="100%"></iframe>
+                      </div>
+                  </div>
+              </div>
+          </section>
+      
+  
+              
+          </main>
+  '''
+# ---
+# name: test_tableaux_de_bord_publics_with_fixture_dashboards
+  '''
+  <main class="s-main" id="main" role="main">
+              
+                  
+      <section>
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <nav aria-label="breadcrumb" class="c-breadcrumb">
+                          <ol class="breadcrumb">
+                              <li class="breadcrumb-item">
+                                  <a href="/">Accueil</a>
+                              </li>
+                              <li aria-current="page" class="breadcrumb-item active">Statistiques publiques</li>
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-title-01">
+          <div class="s-title-01__container container">
+              <div class="s-title-01__row row">
+                  <div class="s-title-01__col col-12 col-lg-11">
+                      <h1>Statistiques publiques</h1>
+                      <p>Le pilotage de l'inclusion vise à résoudre les problématiques métier des professionnels sur le terrain et de leurs partenaires par la donnée. Cette approche se matérialise principalement à travers des tableaux de bord comprenant des données actualisées en temps réel. Ces outils, qu'ils soient stratégiques, opérationnels ou de suivi, s'adressent à tous les acteurs de l'inclusion. Les informations peuvent être affinées pour un territoire spécifique, tel qu'un bassin d'emploi, un type d'organisation comme une entreprise d'insertion ou un conseil départemental, et sur une période donnée. Grâce à ces connaissances, les utilisateurs peuvent ainsi suivre leurs progrès, se comparer, améliorer leurs échanges avec les financeurs et les partenaires, et enrichir leurs plans d'action et feuilles de route.</p>
+                      <p class="h4">
+                          Plaquette présentant l’ensemble des tableaux de bord développés par le Pilotage de l’inclusion
+                          <a aria-label="Plaquette présentant l’ensemble des tableaux de bord" class="has-external-link text-nowrap" href="https://www.canva.com/design/DAF_5XyJqRk/fV5Rpv649EU5P0GJCo0VJQ/view?utm_content=DAF_5XyJqRk&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=editor" target="_blank">disponible ici</a>.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      
+      
+          <section class="s-tableaux">
+              <div class="s-tableaux__container container">
+                  <div class="s-tableaux__row row mb-3">
+                      <div class="col-12">
+                          <h2 class="text-secondary">L'offre d'insertion par l'activité économique (IAE)</h2>
+                      </div>
+                  </div>
+                  <div class="s-tableaux__row row">
+                      <div class="s-tableaux__col s-tableaux__col--grid col-12">
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          Métiers
+                                          
+                                      </h3>
+                                      <p>Quels sont les métiers proposés et recherchés depuis fin 2019 ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/metiers/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          Postes en tension
+                                          
+                                      </h3>
+                                      <p>Quels sont les fiches de poste en tension ? Quelles situations dans les territoires ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/postes-en-tension/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          Zoom sur les employeurs
+                                          
+                                      </h3>
+                                      <p>Quels employeurs inclusifs dynamisent mon territoire et comment ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/zoom-employeurs/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                      </div>
+                  </div>
+              </div>
+          </section>
+      
+          <section class="s-tableaux">
+              <div class="s-tableaux__container container">
+                  <div class="s-tableaux__row row mb-3">
+                      <div class="col-12">
+                          <h2 class="text-secondary">Les publics dans l'IAE</h2>
+                      </div>
+                  </div>
+                  <div class="s-tableaux__row row">
+                      <div class="s-tableaux__col s-tableaux__col--grid col-12">
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          La représentation des femmes dans les candidatures vers l'IAE
+                                          
+                                      </h3>
+                                      <p>Quelle est la place des femmes dans l’IAE ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/femmes-iae/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                      </div>
+                  </div>
+              </div>
+          </section>
+      
+          <section class="s-tableaux">
+              <div class="s-tableaux__container container">
+                  <div class="s-tableaux__row row mb-3">
+                      <div class="col-12">
+                          <h2 class="text-secondary">Les candidatures vers l'IAE</h2>
+                      </div>
+                  </div>
+                  <div class="s-tableaux__row row">
+                      <div class="s-tableaux__col s-tableaux__col--grid col-12">
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          Bilan annuel des candidature en IAE
+                                          <span class="badge badge-sm rounded-pill bg-important">Nouveau</span>
+                                      </h3>
+                                      <p>Quel bilan annuel faire sur l’offre en IAE, les candidats, les candidatures et les réalisations des prescripteurs ? Où en sont les régions et les départements ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/bilan-candidatures-iae/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          Cartographies des orientations vers l'IAE
+                                          
+                                      </h3>
+                                      <p>L'IAE dans les territoires, quelles données locales ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/cartographies-iae/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          État, suivi et résultat des candidatures orientées
+                                          
+                                      </h3>
+                                      <p>Combien de candidatures orientées chaque mois ? Quels sont les résultats ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/etat-suivi-candidatures/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          L'auto-prescription
+                                          
+                                      </h3>
+                                      <p>Comment les structures se saisissent de l’auto-prescription ? Quels critèrent remplissent les personnes recrutées en auto-prescription ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/auto-prescription/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          Zoom sur les prescripteurs
+                                          
+                                      </h3>
+                                      <p>Quels prescripteurs agissent sur mon territoire et comment ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/zoom-prescripteurs/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          L'accompagnement des prescripteurs habilités
+                                          
+                                      </h3>
+                                      <p>Quel est le taux de transformation des prescripteurs habilités ? L’analyse porte sur les candidats pour lesquels les prescripteurs habilités ont réalisé le diagnostic d’éligibilité.</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/prescripteurs-habilites/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                      </div>
+                  </div>
+              </div>
+          </section>
+      
+          <section class="s-tableaux">
+              <div class="s-tableaux__container container">
+                  <div class="s-tableaux__row row mb-3">
+                      <div class="col-12">
+                          <h2 class="text-secondary">Le pilotage du dispositif IAE</h2>
+                      </div>
+                  </div>
+                  <div class="s-tableaux__row row">
+                      <div class="s-tableaux__col s-tableaux__col--grid col-12">
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          Conventionnements IAE
+                                          
+                                      </h3>
+                                      <p>Combien d’ETP sont affectés aux structures de l’IAE et combien sont consommés ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/conventionnements-iae/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          Analyses autour des conventionnements IAE
+                                          
+                                      </h3>
+                                      <p>Quel part du budget de l’IAE bénéficie aux femmes ? Combien d’heures sont réalisées en moyenne dans les structures ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/analyses-conventionnements-iae/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          Suivi du contrôle a posteriori
+                                          
+                                      </h3>
+                                      <p>Quels sont les résultats des campagnes de contrôle a posteriori ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/suivi-controle-a-posteriori/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          Demandes de prolongation
+                                          
+                                      </h3>
+                                      <p>Combien de demandes de prolongation sont réalisées, et par qui ? Combien sont acceptées ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/suivi-demandes-prolongation/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          Suivi des Pass IAE
+                                          
+                                      </h3>
+                                      <p>Combien de Pass IAE arrivent à expiration, semaine après semaine ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/suivi-pass-iae/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                      </div>
+                  </div>
+              </div>
+          </section>
+      
+          <section class="s-tableaux">
+              <div class="s-tableaux__container container">
+                  <div class="s-tableaux__row row mb-3">
+                      <div class="col-12">
+                          <h2 class="text-secondary">Les établissements et service d'accompagnement par le travail (ESAT)</h2>
+                      </div>
+                  </div>
+                  <div class="s-tableaux__row row">
+                      <div class="s-tableaux__col s-tableaux__col--grid col-12">
+                          
+                              <div class="d-flex flex-column justify-content-between position-relative">
+                                  <div>
+                                      <h3>
+                                          Zoom sur les ESAT
+                                          
+                                      </h3>
+                                      <p>Plan de transformation des ESAT : d’où partons-nous ?</p>
+                                  </div>
+                                  <p class="s-tableaux__col__cta">
+                                      <a class="btn btn-outline-primary stretched-link" href="/tableaux-de-bord/zoom-esat/" rel="noopener">Voir le tableau de bord</a>
+                                  </p>
+                              </div>
+                          
+                      </div>
+                  </div>
+              </div>
+          </section>
+      
+  
+              
+          </main>
+  '''
+# ---
+# name: test_tableaux_de_bord_publics_without_dashboards
+  '''
+  <main class="s-main" id="main" role="main">
+              
+                  
+      <section>
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <nav aria-label="breadcrumb" class="c-breadcrumb">
+                          <ol class="breadcrumb">
+                              <li class="breadcrumb-item">
+                                  <a href="/">Accueil</a>
+                              </li>
+                              <li aria-current="page" class="breadcrumb-item active">Statistiques publiques</li>
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-title-01">
+          <div class="s-title-01__container container">
+              <div class="s-title-01__row row">
+                  <div class="s-title-01__col col-12 col-lg-11">
+                      <h1>Statistiques publiques</h1>
+                      <p>Le pilotage de l'inclusion vise à résoudre les problématiques métier des professionnels sur le terrain et de leurs partenaires par la donnée. Cette approche se matérialise principalement à travers des tableaux de bord comprenant des données actualisées en temps réel. Ces outils, qu'ils soient stratégiques, opérationnels ou de suivi, s'adressent à tous les acteurs de l'inclusion. Les informations peuvent être affinées pour un territoire spécifique, tel qu'un bassin d'emploi, un type d'organisation comme une entreprise d'insertion ou un conseil départemental, et sur une période donnée. Grâce à ces connaissances, les utilisateurs peuvent ainsi suivre leurs progrès, se comparer, améliorer leurs échanges avec les financeurs et les partenaires, et enrichir leurs plans d'action et feuilles de route.</p>
+                      <p class="h4">
+                          Plaquette présentant l’ensemble des tableaux de bord développés par le Pilotage de l’inclusion
+                          <a aria-label="Plaquette présentant l’ensemble des tableaux de bord" class="has-external-link text-nowrap" href="https://www.canva.com/design/DAF_5XyJqRk/fV5Rpv649EU5P0GJCo0VJQ/view?utm_content=DAF_5XyJqRk&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=editor" target="_blank">disponible ici</a>.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      
+      
+  
+              
+          </main>
+  '''
+# ---

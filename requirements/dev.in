@@ -1,9 +1,4 @@
--r base.txt
-
-# Code quality
-# ------------------------------------------------------------------------------
-djlint  # https://www.djlint.com
-ruff  # https://github.com/charliermarsh/ruff
+-r test.txt
 
 # Django
 # ------------------------------------------------------------------------------
