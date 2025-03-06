@@ -20,7 +20,7 @@ class Dashboard(models.Model):
 
     title = models.fields.CharField(verbose_name="titre", validators=[MaxLengthValidator(150)])
     baseline = models.fields.CharField(validators=[MaxLengthValidator(250)])
-    slug = models.fields.SlugField()
+    slug = models.fields.SlugField(unique=True)
     category = models.ForeignKey(
         Category,
         on_delete=models.DO_NOTHING,
