@@ -49,9 +49,6 @@ SECURE_SSL_REDIRECT = True
 
 SECURE_HSTS_PRELOAD = True
 
-# Custom variables
-METABASE_SECRET_KEY = os.getenv("METABASE_SECRET_KEY")
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -172,3 +169,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # media files
 MEDIA_ROOT = os.path.join(APPS_DIR, "media")
 MEDIA_URL = "/media/"
+
+
+# Project settings
+# ----------------
+
+METABASE_SECRET_KEY = os.getenv("METABASE_SECRET_KEY")

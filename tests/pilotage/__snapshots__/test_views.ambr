@@ -1,0 +1,1163 @@
+# serializer version: 1
+# name: test_accessibilite
+  '''
+  <main class="s-main" id="main" role="main">
+              
+                  
+      <section>
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <nav aria-label="breadcrumb" class="c-breadcrumb">
+                          <ol class="breadcrumb">
+                              <li class="breadcrumb-item">
+                                  <a href="/">Accueil</a>
+                              </li>
+                              <li aria-current="page" class="breadcrumb-item active">Accessibilité</li>
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-title-01">
+          <div class="s-title-01__container container">
+              <div class="s-title-01__row row">
+                  <div class="s-title-01__col col-12">
+                      <h1>Accessibilité</h1>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-section">
+          <div class="s-section__container container">
+              <div class="s-section__row row">
+                  <div class="s-section__col col-12 col-lg-11">
+                      <article>
+                          <h2>Déclaration d’accessibilité</h2>
+                          <p>
+                              <strong>Le GIP Plateforme de l’inclusion</strong> s’engage à rendre ses sites internet et applications accessibles conformément à l’article 47 de la loi n°2005-102 du 11 février 2005.
+                          </p>
+                          <p>
+                              Son schéma pluriannuel décrit les points importants sur lesquels le GIP de la plateforme de l’inclusion s’appuiera pour améliorer l’accessibilité numérique de l’ensemble de ses sites internet et applications. Ce schéma s’accompagne du plans d’action annuels (<a class="has-external-link" href="https://inclusion.beta.gouv.fr/documents/86/GIP_plateforme_de_linclusion_-_Plan_annuel_daccessibilite_2023.pdf" target="_blank">2023</a>) qui détaillent les opérations programmées et mises en œuvre pour l'année courante, ainsi que l’état de suivis de ces actions, détaillé dans le <a class="has-external-link" href="https://inclusion.beta.gouv.fr/documents/87/GIP_plateforme_de_linclusion_-_Schema_pluriannuel_daccessibilite_2023-2026.pdf" target="_blank">schéma pluriannuel d’accessibilité 2023-2026</a>.
+                          </p>
+                          <p>
+                              Cette déclaration d’accessibilité s’applique au <strong>Pilotage de l'inclusion</strong>.
+                          </p>
+                          <br/>
+                          <h3>État de conformité</h3>
+                          <p>
+                              <strong>Le site <a href="https://pilotage.inclusion.beta.gouv.fr/">pilotage de l'inclusion</a></strong> est <strong>partiellement</strong> conforme avec le référentiel général d’amélioration de l’accessibilité (RGAA), version 4 en raison des non-conformités et des dérogations énumérées ci-dessous.
+                          </p>
+                          <br/>
+                          <h3>Résultats des tests</h3>
+                          <p>
+                              L’audit de conformité réalisé par <strong>Le GIP Plateforme de l’inclusion</strong> révèle que <strong>78%</strong> des critères du RGAA version 4 sont respectés.
+                          </p>
+                          <br/>
+                          <h4>Établissement de cette déclaration d’accessibilité</h4>
+                          <p>
+                              Cette déclaration a été établie le <strong>23 décembre 2022</strong>.
+                          </p>
+                          <br/>
+                          <h4>Technologies utilisées pour la réalisation l’audit</h4>
+                          <ul>
+                              <li>HTML</li>
+                              <li>CSS</li>
+                              <li>JavaScript</li>
+                          </ul>
+                          <br/>
+                          <h4>Environnement de test</h4>
+                          <p>Les vérifications de restitution de contenus ont été réalisées sur la base de la combinaison fournie par la base de référence du RGAA, avec les versions suivantes :</p>
+                          <ul>
+                              <li>Sur ordinateur MacOS Ventura avec Firefox et VoiceOver</li>
+                          </ul>
+                          <br/>
+                          <h4>Outils pour évaluer l’accessibilité</h4>
+                          <ul>
+                              <li>HeadingsMap</li>
+                              <li>NVDA</li>
+                              <li>Validateur en ligne W3C</li>
+                              <li>WCAG Contrast checker</li>
+                              <li>Web Accessibility Toolbar</li>
+                          </ul>
+                          <br/>
+                          <h4>Pages du site ayant fait l’objet de la vérification de conformité</h4>
+                          <ul>
+                              <li>
+                                  <a href="/">Accueil</a>
+                              </li>
+                              <li>
+                                  <a href="/accessibilite/">Accessibilité</a>
+                              </li>
+                              <li>
+                                  <a href="/tableaux-de-bord/">Tableaux de bord publics</a>
+                              </li>
+                          </ul>
+                          <br/>
+                          <h3>Retour d’information et contact</h3>
+                          <p>Si vous n'arrivez pas à accéder à un contenu ou à un service, vous pouvez nous contacter pour être orienté vers une alternative accessible ou obtenir le contenu sous une autre forme.</p>
+                          <ul>
+                              <li>
+                                  Envoyer <a class="has-external-link" href="https://aide.pilotage.inclusion.beta.gouv.fr/" target="_blank">un message</a>
+                              </li>
+                              <li>
+                                  Contacter <a class="has-external-link" href="https://aide.pilotage.inclusion.beta.gouv.fr/" target="_blank">Le GIP Plateforme de l’inclusion</a>.
+                              </li>
+                          </ul>
+                          <br/>
+                          <h3>Voies de recours</h3>
+                          <p>Si vous constatez un défaut d’accessibilité vous empêchant d’accéder à un contenu ou une fonctionnalité du site, que vous nous le signalez et que vous ne parvenez pas à obtenir une réponse de notre part, vous êtes en droit de faire parvenir vos doléances ou une demande de saisine au Défenseur des droits.</p>
+                          <p>Plusieurs moyens sont à votre disposition :</p>
+                          <ul>
+                              <li>Écrire un message au Défenseur des droits</li>
+                              <li>Contacter le délégué du Défenseur des droits dans votre région</li>
+                          </ul>
+                          <p>
+                              Envoyer un courrier par la poste (gratuit, ne pas mettre de timbre)
+                              <br/>
+                              Défenseur des droits
+                              <br/>
+                              Libre réponse 71120
+                              <br/>
+                              75342 Paris CEDEX 07
+                          </p>
+                      </article>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+              
+          </main>
+  '''
+# ---
+# name: test_home
+  '''
+  <main class="s-main" id="main" role="main">
+              
+                  
+      <section class="s-hero-title-01 s-hero-title-01--pilotage pt-lg-0">
+          <div class="s-hero-title-01__container container">
+              <div class="s-hero-title-01__row row align-items-center">
+                  <div class="s-hero-title-01__col s-hero-title-01__col--article col-12 col-md-8 col-xl-7">
+                      <article>
+                          <h1 class="mb-md-4">
+                              Comprendre et analyser
+                              <br class="d-none d-lg-inline"/>
+                              l’inclusion dans l'emploi
+                          </h1>
+                          <h2 class="h4 font-weight-normal">Professionnels de l'inclusion, consultez à la fois les statistiques publiques sur l'inclusion dans l'emploi et les données spécifiques à votre organisation grâce aux tableaux de bord prêts à l'emploi et interactifs du pilotage de l’inclusion.</h2>
+                          <div class="row g-3 mt-3">
+                              <div class="col-6 col-md-auto">
+                                  <a class="btn btn-block btn-primary" href="/tableaux-de-bord-prives/" rel="noopener">Statistiques de mon organisation</a>
+                              </div>
+                              <div class="col-6 col-md-auto">
+                                  <a class="btn btn-block btn-outline-primary" href="/tableaux-de-bord/" rel="noopener">Statistiques publiques</a>
+                              </div>
+                          </div>
+                      </article>
+                  </div>
+                  <div class="s-hero-title-01__col col-12 d-none d-md-inline-flex col-md-4 col-xl-5">
+                      <div>
+                          <img alt="" class="img-fluid" src="/static/images/pilotage/home/illustration-01.png"/>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-section mt-md-0 mb-md-7">
+      <div class="s-section__container container container-max-lg">
+          <div class="row mb-1 mb-md-3">
+              <div class="col-12">
+                  <h2 class="mb-0">Aperçu des connaissances apportées par les tableaux de bord</h2>
+                  <p class="fs-sm mb-3">Dernière mise à jour des données : 17 mars 2024</p>
+              </div>
+          </div>
+          <div class="s-section__row row">
+              <div class="col-12">
+                  <div class="d-flex flex-column flex-lg-row gap-2 p-3 p-md-4 bg-light rounded-3">
+                      <div class="d-flex flex-column w-100">
+                          <div class="flex-grow-1">
+                              <p class="mb-0 mb-lg-3">
+                                  <i aria-hidden="true" class="ri-arrow-down-line ri-2x text-pilotage"></i>
+                                  <span class="h1">31%</span>
+                              </p>
+                              <p>c’est le taux de candidatures acceptées en 2023 par les SIAE</p>
+                          </div>
+                          <div>
+                              <a aria-label="Consulter les données sur les candidatures acceptées" class="btn btn-link ps-0 has-external-link" href="https://pilotage.inclusion.beta.gouv.fr/tableaux-de-bord/bilan-candidatures-iae/" target="_blank">Consulter ces données</a>
+                          </div>
+                      </div>
+                      <div class="d-flex flex-column w-100">
+                          <div class="flex-grow-1">
+                              <p class="mb-0 mb-lg-3">
+                                  <i aria-hidden="true" class="ri-arrow-up-line ri-2x text-pilotage"></i>
+                                  <span class="h1">563 031</span>
+                              </p>
+                              <p>c’est le nombre de candidatures orientées en 2023 vers les SIAE</p>
+                          </div>
+                          <div>
+                              <a aria-label="Consulter les données sur les candidatures orientées" class="btn btn-link ps-0 has-external-link" href="https://pilotage.inclusion.beta.gouv.fr/tableaux-de-bord/bilan-candidatures-iae/" target="_blank">Consulter ces données</a>
+                          </div>
+                      </div>
+                      <div class="d-flex flex-column w-100">
+                          <div class="flex-grow-1">
+                              <p class="mb-0 mb-lg-3">
+                                  <span class="h1">107 466</span>
+                              </p>
+                              <p>C'est le nombre de candidats à l'IAE sans candidature acceptée au 17 mars 2024.</p>
+                          </div>
+                          <div>
+                              <a aria-label="Consulter les données sur les candidats à l'IAE sans candidatures acceptées" class="btn btn-link ps-0 has-external-link" href="https://pilotage.inclusion.beta.gouv.fr/tableaux-de-bord/bilan-candidatures-iae/" target="_blank">Consulter ces données</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  
+      <div id="original">
+          
+  
+  <section class="s-section mt-md-0 mb-md-7">
+      <div class="s-section__container container container-max-lg">
+          <div class="row mb-1 mb-md-3">
+              <div class="col-12">
+                  <h2>Comment j’accède aux données ?</h2>
+              </div>
+          </div>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mt-3">
+              <div class="col mb-3 mb-md-5">
+                  <div class="card h-100">
+                      <div class="card-header">
+                          <span class="d-block h2 text-pilotage">1</span>
+                          <p>Je choisis le tableau de bord qui m’intéresse</p>
+                      </div>
+                      <div class="card-body">
+                          <img alt="" class="img-fluid img-fitcover" src="/static/images/pilotage/home/comment-01.jpg"/>
+                      </div>
+                  </div>
+              </div>
+              <div class="col mb-3 mb-md-5">
+                  <div class="card h-100">
+                      <div class="card-header">
+                          <span class="d-block h2 text-pilotage">2</span>
+                          <p>Je filtre les données pour affiner ma recherche</p>
+                      </div>
+                      <div class="card-body">
+                          <img alt="" class="img-fluid img-fitcover" src="/static/images/pilotage/home/comment-02.jpg"/>
+                      </div>
+                  </div>
+              </div>
+              <div class="col mb-3 mb-md-5">
+                  <div class="card h-100">
+                      <div class="card-header">
+                          <span class="d-block h2 text-pilotage">3</span>
+                          <p>Je consulte les chiffres et les graphiques que je peux aussi exporter</p>
+                      </div>
+                      <div class="card-body">
+                          <img alt="" class="img-fluid img-fitcover" src="/static/images/pilotage/home/comment-03.jpg"/>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  
+          
+  
+  <section class="s-section mt-md-0 mb-5 mb-md-9">
+      <div class="s-section__container container container-max-lg">
+          <div class="row mb-1 mb-md-3">
+              <div class="col-12">
+                  <h2>Vous avez un besoin particulier, une idée, une suggestion ?</h2>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <div class="d-flex">
+                      <div class="d-none d-lg-inline-flex w-lg-25">
+                          <img alt="" class="img-fluid" src="/static/images/pilotage/home/illustration-02.png"/>
+                      </div>
+                      <div class="bg-pilotage p-3 py-md-7 px-md-4 rounded-3 flex-grow-1">
+                          <div class="input-group input-group-xl input-group-search">
+                              <input aria-label="Suggestions et idées" class="form-control" id="input-continuer" placeholder="Dites-nous de quoi vous avez besoin" type="text"/>
+                              <div class="input-group-text p-0 bg-white">
+                                  <button class="btn btn-link" disabled="" id="btn-continuer" type="button">Continuer</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  
+          
+  
+  <section class="s-section mt-md-0 mb-md-7">
+      <div class="s-section__container container container-max-lg">
+          <div class="row mb-1 mb-md-3">
+              <div class="col-12">
+                  <h2>Le pilotage vous accompagne</h2>
+                  <p>Vous travaillez dans une administration, service de l'Etat, une structure inclusive, un conseil départemental ? Vous souhaitez avoir des connaissances et des apprentissages sur les politiques publiques d'inclusion ? Le pilotage vous accompagne.</p>
+              </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 mt-3">
+              <div class="col mb-3 mb-md-5">
+                  <div class="card h-100 text-center has-one-link-inside">
+                      <div class="card-header pt-md-4 ps--md-4 pe-md-4">
+                          <q>Combien de candidatures j'ai reçues ou orientée ? Quels sont leurs résultats ?</q>
+                      </div>
+                      <div class="card-body pb-0">
+                          <img alt="" height="120" src="/static/images/pilotage/home/accompagne-01.png"/>
+                          <h3 class="mt-3 mb-0">
+                              Simplifier le reporting et le bilan
+                              <br class="d-none d-lg-inline"/>
+                              de l'activité
+                          </h3>
+                      </div>
+                      <div class="card-footer">
+                          <a class="btn btn-link stretched-link" data-matomo-action="click" data-matomo-category="statistiques" data-matomo-option="simplifier" href="/tableaux-de-bord-prives/">Accéder à mes statistiques</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col mb-3 mb-md-5">
+                  <div class="card h-100 text-center has-one-link-inside">
+                      <div class="card-header pt-md-4 ps--md-4 pe-md-4">
+                          <q>
+                              J’ai besoin de données pour préparer
+                              <br class="d-none d-lg-inline"/>
+                              mon CDIAE ?
+                          </q>
+                      </div>
+                      <div class="card-body pb-0">
+                          <img alt="" height="120" src="/static/images/pilotage/home/accompagne-02.png"/>
+                          <h3 class="mt-3 mb-0">Enrichir les instances locales de pilotage (dialogue de gestion, CTA, CTS, CDIAE…)</h3>
+                      </div>
+                      <div class="card-footer">
+                          <a class="btn btn-link stretched-link" data-matomo-action="click" data-matomo-category="statistiques" data-matomo-option="enrichir" href="/tableaux-de-bord-prives/">Accéder à mes statistiques</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col mb-3 mb-md-5">
+                  <div class="card h-100 text-center has-one-link-inside">
+                      <div class="card-header pt-md-4 ps--md-4 pe-md-4">
+                          <q>Pourquoi les SIAE ont du mal à recruter, alors que les prescripteurs prescrivent bien ?</q>
+                      </div>
+                      <div class="card-body pb-0">
+                          <img alt="" height="120" src="/static/images/pilotage/home/accompagne-03.png"/>
+                          <h3 class="mt-3 mb-0">Objectiver les situations et les échanges avec les partenaires</h3>
+                      </div>
+                      <div class="card-footer">
+                          <a class="btn btn-link stretched-link" data-matomo-action="click" data-matomo-category="statistiques" data-matomo-option="objectiver" href="/tableaux-de-bord-prives/">Accéder à mes statistiques</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col mb-3 mb-md-5">
+                  <div class="card h-100 text-center has-one-link-inside">
+                      <div class="card-header pt-md-4 ps--md-4 pe-md-4">
+                          <q>Quelle est la situation sur mon territoire ? Les prescripteurs sont-ils mobilisés sur l'IAE ?</q>
+                      </div>
+                      <div class="card-body pb-0">
+                          <img alt="" height="120" src="/static/images/pilotage/home/accompagne-04.png"/>
+                          <h3 class="mt-3 mb-0">Faciliter la réalisation et le suivi des plans d’actions</h3>
+                      </div>
+                      <div class="card-footer">
+                          <a class="btn btn-link stretched-link" data-matomo-action="click" data-matomo-category="statistiques" data-matomo-option="faciliter" href="/tableaux-de-bord-prives/">Accéder à mes statistiques</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+      </div>
+  
+      <div class="d-none" id="variationB">
+          
+  
+  <section class="s-section mt-md-0 mb-md-7">
+      <div class="s-section__container container container-max-lg">
+          <div class="row mb-1 mb-md-3">
+              <div class="col-12">
+                  <h2>Le pilotage vous accompagne</h2>
+                  <p>Vous travaillez dans une administration, service de l'Etat, une structure inclusive, un conseil départemental ? Vous souhaitez avoir des connaissances et des apprentissages sur les politiques publiques d'inclusion ? Le pilotage vous accompagne.</p>
+              </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 mt-3">
+              <div class="col mb-3 mb-md-5">
+                  <div class="card h-100 text-center has-one-link-inside">
+                      <div class="card-header pt-md-4 ps--md-4 pe-md-4">
+                          <q>Combien de candidatures j'ai reçues ou orientée ? Quels sont leurs résultats ?</q>
+                      </div>
+                      <div class="card-body pb-0">
+                          <img alt="" height="120" src="/static/images/pilotage/home/accompagne-01.png"/>
+                          <h3 class="mt-3 mb-0">
+                              Simplifier le reporting et le bilan
+                              <br class="d-none d-lg-inline"/>
+                              de l'activité
+                          </h3>
+                      </div>
+                      <div class="card-footer">
+                          <a class="btn btn-link stretched-link" data-matomo-action="click" data-matomo-category="statistiques" data-matomo-option="simplifier" href="/tableaux-de-bord-prives/">Accéder à mes statistiques</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col mb-3 mb-md-5">
+                  <div class="card h-100 text-center has-one-link-inside">
+                      <div class="card-header pt-md-4 ps--md-4 pe-md-4">
+                          <q>
+                              J’ai besoin de données pour préparer
+                              <br class="d-none d-lg-inline"/>
+                              mon CDIAE ?
+                          </q>
+                      </div>
+                      <div class="card-body pb-0">
+                          <img alt="" height="120" src="/static/images/pilotage/home/accompagne-02.png"/>
+                          <h3 class="mt-3 mb-0">Enrichir les instances locales de pilotage (dialogue de gestion, CTA, CTS, CDIAE…)</h3>
+                      </div>
+                      <div class="card-footer">
+                          <a class="btn btn-link stretched-link" data-matomo-action="click" data-matomo-category="statistiques" data-matomo-option="enrichir" href="/tableaux-de-bord-prives/">Accéder à mes statistiques</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col mb-3 mb-md-5">
+                  <div class="card h-100 text-center has-one-link-inside">
+                      <div class="card-header pt-md-4 ps--md-4 pe-md-4">
+                          <q>Pourquoi les SIAE ont du mal à recruter, alors que les prescripteurs prescrivent bien ?</q>
+                      </div>
+                      <div class="card-body pb-0">
+                          <img alt="" height="120" src="/static/images/pilotage/home/accompagne-03.png"/>
+                          <h3 class="mt-3 mb-0">Objectiver les situations et les échanges avec les partenaires</h3>
+                      </div>
+                      <div class="card-footer">
+                          <a class="btn btn-link stretched-link" data-matomo-action="click" data-matomo-category="statistiques" data-matomo-option="objectiver" href="/tableaux-de-bord-prives/">Accéder à mes statistiques</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col mb-3 mb-md-5">
+                  <div class="card h-100 text-center has-one-link-inside">
+                      <div class="card-header pt-md-4 ps--md-4 pe-md-4">
+                          <q>Quelle est la situation sur mon territoire ? Les prescripteurs sont-ils mobilisés sur l'IAE ?</q>
+                      </div>
+                      <div class="card-body pb-0">
+                          <img alt="" height="120" src="/static/images/pilotage/home/accompagne-04.png"/>
+                          <h3 class="mt-3 mb-0">Faciliter la réalisation et le suivi des plans d’actions</h3>
+                      </div>
+                      <div class="card-footer">
+                          <a class="btn btn-link stretched-link" data-matomo-action="click" data-matomo-category="statistiques" data-matomo-option="faciliter" href="/tableaux-de-bord-prives/">Accéder à mes statistiques</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  
+          
+  
+  <section class="s-section mt-md-0 mb-5 mb-md-9">
+      <div class="s-section__container container container-max-lg">
+          <div class="row mb-1 mb-md-3">
+              <div class="col-12">
+                  <h2>Vous avez un besoin particulier, une idée, une suggestion ?</h2>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <div class="d-flex">
+                      <div class="d-none d-lg-inline-flex w-lg-25">
+                          <img alt="" class="img-fluid" src="/static/images/pilotage/home/illustration-02.png"/>
+                      </div>
+                      <div class="bg-pilotage p-3 py-md-7 px-md-4 rounded-3 flex-grow-1">
+                          <div class="input-group input-group-xl input-group-search">
+                              <input aria-label="Suggestions et idées" class="form-control" id="input-continuer" placeholder="Dites-nous de quoi vous avez besoin" type="text"/>
+                              <div class="input-group-text p-0 bg-white">
+                                  <button class="btn btn-link" disabled="" id="btn-continuer" type="button">Continuer</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  
+          
+  
+  <section class="s-section mt-md-0 mb-md-7">
+      <div class="s-section__container container container-max-lg">
+          <div class="row mb-1 mb-md-3">
+              <div class="col-12">
+                  <h2>Comment j’accède aux données ?</h2>
+              </div>
+          </div>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mt-3">
+              <div class="col mb-3 mb-md-5">
+                  <div class="card h-100">
+                      <div class="card-header">
+                          <span class="d-block h2 text-pilotage">1</span>
+                          <p>Je choisis le tableau de bord qui m’intéresse</p>
+                      </div>
+                      <div class="card-body">
+                          <img alt="" class="img-fluid img-fitcover" src="/static/images/pilotage/home/comment-01.jpg"/>
+                      </div>
+                  </div>
+              </div>
+              <div class="col mb-3 mb-md-5">
+                  <div class="card h-100">
+                      <div class="card-header">
+                          <span class="d-block h2 text-pilotage">2</span>
+                          <p>Je filtre les données pour affiner ma recherche</p>
+                      </div>
+                      <div class="card-body">
+                          <img alt="" class="img-fluid img-fitcover" src="/static/images/pilotage/home/comment-02.jpg"/>
+                      </div>
+                  </div>
+              </div>
+              <div class="col mb-3 mb-md-5">
+                  <div class="card h-100">
+                      <div class="card-header">
+                          <span class="d-block h2 text-pilotage">3</span>
+                          <p>Je consulte les chiffres et les graphiques que je peux aussi exporter</p>
+                      </div>
+                      <div class="card-body">
+                          <img alt="" class="img-fluid img-fitcover" src="/static/images/pilotage/home/comment-03.jpg"/>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+      </div>
+  
+      <section class="s-section mt-md-0 mb-md-7">
+          <div class="s-section__container container container-max-lg">
+              <div class="row mb-1 mb-md-3">
+                  <div class="col-12">
+                      <h2 class="mb-0">Événements à venir</h2>
+                  </div>
+              </div>
+              <div class="s-section__row row">
+                  <div class="s-section__col col-12">
+                      <div class="js-tac-livestorm w-100" data-url="https://app.livestorm.co/itou/upcoming?limit=3" title="Événements La Plateforme de l'inclusion | Livestorm">
+                          <iframe allowfullscreen="" allowtransparency="" src="https://app.livestorm.co/itou/upcoming?limit=3" style="min-height:365px;" title="Événements des emplois de l'inclusion | Livestorm"></iframe>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-section my-md-7">
+      <div class="s-section__container container container-max-lg">
+          <div class="s-section__row row row mb-1 mb-md-3">
+              <div class="col-12">
+                  <h2>Nos utilisateurs témoignent</h2>
+              </div>
+          </div>
+          <div class="s-section__row row row mb-1 mb-md-3">
+              <div class="col-12">
+                  <blockquote class="testimonial mb-3 mb-md-5">
+                      <p class="font-weight-bold fs-lg">L’ensemble des données recueillies nous permettent vraiment de faire un bilan sur les recrutements et de modifier peut-être notre façon de recruter.</p>
+                      <footer class="blockquote-footer">
+                          <i>Association intermédiaire dans l’Aisne sur son tableau de bord privé</i>. Données de candidatures et des embauches
+                      </footer>
+                  </blockquote>
+                  <blockquote class="testimonial mb-3 mb-md-5">
+                      <p class="font-weight-bold fs-lg">J’avais déjà créé mon tableau de bord avec des indicateurs qui ressemblent vraiment beaucoup beaucoup à ceux-ci! Je vais pouvoir économiser du temps!!</p>
+                      <footer class="blockquote-footer">
+                          <i>Entreprise d’insertion en Occitanie sur son tableau de bord privé</i>. Données de candidatures et des embauches
+                      </footer>
+                  </blockquote>
+                  <blockquote class="testimonial mb-3 mb-md-5">
+                      <p class="font-weight-bold fs-lg">L’outil fournit des informations importantes notamment pour argumenter nos différentes rencontres avec l’ensemble des partenaires et pouvoir les mobiliser davantage compte tenu des difficultés de recrutements rencontrées.</p>
+                      <footer class="blockquote-footer">
+                          <i>Association intermédiaire dans les Alpes-Maritime sur son tableau de bord privé</i>. Données de candidatures et des embauches
+                      </footer>
+                  </blockquote>
+                  <div class="text-end">
+                      <a class="btn btn-link has-external-link pe-0" href="https://swll.to/PilotagePageTemoignages" target="_blank">Découvrez d’autres témoignages utilisateurs</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  
+              
+          </main>
+  '''
+# ---
+# name: test_inscription_lettre_information
+  '''
+  <main class="s-main" id="main" role="main">
+              
+                  
+      <section>
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <nav aria-label="breadcrumb" class="c-breadcrumb">
+                          <ol class="breadcrumb">
+                              <li class="breadcrumb-item">
+                                  <a href="/">Accueil</a>
+                              </li>
+                              <li aria-current="page" class="breadcrumb-item active">S’abonner à la lettre d’information du Pilotage de l’inclusion</li>
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-title-01">
+          <div class="s-title-01__container container">
+              <div class="s-title-01__row row">
+                  <div class="s-title-01__col col-12">
+                      <h1>S’abonner à la lettre d’information du Pilotage de l’inclusion</h1>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-embed">
+          <div class="s-embed__container container">
+              <div class="s-embed__row row">
+                  <div class="s-embed__col col-12">
+                      <iframe allowfullscreen="" frameborder="0" src="https://e60d439d.sibforms.com/serve/MUIFAG4HqP3M-hARD3AG0G1QcAHeeMU3ZHHfZnWp3SSHaDFhj6XiRPcpWuhW9p8fO--J6jaNQJQq1BnK8ouUrg9ghvcW8o6HnVTtGYWRGj2NbatXm9LQ01tHOmd8X8cheTK3H4n8VMXTsVv6mP5TFSqgqx_nkDCP7e4t7VSN-5bP-jJiSSvXCTEV3HhadMN_MfUm0xtNUdhA_iTf" style="height: 620px" title="S’abonner à la lettre d’information du Pilotage de l’inclusion">
+                      </iframe>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+              
+          </main>
+  '''
+# ---
+# name: test_mentions_legales
+  '''
+  <main class="s-main" id="main" role="main">
+              
+                  
+      <section>
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <nav aria-label="breadcrumb" class="c-breadcrumb">
+                          <ol class="breadcrumb">
+                              <li class="breadcrumb-item">
+                                  <a href="/">Accueil</a>
+                              </li>
+                              <li aria-current="page" class="breadcrumb-item active">Mentions légales</li>
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-title-01">
+          <div class="s-title-01__container container">
+              <div class="s-title-01__row row">
+                  <div class="s-title-01__col col-12">
+                      <h1 class="h1">
+                          <strong>Mentions légales</strong>
+                      </h1>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-section">
+          <div class="s-section__container container">
+              <div class="s-section__row row">
+                  <div class="s-section__col col-12 col-lg-11">
+                      <article>
+                          <h2>Éditeur</h2>
+                          <p>Le site « Le pilotage de l’inclusion » est édité par :</p>
+                          <p>
+                              <br/>
+                              Le Groupement d’Intérêt Public « Plateforme de l’inclusion » 
+                              <br/>
+                              127 Rue de Grenelle
+                              <br/>
+                              75007 Paris
+                          </p>
+                          <br/>
+                          <h2>Directeur de la publication</h2>
+                          <p>Le Directeur de la publication est Monsieur Arnaud Denoix, Directeur du GIP Plateforme de l’inclusion.</p>
+                          <br/>
+                          <h2>Hébergement du pilotage de l'inclusion</h2>
+                          <p>Ce site est hébergé par :</p>
+                          <p>
+                              Clever Cloud SAS
+                              <br/>
+                              5, passage de l’industrie
+                              <br/>
+                              92130 Issy-Les-Moulineaux
+                              <br/>
+                              France
+                          </p>
+                          <br/>
+                          <h2>Accessibilité</h2>
+                          <p>La conformité aux normes d’accessibilité numérique est un objectif ultérieur mais nous tâchons de rendre ce site accessible à toutes et à tous.</p>
+                          <h3>En savoir plus</h3>
+                          <p>
+                              Pour en savoir plus sur la politique d’accessibilité numérique de l’Etat, voir le lien suivant : <a class="has-external-link" href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/" target="_blank">https://www.numerique.gouv.fr/publications/rgaa-accessibilite</a>
+                          </p>
+                          <br/>
+                          <h2>Signaler un dysfonctionnement</h2>
+                          <p>
+                              Si vous rencontrez un défaut d’accessibilité vous empêchant d’accéder à un contenu ou à une fonctionnalité du site, merci de nous en faire part ici : <a class="has-external-link" href="https://aide.emplois.inclusion.beta.gouv.fr/" target="_blank">https://aide.emplois.inclusion.beta.gouv.fr</a>
+                          </p>
+                          <p>Si vous n’obtenez pas de réponse rapide de notre part, vous êtes en droit de faire parvenir vos doléances ou une demande de saisine au Défenseur des droits.</p>
+                          <p>Pour le joindre, vous pouvez :</p>
+                          <ul>
+                              <li>
+                                  Utiliser le formulaire de contact en ligne ici : <a class="has-external-link" href="https://formulaire.defenseurdesdroits.fr/code/afficher.php?ETAPE=accueil_2016" target="_blank">https://formulaire.defenseurdesdroits.fr/code/afficher.php?ETAPE=accueil_2016</a> 
+                              </li>
+                              <li>
+                                  Composer le <a href="tel:+33969390000">09 69 39 00 00</a> (du lundi au vendredi de 8h à 20h) ;
+                              </li>
+                              <li>
+                                  Envoyer un courrier (sans timbre) à l’adresse suivante :
+                                  <br/>
+                                  <address>
+                                      Défenseur des droits,
+                                      <br/>
+                                      Libre réponse 71120,
+                                      <br/>
+                                      75342 Paris CEDEX 07.
+                                  </address>
+                              </li>
+                          </ul>
+                          <p>
+                              Pour en savoir plus sur la politique d’accessibilité numérique de l’État : <a class="has-external-link" href="https://accessibilite.numerique.gouv.fr/" target="_blank">https://accessibilite.numerique.gouv.fr</a>
+                          </p>
+                          <br/>
+                          <h2>Sécurité</h2>
+                          <p>
+                              Le site est protégé par un certificat électronique, matérialisé pour la grande majorité des navigateurs par un cadenas. Cette protection participe à la confidentialité des échanges.
+                              <br/>
+                              En aucun cas les services associés à la plateforme ne seront à l’origine d’envoi de courriels pour demander la saisie d’informations personnelles.
+                          </p>
+                          <p>En aucun cas les services associés à la plateforme de l’inclusion ne seront à l’origine d’envoi de courriels pour demander la saisie de vos informations personnelles.</p>
+                      </article>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+              
+          </main>
+  '''
+# ---
+# name: test_politique_de_confidentialite
+  '''
+  <main class="s-main" id="main" role="main">
+              
+                  
+      <section>
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <nav aria-label="breadcrumb" class="c-breadcrumb">
+                          <ol class="breadcrumb">
+                              <li class="breadcrumb-item">
+                                  <a href="/">Accueil</a>
+                              </li>
+                              <li aria-current="page" class="breadcrumb-item active">Politique de confidentialité</li>
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-title-01">
+          <div class="s-title-01__container container">
+              <div class="s-title-01__row row">
+                  <div class="s-title-01__col col-12">
+                      <h1 class="h1">
+                          <strong>Politique de confidentialité</strong>
+                      </h1>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-section">
+          <div class="s-section__container container">
+              <div class="s-section__row row">
+                  <div class="s-section__col col-12 col-lg-11">
+                      <article>
+                          <h2>Qui est responsable du Pilotage de l’inclusion ?</h2>
+                          <p>Le Pilotage de l’inclusion est développé au sein du GIP Plateforme de l’inclusion. Le Pilotage de l’inclusion valorise et diffuse la donnée pour favoriser l’efficacité des dispositifs de l’inclusion. De plus, les données récoltées permettent d’apporter des connaissances et des apprentissages aux acteurs de l’écosystème de l’inclusion.</p>
+                          <p>Le responsable de l’utilisation des données est le GIP Plateforme de l’inclusion, représenté par Arnaud Denoix, Directeur du GIP Plateforme de l’inclusion.</p>
+                          <br/>
+  
+                          <h2>Pourquoi traitons-nous ces données ?</h2>
+                          <p>Le Pilotage de l’inclusion traite des données à caractère personnel pour les raisons suivantes :</p>
+                          <ul>
+                              <li>Exploiter les données à disposition de l’administration et autres professionnels de l’inclusion (prescripteurs, SIAE) pour automatiser des rapports et analyses ;</li>
+                              <li>Réduire la charge administrative qui pèse sur les acteurs de l’inclusion ;</li>
+                              <li>Comprendre et analyser l’inclusion dans l’emploi en créant des données de référence et des tableaux de bord.</li>
+                          </ul>
+                          <br/>
+  
+                          <h2>Quelles sont les données à caractère personnel que nous traitons ?</h2>
+                          <p>Le Pilotage de l’inclusion traite les données à caractère personnel suivantes :</p>
+                          <ul>
+                              <li>Adresse e-mail ;</li>
+                              <li>Nom des conseillers de Pôle Emploi ;</li>
+                              <li>Genre et date de naissance des publics éloignés de l’emploi (bénéficiaires et candidats accompagnés).</li>
+                          </ul>
+                          <br/>
+  
+                          <h2>Qu’est-ce qui nous autorise à traiter ces données ?</h2>
+                          <p>Le Pilotage de l’inclusion traite des données à caractère personnel en se basant sur :</p>
+                          <ul>
+                              <li>L’exécution d’une mission d’intérêt public ou relevant de l’exercice de l’autorité publique dont est investi le responsable de traitement au sens de l’article 6-1 e) du RPGD.</li>
+                          </ul>
+                          <p>Cette mission d’intérêt public est mise en œuvre par :</p>
+                          <ul>
+                              <li>L’article R. 5132-1-19 du Code du travail.</li>
+                          </ul>
+                          <br/>
+  
+                          <h2>Pendant combien de temps conservons-nous ces données ?</h2>
+                          <div class="table-responsive">
+                              <table class="table table-sm">
+                                  <thead>
+                                      <tr>
+                                          <th scope="col">Type de données</th>
+                                          <th scope="col">Durée de la conservation</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td>Données relatives à la newsletter : adresse e-mail</td>
+                                          <td>Dès que l’utilisateur se désinscrit de la newsletter.</td>
+                                      </tr>
+                                      <tr>
+                                          <td>Nom des conseillers de Pôle Emploi, genre et date de naissance des publics éloignés de l’emploi</td>
+                                          <td>2 ans à compter du dernier contact avec la personne concernée.</td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                          <br/>
+  
+                          <h2>Quels droits avez-vous ?</h2>
+                          <p>Vous disposez :</p>
+                          <ul>
+                              <li>D’un droit d’information et d’un droit d’accès à vos données ;</li>
+                              <li>D’un droit de rectification de vos données ;</li>
+                              <li>D’un droit à la limitation du traitement de vos données.</li>
+                          </ul>
+                          <p>
+                              Pour les exercer, contactez-nous à : <a href="mailto:rgpd@inclusion.gouv.fr">rgpd@inclusion.gouv.fr</a>
+                          </p>
+                          <p>Puisque ce sont des droits personnels, nous ne traiterons votre demande que si nous sommes en mesure de vous identifier. Dans le cas où nous ne parvenons pas à vous identifier, nous pouvons être amenés à vous demander une preuve de votre identité.</p>
+                          <p>
+                              Pour vous aider dans votre démarche, vous trouverez un <a class="has-external-link" href="https://www.cnil.fr/fr/modele/courrier/exercer-son-droit-dacces" target="_blank">modèle de courrier élaboré par la CNIL</a>.
+                          </p>
+                          <p>Nous nous engageons à vous répondre dans un délai raisonnable qui ne saurait dépasser 1 mois à compter de la réception de votre demande.</p>
+                          <br/>
+  
+                          <h2>Qui va avoir accès à ces données à caractère personnel ?</h2>
+                          <p>Les accès aux données sont strictement encadrés et juridiquement justifiés. Les personnes suivantes vont avoir accès aux données :</p>
+                          <ul>
+                              <li>Les membres du Pilotage de l’inclusion qui ont besoin des données dans leurs missions ou qui y ont accès de fait (développeur, etc.) ;</li>
+                              <li>Pôle Emploi.</li>
+                          </ul>
+                          <br/>
+  
+                          <h2>Quelles mesures de sécurité mettons-nous en place ?</h2>
+                          <p>Nous mettons en place plusieurs mesures pour sécuriser les données :</p>
+                          <ul>
+                              <li>Stockage des données en base de données ;</li>
+                              <li>Cloisonnement des données ;</li>
+                              <li>Mesures de traçabilité ;</li>
+                              <li>Surveillance ;</li>
+                              <li>Protection contre les virus, malwares et logiciels espions ;</li>
+                              <li>Protection des réseaux ;</li>
+                              <li>Sauvegarde ;</li>
+                              <li>Mesures restrictives limitant l’accès physiques aux données à caractère personnel.</li>
+                          </ul>
+                          <br/>
+  
+                          <h2>Qui nous aide à manipuler les données ?</h2>
+                          <div class="table-responsive">
+                              <table class="table table-sm">
+                                  <thead>
+                                      <tr>
+                                          <th scope="col">Sous-traitant</th>
+                                          <th scope="col">Pays destinataire</th>
+                                          <th scope="col">Traitement réalisé</th>
+                                          <th scope="col">Garanties</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td>Clever Cloud</td>
+                                          <td>France</td>
+                                          <td>Hébergement</td>
+                                          <td>
+                                              <a class="has-external-link" href="https://www.clever-cloud.com/fr/politique-de-confidentialite/" target="_blank">https://www.clever-cloud.com/fr...</a>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td>Matomo</td>
+                                          <td>France</td>
+                                          <td>Mesure d’audience</td>
+                                          <td>
+                                              <a class="has-external-link" href="https://fr.matomo.org/privacy-policy/" target="_blank">https://fr.matomo.org/privacy-policy...</a>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td>Mailjet</td>
+                                          <td>France</td>
+                                          <td>Envoi de mails</td>
+                                          <td>
+                                              <a class="has-external-link" href="https://www.mailjet.com/fr/legal/politique-confidentialite/" target="_blank">https://www.mailjet.com/fr/le...</a>
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                          <br/>
+  
+                          <h2>Cookies</h2>
+                          <p>Un cookie est un fichier déposé sur votre terminal lors de la visite d’un site. Il a pour but de collecter des informations relatives à votre navigation et de vous adresser des services adaptés à votre terminal (ordinateur, mobile ou tablette).</p>
+                          <p>En application de l’article 5(3) de la directive 2002/58/CE modifiée concernant le traitement des données à caractère personnel et la protection de la vie privée dans le secteur des communications électroniques, transposée à l’article 82 de la loi n°78-17 du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés, les traceurs ou cookies suivent deux régimes distincts.</p>
+                          <p>Les cookies strictement nécessaires au service ou ayant pour finalité exclusive de faciliter la communication par voie électronique sont dispensés de consentement préalable au titre de l’article 82 de la loi n°78-17 du 6 janvier 1978. Les cookies n’étant pas strictement nécessaires au service ou n’ayant pas pour finalité exclusive de faciliter la communication par voie électronique doivent être consenti par l’utilisateur.</p>
+                          <p>Ce consentement de la personne concernée pour une ou plusieurs finalités spécifiques constitue une base légale au sens du RGPD et doit être entendu au sens de l'article 6-a du Règlement (UE) 2016/679 du Parlement européen et du Conseil du 27 avril 2016 relatif à la protection des personnes physiques à l'égard du traitement des données à caractère personnel et à la libre circulation de ces données.</p>
+                          <p>À tout moment, vous pouvez refuser l’utilisation des cookies et désactiver le dépôt sur votre ordinateur en utilisant la fonction dédiée de votre navigateur (fonction disponible notamment sur Microsoft Internet Explorer 11, Google Chrome, Mozilla Firefox, Apple Safari et Opera). L’utilisateur peut, à tout moment, autoriser ou interdire le suivi des cookies grâce au panneau de gestion des cookies « tarteaucitron » en bas de l’écran.</p>
+                          <p>
+                              <strong>La plateforme du Pilotage de l’inclusion</strong> utilise Matomo pour la mesure d’audience. La plateforme ne configure pas Matomo en mode exempté et nécessite donc le consentement des utilisateurs conformément aux recommandations de la CNIL. L’utilisateur peut refuser le suivi réalisé par Matomo grâce au bandeau cookies sur la plateforme.
+                          </p>
+                          <p>Il convient d'indiquer que :</p>
+                          <ul>
+                              <li>Les cookies ne permettent pas de suivre la navigation de l’internaute sur d’autres sites.</li>
+                          </ul>
+                          <p>Pour aller plus loin, vous pouvez consulter les ﬁches proposées par la Commission Nationale de l'Informatique et des Libertés (CNIL) :</p>
+                          <ul>
+                              <li>
+                                  <a class="has-external-link" href="https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies/que-dit-la-loi" target="_blank">Cookies &amp; traceurs : que dit la loi ?</a>
+                              </li>
+                              <li>
+                                  <a class="has-external-link" href="https://www.cnil.fr/fr/cookies-et-autres-traceurs/comment-se-proteger/maitriser-votre-navigateur" target="_blank">Cookies : les outils pour les maîtriser</a>
+                              </li>
+                          </ul>
+                          <br/>
+                      </article>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+              
+          </main>
+  '''
+# ---
+# name: test_stats
+  '''
+  <main class="s-main" id="main" role="main">
+              
+                  
+      <section>
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <nav aria-label="breadcrumb" class="c-breadcrumb">
+                          <ol class="breadcrumb">
+                              <li class="breadcrumb-item">
+                                  <a href="/">Accueil</a>
+                              </li>
+                              <li aria-current="page" class="breadcrumb-item active">Statistiques du pilotage de l'inclusion</li>
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-title-01">
+          <div class="s-title-01__container container">
+              <div class="s-title-01__row row">
+                  <div class="s-title-01__col col-12">
+                      <h1 class="h1">
+                          <strong>Statistiques du pilotage de l'inclusion</strong>
+                      </h1>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-embed m-0">
+          <div class="s-embed__container container">
+              <div class="s-embed__row row">
+                  <div class="s-embed__col col-12" id="embedMetabase">
+                      <iframe allowtransparency="" id="iframeMetabase" src="//stats.inclusion.beta.gouv.fr/embed/dashboard/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZSI6eyJkYXNoYm9hcmQiOjYzfSwicGFyYW1zIjp7fSwiZXhwIjoxNzQxMjE5ODAwfQ.-RzvcGWU6TYwe6kmtGwrDNiWaiAVfW95aw1LqDmgsfw#bordered=true&amp;titled=false" title="Statistiques du pilotage de l'inclusion"></iframe>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-section my-md-7">
+      <div class="s-section__container container container-max-lg">
+          <div class="s-section__row row row mb-1 mb-md-3">
+              <div class="col-12">
+                  <h2>Nos utilisateurs témoignent</h2>
+              </div>
+          </div>
+          <div class="s-section__row row row mb-1 mb-md-3">
+              <div class="col-12">
+                  <blockquote class="testimonial mb-3 mb-md-5">
+                      <p class="font-weight-bold fs-lg">L’ensemble des données recueillies nous permettent vraiment de faire un bilan sur les recrutements et de modifier peut-être notre façon de recruter.</p>
+                      <footer class="blockquote-footer">
+                          <i>Association intermédiaire dans l’Aisne sur son tableau de bord privé</i>. Données de candidatures et des embauches
+                      </footer>
+                  </blockquote>
+                  <blockquote class="testimonial mb-3 mb-md-5">
+                      <p class="font-weight-bold fs-lg">J’avais déjà créé mon tableau de bord avec des indicateurs qui ressemblent vraiment beaucoup beaucoup à ceux-ci! Je vais pouvoir économiser du temps!!</p>
+                      <footer class="blockquote-footer">
+                          <i>Entreprise d’insertion en Occitanie sur son tableau de bord privé</i>. Données de candidatures et des embauches
+                      </footer>
+                  </blockquote>
+                  <blockquote class="testimonial mb-3 mb-md-5">
+                      <p class="font-weight-bold fs-lg">L’outil fournit des informations importantes notamment pour argumenter nos différentes rencontres avec l’ensemble des partenaires et pouvoir les mobiliser davantage compte tenu des difficultés de recrutements rencontrées.</p>
+                      <footer class="blockquote-footer">
+                          <i>Association intermédiaire dans les Alpes-Maritime sur son tableau de bord privé</i>. Données de candidatures et des embauches
+                      </footer>
+                  </blockquote>
+                  <div class="text-end">
+                      <a class="btn btn-link has-external-link pe-0" href="https://swll.to/PilotagePageTemoignages" target="_blank">Découvrez d’autres témoignages utilisateurs</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  
+  
+              
+          </main>
+  '''
+# ---
+# name: test_tableaux_de_bord_prives
+  '''
+  <main class="s-main" id="main" role="main">
+              
+                  
+      <section>
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <nav aria-label="breadcrumb" class="c-breadcrumb">
+                          <ol class="breadcrumb">
+                              <li class="breadcrumb-item">
+                                  <a href="/">Accueil</a>
+                              </li>
+                              <li aria-current="page" class="breadcrumb-item active">Statistiques de mon organisation</li>
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-title-01">
+          <div class="s-title-01__container container">
+              <div class="s-title-01__row row">
+                  <div class="s-title-01__col col-12 col-lg-11">
+                      <h1 class="h1">
+                          <strong>Statistiques de mon organisation</strong>
+                      </h1>
+                      <p>
+                          Les tableaux de bord privés que nous déployons sont des outils de pilotage co-construits avec et pour les acteurs de l’inclusion en fonction de leurs besoins.
+                          Les données présentées dans ces outils sont des données affinées à l’échelle d’une organisation ou d’un partenaire.
+                          Ces tableaux de bord sont accessibles via votre espace privé sur le site des emplois de l’inclusion.
+                          <br/>
+                          Ils sont visibles dans l’onglet “Tableau de bord” dans l’espace “Services partenaires” et dans la rubrique “Pilotage de l’inclusion”.
+                      </p>
+                      <p>
+                          Accéder au guide d’accès à vos tableaux de bord privés <a class="has-external-link" href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/articles/16882353292817--Acc%C3%A9der-aux-tableaux-de-bord-priv%C3%A9s" target="_blank">en cliquant ici</a>.
+                      </p>
+                      <p class="h3">Cliquer sur le lien correspondant à votre profil utilisateur et consulter vos tableaux de bord privés de pilotage.</p>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+      <section class="s-section mt-md-6">
+          <div class="s-section__container container">
+              <div class="s-section__row row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                  <div class="col mb-3 mb-md-5">
+                      <div class="card c-card c-card--emploi has-one-link-inside h-100 w-100">
+                          <div class="card-header">
+                              <h3 class="h3">Institutions partenaires</h3>
+                          </div>
+                          <div class="card-body">
+                              <p>Je travaille pour la DGEFP, la DIHAL, la DRIHL, une DREETS ou une DDETS</p>
+                          </div>
+                          <div class="card-footer text-end">
+                              <a class="btn btn-ico btn-link stretched-link" href="https://emplois.inclusion.beta.gouv.fr/login/labor_inspector" target="_blank">
+                                  <span>Accéder à mes statistiques</span>
+                                  <i aria-hidden="true" class="ri-external-link-line ri-lg"></i>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col mb-3 mb-md-5">
+                      <div class="card c-card c-card--emploi has-one-link-inside h-100 w-100">
+                          <div class="card-header">
+                              <h3 class="h3">Prescripteurs</h3>
+                          </div>
+                          <div class="card-body">
+                              <p>Je travaille pour un Conseil Départemental, France Travail, une Mission locale, un Cap emploi ou au sein d’une structure de l’accueil de l’hébergement et de l’insertion</p>
+                          </div>
+                          <div class="card-footer text-end">
+                              <a class="btn btn-ico btn-link stretched-link" href="https://emplois.inclusion.beta.gouv.fr/login/prescriber" target="_blank">
+                                  <span>Accéder à mes statistiques</span>
+                                  <i aria-hidden="true" class="ri-external-link-line ri-lg"></i>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col mb-3 mb-md-5">
+                      <div class="card c-card c-card--emploi has-one-link-inside h-100 w-100">
+                          <div class="card-header">
+                              <h3 class="h3">Employeur solidaire et réseaux</h3>
+                          </div>
+                          <div class="card-body">
+                              <p>Je travaille pour une SIAE, un réseau de l’IAE</p>
+                          </div>
+                          <div class="card-footer text-end">
+                              <a class="btn btn-ico btn-link stretched-link" href="https://emplois.inclusion.beta.gouv.fr/login/employer" target="_blank">
+                                  <span>Accéder à mes statistiques</span>
+                                  <i aria-hidden="true" class="ri-external-link-line ri-lg"></i>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+  
+              
+          </main>
+  '''
+# ---
