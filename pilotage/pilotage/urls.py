@@ -1,6 +1,7 @@
 from django.urls import include, path
 
-from . import views
+from pilotage.pilotage import views
+
 
 app_name = "pilotage"
 urlpatterns = [

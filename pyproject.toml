@@ -11,7 +11,17 @@ select = [
     "E",  # pycodestyle errors
     "W",  # pycodestyle warnings
     "UP",  # pyupgrade
+    "I",  # isort
+    "TID",  # flake8-tidy-imports
 ]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+known-first-party = ["pilotage"]
+lines-after-imports = 2
+
+[tool.ruff.lint.flake8-tidy-imports]
+ban-relative-imports = "all"
 
 [tool.djlint]
 profile="django"

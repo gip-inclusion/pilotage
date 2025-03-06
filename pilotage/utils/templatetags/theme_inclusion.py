@@ -6,6 +6,7 @@ from django import template
 from django.templatetags.static import static
 from django.utils.safestring import mark_safe
 
+
 """
 This template tags have for goal to mutualize all the dependencies and specifics component from the itou theme.
 
