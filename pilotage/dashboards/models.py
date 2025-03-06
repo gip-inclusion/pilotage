@@ -27,12 +27,8 @@ class Dashboard(models.Model):
     )
     metabase_db_id = models.fields.IntegerField("Metabase ID")
     description = models.fields.TextField(null=True, blank=True)
-    tally_popup_id = models.fields.CharField(
-        "Tally Popup ID", null=True, blank=True, max_length=10
-    )
-    tally_embed_id = models.fields.CharField(
-        "Tally Embed ID", null=True, blank=True, max_length=10
-    )
+    tally_popup_id = models.fields.CharField("Tally Popup ID", null=True, blank=True, max_length=10)
+    tally_embed_id = models.fields.CharField("Tally Embed ID", null=True, blank=True, max_length=10)
     active = models.fields.BooleanField("Actif", default=True)
     new = models.fields.BooleanField("Nouveau", default=False)
 
