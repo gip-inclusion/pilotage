@@ -4,11 +4,7 @@ from pilotage.dashboards.models import Dashboard
 
 
 def tableaux_de_bord_publics(request):
-    dashboards = (
-        Dashboard.objects.filter(active=True)
-        .select_related("category")
-        .order_by("-category__pk", "-pk")
-    )
+    dashboards = Dashboard.objects.filter(active=True).select_related("category").order_by("-category__pk", "-pk")
     return render(
         request,
         "dashboards/tableaux_de_bord_publics.html",

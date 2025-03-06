@@ -71,15 +71,10 @@ def import_static_CSS_theme_inclusion():
     for css_dep in CSS_DEPENDENCIES_THEME:
         if css_dep["is_external"]:
             scripts_import += (
-                '<link rel="stylesheet" href="{}" integrity="{}" '
-                'crossorigin="anonymous" type="text/css">'
+                '<link rel="stylesheet" href="{}" integrity="{}" crossorigin="anonymous" type="text/css">'
             ).format(css_dep["src"], css_dep["integrity"])
         else:
-            scripts_import += (
-                '<link rel="stylesheet" href="{}" type="text/css">'.format(
-                    static_theme(css_dep["src"])
-                )
-            )
+            scripts_import += '<link rel="stylesheet" href="{}" type="text/css">'.format(static_theme(css_dep["src"]))
     return mark_safe(scripts_import)
 
 
@@ -92,7 +87,5 @@ def import_static_JS_theme_inclusion():
                 js_dep["src"], js_dep["integrity"]
             )
         else:
-            scripts_import += '<script src="{}"></script>'.format(
-                static_theme(js_dep["src"])
-            )
+            scripts_import += '<script src="{}"></script>'.format(static_theme(js_dep["src"]))
     return mark_safe(scripts_import)

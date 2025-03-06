@@ -17,9 +17,4 @@ def iframeurl(value):
 
     token = jwt.encode(payload, settings.METABASE_SECRET_KEY, algorithm="HS256")
 
-    return (
-        "//stats.inclusion.beta.gouv.fr"
-        + "/embed/dashboard/"
-        + token
-        + "#bordered=true&titled=false"
-    )
+    return "//stats.inclusion.beta.gouv.fr" + "/embed/dashboard/" + token + "#bordered=true&titled=false"
