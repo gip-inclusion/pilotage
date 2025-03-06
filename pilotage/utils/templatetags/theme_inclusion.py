@@ -67,7 +67,7 @@ def static_theme_images(url_path):
 
 
 @register.simple_tag
-def import_static_CSS_theme_inclusion():
+def import_static_css_theme_inclusion():
     scripts_import = ""
     for css_dep in CSS_DEPENDENCIES_THEME:
         if css_dep["is_external"]:
@@ -80,7 +80,7 @@ def import_static_CSS_theme_inclusion():
 
 
 @register.simple_tag
-def import_static_JS_theme_inclusion():
+def import_static_js_theme_inclusion():
     scripts_import = ""
     for js_dep in JS_DEPENDENCIES_THEME:
         if js_dep["is_external"]:
