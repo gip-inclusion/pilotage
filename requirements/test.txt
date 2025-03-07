@@ -35,6 +35,8 @@ django==5.1.7 \
     #   -r requirements/base.txt
     #   django-appconf
     #   django-compressor
+    #   django-datadog-logger
+    #   djangorestframework
 django-appconf==1.1.0 \
     --hash=sha256:7abd5a163ff57557f216e84d3ce9dac36c37ffce1ab9a044d3d53b7c943dd10f \
     --hash=sha256:9fcead372f82a0f21ee189434e7ae9c007cbb29af1118c18251720f3d06243e4
@@ -47,10 +49,20 @@ django-compressor==4.5.1 \
     # via
     #   -r requirements/base.txt
     #   django-libsass
+django-datadog-logger==0.7.3 \
+    --hash=sha256:4361bb068a4b188fa14135398f9b747728464a291757e6adf8c95c9215dcd602 \
+    --hash=sha256:87838cd868f407e050831c536413de6b2ece31433b28c952c0fd90be1d66486a
+    # via -r requirements/base.txt
 django-libsass==0.9 \
     --hash=sha256:5234d29100889cac79e36a0f44207ec6d275adfd2da1acb6a94b55c89fe2bd97 \
     --hash=sha256:bfbbb55a8950bb40fa04dd416605f92da34ad1f303b10a41abc3232386ec27b5
     # via -r requirements/base.txt
+djangorestframework==3.15.2 \
+    --hash=sha256:2b8871b062ba1aefc2de01f773875441a961fefbf79f5eed1e32b2f096944b20 \
+    --hash=sha256:36fe88cd2d6c6bec23dca9804bab2ba5517a8bb9d8f47ebc68981b56840107ad
+    # via
+    #   -r requirements/base.txt
+    #   django-datadog-logger
 djlint==1.36.4 \
     --hash=sha256:16ce37e085afe5a30953b2bd87cbe34c37843d94c701fc68a2dda06c1e428ff4 \
     --hash=sha256:17254f218b46fe5a714b224c85074c099bcb74e3b2e1f15c2ddc2cf415a408a1 \
@@ -107,6 +119,11 @@ jsbeautifier==1.15.4 \
     # via
     #   cssbeautifier
     #   djlint
+json-log-formatter==1.1.1 \
+    --hash=sha256:0815e3b4469e5c79cf3f6dc8a0613ba6601f4a7464f85ba03655cfa6e3e17d10
+    # via
+    #   -r requirements/base.txt
+    #   django-datadog-logger
 json5==0.10.0 \
     --hash=sha256:19b23410220a7271e8377f81ba8aacba2fdd56947fbb137ee5977cbe1f5e8dfa \
     --hash=sha256:e66941c8f0a02026943c52c2eb34ebeb2a6f819a0be05920a6f5243cd30fd559
