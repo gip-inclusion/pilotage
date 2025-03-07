@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+import sentry_sdk
+from sentry_sdk.integrations.logging import ignore_logger
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -170,6 +173,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 MEDIA_ROOT = os.path.join(APPS_DIR, "media")
 MEDIA_URL = "/media/"
 
+# Sentry
+sentry_sdk.init(
+    traces_sample_rate=float(os.getenv("SENTRY_TRACES_SAMPLE_RATE", "0.1")),
+)  # Read from SENTRY_DSN and SENTRY_ENVIRONMENT
+ignore_logger("django.security.DisallowedHost")
 
 # Project settings
 # ----------------

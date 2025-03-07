@@ -13,3 +13,5 @@ Markdown  # https://python-markdown.github.io/
 
 # Embedding Metabase signed dashboards
 PyJWT  # https://github.com/jpadilla/pyjwt
+
+sentry-sdk  # https://github.com/getsentry/sentry-python
