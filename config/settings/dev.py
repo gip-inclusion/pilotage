@@ -31,6 +31,9 @@ INTERNAL_IPS = ["127.0.0.1"]
 
 MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware"]  # noqa F405
 
+# Don't use json formatter in dev
+del LOGGING["handlers"]["console"]["formatter"]  # noqa: F405
+
 DATABASES["default"]["HOST"] = os.getenv("PGHOST", "127.0.0.1")  # noqa: F405
 DATABASES["default"]["PORT"] = os.getenv("PGPORT", "5433")  # noqa: F405
 DATABASES["default"]["NAME"] = os.getenv("PGDATABASE", "pilotage_django")  # noqa: F405

@@ -67,6 +67,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # Generate request Id
+    "django_datadog_logger.middleware.request_id.RequestIdMiddleware",
+    # Django stack
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -74,7 +77,35 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # Final logger
+    "django_datadog_logger.middleware.request_log.RequestLoggingMiddleware",
 ]
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        # "console": {"format": "{levelname} {message}", "style": "{"},
+        "json": {"()": "django_datadog_logger.formatters.datadog.DataDogJSONFormatter"},
+    },
+    "handlers": {
+        "console": {"class": "logging.StreamHandler", "formatter": "json"},
+        "null": {"class": "logging.NullHandler"},
+    },
+    "loggers": {
+        "": {"handlers": ["console"], "level": "INFO"},
+        "django": {
+            "level": os.getenv("DJANGO_LOG_LEVEL", "INFO"),
+        },
+        "django.security.DisallowedHost": {
+            "handlers": ["null"],
+            "propagate": False,
+        },
+        "pilotage": {
+            "level": os.getenv("PILOTAGE_LOG_LEVEL", "INFO"),
+        },
+    },
+}
 
 ROOT_URLCONF = "config.urls"
 
