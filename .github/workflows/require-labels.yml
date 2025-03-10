@@ -2,7 +2,8 @@ name: Label Checks
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, labeled, unlabeled, merge_group]
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+  merge_group:
 
 jobs:
   require-label:
