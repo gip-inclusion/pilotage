@@ -12,6 +12,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name="dashboard",
             name="new",
-            field=models.BooleanField(default=False, verbose_name="Nouveau"),
+            field=models.BooleanField(default=False, verbose_name="nouveau"),
         ),
     ]
