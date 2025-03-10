@@ -25,6 +25,7 @@ venv: $(VIRTUAL_ENV)
 PIP_COMPILE_FLAGS := --generate-hashes $(PIP_COMPILE_OPTIONS)
 compile-deps: $(VIRTUAL_ENV)
 	uv pip compile $(PIP_COMPILE_FLAGS) -o requirements/base.txt requirements/base.in
+	uv pip compile $(PIP_COMPILE_FLAGS) -o requirements/test.txt requirements/test.in
 	uv pip compile $(PIP_COMPILE_FLAGS) -o requirements/dev.txt requirements/dev.in
 
 # Django
@@ -38,7 +39,7 @@ runserver: $(VIRTUAL_ENV)
 # =============================================================================
 .PHONY: clean quality fast_fix fix
 
-LINTER_CHECKED_DIRS := config pilotage
+LINTER_CHECKED_DIRS := config pilotage tests
 
 clean:
 	find . -type d -name "__pycache__" -depth -exec rm -rf '{}' \;
@@ -56,6 +57,14 @@ fast_fix: $(VIRTUAL_ENV)
 
 fix: fast_fix
 	djlint --reformat pilotage
+
+# Tests.
+# =============================================================================
+
+.PHONY: test
+
+test: $(VIRTUAL_ENV)
+	pytest --create-db $(TARGET)
 
 # Deployment
 # =============================================================================
