@@ -3,10 +3,10 @@ from django.db import models
 
 class Category(models.Model):
     class Meta:
-        verbose_name = "Categorie"
-        verbose_name_plural = "Categories"
+        verbose_name = "catégorie"
+        verbose_name_plural = "catégories"
 
-    title = models.fields.CharField("Titre", max_length=100)
+    title = models.fields.CharField(verbose_name="titre", max_length=100)
 
     def __str__(self):
         return f"{self.title}"
@@ -14,23 +14,23 @@ class Category(models.Model):
 
 class Dashboard(models.Model):
     class Meta:
-        verbose_name = "Tableau de bord"
-        verbose_name_plural = "Tableaux de bord"
+        verbose_name = "tableau de bord"
+        verbose_name_plural = "tableaux de bord"
 
-    title = models.fields.CharField("Titre", max_length=150)
+    title = models.fields.CharField(verbose_name="titre", max_length=150)
     baseline = models.fields.CharField(max_length=250)
     slug = models.fields.SlugField()
     category = models.ForeignKey(
         Category,
         on_delete=models.DO_NOTHING,
-        verbose_name="Categorie",
+        verbose_name="catégorie",
     )
-    metabase_db_id = models.fields.IntegerField("Metabase ID")
+    metabase_db_id = models.fields.IntegerField(verbose_name="metabase ID")
     description = models.fields.TextField(null=True, blank=True)
-    tally_popup_id = models.fields.CharField("Tally Popup ID", null=True, blank=True, max_length=10)
-    tally_embed_id = models.fields.CharField("Tally Embed ID", null=True, blank=True, max_length=10)
-    active = models.fields.BooleanField("Actif", default=True)
-    new = models.fields.BooleanField("Nouveau", default=False)
+    tally_popup_id = models.fields.CharField(verbose_name="tally popup ID", null=True, blank=True, max_length=10)
+    tally_embed_id = models.fields.CharField(verbose_name="tally embed ID", null=True, blank=True, max_length=10)
+    active = models.fields.BooleanField(verbose_name="actif", default=True)
+    new = models.fields.BooleanField(verbose_name="nouveau", default=False)
 
     def __str__(self):
         return f"{self.title}"
