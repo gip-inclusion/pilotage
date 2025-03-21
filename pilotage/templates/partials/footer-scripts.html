@@ -97,7 +97,7 @@
     <script src="{{ METABASE_BASE_URL }}/app/iframeResizer.js"></script>
     <script>
         window.iFrameResizer = {
-            targetOrigin: "//pilotage.inclusion.beta.gouv.fr"
+            targetOrigin: "{{ request.build_absolute_uri }}"
         }
         iFrameResize({}, '#iframeMetabase');
     </script>
