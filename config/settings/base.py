@@ -91,6 +91,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                # Project's context processors
+                "pilotage.utils.context_processors.expose_settings",
             ],
         },
     },
@@ -184,4 +186,5 @@ ignore_logger("django.security.DisallowedHost")
 # Project settings
 # ----------------
 
+METABASE_BASE_URL = os.getenv("METABASE_BASE_URL")
 METABASE_SECRET_KEY = os.getenv("METABASE_SECRET_KEY")
