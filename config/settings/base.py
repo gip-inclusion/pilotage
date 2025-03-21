@@ -184,6 +184,8 @@ ignore_logger("django.security.DisallowedHost")
 # Project settings
 # ----------------
 
+GIP_SITE_BASE_URL = "https://inclusion.beta.gouv.fr"
+
 MATOMO_BASE_URL = os.getenv("MATOMO_BASE_URL")
 MATOMO_SITE_ID = os.getenv("MATOMO_SITE_ID")
 
