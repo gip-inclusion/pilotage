@@ -38,7 +38,7 @@
                         Ils sont visibles dans l’onglet “Tableau de bord” dans l’espace “Services partenaires” et dans la rubrique “Pilotage de l’inclusion”.
                     </p>
                     <p>
-                        Accéder au guide d’accès à vos tableaux de bord privés <a href="https://aide.pilotage.inclusion.beta.gouv.fr/hc/fr/articles/16882353292817--Acc%C3%A9der-aux-tableaux-de-bord-priv%C3%A9s" target="_blank" class="has-external-link">en cliquant ici</a>.
+                        Accéder au guide d’accès à vos tableaux de bord privés <a href="{{ HELP_CENTER_BASE_URL }}/hc/fr/articles/16882353292817--Acc%C3%A9der-aux-tableaux-de-bord-priv%C3%A9s" target="_blank" class="has-external-link">en cliquant ici</a>.
                     </p>
                     <p class="h3">Cliquer sur le lien correspondant à votre profil utilisateur et consulter vos tableaux de bord privés de pilotage.</p>
                 </div>
@@ -58,7 +58,7 @@
                             <p>Je travaille pour la DGEFP, la DIHAL, la DRIHL, une DREETS ou une DDETS</p>
                         </div>
                         <div class="card-footer text-end">
-                            <a href="https://emplois.inclusion.beta.gouv.fr/login/labor_inspector" target="_blank" class="btn btn-ico btn-link stretched-link">
+                            <a href="{{ EMPLOIS_BASE_URL }}/login/labor_inspector" target="_blank" class="btn btn-ico btn-link stretched-link">
                                 <span>Accéder à mes statistiques</span>
                                 <i class="ri-external-link-line ri-lg" aria-hidden="true"></i>
                             </a>
@@ -74,7 +74,7 @@
                             <p>Je travaille pour un Conseil Départemental, France Travail, une Mission locale, un Cap emploi ou au sein d’une structure de l’accueil de l’hébergement et de l’insertion</p>
                         </div>
                         <div class="card-footer text-end">
-                            <a href="https://emplois.inclusion.beta.gouv.fr/login/prescriber" target="_blank" class="btn btn-ico btn-link stretched-link">
+                            <a href="{{ EMPLOIS_BASE_URL }}/login/prescriber" target="_blank" class="btn btn-ico btn-link stretched-link">
                                 <span>Accéder à mes statistiques</span>
                                 <i class="ri-external-link-line ri-lg" aria-hidden="true"></i>
                             </a>
@@ -90,7 +90,7 @@
                             <p>Je travaille pour une SIAE, un réseau de l’IAE</p>
                         </div>
                         <div class="card-footer text-end">
-                            <a href="https://emplois.inclusion.beta.gouv.fr/login/employer" target="_blank" class="btn btn-ico btn-link stretched-link">
+                            <a href="{{ EMPLOIS_BASE_URL }}/login/employer" target="_blank" class="btn btn-ico btn-link stretched-link">
                                 <span>Accéder à mes statistiques</span>
                                 <i class="ri-external-link-line ri-lg" aria-hidden="true"></i>
                             </a>
@@ -104,5 +104,5 @@
 
 {% block js %}
     {{ block.super }}
-    {% include 'partials/footer-scripts.html' with hasTracking=True %}
+    {% include 'partials/footer-scripts.html' %}
 {% endblock %}

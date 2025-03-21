@@ -103,5 +103,5 @@
 
 {% block js %}
     {{ block.super }}
-    {% include 'partials/footer-scripts.html' with hasTracking=True hasIframeResizer=True hasTallyEmbed=dashboard.tally_embed_id hasTallyPopup=dashboard.tally_popup_id %}
+    {% include 'partials/footer-scripts.html' with hasIframeResizer=True hasTallyEmbed=dashboard.tally_embed_id hasTallyPopup=dashboard.tally_popup_id %}
 {% endblock %}

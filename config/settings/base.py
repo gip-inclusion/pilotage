@@ -41,7 +41,6 @@ CSRF_COOKIE_SECURE = True
 ALLOWED_HOSTS = [
     "pilotage.inclusion.beta.gouv.fr",
     "pilotage-staging.cleverapps.io",
-    "pilotage-prod.cleverapps.io",
 ]
 
 SECURE_HSTS_SECONDS = 31536000
@@ -89,6 +88,8 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                # Project's context processors
+                "pilotage.utils.context_processors.expose_settings",
             ],
         },
     },
@@ -182,4 +183,14 @@ ignore_logger("django.security.DisallowedHost")
 # Project settings
 # ----------------
 
+EMPLOIS_BASE_URL = "https://emplois.inclusion.beta.gouv.fr"
+
+GIP_SITE_BASE_URL = "https://inclusion.beta.gouv.fr"
+
+MATOMO_BASE_URL = os.getenv("MATOMO_BASE_URL")
+MATOMO_SITE_ID = os.getenv("MATOMO_SITE_ID")
+
+METABASE_BASE_URL = os.getenv("METABASE_BASE_URL")
 METABASE_SECRET_KEY = os.getenv("METABASE_SECRET_KEY")
+
+HELP_CENTER_BASE_URL = "https://aide.pilotage.inclusion.beta.gouv.fr"

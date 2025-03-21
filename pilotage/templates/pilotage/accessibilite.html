@@ -42,7 +42,7 @@
                             <strong>Le GIP Plateforme de l’inclusion</strong> s’engage à rendre ses sites internet et applications accessibles conformément à l’article 47 de la loi n°2005-102 du 11 février 2005.
                         </p>
                         <p>
-                            Son schéma pluriannuel décrit les points importants sur lesquels le GIP de la plateforme de l’inclusion s’appuiera pour améliorer l’accessibilité numérique de l’ensemble de ses sites internet et applications. Ce schéma s’accompagne du plans d’action annuels (<a href="https://inclusion.beta.gouv.fr/documents/86/GIP_plateforme_de_linclusion_-_Plan_annuel_daccessibilite_2023.pdf" target="_blank" class="has-external-link">2023</a>) qui détaillent les opérations programmées et mises en œuvre pour l'année courante, ainsi que l’état de suivis de ces actions, détaillé dans le <a href="https://inclusion.beta.gouv.fr/documents/87/GIP_plateforme_de_linclusion_-_Schema_pluriannuel_daccessibilite_2023-2026.pdf" target="_blank" class="has-external-link">schéma pluriannuel d’accessibilité 2023-2026</a>.
+                            Son schéma pluriannuel décrit les points importants sur lesquels le GIP de la plateforme de l’inclusion s’appuiera pour améliorer l’accessibilité numérique de l’ensemble de ses sites internet et applications. Ce schéma s’accompagne du plans d’action annuels (<a href="{{ GIP_SITE_BASE_URL }}/documents/86/GIP_plateforme_de_linclusion_-_Plan_annuel_daccessibilite_2023.pdf" target="_blank" class="has-external-link">2023</a>) qui détaillent les opérations programmées et mises en œuvre pour l'année courante, ainsi que l’état de suivis de ces actions, détaillé dans le <a href="{{ GIP_SITE_BASE_URL }}/documents/87/GIP_plateforme_de_linclusion_-_Schema_pluriannuel_daccessibilite_2023-2026.pdf" target="_blank" class="has-external-link">schéma pluriannuel d’accessibilité 2023-2026</a>.
                         </p>
                         <p>
                             Cette déclaration d’accessibilité s’applique au <strong>Pilotage de l'inclusion</strong>.
@@ -50,7 +50,7 @@
                         <br>
                         <h3>État de conformité</h3>
                         <p>
-                            <strong>Le site <a href="https://pilotage.inclusion.beta.gouv.fr/">pilotage de l'inclusion</a></strong> est <strong>partiellement</strong> conforme avec le référentiel général d’amélioration de l’accessibilité (RGAA), version 4 en raison des non-conformités et des dérogations énumérées ci-dessous.
+                            <strong>Le site <a href="{{ request.build_absolute_uri }}">pilotage de l'inclusion</a></strong> est <strong>partiellement</strong> conforme avec le référentiel général d’amélioration de l’accessibilité (RGAA), version 4 en raison des non-conformités et des dérogations énumérées ci-dessous.
                         </p>
                         <br>
                         <h3>Résultats des tests</h3>
@@ -102,10 +102,10 @@
                         <p>Si vous n'arrivez pas à accéder à un contenu ou à un service, vous pouvez nous contacter pour être orienté vers une alternative accessible ou obtenir le contenu sous une autre forme.</p>
                         <ul>
                             <li>
-                                Envoyer <a href="https://aide.pilotage.inclusion.beta.gouv.fr/" target="_blank" class="has-external-link">un message</a>
+                                Envoyer <a href="{{ HELP_CENTER_BASE_URL }}/" target="_blank" class="has-external-link">un message</a>
                             </li>
                             <li>
-                                Contacter <a href="https://aide.pilotage.inclusion.beta.gouv.fr/" target="_blank" class="has-external-link">Le GIP Plateforme de l’inclusion</a>.
+                                Contacter <a href="{{ HELP_CENTER_BASE_URL }}/" target="_blank" class="has-external-link">Le GIP Plateforme de l’inclusion</a>.
                             </li>
                         </ul>
                         <br>
@@ -134,5 +134,5 @@
 
 {% block js %}
     {{ block.super }}
-    {% include 'partials/footer-scripts.html' with hasTracking=True %}
+    {% include 'partials/footer-scripts.html' %}
 {% endblock %}
