@@ -184,6 +184,9 @@ ignore_logger("django.security.DisallowedHost")
 # Project settings
 # ----------------
 
+MATOMO_BASE_URL = os.getenv("MATOMO_BASE_URL")
+MATOMO_SITE_ID = os.getenv("MATOMO_SITE_ID")
+
 METABASE_BASE_URL = os.getenv("METABASE_BASE_URL")
 METABASE_SECRET_KEY = os.getenv("METABASE_SECRET_KEY")
 

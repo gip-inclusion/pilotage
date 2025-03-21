@@ -69,11 +69,10 @@
     (tarteaucitron.job = tarteaucitron.job || []).push('googlefonts');
 </script>
 
-{% if hasTracking %}
-    <!-- hasTracking -->
-    <script type="text/javascript">
-        tarteaucitron.user.matomoId = 146;
-        tarteaucitron.user.matomoHost = "//matomo.inclusion.beta.gouv.fr/";
+{% if MATOMO_BASE_URL and MATOMO_SITE_ID %}
+    <script>
+        tarteaucitron.user.matomoId = "{{ MATOMO_SITE_ID }}";
+        tarteaucitron.user.matomoHost = "{{ MATOMO_BASE_URL }}";
         (tarteaucitron.job = tarteaucitron.job || []).push('matomo');
     </script>
 
@@ -87,7 +86,7 @@
             g = d.createElement('script'),
             s = d.getElementsByTagName('script')[0];
         g.async = true;
-        g.src = '//matomo.inclusion.beta.gouv.fr/js/container_czDcW7tH.js';
+        g.src = '{{ MATOMO_BASE_URL }}/js/container_czDcW7tH.js';
         s.parentNode.insertBefore(g, s);
     </script>
 {% endif %}
