@@ -186,3 +186,5 @@ ignore_logger("django.security.DisallowedHost")
 
 METABASE_BASE_URL = os.getenv("METABASE_BASE_URL")
 METABASE_SECRET_KEY = os.getenv("METABASE_SECRET_KEY")
+
+HELP_CENTER_BASE_URL = "https://aide.pilotage.inclusion.beta.gouv.fr"
