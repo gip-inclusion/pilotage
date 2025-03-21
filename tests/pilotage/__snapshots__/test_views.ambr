@@ -49,7 +49,7 @@
                           <br/>
                           <h3>État de conformité</h3>
                           <p>
-                              <strong>Le site <a href="https://pilotage.inclusion.beta.gouv.fr/">pilotage de l'inclusion</a></strong> est <strong>partiellement</strong> conforme avec le référentiel général d’amélioration de l’accessibilité (RGAA), version 4 en raison des non-conformités et des dérogations énumérées ci-dessous.
+                              <strong>Le site <a href="http://testserver/accessibilite/">pilotage de l'inclusion</a></strong> est <strong>partiellement</strong> conforme avec le référentiel général d’amélioration de l’accessibilité (RGAA), version 4 en raison des non-conformités et des dérogations énumérées ci-dessous.
                           </p>
                           <br/>
                           <h3>Résultats des tests</h3>
@@ -189,7 +189,7 @@
                               <p>c’est le taux de candidatures acceptées en 2023 par les SIAE</p>
                           </div>
                           <div>
-                              <a aria-label="Consulter les données sur les candidatures acceptées" class="btn btn-link ps-0 has-external-link" href="https://pilotage.inclusion.beta.gouv.fr/tableaux-de-bord/bilan-candidatures-iae/" target="_blank">Consulter ces données</a>
+                              <a aria-label="Consulter les données sur les candidatures acceptées" class="btn btn-link ps-0 has-external-link" href="http://testserver/tableaux-de-bord/bilan-candidatures-iae/" target="_blank">Consulter ces données</a>
                           </div>
                       </div>
                       <div class="d-flex flex-column w-100">
@@ -201,7 +201,7 @@
                               <p>c’est le nombre de candidatures orientées en 2023 vers les SIAE</p>
                           </div>
                           <div>
-                              <a aria-label="Consulter les données sur les candidatures orientées" class="btn btn-link ps-0 has-external-link" href="https://pilotage.inclusion.beta.gouv.fr/tableaux-de-bord/bilan-candidatures-iae/" target="_blank">Consulter ces données</a>
+                              <a aria-label="Consulter les données sur les candidatures orientées" class="btn btn-link ps-0 has-external-link" href="http://testserver/tableaux-de-bord/bilan-candidatures-iae/" target="_blank">Consulter ces données</a>
                           </div>
                       </div>
                       <div class="d-flex flex-column w-100">
@@ -212,7 +212,7 @@
                               <p>C'est le nombre de candidats à l'IAE sans candidature acceptée au 17 mars 2024.</p>
                           </div>
                           <div>
-                              <a aria-label="Consulter les données sur les candidats à l'IAE sans candidatures acceptées" class="btn btn-link ps-0 has-external-link" href="https://pilotage.inclusion.beta.gouv.fr/tableaux-de-bord/bilan-candidatures-iae/" target="_blank">Consulter ces données</a>
+                              <a aria-label="Consulter les données sur les candidats à l'IAE sans candidatures acceptées" class="btn btn-link ps-0 has-external-link" href="http://testserver/tableaux-de-bord/bilan-candidatures-iae/" target="_blank">Consulter ces données</a>
                           </div>
                       </div>
                   </div>
