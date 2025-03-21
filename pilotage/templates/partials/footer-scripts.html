@@ -95,7 +95,7 @@
 {% if hasIframeResizer %}
     <!-- hasIframeResizer -->
     <script src="{% static "vendor/iframe-resizer/iframeResizer.contentWindow.min.js" %}"></script>
-    <script src="//stats.inclusion.beta.gouv.fr/app/iframeResizer.js"></script>
+    <script src="{{ METABASE_BASE_URL }}/app/iframeResizer.js"></script>
     <script>
         window.iFrameResizer = {
             targetOrigin: "//pilotage.inclusion.beta.gouv.fr"
