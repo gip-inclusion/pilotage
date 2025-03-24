@@ -13,3 +13,4 @@ def pytest_collection_modifyitems(config, items):
 @pytest.fixture(name="default_settings", autouse=True)
 def default_settings_fixture(settings):
     settings.METABASE_BASE_URL = "https://metabase.fake"
+    settings.METABASE_API_KEY = ""

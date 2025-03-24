@@ -1,0 +1,26 @@
+# serializer version: 1
+# name: test_dataset_with_unknown_department[di_services]
+  dict({
+    'error': "Department doesn't exists",
+  })
+# ---
+# name: test_dataset_with_unknown_department[di_structures]
+  dict({
+    'error': "Department doesn't exists",
+  })
+# ---
+# name: test_dataset_with_unknown_name
+  dict({
+    'error': "Dataset doesn't exists",
+  })
+# ---
+# name: test_dataset_without_department[di_services]
+  dict({
+    'error': 'Department is a required query parameter',
+  })
+# ---
+# name: test_dataset_without_department[di_structures]
+  dict({
+    'error': 'Department is a required query parameter',
+  })
+# ---
