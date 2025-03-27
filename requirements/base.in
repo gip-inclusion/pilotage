@@ -10,9 +10,7 @@ django-libsass  # https://github.com/torchbox/django-libsass
 
 # Third-party applications
 # ------------------------------------------------------------------------------
+httpx  # https://github.com/encode/httpx/
 Markdown  # https://python-markdown.github.io/
-
-# Embedding Metabase signed dashboards
 PyJWT  # https://github.com/jpadilla/pyjwt
-
 sentry-sdk  # https://github.com/getsentry/sentry-python
