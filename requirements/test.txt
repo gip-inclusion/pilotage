@@ -12,6 +12,7 @@ asgiref==3.8.1 \
     # via
     #   -r requirements/base.txt
     #   django
+    #   django-cors-headers
 beautifulsoup4==4.13.3 \
     --hash=sha256:1bd32405dacc920b42b83ba01644747ed77456a65760e285fbc47633ceddaf8b \
     --hash=sha256:99045d7d3f08f91f0d656bc9b7efbae189426cd913d830294a15eefa0ea4df16
@@ -43,6 +44,7 @@ django==5.1.7 \
     #   -r requirements/base.txt
     #   django-appconf
     #   django-compressor
+    #   django-cors-headers
     #   django-datadog-logger
     #   djangorestframework
 django-appconf==1.1.0 \
@@ -57,6 +59,10 @@ django-compressor==4.5.1 \
     # via
     #   -r requirements/base.txt
     #   django-libsass
+django-cors-headers==4.7.0 \
+    --hash=sha256:6fdf31bf9c6d6448ba09ef57157db2268d515d94fc5c89a0a1028e1fc03ee52b \
+    --hash=sha256:f1c125dcd58479fe7a67fe2499c16ee38b81b397463cf025f0e2c42937421070
+    # via -r requirements/base.txt
 django-datadog-logger==0.7.3 \
     --hash=sha256:4361bb068a4b188fa14135398f9b747728464a291757e6adf8c95c9215dcd602 \
     --hash=sha256:87838cd868f407e050831c536413de6b2ece31433b28c952c0fd90be1d66486a

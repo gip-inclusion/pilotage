@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     "pilotage.dashboards",
     "pilotage.utils",
     "compressor",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,7 @@ MIDDLEWARE = [
     "django_datadog_logger.middleware.request_id.RequestIdMiddleware",
     # Django stack
     "django.middleware.security.SecurityMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.gzip.GZipMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.http.ConditionalGetMiddleware",
@@ -211,6 +213,10 @@ sentry_sdk.init(
     traces_sample_rate=float(os.getenv("SENTRY_TRACES_SAMPLE_RATE", "0.1")),
 )  # Read from SENTRY_DSN and SENTRY_ENVIRONMENT
 ignore_logger("django.security.DisallowedHost")
+
+# CORS
+CORS_URLS_REGEX = r"^/api/.*$"
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Project settings
 # ----------------
