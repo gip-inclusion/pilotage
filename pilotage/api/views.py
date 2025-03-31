@@ -52,6 +52,7 @@ QUERIES = {
             "source-table": 2051,
             "fields": [
                 ["field", 59591, {"base-type": "type/Text"}],  # ID
+                ["field", 59600, {"base-type": "type/Text"}],  # Nom
                 ["field", 59608, {"base-type": "type/Text"}],  # Commune
                 ["field", 59606, {"base-type": "type/Text"}],  # Code Postal
                 ["field", 59588, {"base-type": "type/Text"}],  # Code Insee
