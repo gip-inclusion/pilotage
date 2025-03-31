@@ -5,6 +5,7 @@ psycopg[binary]  # https://github.com/psycopg/psycopg
 
 Django==5.1.*  # https://www.djangoproject.com/
 django-compressor  # https://django-compressor.readthedocs.io/en/latest/
+django-cors-headers  # https://github.com/adamchainz/django-cors-headers
 django-datadog-logger  # https://github.com/namespace-ee/django-datadog-logger
 django-libsass  # https://github.com/torchbox/django-libsass
 
