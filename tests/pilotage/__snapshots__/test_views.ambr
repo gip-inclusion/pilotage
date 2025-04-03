@@ -1011,7 +1011,7 @@
           <div class="s-embed__container container">
               <div class="s-embed__row row">
                   <div class="s-embed__col col-12" id="embedMetabase">
-                      <iframe allowtransparency="" id="iframeMetabase" src="https://metabase.fake/embed/dashboard/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZSI6eyJkYXNoYm9hcmQiOjYzfSwicGFyYW1zIjp7fSwiZXhwIjoxNzQxMjE5ODAwfQ.-RzvcGWU6TYwe6kmtGwrDNiWaiAVfW95aw1LqDmgsfw#bordered=true&amp;titled=false" title="Statistiques du pilotage de l'inclusion"></iframe>
+                      <iframe allowtransparency="" id="iframeMetabase" src="https://metabase.fake/embed/dashboard/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZSI6eyJkYXNoYm9hcmQiOjU0M30sInBhcmFtcyI6e30sImV4cCI6MTc0MTIxOTgwMH0.P2YbgJXkm6h7n3HwKLpsbMvr0CZNUJxhHLkNFXGRpaI#bordered=true&amp;titled=false" title="Statistiques du pilotage de l'inclusion"></iframe>
                   </div>
               </div>
           </div>
