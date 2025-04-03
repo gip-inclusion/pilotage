@@ -66,6 +66,14 @@ fix: fast_fix
 test: $(VIRTUAL_ENV)
 	pytest --create-db $(TARGET)
 
+# Snapshot update
+# =============================================================================
+
+.PHONY: snapshot
+
+snapshot: $(VIRTUAL_ENV)
+	pytest --snapshot-update $(TARGET)
+
 # Deployment
 # =============================================================================
 .PHONY: deploy_prod
