@@ -40,15 +40,17 @@
           </div>
       </section>
   
-      <section class="s-embed m-0">
-          <div class="s-embed__container container">
-              <div class="s-embed__row row">
-                  <div class="col-12">
-                      <iframe allowtransparency="" id="iframeMetabase" src="https://metabase.fake/embed/dashboard/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZSI6eyJkYXNoYm9hcmQiOjB9LCJwYXJhbXMiOnt9LCJleHAiOjE3NDEyMTk4MDB9.eog3uHiTf9_syfFz2kUub0FUfLapUrCF5VhUGLOmdTg#bordered=true&amp;titled=false" title="super duper baseline"></iframe>
+      
+          <section class="s-embed m-0">
+              <div class="s-embed__container container">
+                  <div class="s-embed__row row">
+                      <div class="col-12">
+                          <iframe allowtransparency="" id="iframeMetabase" src="https://metabase.fake/embed/dashboard/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNvdXJjZSI6eyJkYXNoYm9hcmQiOjB9LCJwYXJhbXMiOnt9LCJleHAiOjE3NDEyMTk4MDB9.eog3uHiTf9_syfFz2kUub0FUfLapUrCF5VhUGLOmdTg#bordered=true&amp;titled=false" title="super duper baseline"></iframe>
+                      </div>
                   </div>
               </div>
-          </div>
-      </section>
+          </section>
+      
   
       
           <section class="s-embed s-embed--tally">

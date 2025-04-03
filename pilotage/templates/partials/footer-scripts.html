@@ -99,7 +99,23 @@
         window.iFrameResizer = {
             targetOrigin: "{{ request.build_absolute_uri }}"
         }
-        iFrameResize({}, '#iframeMetabase');
+        iFrameResize({
+            waitForLoad: true
+        }, '#iframeMetabase');
+    </script>
+{% endif %}
+
+{% if hasIframeResizerFromOther %}
+    <!-- hasIframeResizerFromOther -->
+    <script src="{% static "vendor/iframe-resizer/iframeResizer.contentWindow.min.js" %}"></script>
+    <script src="{{hasIframeResizerFromOther}}/iframeResizer.js"></script>
+    <script>
+        window.iFrameResizer = {
+            targetOrigin: "{{ request.build_absolute_uri }}"
+        }
+        iFrameResize({
+            waitForLoad: true
+        }, '#iframeFromOther');
     </script>
 {% endif %}
 
