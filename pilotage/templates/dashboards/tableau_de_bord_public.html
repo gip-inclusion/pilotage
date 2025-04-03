@@ -74,15 +74,28 @@
         </div>
     </section>
 
-    <section class="s-embed m-0">
-        <div class="s-embed__container container">
-            <div class="s-embed__row row">
-                <div class="col-12">
-                    <iframe src="{{ dashboard.metabase_db_id | iframeurl }}" title="{{ dashboard.baseline }}" id="iframeMetabase" allowtransparency></iframe>
+    {% if dashboard.embed_url %}
+        <!-- Quick win crassou aussi pour permettre d'afficher des TBs provenant d'ailleurs que de metabase -->
+        <section class="s-embed m-0">
+            <div class="s-embed__container container">
+                <div class="s-embed__row row">
+                    <div class="col-12">
+                        <iframe src="{{ dashboard.embed_url }}" title="{{ dashboard.baseline }}" id="iframeFromOther" allowtransparency></iframe>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    {% else %}
+        <section class="s-embed m-0">
+            <div class="s-embed__container container">
+                <div class="s-embed__row row">
+                    <div class="col-12">
+                        <iframe src="{{ dashboard.metabase_db_id | iframeurl }}" title="{{ dashboard.baseline }}" id="iframeMetabase" allowtransparency></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
 
     {% if dashboard.tally_embed_id %}
         <section class="s-embed s-embed--tally">
@@ -103,5 +116,9 @@
 
 {% block js %}
     {{ block.super }}
-    {% include 'partials/footer-scripts.html' with hasIframeResizer=True hasTallyEmbed=dashboard.tally_embed_id hasTallyPopup=dashboard.tally_popup_id %}
+    {% if dashboard.embed_url %}
+        {% include 'partials/footer-scripts.html' with hasIframeResizerFromOther=dashboard.embed_url hasTallyEmbed=dashboard.tally_embed_id hasTallyPopup=dashboard.tally_popup_id %}
+    {% else %}
+        {% include 'partials/footer-scripts.html' with hasIframeResizer=True hasTallyEmbed=dashboard.tally_embed_id hasTallyPopup=dashboard.tally_popup_id %}
+    {% endif %}
 {% endblock %}
