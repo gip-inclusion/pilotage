@@ -37,21 +37,11 @@
 
     {% include 'partials/home_section_apercu.html' %}
 
-    <div id="original">
-        {% include 'partials/home_section_comment.html' %}
+    {% include 'partials/home_section_comment.html' %}
 
-        {% include 'partials/home_section_suggestion.html' %}
+    {% include 'partials/home_section_suggestion.html' %}
 
-        {% include 'partials/home_section_accompagne.html' %}
-    </div>
-
-    <div id="variationB" class="d-none">
-        {% include 'partials/home_section_accompagne.html' %}
-
-        {% include 'partials/home_section_suggestion.html' %}
-
-        {% include 'partials/home_section_comment.html' %}
-    </div>
+    {% include 'partials/home_section_accompagne.html' %}
 
     <section class="s-section mt-md-0 mb-md-7">
         <div class="s-section__container container container-max-lg">
@@ -94,40 +84,4 @@
             window.open(tallyUrl + "?suggestion=" + inputContinuer.value);
         });
     </script>
-
-    <!-- Matomo A/B Test -->
-    <script type="text/javascript">
-        const original = document.getElementById("original");
-        const variationB = document.getElementById("variationB");
-
-        var _paq = _paq || [];
-        _paq.push(['AbTesting::create', {
-            name: 'QuelleVersionDeLaHomepage', // you can also use '7' (ID of the experiment) to hide the name
-            percentage: 100,
-            includedTargets: [{
-                "attribute": "url",
-                "inverted": "0",
-                "type": "equals_simple",
-                "value": "https:\/\/pilotage.inclusion.beta.gouv.fr\/"
-            }],
-            excludedTargets: [],
-            variations: [{
-                name: 'original',
-                activate: function(event) {
-                    original.classList.remove("d-none");
-                    variationB.classList.add('d-none');
-                }
-            }, {
-                name: 'VariationB', // you can also use '12' (ID of the variation) to hide the name
-                activate: function(event) {
-                    variationB.classList.remove("d-none");
-                    original.classList.add('d-none');
-                }
-            }],
-            trigger: function() {
-                return true; // here you can further customize which of your visitors will participate in this experiment
-            }
-        }]);
-    </script>
-    <!-- Matomo A/B Test -->
 {% endblock %}
