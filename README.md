@@ -2,6 +2,13 @@
 
 ## Initialiser le projet
 
+`uv` est utilisé pour installer la bonne version de Python et les dépendances
+du projet.
+
+Pour l’installer, suivre la documentation officielle
+https://docs.astral.sh/uv/getting-started/installation/. Un paquet est
+disponible pour la plupart des distributions Linux.
+
 1. `make venv`
 2. créer un fichier `.envrc.local` contenant au minimum le chemin vers le .venv : `echo "source .venv/bin/activate" >> .envrc.local`
 3. démarrer le container pour la première fois `docker compose up`
