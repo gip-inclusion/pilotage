@@ -216,7 +216,7 @@ pluggy==1.6.0 \
     # via
     #   -r requirements/test.txt
     #   pytest
-psycopg[binary]==3.2.6 \
+psycopg==3.2.6 \
     --hash=sha256:16fa094efa2698f260f2af74f3710f781e4a6f226efe9d1fd0c37f384639ed8a \
     --hash=sha256:f3ff5488525890abb0566c429146add66b329e20d6d4835662b920cbbf90ac58
     # via -r requirements/test.txt
@@ -286,9 +286,7 @@ psycopg-binary==3.2.6 \
     --hash=sha256:f1981f13b10de2f11cfa2f99a8738b35b3f0a0f3075861446894a8d3042430c0 \
     --hash=sha256:f27a46ff0497e882e8c0286e8833c785b4d1a80f23e1bf606f4c90e5f9f3ce75 \
     --hash=sha256:f7956b9ea56f79cd86eddcfbfc65ae2af1e4fe7932fa400755005d903c709370
-    # via
-    #   -r requirements/test.txt
-    #   psycopg
+    # via -r requirements/test.txt
 pyjwt==2.10.1 \
     --hash=sha256:3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953 \
     --hash=sha256:dcdd193e30abefd5debf142f9adfcdd2b58004e644f25406ffaebd50bd98dacb
@@ -657,26 +655,6 @@ urllib3==2.4.0 \
     # via
     #   -r requirements/test.txt
     #   sentry-sdk
-uv==0.7.8 \
-    --hash=sha256:0c691090ff631dde788c8f4f1b1ea20f9deb9d805289796dcf10bc4a144a817e \
-    --hash=sha256:13af6b94563f25bdca6bb73e294648af9c0b165af5bb60f0c913ab125ec45e06 \
-    --hash=sha256:2a07bdf9d6aadef40dd4edbe209bca698a3d3244df5285d40d2125f82455519c \
-    --hash=sha256:3c620cecd6f3cdab59b316f41c2b1c4d1b709d9d5226cadeec370cfeed56f80c \
-    --hash=sha256:409cee21edcaf4a7c714893656ab4dd0814a15659cb4b81c6929cbb75cd2d378 \
-    --hash=sha256:4a117fe3806ba4ebb9c68fdbf91507e515a883dfab73fa863df9bc617d6de7a3 \
-    --hash=sha256:4acc09c06d6cf7a27e0f1de4edb8c1698b8a3ffe34f322b10f4c145989e434b9 \
-    --hash=sha256:6ebe252f34c50b09b7f641f8e603d7b627f579c76f181680c757012b808be456 \
-    --hash=sha256:81ac0bb371979f48d1293f9c1bee691680ea6a724f16880c8f76718f5ff50049 \
-    --hash=sha256:91d022235b39e59bab4bce7c4b634dc67e16fa89725cdfb2149a6ef7eaf6d784 \
-    --hash=sha256:9221a9679f2ffd031b71b735b84f58d5a2f1adf9bfa59c8e82a5201dad7db466 \
-    --hash=sha256:a59d6749587946d63d371170d8f69d168ca8f4eade5cf880ad3be2793ea29c77 \
-    --hash=sha256:ad79388b0c6eff5383b963d8d5ddcb7fbb24b0b82bf5d0c8b1bdbfbe445cb868 \
-    --hash=sha256:b5b62ca8a1bea5fdbf8a6372eabb03376dffddb5d139688bbb488c0719fa52fc \
-    --hash=sha256:b83866be6a69f680f3d2e36b3befd2661b5596e59e575e266e7446b28efa8319 \
-    --hash=sha256:c058ee0f8c20b0942bd9f5c83a67b46577fa79f5691df8867b8e0f2d74cbadb1 \
-    --hash=sha256:f749b58a5c348c455083781c92910e49b4ddba85c591eb67e97a8b84db03ef9b \
-    --hash=sha256:ff1b7e4bc8a1d260062782ad34d12ce0df068df01d4a0f61d0ddc20aba1a5688
-    # via -r requirements/test.txt
 webencodings==0.5.1 \
     --hash=sha256:a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78 \
     --hash=sha256:b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923
