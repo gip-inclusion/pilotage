@@ -5,6 +5,7 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions: {}
     env:
       DJANGO_SETTINGS_MODULE: config.settings.test
       VIRTUAL_ENV: .venv
