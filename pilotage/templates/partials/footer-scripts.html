@@ -72,7 +72,7 @@
 {% if MATOMO_BASE_URL and MATOMO_SITE_ID %}
     <script>
         tarteaucitron.user.matomoId = "{{ MATOMO_SITE_ID }}";
-        tarteaucitron.user.matomoHost = "{{ MATOMO_BASE_URL }}";
+        tarteaucitron.user.matomoHost = "{{ MATOMO_BASE_URL }}/";
         (tarteaucitron.job = tarteaucitron.job || []).push('matomo');
     </script>
 
