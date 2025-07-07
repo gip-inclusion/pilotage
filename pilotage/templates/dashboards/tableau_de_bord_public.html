@@ -36,39 +36,6 @@
                         {% if dashboard.new %}<span class="badge badge-base rounded-pill bg-important">Nouveau</span>{% endif %}
                     </h1>
                     {% if dashboard.description %}<div>{{ dashboard.description | markdown | safe }}</div>{% endif %}
-                    <!-- Quick win crassou pour permettre de modifier l'encart du TB 408 -->
-                    {% if dashboard.metabase_db_id == 408 %}
-                        <div class="alert alert-warning mt-3 mt-md-4" role="status">
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
-                            <p class="mb-2">
-                                <strong>Votre retour est précieux sur ce nouveau tableau de bord !</strong>
-                            </p>
-                            <p class="mb-0">
-                                Nous aimerions échanger avec quelques utilisateurs de ce nouveau tableau de bord pour collecter des retours sur son usage, ses points forts et ses points d’amélioration. Vous avez 30 minutes à nous accorder ? <a href="https://tally.so/r/3jL896">Je suis volontaire !</a>
-                            </p>
-                        </div>
-                    {% elif show_webinar_banner %}
-                        <div class="alert alert-info alert-dismissible fade show" role="status">
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
-                            <div class="row">
-                                <div class="col-auto pe-0">
-                                    <i class="ri-information-line ri-xl text-info" aria-hidden="true"></i>
-                                </div>
-                                <div class="col">
-                                    <p class="mb-2">
-                                        <strong>Des questions sur l’utilisation des tableaux de bord ?</strong>
-                                    </p>
-                                    <p class="mb-0">Nous y répondons lors d’un webinaire questions / réponses animé chaque mois.</p>
-                                </div>
-                                <div class="col-12 col-md-auto mt-3 mt-md-0 d-flex align-items-center justify-content-center">
-                                    <a class="btn btn-sm btn-primary btn-block btn-ico"
-                                       href="https://app.livestorm.co/itou/le-pilotage-de-linclusion-professionnels-de-liae-questions-reponses-sur-les-tableaux-de-bord-1"
-                                       target="_blank"
-                                       rel="noopener"><span>Je m’inscris</span> <i class="ri-external-link-line fw-medium" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    {% endif %}
                 </div>
             </div>
         </div>
