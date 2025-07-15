@@ -6,9 +6,9 @@ anyio==4.9.0 \
     # via
     #   -r requirements/base.txt
     #   httpx
-asgiref==3.9.0 \
-    --hash=sha256:06a41250a0114d2b6f6a2cb3ab962147d355b53d1de15eebc34a9d04a7b79981 \
-    --hash=sha256:3dd2556d0f08c4fab8a010d9ab05ef8c34565f6bf32381d17505f7ca5b273767
+asgiref==3.9.1 \
+    --hash=sha256:a5ab6582236218e5ef1648f242fd9f10626cfd4de8dc377db215d5d5098e3142 \
+    --hash=sha256:f3bba7092a48005b5f5bacd747d36ee4a5a61f4a269a6df590b43144355ebd2c
     # via
     #   -r requirements/base.txt
     #   django
@@ -193,7 +193,7 @@ pluggy==1.6.0 \
     --hash=sha256:7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3 \
     --hash=sha256:e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746
     # via pytest
-psycopg[binary]==3.2.6 \
+psycopg==3.2.6 \
     --hash=sha256:16fa094efa2698f260f2af74f3710f781e4a6f226efe9d1fd0c37f384639ed8a \
     --hash=sha256:f3ff5488525890abb0566c429146add66b329e20d6d4835662b920cbbf90ac58
     # via -r requirements/base.txt
@@ -263,9 +263,7 @@ psycopg-binary==3.2.6 \
     --hash=sha256:f1981f13b10de2f11cfa2f99a8738b35b3f0a0f3075861446894a8d3042430c0 \
     --hash=sha256:f27a46ff0497e882e8c0286e8833c785b4d1a80f23e1bf606f4c90e5f9f3ce75 \
     --hash=sha256:f7956b9ea56f79cd86eddcfbfc65ae2af1e4fe7932fa400755005d903c709370
-    # via
-    #   -r requirements/base.txt
-    #   psycopg
+    # via -r requirements/base.txt
 pygments==2.19.2 \
     --hash=sha256:636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887 \
     --hash=sha256:86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b
