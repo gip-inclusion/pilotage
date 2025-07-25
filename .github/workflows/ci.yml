@@ -16,7 +16,7 @@ jobs:
     services:
       postgres:
         # Docker Hub image
-        image: postgres:15-alpine
+        image: postgres:17
         env:
           POSTGRES_PASSWORD: password
         ports:
