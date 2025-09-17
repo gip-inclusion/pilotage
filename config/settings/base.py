@@ -55,16 +55,21 @@ SECURE_HSTS_PRELOAD = True
 # Application definition
 
 INSTALLED_APPS = [
+    # Django apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "pilotage.dashboards",
-    "pilotage.utils",
+    # Third party apps
+    "django_bootstrap5",
     "compressor",
     "corsheaders",
+    # Our apps
+    "pilotage.dashboards",
+    "pilotage.surveys",
+    "pilotage.utils",
 ]
 
 MIDDLEWARE = [
