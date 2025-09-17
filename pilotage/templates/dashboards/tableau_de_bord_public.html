@@ -80,12 +80,3 @@
         </section>
     {% endif %}
 {% endblock %}
-
-{% block js %}
-    {{ block.super }}
-    {% if dashboard.embed_url %}
-        {% include 'partials/footer-scripts.html' with hasIframeResizerFromOther=dashboard.embed_url hasTallyEmbed=dashboard.tally_embed_id hasTallyPopup=dashboard.tally_popup_id %}
-    {% else %}
-        {% include 'partials/footer-scripts.html' with hasIframeResizer=True hasTallyEmbed=dashboard.tally_embed_id hasTallyPopup=dashboard.tally_popup_id %}
-    {% endif %}
-{% endblock %}
