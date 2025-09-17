@@ -1,0 +1,75 @@
+{% extends "layouts/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block title %}Étude {{ survey.get_kind_display }} {{ survey.vintage }} - {{ block.super }}{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="c-breadcrumb" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'pilotage:home' %}">Accueil</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Étude {{ survey.get_kind_display }} {{ survey.vintage }}</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s-title-01">
+        <div class="s-title-01__container container">
+            <div class="s-title-01__row row">
+                <div class="s-title-01__col col-12 col-lg-12">
+                    <h1>{{ title|capfirst }}</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s-section">
+        <div class="s-section__container container">
+            <div class="s-section__row row">
+                <div class="s-section__col col-12 col-xxl-8 col-xxxl-9 order-2 order-xxl-1">
+                    <div class="c-form mb-3 mb-md-4">
+                        <form method="post">
+
+                            {% csrf_token %}
+
+                            {% bootstrap_form form alert_error_type="all" %}
+
+                            <div class="form-group text-end">
+                                {% if previous_step_url %}
+                                    {% bootstrap_button "Retour" button_type="link" href=previous_step_url button_class="btn-outline-primary" %}
+                                {% endif %}
+                                {% bootstrap_button next_step|yesno:"Suivant,Valider" button_type="submit" %}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="s-section__col col-12 col-xxl-4 col-xxxl-3 order-1 order-xxl-2">
+                    <div class="c-box mb-3 mb-md-4">
+                        <h2>Étapes du formulaire</h2>
+                        <hr>
+                        <ol>
+                            {% for step in steps_class %}
+                                <li>
+                                    {% if current_step == step %}
+                                        <b>{{ step.label|capfirst }}</b>
+                                    {% else %}
+                                        <a href="{% url "surveys:tunnel" survey_name=survey.name answer_uid=answer.uid step=step %}">{{ step.label|capfirst }}</a>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
