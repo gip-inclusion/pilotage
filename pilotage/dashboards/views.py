@@ -21,5 +21,13 @@ def tableau_de_bord_public(request, slug):
     return render(
         request,
         "dashboards/tableau_de_bord_public.html",
-        context={"dashboard": dashboard, "slug": slug},
+        context={
+            "dashboard": dashboard,
+            "slug": slug,
+            # Parameters for "partials/footer-scripts.html"
+            "hasIframeResizer": not dashboard.embed_url,
+            "hasIframeResizerFromOther": dashboard.embed_url,
+            "hasTallyEmbed": dashboard.tally_embed_id,
+            "hasTallyPopup": dashboard.tally_popup_id,
+        },
     )
