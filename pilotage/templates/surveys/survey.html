@@ -1,0 +1,45 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% load markdown_extras %}
+{% load metabase_extras %}
+
+{% block title %}Étude {{ survey.get_kind_display }} {{ survey.vintage }} - {{ block.super }}{% endblock %}
+
+{% block content %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="c-breadcrumb" aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="{% url 'pilotage:home' %}">Accueil</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Étude {{ survey.get_kind_display }} {{ survey.vintage }}</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s-title-01">
+        <div class="s-title-01__container container">
+            <div class="s-title-01__row row">
+                <div class="s-title-01__col col-12 col-lg-12">
+                    <h1></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s-embed m-0">
+        <div class="s-embed__container container">
+            <div class="s-embed__row row">
+                <div class="col-12"></div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "pilotage.dashboards",
+    "pilotage.surveys",
     "pilotage.utils",
     "compressor",
     "corsheaders",
