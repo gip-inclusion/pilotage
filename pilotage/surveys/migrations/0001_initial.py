@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ("updated_at", models.DateTimeField(auto_now=True, verbose_name="mis à jour le")),
             ],
             options={
-                "verbose_name": "Enquête",
+                "verbose_name": "enquête",
             },
         ),
         migrations.CreateModel(
@@ -54,7 +54,7 @@ class Migration(migrations.Migration):
                 ),
             ],
             options={
-                "verbose_name": "Réponse",
+                "verbose_name": "réponse",
             },
         ),
     ]

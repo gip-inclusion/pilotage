@@ -5,5 +5,6 @@ from pilotage.surveys import views
 
 app_name = "surveys"
 urlpatterns = [
-    path("<slug:name>", views.show, name="show"),
+    path("<slug:survey_name>/", views.start, name="start"),
+    path("<slug:survey_name>/<uuid:answer_uid>/", views.tunnel, name="tunnel"),
 ]
