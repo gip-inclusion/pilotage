@@ -5,9 +5,11 @@ import uuid_utils
 from django.core.validators import MaxValueValidator
 from django.db import models
 from django.db.models import TextChoices
+from django.utils import timezone
 from django.utils.text import slugify
 
 from pilotage.itoutils.departments import DEPARTMENTS
+from pilotage.itoutils.validators import validate_finess, validate_siret
 
 
 def _uuid7():
@@ -74,13 +76,19 @@ class ESATAnswer(Answer):
     # ESATStep.ORGANIZATION
     esat_role = models.CharField(null=True, blank=True, verbose_name="Quelle est votre fonction au sein de l'ESAT ?")
     esat_name = models.CharField(null=True, blank=True, verbose_name="Quel est le nom de votre ESAT ?")
-    # FIXME: Add validator
     esat_siret = models.CharField(
-        null=True, blank=True, max_length=14, verbose_name="Quel est le numéro SIRET de l'ESAT ?"
+        null=True,
+        blank=True,
+        max_length=14,
+        validators=[validate_siret],
+        verbose_name="Quel est le numéro SIRET de l'ESAT ?",
     )
-    # FIXME: Add validator
     finess_num = models.CharField(
-        null=True, blank=True, max_length=9, verbose_name="Quel est le numéro FINESS de l’établissement principal ?"
+        null=True,
+        blank=True,
+        max_length=9,
+        validators=[validate_finess],
+        verbose_name="Quel est le numéro FINESS de l’établissement principal ?",
     )
     managing_organization_name = models.CharField(
         null=True, blank=True, verbose_name="Quel est votre organisme gestionnaire ?"
@@ -326,6 +334,7 @@ class ESATAnswer(Answer):
     pct_more_than50 = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
+        validators=[MaxValueValidator(100)],
         verbose_name="Quelle proportion de travailleurs et travailleuses de plus de 50 ans cela représente ?",
     )
 
@@ -338,6 +347,7 @@ class ESATAnswer(Answer):
     pct_opco = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
+        validators=[MaxValueValidator(100)],
         verbose_name="Quel a été le taux de votre contribution à l’OPCO Santé ou à l’ANFH ?",
         help_text="En pourcentage de l’assiette de contribution",
     )
@@ -489,6 +499,7 @@ class ESATAnswer(Answer):
     pct_employee_activity_bonus = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
+        validators=[MaxValueValidator(100)],
         verbose_name="Quel pourcentage de travailleurs et travailleuses bénéficie de la prime d'activité?",
     )
 
@@ -501,6 +512,7 @@ class ESATAnswer(Answer):
     pct_health_complementary_esat = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
+        validators=[MaxValueValidator(100)],
         verbose_name="Quel était le pourcentage de financement par l'ESAT en 2024 ?",
         help_text="Possibilité de mettre 0",
     )
@@ -517,6 +529,7 @@ class ESATAnswer(Answer):
     year_foresight_in_place = models.CharField(
         null=True,
         blank=True,
+        choices=[(str(year), year) for year in range(timezone.localdate().year, 1900, -1)],
         verbose_name="Depuis quelle année ce régime de prévoyance est-il mis en œuvre dans l'ESAT ?  ",
     )
 
@@ -629,6 +642,7 @@ class ESATAnswer(Answer):
     pct_ca_public = models.PositiveIntegerField(
         null=True,
         blank=True,
+        validators=[MaxValueValidator(100)],
         verbose_name="Indiquez le pourcentage de votre chiffre d'affaires réalisé avec des clients du secteur public",
     )
 
