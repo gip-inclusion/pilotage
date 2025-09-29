@@ -594,9 +594,9 @@ ruff==0.13.1 \
     --hash=sha256:f8cff7a105dad631085d9505b491db33848007d6b487c3c1979dd8d9b2963783 \
     --hash=sha256:ff7f5ce8d7988767dd46a148192a14d0f48d1baea733f055d9064875c7d50389
     # via -r requirements/test.in
-sentry-sdk==2.38.0 \
-    --hash=sha256:2324aea8573a3fa1576df7fb4d65c4eb8d9929c8fa5939647397a07179eef8d0 \
-    --hash=sha256:792d2af45e167e2f8a3347143f525b9b6bac6f058fb2014720b40b84ccbeb985
+sentry-sdk==2.39.0 \
+    --hash=sha256:8c185854d111f47f329ab6bc35993f28f7a6b7114db64aa426b326998cfa14e9 \
+    --hash=sha256:ba655ca5e57b41569b18e2a5552cb3375209760a5d332cdd87c6c3f28f729602
     # via -r requirements/base.txt
 six==1.17.0 \
     --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274 \
