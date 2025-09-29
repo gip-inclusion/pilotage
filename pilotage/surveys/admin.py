@@ -58,3 +58,35 @@ class AnswerAdmin(admin.ModelAdmin):
 
     def has_change_permission(self, request, obj=None):
         return False
+
+
+@admin.register(models.ESATAnswer)
+class ESATAnswerAdmin(AnswerAdmin):
+    def get_fieldsets(self, request, obj=None):
+        fieldsets = list(super().get_fieldsets(request, obj))
+        fieldsets[1:1] = [
+            (
+                "Données - Structure",
+                {
+                    "fields": (
+                        "esat_role",
+                        "esat_name",
+                        "esat_siret",
+                        "finess_num",
+                        "managing_organization_name",
+                        "esat_status",
+                        "esat_dept",
+                    )
+                },
+            ),
+            (
+                "Données - PMSMP",
+                {
+                    "fields": (
+                        "prescription_delegate",
+                        "PMSMP_refused",
+                    )
+                },
+            ),
+        ]
+        return tuple(fieldsets)
