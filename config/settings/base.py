@@ -41,6 +41,7 @@ CSRF_COOKIE_SECURE = True
 ALLOWED_HOSTS = [
     "pilotage.inclusion.beta.gouv.fr",
     "pilotage-staging.cleverapps.io",
+    "app-a7d66f2a-ab99-43fe-8481-5516b54e1fb1.cleverapps.io",  # FIXME: REMOVE IT!
 ]
 
 SECURE_HSTS_SECONDS = 31536000
