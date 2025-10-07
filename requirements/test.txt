@@ -4,24 +4,24 @@ anyio==4.11.0 \
     --hash=sha256:0287e96f4d26d4149305414d4e3bc32f0dcd0862365a4bddea19d7a1ec38c4fc \
     --hash=sha256:82a8d0b81e318cc5ce71a5f1f8b5c4e63619620b63141ef8c995fa0db95a57c4
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   httpx
 asgiref==3.9.2 \
     --hash=sha256:0b61526596219d70396548fc003635056856dba5d0d086f86476f10b33c75960 \
     --hash=sha256:a0249afacb66688ef258ffe503528360443e2b9a8d8c4581b6ebefa58c841ef1
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django
     #   django-cors-headers
 beautifulsoup4==4.14.2 \
     --hash=sha256:2a98ab9f944a11acee9cc848508ec28d9228abfd522ef0fad6a02a72e0ded69e \
     --hash=sha256:5ef6fa3a8cbece8488d66985560f97ed091e22bbc4e9c2338508a9d5de6d4515
-    # via -r requirements/test.in
+    # via -r test.in
 certifi==2025.8.3 \
     --hash=sha256:e564105f78ded564e3ae7c923924435e1daa7463faeab5bb932bc53ffae63407 \
     --hash=sha256:f6c12493cfb1b06ba2ff328595af9350c65d6644968e5d3a2ffd78699af217a5
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   httpcore
     #   httpx
     #   sentry-sdk
@@ -37,11 +37,11 @@ cssbeautifier==1.15.4 \
     --hash=sha256:78c84d5e5378df7d08622bbd0477a1abdbd209680e95480bf22f12d5701efc98 \
     --hash=sha256:9bb08dc3f64c101a01677f128acf01905914cf406baf87434dcde05b74c0acf5
     # via djlint
-django==5.1.12 \
-    --hash=sha256:8a8991b1ec052ef6a44fefd1ef336ab8daa221287bcb91a4a17d5e1abec5bbcc \
-    --hash=sha256:9eb695636cea3601b65690f1596993c042206729afb320ca0960b55f8ed4477b
+django==5.1.13 \
+    --hash=sha256:06f257f79dc4c17f3f9e23b106a4c5ed1335abecbe731e83c598c941d14fbeed \
+    --hash=sha256:543ff21679f15e80edfc01fe7ea35f8291b6d4ea589433882913626a7c1cf929
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django-appconf
     #   django-compressor
     #   django-cors-headers
@@ -51,31 +51,31 @@ django-appconf==1.1.0 \
     --hash=sha256:7abd5a163ff57557f216e84d3ce9dac36c37ffce1ab9a044d3d53b7c943dd10f \
     --hash=sha256:9fcead372f82a0f21ee189434e7ae9c007cbb29af1118c18251720f3d06243e4
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django-compressor
 django-compressor==4.5.1 \
     --hash=sha256:87741edee4e7f24f3e0b8072d94a990cfb010cb2ca7cc443944da8e193cdea65 \
     --hash=sha256:c1d8a48a2ee4d8b7f23c411eb9c97e2d88db18a18ba1c9e8178d5f5b8366a822
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django-libsass
 django-cors-headers==4.9.0 \
     --hash=sha256:15c7f20727f90044dcee2216a9fd7303741a864865f0c3657e28b7056f61b449 \
     --hash=sha256:fe5d7cb59fdc2c8c646ce84b727ac2bca8912a247e6e68e1fb507372178e59e8
-    # via -r requirements/base.txt
+    # via -r base.txt
 django-datadog-logger==0.7.3 \
     --hash=sha256:4361bb068a4b188fa14135398f9b747728464a291757e6adf8c95c9215dcd602 \
     --hash=sha256:87838cd868f407e050831c536413de6b2ece31433b28c952c0fd90be1d66486a
-    # via -r requirements/base.txt
+    # via -r base.txt
 django-libsass==0.9 \
     --hash=sha256:5234d29100889cac79e36a0f44207ec6d275adfd2da1acb6a94b55c89fe2bd97 \
     --hash=sha256:bfbbb55a8950bb40fa04dd416605f92da34ad1f303b10a41abc3232386ec27b5
-    # via -r requirements/base.txt
+    # via -r base.txt
 djangorestframework==3.16.1 \
     --hash=sha256:166809528b1aced0a17dc66c24492af18049f2c9420dbd0be29422029cfc3ff7 \
     --hash=sha256:33a59f47fb9c85ede792cbf88bde71893bcda0667bc573f784649521f1102cec
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django-datadog-logger
 djlint==1.36.4 \
     --hash=sha256:16ce37e085afe5a30953b2bd87cbe34c37843d94c701fc68a2dda06c1e428ff4 \
@@ -100,7 +100,7 @@ djlint==1.36.4 \
     --hash=sha256:e9699b8ac3057a6ed04fb90835b89bee954ed1959c01541ce4f8f729c938afdd \
     --hash=sha256:ead475013bcac46095b1bbc8cf97ed2f06e83422335734363f8a76b4ba7e47c2 \
     --hash=sha256:ff9faffd7d43ac20467493fa71d5355b5b330a00ade1c4d1e859022f4195223b
-    # via -r requirements/test.in
+    # via -r test.in
 editorconfig==0.17.1 \
     --hash=sha256:1eda9c2c0db8c16dbd50111b710572a5e6de934e39772de1959d41f64fc17c82 \
     --hash=sha256:23c08b00e8e08cc3adcddb825251c497478df1dada6aefeb01e626ad37303745
@@ -110,42 +110,42 @@ editorconfig==0.17.1 \
 factory-boy==3.3.3 \
     --hash=sha256:1c39e3289f7e667c4285433f305f8d506efc2fe9c73aaea4151ebd5cdea394fc \
     --hash=sha256:866862d226128dfac7f2b4160287e899daf54f2612778327dd03d0e2cb1e3d03
-    # via -r requirements/test.in
+    # via -r test.in
 faker==37.8.0 \
     --hash=sha256:090bb5abbec2b30949a95ce1ba6b20d1d0ed222883d63483a0d4be4a970d6fb8 \
     --hash=sha256:b08233118824423b5fc239f7dd51f145e7018082b4164f8da6a9994e1f1ae793
     # via
-    #   -r requirements/test.in
+    #   -r test.in
     #   factory-boy
 freezegun==1.5.5 \
     --hash=sha256:ac7742a6cc6c25a2c35e9292dfd554b897b517d2dec26891a2e8debf205cb94a \
     --hash=sha256:cd557f4a75cf074e84bc374249b9dd491eaeacd61376b9eb3c423282211619d2
-    # via -r requirements/test.in
+    # via -r test.in
 h11==0.16.0 \
     --hash=sha256:4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1 \
     --hash=sha256:63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   httpcore
 html5lib==1.1 \
     --hash=sha256:0d78f8fde1c230e99fe37986a60526d7049ed4bf8a9fadbad5f00e22e58e041d \
     --hash=sha256:b2e5b40261e20f354d198eae92afc10d750afb487ed5e50f9c4eaf07c184146f
-    # via -r requirements/test.in
+    # via -r test.in
 httpcore==1.0.9 \
     --hash=sha256:2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55 \
     --hash=sha256:6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   httpx
 httpx==0.28.1 \
     --hash=sha256:75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc \
     --hash=sha256:d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad
-    # via -r requirements/base.txt
+    # via -r base.txt
 idna==3.10 \
     --hash=sha256:12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9 \
     --hash=sha256:946d195a0d259cbba61165e88e65941f16e9b36ea6ddb97f00452bae8b1287d3
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   anyio
     #   httpx
 iniconfig==2.1.0 \
@@ -161,7 +161,7 @@ jsbeautifier==1.15.4 \
 json-log-formatter==1.1.1 \
     --hash=sha256:0815e3b4469e5c79cf3f6dc8a0613ba6601f4a7464f85ba03655cfa6e3e17d10
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django-datadog-logger
 json5==0.12.1 \
     --hash=sha256:b2743e77b3242f8d03c143dd975a6ec7c52e2f2afe76ed934e53503dd4ad4990 \
@@ -175,12 +175,12 @@ libsass==0.23.0 \
     --hash=sha256:a2ec85d819f353cbe807432d7275d653710d12b08ec7ef61c124a580a8352f3c \
     --hash=sha256:ea97d1b45cdc2fc3590cb9d7b60f1d8915d3ce17a98c1f2d4dd47ee0d9c68ce6
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django-libsass
 markdown==3.9 \
     --hash=sha256:9f4d91ed810864ea88a6f32c07ba8bee1346c0cc1f6b1f9f6c822f2a9667d280 \
     --hash=sha256:d2900fe1782bd33bdbbd56859defef70c2e78fc46668f8eb9df3128138f2cb6a
-    # via -r requirements/base.txt
+    # via -r base.txt
 packaging==25.0 \
     --hash=sha256:29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484 \
     --hash=sha256:d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f
@@ -196,7 +196,7 @@ pluggy==1.6.0 \
 psycopg[binary]==3.2.6 \
     --hash=sha256:16fa094efa2698f260f2af74f3710f781e4a6f226efe9d1fd0c37f384639ed8a \
     --hash=sha256:f3ff5488525890abb0566c429146add66b329e20d6d4835662b920cbbf90ac58
-    # via -r requirements/base.txt
+    # via -r base.txt
 psycopg-binary==3.2.6 \
     --hash=sha256:030e9c3082a931e972b029b3cef085784a3bf7f8e18367ae50d5b809aa6e1d87 \
     --hash=sha256:05560c81312d7c2bee95a9860cd25198677f2320fb4a3527bc04e8cae7fcfb64 \
@@ -264,7 +264,7 @@ psycopg-binary==3.2.6 \
     --hash=sha256:f27a46ff0497e882e8c0286e8833c785b4d1a80f23e1bf606f4c90e5f9f3ce75 \
     --hash=sha256:f7956b9ea56f79cd86eddcfbfc65ae2af1e4fe7932fa400755005d903c709370
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   psycopg
 pygments==2.19.2 \
     --hash=sha256:636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887 \
@@ -273,12 +273,12 @@ pygments==2.19.2 \
 pyjwt==2.10.1 \
     --hash=sha256:3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953 \
     --hash=sha256:dcdd193e30abefd5debf142f9adfcdd2b58004e644f25406ffaebd50bd98dacb
-    # via -r requirements/base.txt
+    # via -r base.txt
 pytest==8.4.2 \
     --hash=sha256:86c0d0b93306b961d58d62a4db4879f27fe25513d4b969df351abdddb3c30e01 \
     --hash=sha256:872f880de3fc3a5bdc88a11b39c9710c3497a547cfa9320bc3c5e62fbf272e79
     # via
-    #   -r requirements/test.in
+    #   -r test.in
     #   pytest-django
     #   pytest-mock
     #   pytest-randomly
@@ -286,15 +286,15 @@ pytest==8.4.2 \
 pytest-django==4.11.1 \
     --hash=sha256:1b63773f648aa3d8541000c26929c1ea63934be1cfa674c76436966d73fe6a10 \
     --hash=sha256:a949141a1ee103cb0e7a20f1451d355f83f5e4a5d07bdd4dcfdd1fd0ff227991
-    # via -r requirements/test.in
+    # via -r test.in
 pytest-mock==3.15.1 \
     --hash=sha256:0a25e2eb88fe5168d535041d09a4529a188176ae608a6d249ee65abc0949630d \
     --hash=sha256:1849a238f6f396da19762269de72cb1814ab44416fa73a8686deac10b0d87a0f
-    # via -r requirements/test.in
+    # via -r test.in
 pytest-randomly==4.0.1 \
     --hash=sha256:174e57bb12ac2c26f3578188490bd333f0e80620c3f47340158a86eca0593cd8 \
     --hash=sha256:e0dfad2fd4f35e07beff1e47c17fbafcf98f9bf4531fd369d9260e2f858bfcb7
-    # via -r requirements/test.in
+    # via -r test.in
 python-dateutil==2.9.0.post0 \
     --hash=sha256:37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3 \
     --hash=sha256:a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427
@@ -423,7 +423,7 @@ rcssmin==1.1.2 \
     --hash=sha256:f363c9d242e1afce4fafbbf6bed52452464b19199e66075bed606764f31ca329 \
     --hash=sha256:fdffd58868a752cac0400249ce21bddf55e00d3206f8885d4a3aca1dab487070
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django-compressor
 regex==2025.9.18 \
     --hash=sha256:032720248cbeeae6444c269b78cb15664458b7bb9ed02401d3da59fe4d68c3a5 \
@@ -591,7 +591,7 @@ rjsmin==1.2.2 \
     --hash=sha256:e0e009f6f8460901f5144b34ac2948f94af2f9b8c9b5425da705dbc8152c36c2 \
     --hash=sha256:e733fea039a7b5ad7c06cc8bf215ee7afac81d462e273b3ab55c1ccc906cf127
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django-compressor
 ruff==0.13.3 \
     --hash=sha256:17b951f9d9afb39330b2bdd2dd144ce1c1335881c277837ac1b50bfd99985ed3 \
@@ -613,11 +613,11 @@ ruff==0.13.3 \
     --hash=sha256:dc742c50f4ba72ce2a3be362bd359aef7d0d302bf7637a6f942eaa763bd292af \
     --hash=sha256:f14e0d1fe6460f07814d03c6e32e815bff411505178a1f539a38f6097d3e8ee3 \
     --hash=sha256:fc6fa4637284708d6ed4e5e970d52fc3b76a557d7b4e85a53013d9d201d93286
-    # via -r requirements/test.in
+    # via -r test.in
 sentry-sdk==2.39.0 \
     --hash=sha256:8c185854d111f47f329ab6bc35993f28f7a6b7114db64aa426b326998cfa14e9 \
     --hash=sha256:ba655ca5e57b41569b18e2a5552cb3375209760a5d332cdd87c6c3f28f729602
-    # via -r requirements/base.txt
+    # via -r base.txt
 six==1.17.0 \
     --hash=sha256:4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274 \
     --hash=sha256:ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81
@@ -630,7 +630,7 @@ sniffio==1.3.1 \
     --hash=sha256:2f6da418d1f1e0fddd844478f41680e794e6051915791a034ff65e5f100525a2 \
     --hash=sha256:f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   anyio
 soupsieve==2.8 \
     --hash=sha256:0cc76456a30e20f5d7f2e14a98a4ae2ee4e5abdc7c5ea0aafe795f344bc7984c \
@@ -640,12 +640,12 @@ sqlparse==0.5.3 \
     --hash=sha256:09f67787f56a0b16ecdbde1bfc7f5d9c3371ca683cfeaa8e6ff60b4807ec9272 \
     --hash=sha256:cf2196ed3418f3ba5de6af7e82c694a9fbdbfecccdfc72e281548517081f16ca
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   django
 syrupy==5.0.0 \
     --hash=sha256:3282fe963fa5d4d3e47231b16d1d4d0f4523705e8199eeb99a22a1bc9f5942f2 \
     --hash=sha256:c848e1a980ca52a28715cd2d2b4d434db424699c05653bd1158fb31cf56e9546
-    # via -r requirements/test.in
+    # via -r test.in
 tqdm==4.67.1 \
     --hash=sha256:26445eca388f82e72884e0d580d5464cd801a3ea01e63e5601bdff9ba6a48de2 \
     --hash=sha256:f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2
@@ -662,7 +662,7 @@ urllib3==2.5.0 \
     --hash=sha256:3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760 \
     --hash=sha256:e6b01673c0fa6a13e374b50871808eb3bf7046c4b125b216f6bf1cc604cff0dc
     # via
-    #   -r requirements/base.txt
+    #   -r base.txt
     #   sentry-sdk
 webencodings==0.5.1 \
     --hash=sha256:a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78 \
