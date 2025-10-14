@@ -1,7 +1,6 @@
-let textareas = document.querySelectorAll("textarea");
-
-if (textareas.length) {
-  const easyMDE = new EasyMDE({
+document.querySelectorAll("textarea").forEach(function (elem) {
+  new EasyMDE({
+    element: elem,
     toolbar: [
       {
         name: "heading",
@@ -30,5 +29,4 @@ if (textareas.length) {
     ],
     spellChecker: false,
   });
-}
-
+})
