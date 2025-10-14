@@ -48,6 +48,14 @@ class ESATAnswerEmployeeForm(ESATBaseForm):
             "nb_employee_mispe_rpe",
         ]
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["nb_places_allowed"].widget.attrs["min"] = 0
+        self.fields["nb_employee_worked"].widget.attrs["min"] = 0
+        self.fields["mean_employee_age"].widget.attrs["min"] = 0
+        self.fields["mean_employee_age"].widget.attrs["max"] = 80
+        self.fields["mean_seniority"].widget.attrs["min"] = 0
+
 
 class ESATAnswerPMSMPForm(ESATBaseForm):
     class Meta:
@@ -133,6 +141,7 @@ class ESATAnswerRetirementForm(ESATBaseForm):
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
             self.fields["retirement_preparation"].widget.attrs["placeholder"] = "Avenir après le travail, RDV CARSAT"
+            self.fields["pct_more_than50"].widget.attrs["max"] = 100
 
 
 class ESATAnswerOPCOForm(ESATBaseForm):
@@ -144,6 +153,10 @@ class ESATAnswerOPCOForm(ESATBaseForm):
             "nb_employee_formation_opco",
             "opco_or_anfh_refusal",
         ]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["pct_opco"].widget.attrs["max"] = 100
 
 
 class ESATAnswerSkillsForm(ESATBaseForm):
@@ -238,6 +251,11 @@ class ESATAnswerBonusForm(ESATBaseForm):
             "pct_employee_activity_bonus",
         ]
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["mean_pct_esat_rem"].widget.attrs["max"] = 100
+        self.fields["pct_employee_activity_bonus"].widget.attrs["max"] = 100
+
 
 class ESATAnswerHealthAssuranceForm(ESATBaseForm):
     class Meta:
@@ -249,6 +267,10 @@ class ESATAnswerHealthAssuranceForm(ESATBaseForm):
             "foresight_in_place",
             "year_foresight_in_place",
         ]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["pct_health_complementary_esat"].widget.attrs["max"] = 100
 
 
 class ESATAnswerMobilityForm(ESATBaseForm):
@@ -305,6 +327,10 @@ class ESATAnswerRevenueForm(ESATBaseForm):
             "annual_ca_dispo",
             "pct_ca_public",
         ]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["pct_ca_public"].widget.attrs["max"] = 100
 
 
 class ESATAnswerSalesBudgetForm(ESATBaseForm):
