@@ -3,7 +3,7 @@ from django.utils.text import capfirst
 
 from pilotage.surveys import models
 from pilotage.surveys.utils import get_step_form_class
-from pilotage.surveys.views import ESATStep
+from pilotage.surveys.views import CommonStep, ESATStep
 
 
 @admin.register(models.Survey)
@@ -20,6 +20,8 @@ class SurveyAdmin(admin.ModelAdmin):
                     "name",
                     "kind",
                     "vintage",
+                    "introduction",
+                    "conclusion",
                 )
             },
         ),
@@ -68,6 +70,8 @@ class ESATAnswerAdmin(AnswerAdmin):
     def get_fieldsets(self, request, obj=None):
         steps_fieldsets = []
         for step in ESATStep:
+            if step in CommonStep:
+                continue
             step_form_class = get_step_form_class(models.ESATAnswer, step)
             steps_fieldsets.append(
                 (

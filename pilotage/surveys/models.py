@@ -27,6 +27,9 @@ class Survey(models.Model):
     vintage = models.CharField(verbose_name="millésime")
     name = models.SlugField(verbose_name="nom", unique=True, editable=False)
 
+    introduction = models.fields.TextField(null=True, blank=True)
+    conclusion = models.fields.TextField(null=True, blank=True)
+
     created_at = models.DateTimeField(verbose_name="créé le", auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name="mis à jour le", auto_now=True)
 

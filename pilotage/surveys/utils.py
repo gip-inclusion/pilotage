@@ -17,12 +17,12 @@ def get_step_form_class(answer_class, step):
 
 def get_previous_and_next_step(steps, current_step):
     choices = list(steps)
+    current_step_index = choices.index(current_step)
+
     try:
-        next_step = choices[choices.index(current_step) + 1]
+        next_step = choices[current_step_index + 1]
     except IndexError:
         next_step = None
-    try:
-        previous_step = choices[choices.index(current_step) - 1]
-    except IndexError:
-        previous_step = None
+    previous_step = choices[current_step_index - 1] if current_step_index > 0 else None  # Don't cycle in reverse order
+
     return previous_step, next_step
