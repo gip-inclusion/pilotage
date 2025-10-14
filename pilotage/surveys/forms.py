@@ -1,16 +1,14 @@
 from django import forms
 
+from pilotage.itoutils.forms import EmptyPlaceholderFormMixin, LetteredLabelFormMixin
 from pilotage.surveys import models
 
 
-class EmptyPlaceholderFormMixin:
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for field in self.fields.values():
-            field.widget.attrs["placeholder"] = ""
+class ESATBaseForm(LetteredLabelFormMixin, EmptyPlaceholderFormMixin, forms.ModelForm):
+    pass
 
 
-class ESATAnswerOrganizationForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerOrganizationForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -32,7 +30,7 @@ class ESATAnswerOrganizationForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         self.fields["managing_organization_name"].widget.attrs["placeholder"] = "ADAPEI16"
 
 
-class ESATAnswerEmployeeForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerEmployeeForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -51,7 +49,7 @@ class ESATAnswerEmployeeForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerPMSMPForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerPMSMPForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -61,7 +59,7 @@ class ESATAnswerPMSMPForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerActivityKindForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerActivityKindForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -72,7 +70,7 @@ class ESATAnswerActivityKindForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerPartialWorkForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerPartialWorkForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -83,7 +81,7 @@ class ESATAnswerPartialWorkForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerEmployeeLeftForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerEmployeeLeftForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -95,7 +93,7 @@ class ESATAnswerEmployeeLeftForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerEmployeeReturnForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerEmployeeReturnForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -105,7 +103,7 @@ class ESATAnswerEmployeeReturnForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerMiscForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerMiscForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -122,7 +120,7 @@ class ESATAnswerMiscForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         )
 
 
-class ESATAnswerRetirementForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerRetirementForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -137,7 +135,7 @@ class ESATAnswerRetirementForm(EmptyPlaceholderFormMixin, forms.ModelForm):
             self.fields["retirement_preparation"].widget.attrs["placeholder"] = "Avenir après le travail, RDV CARSAT"
 
 
-class ESATAnswerOPCOForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerOPCOForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -148,7 +146,7 @@ class ESATAnswerOPCOForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerSkillsForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerSkillsForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -158,7 +156,7 @@ class ESATAnswerSkillsForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerCPFForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerCPFForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -173,7 +171,7 @@ class ESATAnswerCPFForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         self.fields["formation_cpf"].widget.attrs["placeholder"] = "Permis de conduire"
 
 
-class ESATAnswerAutodeterminationForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerAutodeterminationForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -191,7 +189,7 @@ class ESATAnswerAutodeterminationForm(EmptyPlaceholderFormMixin, forms.ModelForm
         )
 
 
-class ESATAnswerDuodayForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerDuodayForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -208,7 +206,7 @@ class ESATAnswerDuodayForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         self.fields["duoday_financial_help_type"].widget.attrs["placeholder"] = "CNR"
 
 
-class ESATAnswerRepresentativeForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerRepresentativeForm(ESATBaseForm):
     documents_falclist = forms.MultipleChoiceField(
         required=False,
         label=(
@@ -231,7 +229,7 @@ class ESATAnswerRepresentativeForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerBonusForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerBonusForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -241,7 +239,7 @@ class ESATAnswerBonusForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerHealthAssuranceForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerHealthAssuranceForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -253,7 +251,7 @@ class ESATAnswerHealthAssuranceForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerMobilityForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerMobilityForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -265,7 +263,7 @@ class ESATAnswerMobilityForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerVoucherForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerVoucherForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -276,7 +274,7 @@ class ESATAnswerVoucherForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerConventionForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerConventionForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -288,7 +286,7 @@ class ESATAnswerConventionForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerCounselorsForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerCounselorsForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -297,7 +295,7 @@ class ESATAnswerCounselorsForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerRevenueForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerRevenueForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -309,7 +307,7 @@ class ESATAnswerRevenueForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerSalesBudgetForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerSalesBudgetForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -319,7 +317,7 @@ class ESATAnswerSalesBudgetForm(EmptyPlaceholderFormMixin, forms.ModelForm):
         ]
 
 
-class ESATAnswerSocialActivityBudgetForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerSocialActivityBudgetForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -331,7 +329,7 @@ class ESATAnswerSocialActivityBudgetForm(EmptyPlaceholderFormMixin, forms.ModelF
         ]
 
 
-class ESATAnswerCommentsForm(EmptyPlaceholderFormMixin, forms.ModelForm):
+class ESATAnswerCommentsForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
