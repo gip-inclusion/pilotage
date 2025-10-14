@@ -3,7 +3,7 @@
 import uuid
 
 from django.contrib.postgres.fields import ArrayField
-from django.core.validators import MaxValueValidator
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.db.models import TextChoices
 from django.utils import timezone
@@ -125,6 +125,7 @@ class ESATAnswer(Answer):
         blank=True,
         decimal_places=1,
         max_digits=4,
+        validators=[MinValueValidator(0)],
         verbose_name="Au 31 décembre 2024, quel était le nombre de places autorisées par l’ARS pour l'ESAT ?",
     )
     nb_employee_worked = models.DecimalField(
@@ -132,6 +133,7 @@ class ESATAnswer(Answer):
         blank=True,
         decimal_places=1,
         max_digits=4,
+        validators=[MinValueValidator(0)],
         verbose_name="Combien de salarié(e)s ou d’agents publics (ESAT publics) ont travaillé dans l'ESAT?",
     )
     nb_employee_acc = models.PositiveSmallIntegerField(
@@ -142,7 +144,7 @@ class ESATAnswer(Answer):
         blank=True,
         decimal_places=1,
         max_digits=3,
-        validators=[MaxValueValidator(80)],
+        validators=[MinValueValidator(0), MaxValueValidator(80)],
         verbose_name="Quel était l’âge moyen des travailleurs et travailleuses accompagnés ?",
     )
     mean_seniority = models.DecimalField(
@@ -150,6 +152,7 @@ class ESATAnswer(Answer):
         blank=True,
         decimal_places=1,
         max_digits=3,
+        validators=[MinValueValidator(0)],
         verbose_name="Quelle était l’ancienneté moyenne des travailleurs et travailleuses accompagnés ?",
         help_text="L'ancienneté moyenne doit être exprimée en mois",
     )
@@ -505,6 +508,7 @@ class ESATAnswer(Answer):
     mean_pct_esat_rem = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
+        validators=[MaxValueValidator(100)],
         verbose_name="Au 31 décembre 2024, quel était le montant moyen de la part rémunération garantie du travailleur prise en charge financièrement par l'ESAT (en pourcentage du SMIC)?",
     )
     pct_employee_activity_bonus = models.PositiveSmallIntegerField(
@@ -650,7 +654,7 @@ class ESATAnswer(Answer):
         blank=True,
         verbose_name="Quel était votre chiffre d'affaire annuel commercial en mises à disposition de travailleurs et travailleuses auprès d’utilisateurs ?",
     )
-    pct_ca_public = models.PositiveIntegerField(
+    pct_ca_public = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         validators=[MaxValueValidator(100)],
