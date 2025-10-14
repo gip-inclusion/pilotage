@@ -64,16 +64,22 @@ class Answer(models.Model):
         return str(self.uid)
 
 
+DO_NOT_KNOW_VALUE = "DO_NOT_KNOW"
+DO_NOT_KNOW_CHOICE = (DO_NOT_KNOW_VALUE, "Je ne sais pas")
+
+
 class BudgetState(TextChoices):
     SURPLUS = "SURPLUS", "excédentaire"
     BALANCE = "BALANCE", "à l'équilibre"
     DEFICIT = "DEFICIT", "déficitaire"
+    DO_NOT_KNOW = DO_NOT_KNOW_VALUE, "Je ne sais pas"
 
 
 class BudgetRange(TextChoices):
     LESS_THAN_100K = "LESS_THAN_100K", "Moins de 100 k€"
     RANGE_100K_500K = "RANGE_100K_500K", "100 k€ à 500k€"
     MORE_THAN_500K = "MORE_THAN_500K", "Plus de 500k€"
+    DO_NOT_KNOW = DO_NOT_KNOW_VALUE, "Je ne sais pas"
 
 
 class DocumentFALCList(TextChoices):
@@ -81,6 +87,7 @@ class DocumentFALCList(TextChoices):
     BOOKLET = "BOOKLET", "Oui : livret d'accueil"
     REGULATION = "REGULATION", "Oui : règlement de fonctionnement"
     NO = "NO", "Non"
+    DO_NOT_KNOW = DO_NOT_KNOW_VALUE, "Je ne sais pas"
 
 
 class ESATAnswer(Answer):
@@ -240,6 +247,7 @@ class ESATAnswer(Answer):
             ("41-60", "De 41% à 60%"),
             ("61-80", "De 61% à 80%"),
             ("81-100", "De 81 à 100%"),
+            DO_NOT_KNOW_CHOICE,
         ],
         verbose_name="Sur l’ensemble de l’activité de l’ESAT, quel est le pourcentage d’activité exercée en dehors de l’établissement ?",
     )
@@ -334,7 +342,7 @@ class ESATAnswer(Answer):
     uaat_inscription = models.CharField(
         null=True,
         blank=True,
-        choices=[("YES", "Oui"), ("NO", "Non"), ("IN_PROGRESS", "En cours")],
+        choices=[("YES", "Oui"), ("NO", "Non"), ("IN_PROGRESS", "En cours"), DO_NOT_KNOW_CHOICE],
         verbose_name="Etes-vous inscrit dans la démarche Un Avenir Après le Travail (UAAT) ?",
     )
     nb_uaat_beneficiary = models.PositiveSmallIntegerField(
@@ -393,6 +401,7 @@ class ESATAnswer(Answer):
             ("TRAINING_COURSE", "Accès à une formation via un organisme de formation"),
             ("PARTIAL_TIME_WORK", "Accès à un emploi via le temps partagé"),
             ("LEFT", "Sortie de l'ESAT pour accéder à un emploi en milieu ordinaire ou adapté"),
+            DO_NOT_KNOW_CHOICE,
         ],
         verbose_name="A l’issue de cette reconnaissance ou validation, quelle a été la suite du parcours des travailleurs et travailleuses concerné(e)s ?",
     )
@@ -475,6 +484,7 @@ class ESATAnswer(Answer):
         choices=[
             ("TRAINING_ORGANIZATION", "par l'intermédiaire d'un organisme de formation"),
             ("INTERNALLY", "en interne"),
+            DO_NOT_KNOW_CHOICE,
         ],
         verbose_name="Est-ce que le délégué ou la déléguée a bénéficié d'une formation :",
     )
@@ -535,7 +545,7 @@ class ESATAnswer(Answer):
     year_foresight_in_place = models.CharField(
         null=True,
         blank=True,
-        choices=[(str(year), year) for year in range(timezone.localdate().year, 1900, -1)],
+        choices=[(str(year), year) for year in range(timezone.localdate().year, 1900, -1)] + [DO_NOT_KNOW_CHOICE],
         verbose_name="Depuis quelle année ce régime de prévoyance est-il mis en œuvre dans l'ESAT ?  ",
     )
 
