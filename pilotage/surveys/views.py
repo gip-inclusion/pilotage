@@ -1,3 +1,5 @@
+import enum
+
 from django.db.models import TextChoices
 from django.http import HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
@@ -7,7 +9,13 @@ from pilotage.surveys.models import ESATAnswer, Survey, SurveyKind
 from pilotage.surveys.utils import get_previous_and_next_step, get_step_form_class
 
 
+class CommonStep(enum.StrEnum):
+    INTRODUCTION = "introduction"
+    CONCLUSION = "conclusion"
+
+
 class ESATStep(TextChoices):
+    INTRODUCTION = CommonStep.INTRODUCTION, "introduction"
     ORGANIZATION = "organization", "la structure"
     EMPLOYEE = "employee", "les employés"
     PMSMP = "pmsmp", "PMSMP"
@@ -33,6 +41,7 @@ class ESATStep(TextChoices):
     SALES_BUDGET = "sales-budget", "budget commercial"
     SOCIAL_ACTIVITY_BUDGET = "social-activity-budget", "budget principal de l'activité sociale"
     COMMENTS = "comments", "commentaires"
+    CONCLUSION = CommonStep.CONCLUSION, "conclusion"
 
 
 def start(request, *, survey_name):
@@ -70,31 +79,43 @@ def tunnel(request, *, survey_name, answer_uid, step):
             )
         )
     previous_step, next_step = get_previous_and_next_step(steps_class, step)
-    form = get_step_form_class(answer_class, step)(instance=answer, data=request.POST or None)
-    if form.is_valid():
-        form.save()
-        return HttpResponseRedirect(
-            reverse(
-                "surveys:tunnel",
-                kwargs={"survey_name": survey.name, "answer_uid": answer.uid, "step": next_step},
+    extra_context = {}
+    if step in CommonStep:
+        extra_context["content"] = getattr(survey, step)
+    else:
+        form = get_step_form_class(answer_class, step)(instance=answer, data=request.POST or None)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(
+                reverse(
+                    "surveys:tunnel",
+                    kwargs={"survey_name": survey.name, "answer_uid": answer.uid, "step": next_step},
+                )
             )
-        )
+        extra_context["form"] = form
 
+    next_step_url = (
+        reverse("surveys:tunnel", kwargs={"survey_name": survey.name, "answer_uid": answer.uid, "step": next_step})
+        if next_step
+        else None
+    )
+    previous_step_url = (
+        reverse("surveys:tunnel", kwargs={"survey_name": survey.name, "answer_uid": answer.uid, "step": previous_step})
+        if previous_step
+        else None
+    )
     return render(
         request,
         "surveys/survey.html",
         context={
             "survey": survey,
             "answer": answer,
-            "form": form,
             "title": step.label,
             "steps_class": steps_class,
-            "previous_step_url": reverse(
-                "surveys:tunnel", kwargs={"survey_name": survey.name, "answer_uid": answer.uid, "step": previous_step}
-            )
-            if previous_step
-            else None,
+            "next_step_url": next_step_url,
+            "previous_step_url": previous_step_url,
             "current_step": step,
             "next_step": next_step,
+            **extra_context,
         },
     )

@@ -1,5 +1,6 @@
 {% extends "layouts/base.html" %}
 {% load django_bootstrap5 %}
+{% load markdown_extras %}
 
 {% block title %}Étude {{ survey.get_kind_display }} {{ survey.vintage }} - {{ block.super }}{% endblock %}
 
@@ -36,19 +37,31 @@
             <div class="s-section__row row">
                 <div class="s-section__col col-12 col-xxl-8 col-xxxl-9 order-2 order-xxl-1">
                     <div class="c-form mb-3 mb-md-4">
-                        <form method="post">
-
-                            {% csrf_token %}
-
-                            {% bootstrap_form form alert_error_type="all" %}
-
+                        {% if not form %}
+                            {{ content|default_if_none:"" | markdown | safe }}
                             <div class="form-group text-end">
                                 {% if previous_step_url %}
                                     {% bootstrap_button "Retour" button_type="link" href=previous_step_url button_class="btn-outline-primary" %}
                                 {% endif %}
-                                {% bootstrap_button next_step|yesno:"Suivant,Valider" button_type="submit" %}
+                                {% if next_step_url %}
+                                    {% bootstrap_button "Suivant" button_type="link" href=next_step_url %}
+                                {% endif %}
                             </div>
-                        </form>
+                        {% elif form %}
+                            <form method="post">
+
+                                {% csrf_token %}
+
+                                {% bootstrap_form form alert_error_type="all" %}
+
+                                <div class="form-group text-end">
+                                    {% if previous_step_url %}
+                                        {% bootstrap_button "Retour" button_type="link" href=previous_step_url button_class="btn-outline-primary" %}
+                                    {% endif %}
+                                    {% bootstrap_button next_step|yesno:"Suivant,Valider" button_type="submit" %}
+                                </div>
+                            </form>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="s-section__col col-12 col-xxl-4 col-xxxl-3 order-1 order-xxl-2">
