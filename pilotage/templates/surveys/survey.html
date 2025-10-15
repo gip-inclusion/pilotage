@@ -56,9 +56,9 @@
 
                                 <div class="form-group text-end">
                                     {% if previous_step_url %}
-                                        {% bootstrap_button "Retour" button_type="link" href=previous_step_url button_class="btn-outline-primary" %}
+                                        {% bootstrap_button "Précédent" button_type="submit" name="goto" value="previous" button_class="btn-outline-primary" %}
                                     {% endif %}
-                                    {% bootstrap_button next_step|yesno:"Suivant,Valider" button_type="submit" %}
+                                    {% bootstrap_button "Suivant" button_type="submit" %}
                                 </div>
                             </form>
                         {% endif %}
