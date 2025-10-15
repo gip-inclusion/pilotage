@@ -123,6 +123,7 @@ class ESATAnswerMiscForm(ESATBaseForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields["nb_support_hours"].widget.attrs["min"] = 0
         self.fields["support_themes"].widget.attrs["placeholder"] = (
             "Connaissance de soi et valorisation des compétences, accès aux droits, journée sportive"
         )
@@ -315,6 +316,11 @@ class ESATAnswerCounselorsForm(ESATBaseForm):
             "nb_insertion_staff",
             "nb_insertion_dispo",
         ]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["nb_insertion_staff"].widget.attrs["min"] = 0
+        self.fields["nb_insertion_dispo"].widget.attrs["min"] = 0
 
 
 class ESATAnswerRevenueForm(ESATBaseForm):
