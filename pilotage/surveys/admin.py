@@ -8,9 +8,9 @@ from pilotage.surveys.views import CommonStep, ESATStep
 
 @admin.register(models.Survey)
 class SurveyAdmin(admin.ModelAdmin):
-    list_display = ("name", "kind", "vintage", "created_at", "updated_at")
+    list_display = ("name", "kind", "vintage", "is_open", "created_at", "updated_at")
     list_filter = ("kind", "vintage")
-    readonly_fields = ("name", "created_at", "updated_at")
+    readonly_fields = ("name", "is_open", "created_at", "updated_at")
 
     fieldsets = (
         (
@@ -20,6 +20,7 @@ class SurveyAdmin(admin.ModelAdmin):
                     "name",
                     "kind",
                     "vintage",
+                    "opening_period",
                     "introduction",
                     "conclusion",
                 )
@@ -33,6 +34,10 @@ class SurveyAdmin(admin.ModelAdmin):
         if obj is not None:
             readonly_fields += ("kind", "vintage")
         return readonly_fields
+
+    @admin.display(description="ouvert", boolean=True)
+    def is_open(self, obj):
+        return obj.is_open
 
 
 @admin.register(models.Answer)
