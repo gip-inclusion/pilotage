@@ -2,7 +2,7 @@
 # ruff: noqa: E501
 
 import uuid_utils
-from django.contrib.postgres.fields import ArrayField
+from django.contrib.postgres.fields import ArrayField, DateTimeRangeField
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.db.models import TextChoices
@@ -22,16 +22,24 @@ class SurveyKind(models.TextChoices):
     ESAT = "ESAT", "ESAT"
 
 
+class SurveyQuerySet(models.QuerySet):
+    def open(self):
+        return self.filter(opening_period__contains=timezone.now())
+
+
 class Survey(models.Model):
     kind = models.CharField(verbose_name="type", choices=SurveyKind.choices)
     vintage = models.CharField(verbose_name="millésime")
     name = models.SlugField(verbose_name="nom", unique=True, editable=False)
+    opening_period = DateTimeRangeField(verbose_name="période d'ouverture")
 
     introduction = models.fields.TextField(null=True, blank=True)
     conclusion = models.fields.TextField(null=True, blank=True)
 
     created_at = models.DateTimeField(verbose_name="créé le", auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name="mis à jour le", auto_now=True)
+
+    objects = SurveyQuerySet.as_manager()
 
     class Meta:
         verbose_name = "enquête"
@@ -42,6 +50,10 @@ class Survey(models.Model):
     def save(self, **kwargs):
         self.name = self.name or slugify(f"{self.kind} {self.vintage}")
         super().save(**kwargs)
+
+    @property
+    def is_open(self):
+        return timezone.now() in self.opening_period
 
 
 class Answer(models.Model):
