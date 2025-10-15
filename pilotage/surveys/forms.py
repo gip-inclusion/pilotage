@@ -223,7 +223,7 @@ class ESATAnswerRepresentativeForm(ESATBaseForm):
     documents_falclist = forms.MultipleChoiceField(
         required=False,
         label=(
-            "Au 31 décembre 2024, les principaux documents destinés aux travailleurs et travailleuses "
+            "Au 31 décembre 2024, les principaux documents destinés aux travailleur·euse·s "
             "étaient-ils accessibles en FALC ou en communication alternative augmentée ?"
         ),
         choices=models.DocumentFALCList.choices,
