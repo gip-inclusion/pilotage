@@ -329,9 +329,12 @@ class ESATAnswer(Answer):
         blank=True,
         verbose_name="combien de travailleur·euse·s ont quitté l’ESAT pour suivre une formation en établissement et service de réadaptation professionnelle (ESRP) ?",
     )
-    nb_support_hours = models.PositiveSmallIntegerField(
+    nb_support_hours = models.DecimalField(
         null=True,
         blank=True,
+        decimal_places=1,
+        max_digits=4,
+        validators=[MinValueValidator(0)],
         verbose_name="quel était le nombre d’heures de soutien liées à l’activité professionnelle, dont en moyenne chaque travailleur a bénéficié (rémunérées et comprises dans le temps de travail) ?",
     )
     support_themes = models.TextField(null=True, blank=True, verbose_name="sur quelles thématiques principales ?")
@@ -624,15 +627,21 @@ class ESATAnswer(Answer):
     )
 
     # ESATStep.COUNSELORS
-    nb_insertion_staff = models.PositiveSmallIntegerField(
+    nb_insertion_staff = models.DecimalField(
         null=True,
         blank=True,
+        decimal_places=1,
+        max_digits=4,
+        validators=[MinValueValidator(0)],
         verbose_name="au 31 décembre, combien de postes de conseillers en parcours d'insertion ou chargé(e)s d'inclusion professionnelle sont dans vos effectifs ?",
         help_text="On parle ici de professionnels formés et exclusifs sur la mission d’inclusion. Répondre ici en ETP.",
     )
-    nb_insertion_dispo = models.PositiveSmallIntegerField(
+    nb_insertion_dispo = models.DecimalField(
         null=True,
         blank=True,
+        decimal_places=1,
+        max_digits=4,
+        validators=[MinValueValidator(0)],
         verbose_name="au 31 décembre, combien de postes de conseillers en parcours d'insertion ou chargé(e)s d'inclusion professionnelle sont mis à disposition ou mutualisés ?",
         help_text="On parle ici de professionnels formés et exclusifs sur la mission d’inclusion. Répondre ici en ETP.",
     )
