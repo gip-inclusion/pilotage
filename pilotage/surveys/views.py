@@ -45,7 +45,7 @@ class ESATStep(TextChoices):
 
 
 def start(request, *, survey_name):
-    survey = get_object_or_404(Survey, name=survey_name)
+    survey = get_object_or_404(Survey.objects.open(), name=survey_name)  # Only open surveys can have new answers
     match survey.kind:
         case SurveyKind.ESAT:
             answer = ESATAnswer.objects.create(survey=survey)
@@ -61,6 +61,7 @@ def start(request, *, survey_name):
 
 
 def tunnel(request, *, survey_name, answer_uid, step):
+    # Here we also include closed surveys so the respondent can see their answers
     survey = get_object_or_404(Survey, name=survey_name)
     match survey.kind:
         case SurveyKind.ESAT:
@@ -83,7 +84,9 @@ def tunnel(request, *, survey_name, answer_uid, step):
     if step in CommonStep:
         extra_context["content"] = getattr(survey, step)
     else:
-        form = get_step_form_class(answer_class, step)(instance=answer, data=request.POST or None)
+        form = get_step_form_class(answer_class, step)(
+            instance=answer, data=request.POST or None, editable=survey.is_open
+        )
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(

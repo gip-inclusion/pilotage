@@ -5,7 +5,10 @@ from pilotage.surveys import models
 
 
 class ESATBaseForm(LetteredLabelFormMixin, EmptyPlaceholderFormMixin, forms.ModelForm):
-    pass
+    def __init__(self, *args, editable, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.disabled = True if not editable else field.disabled
 
 
 class ESATAnswerOrganizationForm(ESATBaseForm):
@@ -23,11 +26,12 @@ class ESATAnswerOrganizationForm(ESATBaseForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["esat_role"].widget.attrs["placeholder"] = "Directrice d'ESAT"
-        self.fields["esat_name"].widget.attrs["placeholder"] = "ESAT Les pruniers"
-        self.fields["esat_siret"].widget.attrs["placeholder"] = "12002701600357"
-        self.fields["finess_num"].widget.attrs["placeholder"] = "123456789"
-        self.fields["managing_organization_name"].widget.attrs["placeholder"] = "ADAPEI16"
+        if kwargs["editable"]:
+            self.fields["esat_role"].widget.attrs["placeholder"] = "Directrice d'ESAT"
+            self.fields["esat_name"].widget.attrs["placeholder"] = "ESAT Les pruniers"
+            self.fields["esat_siret"].widget.attrs["placeholder"] = "12002701600357"
+            self.fields["finess_num"].widget.attrs["placeholder"] = "123456789"
+            self.fields["managing_organization_name"].widget.attrs["placeholder"] = "ADAPEI16"
 
 
 class ESATAnswerEmployeeForm(ESATBaseForm):
@@ -124,9 +128,10 @@ class ESATAnswerMiscForm(ESATBaseForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["nb_support_hours"].widget.attrs["min"] = 0
-        self.fields["support_themes"].widget.attrs["placeholder"] = (
-            "Connaissance de soi et valorisation des compétences, accès aux droits, journée sportive"
-        )
+        if kwargs["editable"]:
+            self.fields["support_themes"].widget.attrs["placeholder"] = (
+                "Connaissance de soi et valorisation des compétences, accès aux droits, journée sportive"
+            )
 
 
 class ESATAnswerRetirementForm(ESATBaseForm):
@@ -141,7 +146,10 @@ class ESATAnswerRetirementForm(ESATBaseForm):
 
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
-            self.fields["retirement_preparation"].widget.attrs["placeholder"] = "Avenir après le travail, RDV CARSAT"
+            if kwargs["editable"]:
+                self.fields["retirement_preparation"].widget.attrs["placeholder"] = (
+                    "Avenir après le travail, RDV CARSAT"
+                )
             self.fields["pct_more_than50"].widget.attrs["max"] = 100
 
 
@@ -181,8 +189,9 @@ class ESATAnswerCPFForm(ESATBaseForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["cpfreason"].widget.attrs["placeholder"] = "Nous n'avons eu aucune demande en ce sens"
-        self.fields["formation_cpf"].widget.attrs["placeholder"] = "Permis de conduire"
+        if kwargs["editable"]:
+            self.fields["cpfreason"].widget.attrs["placeholder"] = "Nous n'avons eu aucune demande en ce sens"
+            self.fields["formation_cpf"].widget.attrs["placeholder"] = "Permis de conduire"
 
 
 class ESATAnswerAutodeterminationForm(ESATBaseForm):
@@ -198,9 +207,10 @@ class ESATAnswerAutodeterminationForm(ESATBaseForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["formation_subject"].widget.attrs["placeholder"] = (
-            "Hygiène, communication bienveillante, savoir s'exprimer en public"
-        )
+        if kwargs["editable"]:
+            self.fields["formation_subject"].widget.attrs["placeholder"] = (
+                "Hygiène, communication bienveillante, savoir s'exprimer en public"
+            )
 
 
 class ESATAnswerDuodayForm(ESATBaseForm):
@@ -216,8 +226,9 @@ class ESATAnswerDuodayForm(ESATBaseForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["duoday_software_used"].widget.attrs["placeholder"] = "WIKIKAP, Neopass"
-        self.fields["duoday_financial_help_type"].widget.attrs["placeholder"] = "CNR"
+        if kwargs["editable"]:
+            self.fields["duoday_software_used"].widget.attrs["placeholder"] = "WIKIKAP, Neopass"
+            self.fields["duoday_financial_help_type"].widget.attrs["placeholder"] = "CNR"
 
 
 class ESATAnswerRepresentativeForm(ESATBaseForm):
