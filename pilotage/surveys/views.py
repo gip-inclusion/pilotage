@@ -89,7 +89,11 @@ def tunnel(request, *, survey_name, answer_uid, step):
             return HttpResponseRedirect(
                 reverse(
                     "surveys:tunnel",
-                    kwargs={"survey_name": survey.name, "answer_uid": answer.uid, "step": next_step},
+                    kwargs={
+                        "survey_name": survey.name,
+                        "answer_uid": answer.uid,
+                        "step": previous_step if request.POST.get("goto") == "previous" else next_step,
+                    },
                 )
             )
         extra_context["form"] = form
