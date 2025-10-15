@@ -37,8 +37,8 @@ class SurveyAdmin(admin.ModelAdmin):
 
 @admin.register(models.Answer)
 class AnswerAdmin(admin.ModelAdmin):
-    list_display = ("uid", "survey", "status", "created_at", "updated_at")
-    list_filter = ("survey", "status")
+    list_display = ("uid", "survey", "created_at", "updated_at")
+    list_filter = ("survey",)
     readonly_fields = ("uid", "created_at", "updated_at")
 
     fieldsets = (
@@ -48,7 +48,6 @@ class AnswerAdmin(admin.ModelAdmin):
                 "fields": (
                     "uid",
                     "survey",
-                    "status",
                 )
             },
         ),

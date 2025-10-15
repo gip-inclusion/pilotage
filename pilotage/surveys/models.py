@@ -44,15 +44,9 @@ class Survey(models.Model):
         super().save(**kwargs)
 
 
-class AnswerStatus(models.TextChoices):
-    PENDING = "pending", "en cours"
-    DONE = "done", "terminé"
-
-
 class Answer(models.Model):
     uid = models.UUIDField(primary_key=True, default=_uuid7, editable=False)
     survey = models.ForeignKey(Survey, on_delete=models.CASCADE, related_name="answers", verbose_name="enquête")
-    status = models.CharField(verbose_name="statut", default=AnswerStatus.PENDING, choices=AnswerStatus.choices)
 
     created_at = models.DateTimeField(verbose_name="créé le", auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name="mis à jour le", auto_now=True)
