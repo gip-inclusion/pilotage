@@ -69,13 +69,14 @@
                         <h2>Étapes du formulaire</h2>
                         <hr>
                         <ol>
-                            {% for step in steps_class %}
+                            {% for step, info in steps_info.items %}
                                 <li>
                                     {% if current_step == step %}
                                         <b>{{ step.label|capfirst }}</b>
                                     {% else %}
                                         <a href="{% url "surveys:tunnel" survey_name=survey.name answer_uid=answer.uid step=step %}">{{ step.label|capfirst }}</a>
                                     {% endif %}
+                                    - {{ info.filled }}/{{ info.total }}
                                 </li>
                             {% endfor %}
                         </ol>
