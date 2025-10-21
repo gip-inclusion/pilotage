@@ -11,12 +11,17 @@ from pilotage.itoutils.departments import DEPARTMENTS
 
 
 class DataSetName(TextChoices):
-    DI_SERVICES = "di_services", "data·inclusion - Services"
-    DI_STRUCTURES = "di_structures", "data·inclusion - Structures"
+    # API V0
+    DI_SERVICES_V0 = "di_services", "data·inclusion - Services"
+    DI_STRUCTURES_V0 = "di_structures", "data·inclusion - Structures"
+    # API V1
+    DI_SERVICES_V1 = "di_services_v1", "data·inclusion - Services"
+    DI_STRUCTURES_V1 = "di_structures_v1", "data·inclusion - Structures"
 
 
 QUERIES = {
-    DataSetName.DI_SERVICES: {
+    # API V0
+    DataSetName.DI_SERVICES_V0: {
         "database": 2,
         "type": "query",
         "query": {
@@ -45,7 +50,7 @@ QUERIES = {
             ],
         },
     },
-    DataSetName.DI_STRUCTURES: {
+    DataSetName.DI_STRUCTURES_V0: {
         "database": 2,
         "type": "query",
         "query": {
@@ -64,6 +69,61 @@ QUERIES = {
             "filter": [
                 "starts-with",
                 ["field", 59588, {"base-type": "type/Text"}],
+                "000",  # Default to no-matchs
+                {"case-sensitive": False},
+            ],
+        },
+    },
+    # API V1
+    DataSetName.DI_SERVICES_V1: {
+        "database": 2,
+        "type": "query",
+        "query": {
+            "source-table": 2169,
+            "fields": [
+                ["field", 62677, {"base-type": "type/Text"}],  # Source
+                ["field", 62706, {"base-type": "type/Text"}],  # Structure ID
+                ["field", 62694, {"base-type": "type/Text"}],  # ID
+                ["field", 62685, {"base-type": "type/Text"}],  # Nom
+                ["field", 62704, {"base-type": "type/*"}],  # Thematiques
+                ["field", 62692, {"base-type": "type/Text"}],  # Frais
+                ["field", 62710, {"base-type": "type/*"}],  # Publics
+                ["field", 62700, {"base-type": "type/Text"}],  # Commune
+                ["field", 62696, {"base-type": "type/Text"}],  # Code Postal
+                ["field", 62686, {"base-type": "type/Text"}],  # Code Insee
+                ["field", 62683, {"base-type": "type/Text"}],  # Adresse
+                ["field", 62681, {"base-type": "type/Float"}],  # Longitude
+                ["field", 62699, {"base-type": "type/Float"}],  # Latitude
+                ["field", 62682, {"base-type": "type/*"}],  # Modes accueil
+            ],
+            "filter": [
+                "starts-with",
+                ["field", 62686, {"base-type": "type/Text"}],
+                "000",  # Default to no-matchs
+                {"case-sensitive": False},
+            ],
+        },
+    },
+    DataSetName.DI_STRUCTURES_V1: {
+        "database": 2,
+        "type": "query",
+        "query": {
+            "source-table": 2170,
+            "fields": [
+                ["field", 62728, {"base-type": "type/Text"}],  # Source
+                ["field", 62727, {"base-type": "type/Text"}],  # ID
+                ["field", 62721, {"base-type": "type/Text"}],  # Nom
+                ["field", 62716, {"base-type": "type/Text"}],  # Commune
+                ["field", 62730, {"base-type": "type/Text"}],  # Code Postal
+                ["field", 62719, {"base-type": "type/Text"}],  # Code Insee
+                ["field", 62718, {"base-type": "type/Text"}],  # Adresse
+                ["field", 62711, {"base-type": "type/Float"}],  # Longitude
+                ["field", 62715, {"base-type": "type/Float"}],  # Latitude
+                ["field", 62717, {"base-type": "type/*"}],  # Reseaux Porteurs
+            ],
+            "filter": [
+                "starts-with",
+                ["field", 62719, {"base-type": "type/Text"}],
                 "000",  # Default to no-matchs
                 {"case-sensitive": False},
             ],
