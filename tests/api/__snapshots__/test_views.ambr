@@ -4,7 +4,17 @@
     'error': "Department doesn't exists",
   })
 # ---
+# name: test_dataset_with_unknown_department[di_services_v1]
+  dict({
+    'error': "Department doesn't exists",
+  })
+# ---
 # name: test_dataset_with_unknown_department[di_structures]
+  dict({
+    'error': "Department doesn't exists",
+  })
+# ---
+# name: test_dataset_with_unknown_department[di_structures_v1]
   dict({
     'error': "Department doesn't exists",
   })
@@ -19,7 +29,17 @@
     'error': 'Department is a required query parameter',
   })
 # ---
+# name: test_dataset_without_department[di_services_v1]
+  dict({
+    'error': 'Department is a required query parameter',
+  })
+# ---
 # name: test_dataset_without_department[di_structures]
+  dict({
+    'error': 'Department is a required query parameter',
+  })
+# ---
+# name: test_dataset_without_department[di_structures_v1]
   dict({
     'error': 'Department is a required query parameter',
   })
