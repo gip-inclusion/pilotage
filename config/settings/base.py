@@ -223,7 +223,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 EMPLOIS_BASE_URL = "https://emplois.inclusion.beta.gouv.fr"
 
-GIP_SITE_BASE_URL = "https://inclusion.beta.gouv.fr"
+GIP_SITE_BASE_URL = "https://inclusion.gouv.fr"
 
 MATOMO_BASE_URL = os.getenv("MATOMO_BASE_URL")
 MATOMO_SITE_ID = os.getenv("MATOMO_SITE_ID")
