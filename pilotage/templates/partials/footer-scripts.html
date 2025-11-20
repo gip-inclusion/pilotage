@@ -69,15 +69,10 @@
     (tarteaucitron.job = tarteaucitron.job || []).push('googlefonts');
 </script>
 
-{% if MATOMO_BASE_URL and MATOMO_SITE_ID %}
-    <script>
-        tarteaucitron.user.matomoId = "{{ MATOMO_SITE_ID }}";
-        tarteaucitron.user.matomoHost = "{{ MATOMO_BASE_URL }}/";
-        (tarteaucitron.job = tarteaucitron.job || []).push('matomo');
-    </script>
-
+{% if MATOMO_BASE_URL %}
     <script>
         var _mtm = window._mtm = window._mtm || [];
+        _mtm.push(["HeatmapSessionRecording::disable"]);
         _mtm.push({
             'mtm.startTime': (new Date().getTime()),
             'event': 'mtm.Start'
