@@ -70,19 +70,22 @@
 </script>
 
 {% if MATOMO_BASE_URL %}
-    <script>
-        var _mtm = window._mtm = window._mtm || [];
-        _mtm.push(["HeatmapSessionRecording::disable"]);
-        _mtm.push({
+    <script type="text/javascript">
+        window._mtm = window._mtm || [];
+        window._mtm.push(["HeatmapSessionRecording::disable"]);
+        window._mtm.push({
             'mtm.startTime': (new Date().getTime()),
             'event': 'mtm.Start'
         });
-        var d = document,
-            g = d.createElement('script'),
-            s = d.getElementsByTagName('script')[0];
-        g.async = true;
-        g.src = '{{ MATOMO_BASE_URL }}/js/container_czDcW7tH.js';
-        s.parentNode.insertBefore(g, s);
+        (function() {
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.src = '{{ MATOMO_BASE_URL }}/js/container_czDcW7tH.js';
+            s.parentNode.insertBefore(g, s);
+        })();
     </script>
 {% endif %}
 
