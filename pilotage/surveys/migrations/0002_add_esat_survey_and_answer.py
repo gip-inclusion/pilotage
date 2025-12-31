@@ -186,7 +186,7 @@ class Migration(migrations.Migration):
                             ("988", "Nouvelle-Calédonie"),
                         ],
                         null=True,
-                        verbose_name="quels est le département d’implantation de l'ESAT ?",
+                        verbose_name="quel est le département d’implantation de l'ESAT ?",
                     ),
                 ),
                 (
@@ -194,7 +194,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="avez-vous eu des refus de PMSMP par les organismes du réseau pour l'emploi (France Travail, Cap Emploi, Mission Locale) pour un ou plusieurs de vos travailleur·euse·s ?",
+                        verbose_name="avez-vous eu des refus de PMSMP par les organismes du réseau pour l'emploi (France Travail, Cap Emploi, Mission Locale) pour un ou plusieurs de vos travailleurs et travailleuses ?",
                     ),
                 ),
                 (
@@ -202,7 +202,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="êtes-vous délégataire de prescription de PMSMP pour les travailleur·euse·s que vous accompagnez ?",
+                        verbose_name="êtes-vous délégataire de prescription de PMSMP pour les travailleurs et travailleuses que vous accompagnez ?",
                     ),
                 ),
                 (
@@ -210,7 +210,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont quitté l'ESAT au cours de l’année ?",
+                        verbose_name="en n-1, combien de travailleurs et travailleuses ont quitté l'ESAT ?",
                     ),
                 ),
                 (
@@ -218,7 +218,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="parmi eux, combien ont quitté pour un emplois en entreprise adaptée",
+                        verbose_name="combien ont quitté l'ESAT pour un emploi en entreprise adaptée ?",
                     ),
                 ),
                 (
@@ -226,7 +226,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="parmi eux, combien ont quitté pour un emplois en association",
+                        verbose_name="combien ont quitté l'ESAT pour un emploi dans le milieu ordinaire privé non lucratif (associations) ?",
                     ),
                 ),
                 (
@@ -234,7 +234,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="parmi eux, combien ont quitté pour un emplois dans le privé",
+                        verbose_name="combien ont quitté l'ESAT pour un emploi dans le milieu ordinaire privé lucratif ?",
                     ),
                 ),
                 (
@@ -242,7 +242,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="parmi eux, combien ont quitté pour un emplois dans le public",
+                        verbose_name="combien ont quitté l'ESAT pour un emploi dans le milieu ordinaire public ?",
                     ),
                 ),
                 (
@@ -251,7 +251,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         help_text="hors situation de temps partagé entre milieu protégé et milieu ordinaire",
                         null=True,
-                        verbose_name="parmi eux, combien de travailleur·euse·s étaient à temps partiel ?",
+                        verbose_name="parmi eux, combien de travailleurs et travailleuses étaient à temps partiel ?",
                     ),
                 ),
                 (
@@ -275,7 +275,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         help_text="Ici, il ne faut pas comptabiliser par contrat mais par travailleur",
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont cumulé un temps partiel dans l'ESAT et un emploi à temps partiel en Entreprise Adaptée ?",
+                        verbose_name="combien de travailleurs et travailleuses ont cumulé un temps partiel dans l'ESAT et un emploi à temps partiel en Entreprise Adaptée ?",
                     ),
                 ),
                 (
@@ -284,7 +284,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         help_text="Ici, il ne faut pas comptabiliser par contrat mais par travailleur",
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont cumulé un temps partiel dans l'ESAT avec un emploi à temps partiel en milieu ordinaire classique, privé ou public ?",
+                        verbose_name="combien de travailleurs et travailleuses ont cumulé un temps partiel dans l'ESAT avec un emploi à temps partiel en milieu ordinaire classique, privé ou public ?",
                     ),
                 ),
                 (
@@ -304,7 +304,7 @@ class Migration(migrations.Migration):
                             ("LEFT", "Sortie de l'ESAT pour accéder à un emploi en milieu ordinaire ou adapté"),
                         ],
                         null=True,
-                        verbose_name="a l’issue de cette reconnaissance ou validation, quelle a été la suite du parcours des travailleur·euse·s concerné(e)s ?",
+                        verbose_name="a l’issue de cette reconnaissance ou validation, quelle a été la suite du parcours des travailleurs et travailleuses concerné(e)s ?",
                     ),
                 ),
                 (
@@ -313,7 +313,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         help_text="Entendre hors aide au poste de l’Etat au titre de la compensation de la rémunération garantie.",
                         null=True,
-                        verbose_name="quel était votre chiffre d'affaire annuel commercial tout confondu (productions propres, prestations de service, mises à disposition de travailleur·euse·s auprès d’utilisateurs) ?",
+                        verbose_name="quel était votre chiffre d'affaire annuel commercial tout confondu (productions propres, prestations de service, mises à disposition de travailleurs et travailleuses auprès d’utilisateurs) ?",
                     ),
                 ),
                 (
@@ -321,7 +321,7 @@ class Migration(migrations.Migration):
                     models.PositiveIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="quel était votre chiffre d'affaire annuel commercial en mises à disposition de travailleur·euse·s auprès d’utilisateurs ?",
+                        verbose_name="quel est le montant annuel de votre chiffre d'affaires (Compte 706) issu exclusivement des contrats de mise à disposition de travailleurs et travailleuses handicapés (MAD) auprès d'utilisateurs tiers (entreprises, collectivités, associations) ?",
                     ),
                 ),
                 (
@@ -345,7 +345,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="quel était le montant annuel pour 2024 pour l'ensemble des travailleur·euse·s couverts de la contribution acquittée par l’ESAT ?",
+                        verbose_name="quel était le montant annuel pour l'année n-1 pour l'ensemble des travailleurs et travailleuses couverts de la contribution acquittée par l’ESAT ?",
                     ),
                 ),
                 (
@@ -353,7 +353,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="quel budget annuel avez-vous alloué au transport des travailleur·euse·s de leur domicile à l’ESAT (transport en commun et/ou navette et/ou taxi) en euro ?",
+                        verbose_name="quel budget annuel avez-vous alloué au transport des travailleurs et travailleuses de leur domicile à l’ESAT (transport en commun et/ou navette et/ou taxi) en euro ?",
                     ),
                 ),
                 (
@@ -369,7 +369,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="avez-vous mis en place une formation à l'autodétermination pour les travailleur·euse·s ?",
+                        verbose_name="avez-vous mis en place une formation à l'autodétermination pour les travailleurs et travailleuses ?",
                     ),
                 ),
                 (
@@ -377,7 +377,7 @@ class Migration(migrations.Migration):
                     models.PositiveIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="quel a été le montant des investissements de mise aux normes de sécurité et d’accessibilité des installations réalisés par l'ESAT en 2024 ?",
+                        verbose_name="quel a été le montant des investissements de mise aux normes de sécurité et d’accessibilité des installations réalisés par l'ESAT en n-1 ?",
                     ),
                 ),
                 (
@@ -390,7 +390,7 @@ class Migration(migrations.Migration):
                             ("DEFICIT", "déficitaire"),
                         ],
                         null=True,
-                        verbose_name="sur le budget commercial, étiez-vous",
+                        verbose_name="sur le résultat net de la SEC, étiez-vous",
                     ),
                 ),
                 (
@@ -403,7 +403,7 @@ class Migration(migrations.Migration):
                             ("MORE_THAN_500K", "Plus de 500k€"),
                         ],
                         null=True,
-                        verbose_name="de quel montant est ce déficit sur le budget commercial ?",
+                        verbose_name="de quel montant est-ce déficit ?",
                     ),
                 ),
                 (
@@ -416,7 +416,7 @@ class Migration(migrations.Migration):
                             ("MORE_THAN_500K", "Plus de 500k€"),
                         ],
                         null=True,
-                        verbose_name="de quel montant est cet excédent sur le budget commercial ?",
+                        verbose_name="de quel montant est-cet excédant?",
                     ),
                 ),
                 (
@@ -425,7 +425,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         help_text="En lien le cas échéant avec le soutien de l’Etat via fonds d'intervention régional (FIR)",
                         null=True,
-                        verbose_name="quel a été le montant des investissements permettant de diversifier les activités proposées aux travailleur·euse·s, réalisés par l'ESAT en 2024 ?",
+                        verbose_name="quel a été le montant des investissements permettant de diversifier les activités proposées aux travailleurs et travailleuses, réalisés par l'ESAT en n-1 ?",
                     ),
                 ),
                 (
@@ -439,7 +439,7 @@ class Migration(migrations.Migration):
                         ],
                         help_text="Il s’agit du résultat comptable de l'exercice",
                         null=True,
-                        verbose_name="sur le budget principal de l'activité sociale, étiez-vous:",
+                        verbose_name="sur le résultat de clôture de votre Budget de Fonctionnement (Section d'Exploitation du Budget Social), étiez-vous :",
                     ),
                 ),
                 (
@@ -452,7 +452,7 @@ class Migration(migrations.Migration):
                             ("MORE_THAN_500K", "Plus de 500k€"),
                         ],
                         null=True,
-                        verbose_name="de quel montant est ce déficit sur le budget principal de l'activité sociale ?",
+                        verbose_name="de quel montant est-ce déficit ?",
                     ),
                 ),
                 (
@@ -465,7 +465,7 @@ class Migration(migrations.Migration):
                             ("MORE_THAN_500K", "Plus de 500k€"),
                         ],
                         null=True,
-                        verbose_name="de quel montant est cet excédent sur le budget principal de l'activité sociale ?",
+                        verbose_name="de quel montant est-cet excédant?",
                     ),
                 ),
                 (
@@ -473,10 +473,17 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="est-ce que l'ESAT a acquitté une contribution pour la formation de vos travailleur·euse·s auprès de l’OPCO Santé ou de l’OPCA ANFH (pour les ESAT publics) ?",
+                        verbose_name="est-ce que l'ESAT a acquitté une contribution pour la formation de vos travailleurs et travailleuses auprès de l’OPCO Santé ou de l’OPCA ANFH (pour les ESAT publics) ?",
                     ),
                 ),
-                ("cpfreason", models.TextField(blank=True, null=True, verbose_name="pour quelles raisons ?")),
+                (
+                    "cpfreason",
+                    models.TextField(
+                        blank=True,
+                        null=True,
+                        verbose_name="pour quelles raisons les travailleurs et travailleurs n'utilisent pas leur CPF ?",
+                    ),
+                ),
                 (
                     "documents_falclist",
                     django.contrib.postgres.fields.ArrayField(
@@ -492,7 +499,7 @@ class Migration(migrations.Migration):
                         help_text="Le facile à lire et à comprendre (FALC) est une méthode qui a pour but de traduire un langage classique en un langage simplifié.",
                         null=True,
                         size=None,
-                        verbose_name="au 31 décembre 2024, les principaux documents destinés aux travailleur·euse·s étaient-ils accessibles en FALC ou en communication alternative augmentée?(contrat d’accompagnement par le travail, livret d’accueil, règlement de fonctionnement, etc.)",
+                        verbose_name="au 31 décembre N-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils accessibles en FALC ou en communication alternative augmentée?(contrat d’accompagnement par le travail, livret d’accueil, règlement de fonctionnement, etc.)  ",
                     ),
                 ),
                 (
@@ -509,7 +516,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="l'ESAT a t-il bénéficié d’une aide financière pour mettre en place ce carnet et le cas échéant, acquérir un logiciel ?   ",
+                        verbose_name="l'ESAT a t-il bénéficié d’une aide financière pour mettre en place ce carnet et le cas échéant, acquérir un logiciel ?",
                     ),
                 ),
                 (
@@ -525,7 +532,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="avez-vous signé en 2024 une convention de partenariat avec une entreprise adaptée (EA)  ?",
+                        verbose_name="avez-vous signé en n-1 une convention de partenariat avec une entreprise adaptée (EA)  ?",
                     ),
                 ),
                 (
@@ -533,7 +540,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="en 2024, y-a-t-il dans l'ESAT un délégué/une déléguée des travailleurs élu(e) ?",
+                        verbose_name="en n-1, y-a-t-il dans l'ESAT un délégué/une déléguée des travailleurs élu(e) ?",
                     ),
                 ),
                 (
@@ -545,7 +552,7 @@ class Migration(migrations.Migration):
                             ("INTERNALLY", "en interne"),
                         ],
                         null=True,
-                        verbose_name="est-ce que le délégué ou la déléguée a bénéficié d'une formation :",
+                        verbose_name="est-ce que le délégué ou la déléguée a bénéficié d'une formation au cours de son mandat pour cette mission :",
                     ),
                 ),
                 (
@@ -569,7 +576,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="est-ce que l'ESAT a contribué en 2024 à un régime de prévoyance au sens de l’article R 243-9 du CASF, avec compensation par l’Etat d’une partie de la contribution ?",
+                        verbose_name="est-ce que l'ESAT a contribué en n-1 à un régime de prévoyance au sens de l’article R 243-9 du CASF, avec compensation par l’Etat d’une partie de la contribution ?",
                     ),
                 ),
                 (
@@ -577,7 +584,7 @@ class Migration(migrations.Migration):
                     models.TextField(
                         blank=True,
                         null=True,
-                        verbose_name="quelle a été la formation majoritairement suivie par les travailleur·euse·s de l'ESAT au titre de leur CPF ?",
+                        verbose_name="quelle a été la formation majoritairement suivie par les travailleurs et travailleuses de l'ESAT au titre de leur CPF ?",
                     ),
                 ),
                 (
@@ -593,7 +600,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="l'ESAT propose-t-il des chèques cadeaux aux travailleur·euse·s ?",
+                        verbose_name="l'ESAT propose-t-il des chèques cadeaux aux travailleurs et travailleuses ?",
                     ),
                 ),
                 (
@@ -601,7 +608,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="quel est le budget annuel de l'ESAT pour les chèques cadeaux ? (en euro) ",
+                        verbose_name="quel est le budget annuel de l'ESAT pour les chèques cadeaux ?",
                     ),
                 ),
                 (
@@ -609,7 +616,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="les travailleur·euse·s de l’ESAT bénéficiaient-ils en 2024 d’une complémentaire santé collective avec prise en charge par l’ESAT d’une partie du coût de la cotisation ? ",
+                        verbose_name="les travailleurs et travailleuses de l’ESAT bénéficiaient-ils en n-1 d’une complémentaire santé collective avec prise en charge par l’ESAT d’une partie du coût de la cotisation ?",
                     ),
                 ),
                 (
@@ -617,7 +624,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="l'ESAT propose-t-il des chèques vacances aux travailleur·euse·s ?",
+                        verbose_name="l'ESAT propose-t-il des chèques vacances aux travailleurs et travailleuses ?",
                     ),
                 ),
                 (
@@ -625,7 +632,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="quel est le budget annuel de l'ESAT pour les chèques vacances ? (en euro)  ",
+                        verbose_name="quel est le budget annuel de l'ESAT pour les chèques vacances ?",
                     ),
                 ),
                 (
@@ -636,7 +643,7 @@ class Migration(migrations.Migration):
                         max_digits=3,
                         null=True,
                         validators=[django.core.validators.MaxValueValidator(80)],
-                        verbose_name="quel était l’âge moyen des travailleur·euse·s accompagnés ?",
+                        verbose_name="au 31 décembre n-1, quel était l’âge moyen des travailleurs et travailleuses accompagnés ?",
                     ),
                 ),
                 (
@@ -644,7 +651,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="au 31 décembre 2024, quel était le montant moyen de la part rémunération garantie du travailleur prise en charge financièrement par l'ESAT (en pourcentage du SMIC)?",
+                        verbose_name="au 31 décembre n-1, quel était le montant moyen de la part rémunération garantie du travailleur prise en charge financièrement par l'ESAT (en pourcentage du SMIC)?",
                     ),
                 ),
                 (
@@ -655,7 +662,7 @@ class Migration(migrations.Migration):
                         help_text="L'ancienneté moyenne doit être exprimée en mois",
                         max_digits=3,
                         null=True,
-                        verbose_name="quelle était l’ancienneté moyenne des travailleur·euse·s accompagnés ?",
+                        verbose_name="au 31 décembre n-1, quelle était l’ancienneté moyenne des travailleurs et travailleuses accompagnés ?",
                     ),
                 ),
                 (
@@ -663,7 +670,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="une instance mixte (salarié(e)s/travailleur·euse·s) sur la qualité de vie au travail (QVT), l’hygiène et la sécurité et l’évaluation des risques professionnels a-t-elle été mise en place ?",
+                        verbose_name="une instance mixte (salarié(e)s/travailleurs et travailleuses) sur la qualité de vie au travail (QVT), l’hygiène et la sécurité et l’évaluation des risques professionnels a-t-elle été mise en place ?",
                     ),
                 ),
                 (
@@ -671,7 +678,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de conventions d'appui ont été conclues dans l'ESAT avec un employeur privé ou public pour accompagner la sortie et le parcours professionnel d’un travailleur en milieu ordinaire ?",
+                        verbose_name="combien de conventions d'appui sont actuellement en vigueur dans l'ESAT avec un employeur privé ou public pour accompagner la sortie et le parcours professionnel d’un travailleur en milieu ordinaire au 31/12/N-1 ?",
                     ),
                 ),
                 (
@@ -683,7 +690,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="avec combien d'entreprises adaptées présentes sur votre territoire avez-vous une convention de partenariat au 31 décembre 2024 ?",
+                        verbose_name="avec combien d'entreprises adaptées présentes sur votre territoire avez-vous une convention de partenariat au 31 décembre n-1 ?",
                     ),
                 ),
                 (
@@ -691,7 +698,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s avez-vous accompagnés ?",
+                        verbose_name="combien de travailleurs et travailleuses avez-vous accompagné ?",
                     ),
                 ),
                 (
@@ -705,7 +712,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont bénéficié d’une formation à l’autodétermination ?",
+                        verbose_name="combien de travailleurs et travailleuses ont bénéficié dans l'année d’une formation à l’autodétermination ?",
                     ),
                 ),
                 (
@@ -723,7 +730,7 @@ class Migration(migrations.Migration):
                 (
                     "nb_employee_code",
                     models.PositiveSmallIntegerField(
-                        blank=True, null=True, verbose_name="combien de travailleur·euse·s ont le code ?"
+                        blank=True, null=True, verbose_name="combien de travailleurs et travailleuses ont le code ?"
                     ),
                 ),
                 (
@@ -731,7 +738,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont réalisé une mise à disposition collective d'un employeur public ou privé ?",
+                        verbose_name="combien de travailleurs et travailleuses ont réalisé une mise à disposition collective d'un employeur public ou privé ?",
                     ),
                 ),
                 (
@@ -739,7 +746,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont réalisé une mise à disposition individuelle d'un employeur public ou privé ?",
+                        verbose_name="combien de travailleurs et travailleuses ont réalisé une mise à disposition individuelle d'un employeur public ou privé ?",
                     ),
                 ),
                 (
@@ -747,7 +754,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="en 2024, combien de travailleur·euse·s de l'ESAT ont participé à Duoday ?",
+                        verbose_name="en n-1, combien de travailleurs et travailleuses de l'ESAT ont participé à Duoday ?",
                     ),
                 ),
                 (
@@ -755,7 +762,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="en 2024, combien de travailleur·euse·s de l'ESAT ont suivi une formation prise en charge par l'OPCO Santé ou par l’ANFH ?",
+                        verbose_name="en n-1, combien de travailleurs et travailleuses de l'ESAT ont suivi une formation prise en charge par l'OPCO Santé ou par l’ANFH ?",
                     ),
                 ),
                 (
@@ -763,7 +770,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s se sont inscrits comme demandeurs d’emploi à France Travail ? ",
+                        verbose_name="combien de travailleurs et travailleuses se sont inscrits comme demandeurs d’emploi à France Travail ?",
                     ),
                 ),
                 (
@@ -777,7 +784,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont bénéficié d'au moins une formation animée en interne par les salarié(e)s de l'ESAT ?",
+                        verbose_name="combien de travailleurs et travailleuses ont bénéficié d'au moins une formation animée en interne par les salarié(e)s de l'ESAT ?",
                     ),
                 ),
                 (
@@ -785,7 +792,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont quitté l’ESAT pour suivre une formation en établissement et service de réadaptation professionnelle (ESRP) ?",
+                        verbose_name="combien de travailleurs et travailleuses ont suivi une formation en établissement et service de réadaptation professionnelle (ESRP) ?",
                     ),
                 ),
                 (
@@ -809,7 +816,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont bénéficié de la carte mobilité inclusion ?",
+                        verbose_name="combien de travailleurs et travailleuses ont bénéficié de la carte mobilité inclusion ?",
                     ),
                 ),
                 (
@@ -817,7 +824,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="quel était le nombre de travailleur·euse·s dans l'ESAT admis pour la première fois en milieu protégé ?",
+                        verbose_name="quel était le nombre de travailleurs et travailleuses dans l'ESAT admis pour la première fois en milieu protégé ?",
                     ),
                 ),
                 (
@@ -825,7 +832,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="quel était le nombre de travailleur·euse·s dans l'ESAT ayant occupé antérieurement à leur admission un emploi en milieu ordinaire y compris adapté ?",
+                        verbose_name="quel était le nombre de travailleurs et travailleuses dans l'ESAT ayant occupé antérieurement à leur admission un emploi en milieu ordinaire y compris adapté ?",
                     ),
                 ),
                 (
@@ -833,7 +840,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont effectué une PMSMP ?",
+                        verbose_name="combien de travailleurs et travailleuses ont effectué une PMSMP ?",
                     ),
                 ),
                 (
@@ -849,7 +856,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont bénéficié d’une RAE ou d’une RSFP ?",
+                        verbose_name="combien de travailleurs et travailleuses ont bénéficié d’une RAE ou d’une RSFP ?",
                     ),
                 ),
                 (
@@ -857,7 +864,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="nombre de travailleur·euse·s ayant réintégrés l'ESAT",
+                        verbose_name="nombre de travailleurs et travailleuses ayant réintégrés l'ESAT",
                     ),
                 ),
                 (
@@ -865,7 +872,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="nombre de travailleur·euse·s ayant intégrés un autre ESAT",
+                        verbose_name="nombre de travailleurs et travailleuses ayant intégrés un autre ESAT",
                     ),
                 ),
                 (
@@ -873,7 +880,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont réalisé une activité en boutique/restaurant ?",
+                        verbose_name="nombre de travailleur et travailleuses ayant réalisé une activité dans un lieu au contact de la clientèle ?",
                     ),
                 ),
                 (
@@ -881,7 +888,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont bénéficié d’une VAE ?",
+                        verbose_name="combien de travailleurs et travailleuses ont bénéficié d’une VAE ?",
                     ),
                 ),
                 (
@@ -889,7 +896,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont réalisé une prestation de service auprès d'une entreprise, d'une collectivité publique ou de tout autre organisme, assurée avec ou un plusieurs salarié(e)s de l'ESAT ?",
+                        verbose_name="combien de travailleurs et travailleuses ont réalisé une prestation de service auprès d'une entreprise, d'une collectivité publique ou de tout autre organisme, assurée avec ou un plusieurs salarié(e)s de l'ESAT ?",
                     ),
                 ),
                 (
@@ -898,7 +905,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         help_text="et maintenir ainsi votre capacité d’activité en bénéficiant via l’ASP de l’annualisation de l’aide au poste",
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont été admis temporairement dans l'ESAT pour remplacer des travailleurs absents pour maladie, pour suivre une action formation ou pour occuper un emploi à temps partiel ?",
+                        verbose_name="combien de travailleurs et travailleuses ont été admis temporairement dans l'ESAT pour remplacer des travailleurs absents pour maladie, pour suivre une action formation ou pour occuper un emploi à temps partiel ?",
                     ),
                 ),
                 (
@@ -906,7 +913,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont bénéficié d'un transport proposé par l'ESAT? (transport en commun et/ou navette et/ou taxi)",
+                        verbose_name="combien de travailleurs et travailleuses ont bénéficié d'un transport proposé par l'ESAT? (transport en commun et/ou navette et/ou taxi)",
                     ),
                 ),
                 (
@@ -932,7 +939,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s de l'ESAT ont travaillé au moins un dimanche ou un jour férié en 2024 ?",
+                        verbose_name="combien de travailleurs et travailleuses de l'ESAT ont travaillé au moins un dimanche ou un jour férié en n-1 ?",
                     ),
                 ),
                 (
@@ -940,7 +947,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="au 31 décembre 2024, et depuis leur admission dans l'ESAT, combien de travailleur·euse·s n'ont pas encore utilisé leur CPF ?",
+                        verbose_name="au 31 décembre n-1, et depuis leur admission dans l'ESAT, combien de travailleurs et travailleuses ont utilisé leur CPF ?",
                     ),
                 ),
                 (
@@ -948,7 +955,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont leur permis de conduire ?",
+                        verbose_name="combien de travailleurs et travailleuses ont leur permis de conduire ?",
                     ),
                 ),
                 (
@@ -984,7 +991,7 @@ class Migration(migrations.Migration):
                         decimal_places=1,
                         max_digits=4,
                         null=True,
-                        verbose_name="au 31 décembre 2024, quel était le nombre de places autorisées par l’ARS pour l'ESAT ?",
+                        verbose_name="au 31 décembre n-1, quel était l'agrément fixé par l'ARS pour l'ESAT en nombre de places autorisées ?",
                     ),
                 ),
                 (
@@ -1000,7 +1007,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="combien de travailleur·euse·s ont bénéficié d’actions de préparation à la retraite, dans le cadre ou non d’Un Avenir Après le Travail ?",
+                        verbose_name="combien de travailleurs et travailleuses ont bénéficié d’actions de préparation à la retraite, dans le cadre ou non d’Un Avenir Après le Travail ?",
                     ),
                 ),
                 (
@@ -1026,7 +1033,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         null=True,
                         validators=[django.core.validators.MaxValueValidator(100)],
-                        verbose_name="quel pourcentage de travailleur·euse·s bénéficie de la prime d'activité?",
+                        verbose_name="quel pourcentage de travailleurs et travailleuses bénéficie de la prime d'activité?",
                     ),
                 ),
                 (
@@ -1036,7 +1043,7 @@ class Migration(migrations.Migration):
                         help_text="Possibilité de mettre 0",
                         null=True,
                         validators=[django.core.validators.MaxValueValidator(100)],
-                        verbose_name="quel était le pourcentage de financement par l'ESAT en 2024 ?",
+                        verbose_name="quel était le pourcentage de financement par l'ESAT en n-1 ?",
                     ),
                 ),
                 (
@@ -1063,7 +1070,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="avez-vous signé en 2024 une convention de partenariat avec une Plateforme Emploi Accompagné ?",
+                        verbose_name="avez-vous signé en n-1 une convention de partenariat avec une Plateforme Emploi Accompagné ?",
                     ),
                 ),
                 (
@@ -1072,7 +1079,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         help_text="Possibilité de mettre 0",
                         null=True,
-                        verbose_name="en 2024, quel était le montant moyen de la prime d’intéressement (au sens de l’article R 243-6 du CASF) versée aux travailleur·euse·s ?",
+                        verbose_name="en n-1, quel était le montant moyen de la prime d’intéressement (au sens de l’article R 243-6 du CASF) versée aux travailleurs et travailleuses?",
                     ),
                 ),
                 (
@@ -1080,7 +1087,7 @@ class Migration(migrations.Migration):
                     models.TextField(
                         blank=True,
                         null=True,
-                        verbose_name="quelles ont été les actions conduites par l'ESAT pour préparer les travailleur·euse·s au départ à la retraite (inscription dans la démarche Un Avenir Après le Travail, rendez-vous organisés avec la CARSAT, etc.) ?",
+                        verbose_name="quelles ont été les actions conduites par l'ESAT pour préparer les travailleurs et travailleuses au départ à la retraite (inscription dans la démarche Un Avenir Après le Travail, rendez-vous organisés avec la CARSAT, etc.) ?",
                     ),
                 ),
                 (
@@ -1088,7 +1095,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="avez-vous signé en 2024 une convention de partenariat territoriale avec le réseau pour l’emploi ?",
+                        verbose_name="avez-vous signé en n-1 une convention de partenariat territoriale avec le réseau pour l’emploi ?",
                     ),
                 ),
                 (
@@ -1236,7 +1243,7 @@ class Migration(migrations.Migration):
                             ("1901", 1901),
                         ],
                         null=True,
-                        verbose_name="depuis quelle année ce régime de prévoyance est-il mis en œuvre dans l'ESAT ?  ",
+                        verbose_name="depuis quelle année ce régime de prévoyance est-il mis en œuvre dans l'ESAT ?",
                     ),
                 ),
                 (

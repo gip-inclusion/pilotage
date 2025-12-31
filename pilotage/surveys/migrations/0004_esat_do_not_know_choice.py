@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                     ("DO_NOT_KNOW", "Je ne sais pas"),
                 ],
                 null=True,
-                verbose_name="a l’issue de cette reconnaissance ou validation, quelle a été la suite du parcours des travailleur·euse·s concerné(e)s ?",
+                verbose_name="a l’issue de cette reconnaissance ou validation, quelle a été la suite du parcours des travailleurs et travailleuses concerné(e)s ?",
             ),
         ),
         migrations.AlterField(
@@ -44,7 +44,7 @@ class Migration(migrations.Migration):
                     ("DO_NOT_KNOW", "Je ne sais pas"),
                 ],
                 null=True,
-                verbose_name="sur le budget commercial, étiez-vous",
+                verbose_name="sur le résultat net de la SEC, étiez-vous",
             ),
         ),
         migrations.AlterField(
@@ -59,7 +59,7 @@ class Migration(migrations.Migration):
                     ("DO_NOT_KNOW", "Je ne sais pas"),
                 ],
                 null=True,
-                verbose_name="de quel montant est ce déficit sur le budget commercial ?",
+                verbose_name="de quel montant est-ce déficit ?",
             ),
         ),
         migrations.AlterField(
@@ -74,7 +74,7 @@ class Migration(migrations.Migration):
                     ("DO_NOT_KNOW", "Je ne sais pas"),
                 ],
                 null=True,
-                verbose_name="de quel montant est cet excédent sur le budget commercial ?",
+                verbose_name="de quel montant est-cet excédant?",
             ),
         ),
         migrations.AlterField(
@@ -90,7 +90,7 @@ class Migration(migrations.Migration):
                 ],
                 help_text="Il s’agit du résultat comptable de l'exercice",
                 null=True,
-                verbose_name="sur le budget principal de l'activité sociale, étiez-vous:",
+                verbose_name="sur le résultat de clôture de votre Budget de Fonctionnement (Section d'Exploitation du Budget Social), étiez-vous :",
             ),
         ),
         migrations.AlterField(
@@ -105,7 +105,7 @@ class Migration(migrations.Migration):
                     ("DO_NOT_KNOW", "Je ne sais pas"),
                 ],
                 null=True,
-                verbose_name="de quel montant est ce déficit sur le budget principal de l'activité sociale ?",
+                verbose_name="de quel montant est-ce déficit ?",
             ),
         ),
         migrations.AlterField(
@@ -120,7 +120,7 @@ class Migration(migrations.Migration):
                     ("DO_NOT_KNOW", "Je ne sais pas"),
                 ],
                 null=True,
-                verbose_name="de quel montant est cet excédent sur le budget principal de l'activité sociale ?",
+                verbose_name="de quel montant est-cet excédant?",
             ),
         ),
         migrations.AlterField(
@@ -134,7 +134,7 @@ class Migration(migrations.Migration):
                     ("DO_NOT_KNOW", "Je ne sais pas"),
                 ],
                 null=True,
-                verbose_name="est-ce que le délégué ou la déléguée a bénéficié d'une formation :",
+                verbose_name="est-ce que le délégué ou la déléguée a bénéficié d'une formation au cours de son mandat pour cette mission :",
             ),
         ),
         migrations.AlterField(
@@ -175,6 +175,7 @@ class Migration(migrations.Migration):
             field=models.CharField(
                 blank=True,
                 choices=[
+                    ("2026", 2026),
                     ("2025", 2025),
                     ("2024", 2024),
                     ("2023", 2023),
@@ -303,7 +304,7 @@ class Migration(migrations.Migration):
                     ("DO_NOT_KNOW", "Je ne sais pas"),
                 ],
                 null=True,
-                verbose_name="depuis quelle année ce régime de prévoyance est-il mis en œuvre dans l'ESAT ?  ",
+                verbose_name="depuis quelle année ce régime de prévoyance est-il mis en œuvre dans l'ESAT ?",
             ),
         ),
         migrations.AlterField(
@@ -323,7 +324,7 @@ class Migration(migrations.Migration):
                 help_text="Le facile à lire et à comprendre (FALC) est une méthode qui a pour but de traduire un langage classique en un langage simplifié.",
                 null=True,
                 size=None,
-                verbose_name="au 31 décembre 2024, les principaux documents destinés aux travailleur·euse·s étaient-ils accessibles en FALC ou en communication alternative augmentée?(contrat d’accompagnement par le travail, livret d’accueil, règlement de fonctionnement, etc.)",
+                verbose_name="au 31 décembre N-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils accessibles en FALC ou en communication alternative augmentée ? (contrat d’accompagnement par le travail, livret d’accueil, règlement de fonctionnement, etc.)",
             ),
         ),
     ]
