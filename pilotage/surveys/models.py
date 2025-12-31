@@ -127,7 +127,7 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         choices=DEPARTMENTS.items(),
-        verbose_name="quels est le département d’implantation de l'ESAT ?",
+        verbose_name="quel est le département d’implantation de l'ESAT ?",
     )
 
     # ESATStep.EMPLOYEE
@@ -137,7 +137,7 @@ class ESATAnswer(Answer):
         decimal_places=1,
         max_digits=4,
         validators=[MinValueValidator(0)],
-        verbose_name="au 31 décembre 2024, quel était le nombre de places autorisées par l’ARS pour l'ESAT ?",
+        verbose_name="au 31 décembre n-1, quel était l'agrément fixé par l'ARS pour l'ESAT en nombre de places autorisées ?",
     )
     nb_employee_worked = models.DecimalField(
         null=True,
@@ -148,7 +148,7 @@ class ESATAnswer(Answer):
         verbose_name="combien de salarié(e)s ou d’agents publics (ESAT publics) ont travaillé dans l'ESAT ?",
     )
     nb_employee_acc = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="combien de travailleur·euse·s avez-vous accompagnés ?"
+        null=True, blank=True, verbose_name="combien de travailleurs et travailleuses avez-vous accompagné ?"
     )
     mean_employee_age = models.DecimalField(
         null=True,
@@ -156,7 +156,7 @@ class ESATAnswer(Answer):
         decimal_places=1,
         max_digits=3,
         validators=[MinValueValidator(0), MaxValueValidator(80)],
-        verbose_name="quel était l’âge moyen des travailleur·euse·s accompagnés ?",
+        verbose_name="au 31 décembre n-1, quel était l’âge moyen des travailleurs et travailleuses accompagnés ?",
     )
     mean_seniority = models.DecimalField(
         null=True,
@@ -164,7 +164,7 @@ class ESATAnswer(Answer):
         decimal_places=1,
         max_digits=3,
         validators=[MinValueValidator(0)],
-        verbose_name="quelle était l’ancienneté moyenne des travailleur·euse·s accompagnés ?",
+        verbose_name="au 31 décembre n-1, quelle était l’ancienneté moyenne des travailleurs et travailleuses accompagnés ?",
         help_text="L'ancienneté moyenne doit être exprimée en mois",
     )
     nb_employee_ordinary_job = models.PositiveSmallIntegerField(
@@ -191,7 +191,7 @@ class ESATAnswer(Answer):
     nb_employee_ft_job_seekers = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleur·euse·s se sont inscrits comme demandeurs d’emploi à France Travail ? ",
+        verbose_name="combien de travailleur·euse·s se sont inscrits comme demandeurs d’emploi à France Travail ?",
     )
     nb_employee_mispe_mdph = models.PositiveSmallIntegerField(
         null=True,
@@ -238,7 +238,7 @@ class ESATAnswer(Answer):
     nb_employee_restau = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleur·euse·s ont réalisé une activité en boutique/restaurant ?",
+        verbose_name="nombre de travailleur et travailleuses ayant réalisé une activité dans un lieu au contact de la clientèle ?",
     )
     nb_employee_worked_sunday = models.PositiveSmallIntegerField(
         null=True,
@@ -281,19 +281,25 @@ class ESATAnswer(Answer):
 
     # ESATStep.EMPLOYEE_LEFT
     nb_employee_left = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="combien de travailleur·euse·s ont quitté l'ESAT au cours de l’année ?"
+        null=True, blank=True, verbose_name="en n-1, combien de travailleurs et travailleuses ont quitté l'ESAT ?"
     )
     nb_employee_left_ea = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="parmi eux, combien ont quitté pour un emplois en entreprise adaptée"
+        null=True, blank=True, verbose_name="combien ont quitté l'ESAT pour un emploi en entreprise adaptée ?"
     )
     nb_employee_left_private = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="parmi eux, combien ont quitté pour un emplois dans le privé"
+        null=True,
+        blank=True,
+        verbose_name="combien ont quitté l'ESAT pour un emploi dans le milieu ordinaire privé lucratif ?",
     )
     nb_employee_left_public = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="parmi eux, combien ont quitté pour un emplois dans le public"
+        null=True,
+        blank=True,
+        verbose_name="combien ont quitté l'ESAT pour un emploi dans le milieu ordinaire public ?",
     )
     nb_employee_left_asso = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="parmi eux, combien ont quitté pour un emplois en association"
+        null=True,
+        blank=True,
+        verbose_name="combien ont quitté l'ESAT pour un emploi dans le milieu ordinaire privé non lucratif (associations) ?",
     )
     nb_employee_cdi = models.PositiveSmallIntegerField(
         null=True, blank=True, verbose_name="parmi eux, combien ont signé un CDI ?"
@@ -328,12 +334,12 @@ class ESATAnswer(Answer):
     nb_conv_exit = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de conventions d'appui ont été conclues dans l'ESAT avec un employeur privé ou public pour accompagner la sortie et le parcours professionnel d’un travailleur en milieu ordinaire ?",
+        verbose_name="combien de conventions d'appui sont actuellement en vigueur dans l'ESAT avec un employeur privé ou public pour accompagner la sortie et le parcours professionnel d’un travailleur en milieu ordinaire au 31/12/N-1 ?",
     )
     nb_employee_left_esrp = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleur·euse·s ont quitté l’ESAT pour suivre une formation en établissement et service de réadaptation professionnelle (ESRP) ?",
+        verbose_name="combien de travailleurs et travailleuses ont suivi une formation en établissement et service de réadaptation professionnelle (ESRP) ?",
     )
     nb_support_hours = models.DecimalField(
         null=True,
@@ -422,9 +428,13 @@ class ESATAnswer(Answer):
     nb_employeed_cpf_unused = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="au 31 décembre 2024, et depuis leur admission dans l'ESAT, combien de travailleur·euse·s n'ont pas encore utilisé leur CPF ?",
+        verbose_name="au 31 décembre n-1, et depuis leur admission dans l'ESAT, combien de travailleurs et travailleuses ont utilisé leur CPF ?",
     )
-    cpfreason = models.TextField(null=True, blank=True, verbose_name="pour quelles raisons ?")
+    cpfreason = models.TextField(
+        null=True,
+        blank=True,
+        verbose_name="pour quelles raisons les travailleurs et travailleurs n'utilisent pas leur CPF ?",
+    )
     formation_cpf = models.TextField(
         null=True,
         blank=True,
@@ -448,7 +458,7 @@ class ESATAnswer(Answer):
     nb_employee_autodetermination = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleur·euse·s ont bénéficié d’une formation à l’autodétermination ?",
+        verbose_name="combien de travailleurs et travailleuses ont bénéficié dans l'année d’une formation à l’autodétermination ?",
     )
     autodetermination_external_formation = models.BooleanField(
         null=True,
@@ -473,7 +483,7 @@ class ESATAnswer(Answer):
     duoday_software_financial_help = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="l'ESAT a t-il bénéficié d’une aide financière pour mettre en place ce carnet et le cas échéant, acquérir un logiciel ?   ",
+        verbose_name="l'ESAT a t-il bénéficié d’une aide financière pour mettre en place ce carnet et le cas échéant, acquérir un logiciel ?",
     )
     duoday_financial_help_type = models.TextField(null=True, blank=True, verbose_name="type d'aide")
 
@@ -482,7 +492,7 @@ class ESATAnswer(Answer):
         models.CharField(choices=DocumentFALCList.choices),
         null=True,
         blank=True,
-        verbose_name="au 31 décembre 2024, les principaux documents destinés aux travailleur·euse·s étaient-ils accessibles en FALC ou en communication alternative augmentée?(contrat d’accompagnement par le travail, livret d’accueil, règlement de fonctionnement, etc.)",
+        verbose_name="au 31 décembre N-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils accessibles en FALC ou en communication alternative augmentée?(contrat d’accompagnement par le travail, livret d’accueil, règlement de fonctionnement, etc.)",
         help_text="Le facile à lire et à comprendre (FALC) est une méthode qui a pour but de traduire un langage classique en un langage simplifié.",
     )
     employee_delegate = models.PositiveSmallIntegerField(
@@ -498,7 +508,7 @@ class ESATAnswer(Answer):
             ("INTERNALLY", "en interne"),
             DO_NOT_KNOW_CHOICE,
         ],
-        verbose_name="est-ce que le délégué ou la déléguée a bénéficié d'une formation :",
+        verbose_name="est-ce que le délégué ou la déléguée a bénéficié d'une formation au cours de son mandat pour cette mission :",
     )
     employee_delegate_hours_credit = models.BooleanField(
         null=True,
@@ -516,14 +526,14 @@ class ESATAnswer(Answer):
     profit_sharing_bonus = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="en 2024, quel était le montant moyen de la prime d’intéressement (au sens de l’article R 243-6 du CASF) versée aux travailleur·euse·s ?",
+        verbose_name="en n-1, quel était le montant moyen de la prime d’intéressement (au sens de l’article R 243-6 du CASF) versée aux travailleurs et travailleuses?",
         help_text="Possibilité de mettre 0",
     )
     mean_pct_esat_rem = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         validators=[MaxValueValidator(100)],
-        verbose_name="au 31 décembre 2024, quel était le montant moyen de la part rémunération garantie du travailleur prise en charge financièrement par l'ESAT (en pourcentage du SMIC)?",
+        verbose_name="au 31 décembre n-1, quel était le montant moyen de la part rémunération garantie du travailleur prise en charge financièrement par l'ESAT (en pourcentage du SMIC)?",
     )
     pct_employee_activity_bonus = models.PositiveSmallIntegerField(
         null=True,
@@ -536,7 +546,7 @@ class ESATAnswer(Answer):
     health_complementary = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="les travailleur·euse·s de l’ESAT bénéficiaient-ils en 2024 d’une complémentaire santé collective avec prise en charge par l’ESAT d’une partie du coût de la cotisation ? ",
+        verbose_name="les travailleur·euse·s de l’ESAT bénéficiaient-ils en 2024 d’une complémentaire santé collective avec prise en charge par l’ESAT d’une partie du coût de la cotisation ?",
     )
     pct_health_complementary_esat = models.PositiveSmallIntegerField(
         null=True,
@@ -559,7 +569,7 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         choices=[(str(year), year) for year in range(timezone.localdate().year, 1900, -1)] + [DO_NOT_KNOW_CHOICE],
-        verbose_name="depuis quelle année ce régime de prévoyance est-il mis en œuvre dans l'ESAT ?  ",
+        verbose_name="depuis quelle année ce régime de prévoyance est-il mis en œuvre dans l'ESAT ?",
     )
 
     # ESATStep.MOBILITY
@@ -594,7 +604,7 @@ class ESATAnswer(Answer):
     holiday_voucher_annual_budget = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="quel est le budget annuel de l'ESAT pour les chèques vacances ? (en euro)  ",
+        verbose_name="quel est le budget annuel de l'ESAT pour les chèques vacances ?",
     )
     gift_voucher = models.BooleanField(
         null=True,
@@ -602,7 +612,7 @@ class ESATAnswer(Answer):
         verbose_name="l'ESAT propose-t-il des chèques cadeaux aux travailleur·euse·s ?",
     )
     gift_voucher_annual_budget = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="quel est le budget annuel de l'ESAT pour les chèques cadeaux ? (en euro) "
+        null=True, blank=True, verbose_name="quel est le budget annuel de l'ESAT pour les chèques cadeaux ?"
     )
 
     # ESATStep.CONVENTION
@@ -672,7 +682,7 @@ class ESATAnswer(Answer):
     annual_ca_dispo = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name="quel était votre chiffre d'affaire annuel commercial en mises à disposition de travailleur·euse·s auprès d’utilisateurs ?",
+        verbose_name="quel est le montant annuel de votre chiffre d'affaires (Compte 706) issu exclusivement des contrats de mise à disposition de travailleurs et travailleuses handicapés (MAD) auprès d'utilisateurs tiers (entreprises, collectivités, associations) ?",
     )
     pct_ca_public = models.PositiveSmallIntegerField(
         null=True,
@@ -683,19 +693,19 @@ class ESATAnswer(Answer):
 
     # ESATStep.SALES_BUDGET
     budget_commercial = models.CharField(
-        null=True, blank=True, choices=BudgetState.choices, verbose_name="sur le budget commercial, étiez-vous"
+        null=True, blank=True, choices=BudgetState.choices, verbose_name="sur le résultat net de la SEC, étiez-vous"
     )
     budget_commercial_deficit = models.CharField(
         null=True,
         blank=True,
         choices=BudgetRange.choices,
-        verbose_name="de quel montant est ce déficit sur le budget commercial ?",
+        verbose_name="de quel montant est-ce déficit ?",
     )
     budget_commercial_excedent = models.CharField(
         null=True,
         blank=True,
         choices=BudgetRange.choices,
-        verbose_name="de quel montant est cet excédent sur le budget commercial ?",
+        verbose_name="de quel montant est-cet excédant?",
     )
 
     # ESATStep.SOCIAL_ACTIVITY_BUDGET
@@ -703,20 +713,20 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         choices=BudgetState.choices,
-        verbose_name="sur le budget principal de l'activité sociale, étiez-vous:",
+        verbose_name="sur le résultat de clôture de votre Budget de Fonctionnement (Section d'Exploitation du Budget Social), étiez-vous :",
         help_text="Il s’agit du résultat comptable de l'exercice",
     )
     budget_social_deficit = models.CharField(
         null=True,
         blank=True,
         choices=BudgetRange.choices,
-        verbose_name="de quel montant est ce déficit sur le budget principal de l'activité sociale ?",
+        verbose_name="de quel montant est-ce déficit ?",
     )
     budget_social_excedent = models.CharField(
         null=True,
         blank=True,
         choices=BudgetRange.choices,
-        verbose_name="de quel montant est cet excédent sur le budget principal de l'activité sociale ?",
+        verbose_name="de quel montant est-cet excédant?",
     )
     budget_accessibility = models.PositiveIntegerField(
         null=True,
