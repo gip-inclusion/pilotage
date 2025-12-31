@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 max_digits=3,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0), django.core.validators.MaxValueValidator(80)],
-                verbose_name="quel était l’âge moyen des travailleur·euse·s accompagnés ?",
+                verbose_name="au 31 décembre n-1, quel était l’âge moyen des travailleurs et travailleuses accompagnés ?",
             ),
         ),
         migrations.AlterField(
@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 null=True,
                 validators=[django.core.validators.MaxValueValidator(100)],
-                verbose_name="au 31 décembre 2024, quel était le montant moyen de la part rémunération garantie du travailleur prise en charge financièrement par l'ESAT (en pourcentage du SMIC)?",
+                verbose_name="au 31 décembre n-1, quel était le montant moyen de la part rémunération garantie du travailleur prise en charge financièrement par l'ESAT (en pourcentage du SMIC)?",
             ),
         ),
         migrations.AlterField(
@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
                 max_digits=3,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
-                verbose_name="quelle était l’ancienneté moyenne des travailleur·euse·s accompagnés ?",
+                verbose_name="au 31 décembre n-1, quelle était l’ancienneté moyenne des travailleurs et travailleuses accompagnés ?",
             ),
         ),
         migrations.AlterField(
@@ -65,7 +65,7 @@ class Migration(migrations.Migration):
                 max_digits=4,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
-                verbose_name="au 31 décembre 2024, quel était le nombre de places autorisées par l’ARS pour l'ESAT ?",
+                verbose_name="au 31 décembre n-1, quel était l'agrément fixé par l'ARS pour l'ESAT en nombre de places autorisées ?",
             ),
         ),
         migrations.AlterField(
