@@ -22,10 +22,15 @@ class ESATAnswerOrganizationForm(ESATBaseForm):
             "managing_organization_name",
             "esat_status",
             "esat_dept",
+            "nb_places_allowed",
+            "nb_employee_worked",
         ]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields["nb_places_allowed"].widget.attrs["min"] = 0
+        self.fields["nb_employee_worked"].widget.attrs["min"] = 0
+
         if kwargs["editable"]:
             self.fields["esat_role"].widget.attrs["placeholder"] = "Directrice d'ESAT"
             self.fields["esat_name"].widget.attrs["placeholder"] = "ESAT Les pruniers"
@@ -34,66 +39,70 @@ class ESATAnswerOrganizationForm(ESATBaseForm):
             self.fields["managing_organization_name"].widget.attrs["placeholder"] = "ADAPEI16"
 
 
-class ESATAnswerEmployeeForm(ESATBaseForm):
+class ESATAnswerWorkersSupportedForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
-            "nb_places_allowed",
-            "nb_employee_worked",
             "nb_employee_acc",
             "mean_employee_age",
             "mean_seniority",
-            "nb_employee_ordinary_job",
-            "nb_employee_new",
-            "nb_employee_temporary",
-            "nb_employee_willing_ordinary",
-            "nb_employee_ft_job_seekers",
-            "nb_employee_mispe_mdph",
-            "nb_employee_mispe_rpe",
+            "nb_employee_half_time",
         ]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["nb_places_allowed"].widget.attrs["min"] = 0
-        self.fields["nb_employee_worked"].widget.attrs["min"] = 0
         self.fields["mean_employee_age"].widget.attrs["min"] = 0
         self.fields["mean_employee_age"].widget.attrs["max"] = 80
         self.fields["mean_seniority"].widget.attrs["min"] = 0
 
 
-class ESATAnswerPMSMPForm(ESATBaseForm):
+class ESATAnswerWorkersNewForm(ESATBaseForm):
+    class Meta:
+        model = models.ESATAnswer
+        fields = [
+            "nb_employee_ordinary_job",
+            "nb_employee_new",
+            "nb_employee_temporary",
+        ]
+
+
+class ESATAnswerEstablishmentDiscoveryForm(ESATBaseForm):
+    class Meta:
+        model = models.ESATAnswer
+        fields = [
+            "nb_employee_mispe_mdph",
+            "nb_employee_mispe_rpe",
+        ]
+
+
+class ESATAnswerOrdinaryWorkingEnvironmentForm(ESATBaseForm):
+    class Meta:
+        model = models.ESATAnswer
+        fields = [
+            "nb_employee_willing_ordinary",
+            "nb_employee_ft_job_seekers",
+        ]
+
+
+class ESATAnswerOrdinaryWorkingEnvironmentAndCustomersInvolvementForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
             "prescription_delegate",
             "pmsmp_refused",
             "nb_employee_pmsmp",
-        ]
-
-
-class ESATAnswerActivityKindForm(ESATBaseForm):
-    class Meta:
-        model = models.ESATAnswer
-        fields = [
             "nb_employee_service",
             "nb_employee_dispo_indiv",
             "nb_employee_dispo_collec",
             "nb_employee_restau",
-        ]
-
-
-class ESATAnswerPartialWorkForm(ESATBaseForm):
-    class Meta:
-        model = models.ESATAnswer
-        fields = [
+            "nb_worker_only_inside",
             "pct_activity_outside",
-            "nb_employee_half_time",
             "nb_employee_cumul_esat_ea",
             "nb_employee_cumul_esat_ordi",
         ]
 
 
-class ESATAnswerEmployeeLeftForm(ESATBaseForm):
+class ESATAnswerWorkersLeftForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -102,25 +111,33 @@ class ESATAnswerEmployeeLeftForm(ESATBaseForm):
             "nb_employee_left_private",
             "nb_employee_left_public",
             "nb_employee_left_asso",
+            "nb_worker_left_other_reason",
+            "nb_employee_cdi",
+            "nb_employee_cdd",
+            "nb_employee_interim",
+            "nb_employee_prof",
+            "nb_employee_apprentice",
+            "nb_conv_exit",
+            "nb_conv_exit_agreement_new",
+            "nb_employee_left_esrp",
         ]
 
 
-class ESATAnswerEmployeeReturnForm(ESATBaseForm):
+class ESATAnswerWorkersRightToReturnForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
             "nb_employee_reinteg",
             "nb_employee_reinteg_other",
+            "nb_worker_other_esat_with_agreement",
             "nb_esat_conv",
         ]
 
 
-class ESATAnswerMiscForm(ESATBaseForm):
+class ESATAnswerSupportHoursForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
-            "nb_conv_exit",
-            "nb_employee_left_esrp",
             "nb_support_hours",
             "support_themes",
         ]
@@ -132,6 +149,73 @@ class ESATAnswerMiscForm(ESATBaseForm):
             self.fields["support_themes"].widget.attrs["placeholder"] = (
                 "Connaissance de soi et valorisation des compétences, accès aux droits, journée sportive"
             )
+
+
+class ESATAnswerFormationsForm(ESATBaseForm):
+    class Meta:
+        model = models.ESATAnswer
+        fields = [
+            "contrib_opco",
+            "pct_opco",
+            "nb_employee_formation_opco",
+            "opco_or_anfh_refusal",
+            "nb_employeed_cpf_unused",
+            "cpfreason",
+            "formation_cpf",
+            "nb_employee_intern_formation",
+            "formation_subject",
+            "autodetermination_formation",
+            "nb_employee_autodetermination",
+            "autodetermination_external_formation",
+        ]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["pct_opco"].widget.attrs["max"] = 100
+        if kwargs["editable"]:
+            self.fields["cpfreason"].widget.attrs["placeholder"] = "Nous n'avons eu aucune demande en ce sens"
+            self.fields["formation_cpf"].widget.attrs["placeholder"] = "Permis de conduire"
+            self.fields["formation_subject"].widget.attrs["placeholder"] = (
+                "Hygiène, communication bienveillante, savoir s'exprimer en public"
+            )
+
+
+class ESATAnswerSkillsForm(ESATBaseForm):
+    class Meta:
+        model = models.ESATAnswer
+        fields = [
+            "skills_validation_type",
+            "nb_employee_rae",
+            "nb_employee_rsfp",
+            "after_reco_situation_list",
+        ]
+
+
+class ESATAnswerDuodaysForm(ESATBaseForm):
+    class Meta:
+        model = models.ESATAnswer
+        fields = [
+            "nb_employee_duoday",
+            "nb_employee_reverse_duoday",
+        ]
+
+
+class ESATAnswerSkillsNotebookForm(ESATBaseForm):
+    class Meta:
+        model = models.ESATAnswer
+        fields = [
+            "duoday_board",
+            "duoday_software_used",
+            "software_name",
+            "duoday_software_financial_help",
+            "duoday_financial_help_type",
+        ]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if kwargs["editable"]:
+            self.fields["duoday_software_used"].widget.attrs["placeholder"] = "WIKIKAP, Neopass"
+            self.fields["duoday_financial_help_type"].widget.attrs["placeholder"] = "CNR"
 
 
 class ESATAnswerRetirementForm(ESATBaseForm):
@@ -153,85 +237,8 @@ class ESATAnswerRetirementForm(ESATBaseForm):
             self.fields["pct_more_than50"].widget.attrs["max"] = 100
 
 
-class ESATAnswerOPCOForm(ESATBaseForm):
-    class Meta:
-        model = models.ESATAnswer
-        fields = [
-            "contrib_opco",
-            "pct_opco",
-            "nb_employee_formation_opco",
-            "opco_or_anfh_refusal",
-        ]
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields["pct_opco"].widget.attrs["max"] = 100
-
-
-class ESATAnswerSkillsForm(ESATBaseForm):
-    class Meta:
-        model = models.ESATAnswer
-        fields = [
-            "nb_employee_rae",
-            "nb_employee_rsfp",
-            "after_reco_situation_list",
-        ]
-
-
-class ESATAnswerCPFForm(ESATBaseForm):
-    class Meta:
-        model = models.ESATAnswer
-        fields = [
-            "nb_employeed_cpf_unused",
-            "cpfreason",
-            "formation_cpf",
-        ]
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        if kwargs["editable"]:
-            self.fields["cpfreason"].widget.attrs["placeholder"] = "Nous n'avons eu aucune demande en ce sens"
-            self.fields["formation_cpf"].widget.attrs["placeholder"] = "Permis de conduire"
-
-
-class ESATAnswerAutodeterminationForm(ESATBaseForm):
-    class Meta:
-        model = models.ESATAnswer
-        fields = [
-            "nb_employee_intern_formation",
-            "formation_subject",
-            "autodetermination_formation",
-            "nb_employee_autodetermination",
-            "autodetermination_external_formation",
-        ]
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        if kwargs["editable"]:
-            self.fields["formation_subject"].widget.attrs["placeholder"] = (
-                "Hygiène, communication bienveillante, savoir s'exprimer en public"
-            )
-
-
-class ESATAnswerDuodayForm(ESATBaseForm):
-    class Meta:
-        model = models.ESATAnswer
-        fields = [
-            "nb_employee_duoday",
-            "duoday_board",
-            "duoday_software_used",
-            "duoday_software_financial_help",
-            "duoday_financial_help_type",
-        ]
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        if kwargs["editable"]:
-            self.fields["duoday_software_used"].widget.attrs["placeholder"] = "WIKIKAP, Neopass"
-            self.fields["duoday_financial_help_type"].widget.attrs["placeholder"] = "CNR"
-
-
-class ESATAnswerRepresentativeForm(ESATBaseForm):
+class ESATAnswerLanguageAccessibilityForm(ESATBaseForm):
+    # TODO: Check if we can only override the widget
     documents_falclist = forms.MultipleChoiceField(
         required=False,
         label=(
@@ -247,6 +254,13 @@ class ESATAnswerRepresentativeForm(ESATBaseForm):
         model = models.ESATAnswer
         fields = [
             "documents_falclist",
+        ]
+
+
+class ESATAnswerWorkingConditionsForm(ESATBaseForm):
+    class Meta:
+        model = models.ESATAnswer
+        fields = [
             "employee_delegate",
             "employee_delegate_formation",
             "employee_delegate_hours_credit",
@@ -255,38 +269,29 @@ class ESATAnswerRepresentativeForm(ESATBaseForm):
         ]
 
 
-class ESATAnswerBonusForm(ESATBaseForm):
+class ESATAnswerProfitSharingForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
             "profit_sharing_bonus",
             "mean_pct_esat_rem",
-            "pct_employee_activity_bonus",
         ]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["mean_pct_esat_rem"].widget.attrs["max"] = 100
-        self.fields["pct_employee_activity_bonus"].widget.attrs["max"] = 100
 
 
-class ESATAnswerHealthAssuranceForm(ESATBaseForm):
+class ESATAnswerInsurancePolicyForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
-            "health_complementary",
-            "pct_health_complementary_esat",
-            "annual_health_complementary_budget",
             "foresight_in_place",
             "year_foresight_in_place",
         ]
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields["pct_health_complementary_esat"].widget.attrs["max"] = 100
 
-
-class ESATAnswerMobilityForm(ESATBaseForm):
+class ESATAnswerMobilityProgramForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -298,7 +303,7 @@ class ESATAnswerMobilityForm(ESATBaseForm):
         ]
 
 
-class ESATAnswerVoucherForm(ESATBaseForm):
+class ESATAnswerVouchersForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -309,7 +314,15 @@ class ESATAnswerVoucherForm(ESATBaseForm):
         ]
 
 
-class ESATAnswerConventionForm(ESATBaseForm):
+class ESATAnswerSundayWorkForm(ESATBaseForm):
+    class Meta:
+        model = models.ESATAnswer
+        fields = [
+            "nb_employee_worked_sunday",
+        ]
+
+
+class ESATAnswerPartnershipAgreementsForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -321,12 +334,13 @@ class ESATAnswerConventionForm(ESATBaseForm):
         ]
 
 
-class ESATAnswerCounselorsForm(ESATBaseForm):
+class ESATAnswerStaffForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
             "nb_insertion_staff",
             "nb_insertion_dispo",
+            "insertion_staff_funding",
         ]
 
     def __init__(self, *args, **kwargs):
@@ -335,7 +349,7 @@ class ESATAnswerCounselorsForm(ESATBaseForm):
         self.fields["nb_insertion_dispo"].widget.attrs["min"] = 0
 
 
-class ESATAnswerRevenueForm(ESATBaseForm):
+class ESATAnswerCommercialOperationForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -344,21 +358,14 @@ class ESATAnswerRevenueForm(ESATBaseForm):
             "annual_ca_service",
             "annual_ca_dispo",
             "pct_ca_public",
+            "budget_commercial",
+            "budget_commercial_deficit",
+            "budget_commercial_excedent",
         ]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["pct_ca_public"].widget.attrs["max"] = 100
-
-
-class ESATAnswerSalesBudgetForm(ESATBaseForm):
-    class Meta:
-        model = models.ESATAnswer
-        fields = [
-            "budget_commercial",
-            "budget_commercial_deficit",
-            "budget_commercial_excedent",
-        ]
 
 
 class ESATAnswerSocialActivityBudgetForm(ESATBaseForm):
@@ -368,6 +375,15 @@ class ESATAnswerSocialActivityBudgetForm(ESATBaseForm):
             "budget_social",
             "budget_social_deficit",
             "budget_social_excedent",
+            "budget_accessibility",
+            "budget_diversity",
+        ]
+
+
+class ESATAnswerInvestmentsForm(ESATBaseForm):
+    class Meta:
+        model = models.ESATAnswer
+        fields = [
             "budget_accessibility",
             "budget_diversity",
         ]
