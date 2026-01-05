@@ -150,7 +150,7 @@ class ESATAnswer(Answer):
         max_digits=4,
         validators=[MinValueValidator(0)],
         verbose_name="combien de salarié(e)s ou d’agents publics (ESAT publics) ont travaillé dans l'ESAT ?",
-        help_text="En équivalent temps plein (ETP), salariés ou agents publics encore en poste au 31/12/N-1 et ceux partis dans l'année",
+        help_text="En équivalent temps plein (ETP), salariés ou agents publics encore en poste au 31/12/n-1 et ceux partis dans l'année",
     )
 
     # ESATStep.WORKERS_SUPPORTED
@@ -210,13 +210,13 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name="combien de personnes ont été accueillies par l'ESAT dans le cadre d’une mise en situation professionnelle (MISPE) prescrite par une MDPH ?",
-        help_text="Nombre de personnes (effectif physique) accueillies en 2024",
+        help_text="Nombre de personnes (effectif physique) accueillies en n-1",
     )
     nb_worker_mispe_rpe = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name="combien de personnes ont été accueillies par l'ESAT dans le cadre d’une mise en situation professionnelle (MISPE) prescrite par le réseau pour l'emploi (RPE) ?",
-        help_text="Nombre de personnes (effectif physique) accueillies en 2024",
+        help_text="Nombre de personnes (effectif physique) accueillies en n-1",
     )
 
     # ESATStep.ORDINARY_WORKING_ENVIRONMENT
@@ -301,7 +301,7 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name="en n-1, combien de travailleurs et travailleuses ont quitté l'ESAT ?",
-        help_text="Nombre de travailleurs partis au cours de l'année N-1",
+        help_text="Nombre de travailleurs partis au cours de l'année n-1",
     )
     nb_worker_left_ea = models.PositiveSmallIntegerField(
         null=True,
@@ -350,12 +350,12 @@ class ESATAnswer(Answer):
     nb_conv_exit_agreement = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de conventions d'appui sont actuellement en vigueur dans l'ESAT avec un employeur privé ou public pour accompagner la sortie et le parcours professionnel d’un travailleur en milieu ordinaire au 31/12/N-1 ?",
+        verbose_name="combien de conventions d'appui sont actuellement en vigueur dans l'ESAT avec un employeur privé ou public pour accompagner la sortie et le parcours professionnel d’un travailleur en milieu ordinaire au 31/12/n-1 ?",
     )
     nb_conv_exit_agreement_new = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de conventions d'appui ont été signées dans l'année N-1 avec un employeur privé ou public pour accompagner la sortie et le parcours professionnel d’un travailleur en milieu ordinaire ?",
+        verbose_name="combien de conventions d'appui ont été signées dans l'année n-1 avec un employeur privé ou public pour accompagner la sortie et le parcours professionnel d’un travailleur en milieu ordinaire ?",
     )
     nb_worker_esrp = models.PositiveSmallIntegerField(
         null=True,
@@ -551,7 +551,7 @@ class ESATAnswer(Answer):
         models.CharField(choices=DocumentFALCList.choices),
         null=True,
         blank=True,
-        verbose_name="au 31 décembre N-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils accessibles en FALC ou en communication alternative augmentée ? (contrat d’accompagnement par le travail, livret d’accueil, règlement de fonctionnement, etc.)",
+        verbose_name="au 31 décembre n-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils accessibles en FALC ou en communication alternative augmentée ? (contrat d’accompagnement par le travail, livret d’accueil, règlement de fonctionnement, etc.)",
         help_text="Le facile à lire et à comprendre (FALC) est une méthode qui a pour but de traduire un langage classique en un langage simplifié.",
     )
 

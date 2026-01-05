@@ -242,7 +242,7 @@ class ESATAnswerLanguageAccessibilityForm(ESATBaseForm):
     documents_falclist = forms.MultipleChoiceField(
         required=False,
         label=(
-            "au 31 décembre N-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils "
+            "au 31 décembre n-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils "
             "accessibles en FALC ou en communication alternative augmentée ? "
             "(contrat d’accompagnement par le travail, livret d’accueil, règlement de fonctionnement, etc.)"
         ),

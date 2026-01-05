@@ -105,7 +105,7 @@ class Migration(migrations.Migration):
             field=models.DecimalField(
                 blank=True,
                 decimal_places=1,
-                help_text="En équivalent temps plein (ETP), salariés ou agents publics encore en poste au 31/12/N-1 et ceux partis dans l'année",
+                help_text="En équivalent temps plein (ETP), salariés ou agents publics encore en poste au 31/12/n-1 et ceux partis dans l'année",
                 max_digits=4,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
@@ -234,7 +234,7 @@ class Migration(migrations.Migration):
             name="nb_worker_left",
             field=models.PositiveSmallIntegerField(
                 blank=True,
-                help_text="Nombre de travailleurs partis au cours de l'année N-1",
+                help_text="Nombre de travailleurs partis au cours de l'année n-1",
                 null=True,
                 verbose_name="en n-1, combien de travailleurs et travailleuses ont quitté l'ESAT ?",
             ),
@@ -284,7 +284,7 @@ class Migration(migrations.Migration):
             name="nb_worker_mispe_mdph",
             field=models.PositiveSmallIntegerField(
                 blank=True,
-                help_text="Nombre de personnes (effectif physique) accueillies en 2024",
+                help_text="Nombre de personnes (effectif physique) accueillies en n-1",
                 null=True,
                 verbose_name="combien de personnes ont été accueillies par l'ESAT dans le cadre d’une mise en situation professionnelle (MISPE) prescrite par une MDPH ?",
             ),
@@ -294,7 +294,7 @@ class Migration(migrations.Migration):
             name="nb_worker_mispe_rpe",
             field=models.PositiveSmallIntegerField(
                 blank=True,
-                help_text="Nombre de personnes (effectif physique) accueillies en 2024",
+                help_text="Nombre de personnes (effectif physique) accueillies en n-1",
                 null=True,
                 verbose_name="combien de personnes ont été accueillies par l'ESAT dans le cadre d’une mise en situation professionnelle (MISPE) prescrite par le réseau pour l'emploi (RPE) ?",
             ),
