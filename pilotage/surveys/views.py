@@ -16,30 +16,39 @@ class CommonStep(enum.StrEnum):
 
 class ESATStep(TextChoices):
     INTRODUCTION = CommonStep.INTRODUCTION, "introduction"
-    ORGANIZATION = "organization", "la structure"
-    EMPLOYEE = "employee", "les employés"
-    PMSMP = "pmsmp", "PMSMP"
-    ACTIVITY_KIND = "activity-kind", "types d'activités"
-    PARTIAL_WORK = "partial-work", "temps partiels et cumuls d'activités"
-    EMPLOYEE_LEFT = "employee-left", "sorties"
-    EMPLOYEE_RETURN = "employee-return", "droit au retour"
-    MISC = "misc", "misc"
-    RETIREMENT = "retirement", "préparation à la retraite"
-    OPCO = "opco", "OPCO"
+    ORGANIZATION = "organization", "l'établissement"
+    WORKERS_SUPPORTED = "workers-supported", "les travailleur.euse.s accompagné.es"
+    WORKERS_ENTRY = "workers-new", "les travailleurs admis dans l'année"
+    ESTABLISHMENT_DISCOVERY = "establishment-discovery", "découverte de l'ESAT"
+    ORDINARY_WORKING_ENVIRONMENT = "ordinary-working-environment", "volonté d'aller vers le milieu ordinaire"
+    ORDINARY_WORKING_ENVIRONMENT_AND_CUSTOMERS_INVOLVEMENT = (
+        "ordinary-working-environment-and-customers-involvement",
+        "contact avec le milieu ordinaire et la clientèle",
+    )
+    WORKERS_LEFT = "workers-left", "les sorties"
+    WORKERS_RIGHT_TO_RETURN = (
+        "workers-right-to-return",
+        "travailleurs et travailleuses ayant exercé leur droit au retour "
+        "après avoir occupé un emploi en milieu ordinaire de travail",
+    )
+    SUPPORT_HOURS = "support-hours", "heures de soutien"
+    FORMATIONS = "formations", "formations"
     SKILLS = "skills", "reconnaissance des compétences"
-    CPF = "cpf", "CPF"
-    AUTODETERMINATION = "autodetermination", "formation à l'autodétermination"
-    DUODAY = "duoday", "Duoday"
-    REPRESENTATIVE = "representative", "Délégués"
-    BONUS = "bonus", "primes"
-    HEALTH_ASSURANCE = "health-assurance", "complémentaire santé et prévoyance"
-    MOBILITY = "mobility", "mobilité"
-    VOUCHER = "voucher", "chèques vacances et cadeaux"
-    CONVENTION = "convention", "conventions"
-    COUNSELORS = "counselors", "conseillers en parcours d'insertion et chargé(e)s d'inclusion professionnelle"
-    REVENUE = "revenue", "chiffre d'affaires"
-    SALES_BUDGET = "sales-budget", "budget commercial"
-    SOCIAL_ACTIVITY_BUDGET = "social-activity-budget", "budget principal de l'activité sociale"
+    DUODAYS = "duodays", "Duodays"
+    SKILLS_NOTEBOOK = "skills-notebook", "carnet parcours et compétences"
+    RETIREMENT = "retirement", "préparation à la retraite"
+    LANGUAGE_ACCESSIBILITY = "language-accessibility", "adaptation du langage écrit et oral"
+    WORKING_CONDITIONS = "working-conditions", "pouvoir d'agir sur les conditions de travail"
+    PROFIT_SHARING = "profit-sharing", "rémunération et prime d'intéressement"
+    INSURANCE_POLICY = "insurance-policy", "régime de prévoyance"
+    MOBILITY_PROGRAM = "mobility-program", "aide à la mobilité"
+    VOUCHERS = "vouchers", "chèques vacances et chèques cadeaux"
+    SUNDAY_WORK = "sunday-work", "travail le dimanche"
+    PARTNERSHIP_AGREEMENTS = "partnership-agreements", "conventions de partenariats"
+    STAFF = "staff", "conseillers en parcours d'insertion ou chargé(e)s d'inclusion professionnelle"
+    COMMERCIAL_OPERATION = "commercial-operation", "section d'Exploitation Commerciale"
+    SOCIAL_ACTIVITY_BUDGET = "social-activity-budget", "budget de fonctionnement ou budget social"
+    INVESTMENTS = "investments", "investissements"
     COMMENTS = "comments", "commentaires"
     CONCLUSION = CommonStep.CONCLUSION, "conclusion"
 
