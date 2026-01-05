@@ -666,30 +666,30 @@ class ESATAnswer(Answer):
     )
 
     # ESATStep.PARTNERSHIP_AGREEMENTS
-    rpe_agreement_signed = models.BooleanField(
+    agreement_signed_ft = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="avez-vous signé en n-1 une convention de partenariat territoriale avec le réseau pour l’emploi ?",
+        verbose_name="pour l'année n-1, une convention était-elle en vigueur avec France Travail",
     )
-    pea_agreement_signed = models.BooleanField(
+    agreement_signed_cap_emploi = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="avez-vous signé en n-1 une convention de partenariat avec une Plateforme Emploi Accompagné ?",
+        verbose_name="pour l'année n-1, une convention était-elle en vigueur avec Cap emploi",
     )
-    esat_pea_rattached = models.BooleanField(
+    agreement_signed_ml = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="êtes-vous un ESAT porteur ou rattaché à une structure qui gère une plateforme d’emploi accompagné (en tant que signataire de la convention de gestion)  ?",
+        verbose_name="pour l'année n-1, une convention était-elle en vigueur avec Mission Locale",
     )
-    ea_convention_signed = models.BooleanField(
+    agreement_signed_ea = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="avez-vous signé en n-1 une convention de partenariat avec une entreprise adaptée (EA)  ?",
+        verbose_name="pour l'année n-1, une convention était-elle en vigueur avec une Entreprise adaptée",
     )
-    nb_ea_convention_signed = models.BooleanField(
+    agreement_signed_dept_pae = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="avec combien d'entreprises adaptées présentes sur votre territoire avez-vous une convention de partenariat au 31 décembre n-1 ?",
+        verbose_name="pour l'année n-1, une convention était-elle en vigueur avec la plateforme accompagnée du département",
     )
 
     # ESATStep.STAFF

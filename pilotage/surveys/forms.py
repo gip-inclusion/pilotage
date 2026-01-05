@@ -326,11 +326,11 @@ class ESATAnswerPartnershipAgreementsForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = [
-            "rpe_agreement_signed",
-            "pea_agreement_signed",
-            "esat_pea_rattached",
-            "ea_convention_signed",
-            "nb_ea_convention_signed",
+            "agreement_signed_ft",
+            "agreement_signed_cap_emploi",
+            "agreement_signed_ml",
+            "agreement_signed_ea",
+            "agreement_signed_dept_pae",
         ]
 
 
