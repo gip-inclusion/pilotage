@@ -150,11 +150,15 @@ class ESATAnswer(Answer):
         max_digits=4,
         validators=[MinValueValidator(0)],
         verbose_name="combien de salarié(e)s ou d’agents publics (ESAT publics) ont travaillé dans l'ESAT ?",
+        help_text="En équivalent temps plein (ETP), salariés ou agents publics encore en poste au 31/12/N-1 et ceux partis dans l'année",
     )
 
     # ESATStep.WORKERS_SUPPORTED
     nb_worker_acc = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="combien de travailleurs et travailleuses avez-vous accompagné ?"
+        null=True,
+        blank=True,
+        verbose_name="combien de travailleurs et travailleuses avez-vous accompagné ?",
+        help_text="En nombre de travailleurs (effectif physique) en file active",
     )
     mean_worker_age = models.DecimalField(
         null=True,
@@ -163,6 +167,7 @@ class ESATAnswer(Answer):
         max_digits=3,
         validators=[MinValueValidator(0), MaxValueValidator(80)],
         verbose_name="au 31 décembre n-1, quel était l’âge moyen des travailleurs et travailleuses accompagnés ?",
+        help_text="En nombre d'années",
     )
     mean_seniority = models.DecimalField(
         null=True,
@@ -171,13 +176,13 @@ class ESATAnswer(Answer):
         max_digits=3,
         validators=[MinValueValidator(0)],
         verbose_name="au 31 décembre n-1, quelle était l’ancienneté moyenne des travailleurs et travailleuses accompagnés ?",
-        help_text="L'ancienneté moyenne doit être exprimée en mois",
+        help_text="En nombre d'années",
     )
     nb_worker_half_time = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name="parmi eux, combien de travailleurs et travailleuses étaient à temps partiel ?",
-        help_text="hors situation de temps partagé entre milieu protégé et milieu ordinaire",
+        help_text="En nombre de travailleurs (effectif physique) en file active",
     )
 
     # ESATStep.WORKERS_ENTRY
@@ -185,17 +190,19 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name="quel était le nombre de travailleurs et travailleuses dans l'ESAT ayant occupé antérieurement à leur admission un emploi en milieu ordinaire y compris adapté ?",
+        help_text="En nombre de travailleurs (effectif physique) parmi les travailleurs admis en n-1",
     )
     nb_worker_new = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name="quel était le nombre de travailleurs et travailleuses dans l'ESAT admis pour la première fois en milieu protégé ?",
+        help_text="En nombre de travailleurs (effectif physique) parmi les travailleurs admis en n-1",
     )
     nb_worker_temporary = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name="combien de travailleurs et travailleuses ont été admis temporairement dans l'ESAT pour remplacer des travailleurs absents pour maladie, pour suivre une action formation ou pour occuper un emploi à temps partiel ?",
-        help_text="et maintenir ainsi votre capacité d’activité en bénéficiant via l’ASP de l’annualisation de l’aide au poste",
+        help_text="En nombre de travailleurs (effectif physique) parmi les travailleurs admis en n-1",
     )
 
     # ESATStep.ESTABLISHMENT_DISCOVERY
@@ -203,11 +210,13 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name="combien de personnes ont été accueillies par l'ESAT dans le cadre d’une mise en situation professionnelle (MISPE) prescrite par une MDPH ?",
+        help_text="Nombre de personnes (effectif physique) accueillies en 2024",
     )
     nb_worker_mispe_rpe = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name="combien de personnes ont été accueillies par l'ESAT dans le cadre d’une mise en situation professionnelle (MISPE) prescrite par le réseau pour l'emploi (RPE) ?",
+        help_text="Nombre de personnes (effectif physique) accueillies en 2024",
     )
 
     # ESATStep.ORDINARY_WORKING_ENVIRONMENT
@@ -215,11 +224,13 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name="combien de travailleurs de l'ESAT ont exprimé dans leur projet personnalisé leur volonté d’aller travailler en milieu ordinaire ?",
+        help_text="Nombre de travailleurs",
     )
     nb_worker_ft_job_seekers = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name="combien de travailleurs et travailleuses se sont inscrits comme demandeurs d’emploi à France Travail ?",
+        help_text="Nombre de travailleurs parmi ceux ayant acté dans leur projet leur volonté d'aller vers le MOT",
     )
 
     # ESATStep.ORDINARY_WORKING_ENVIRONMENT_AND_CUSTOMERS_INVOLVEMENT
@@ -278,36 +289,43 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name="combien de travailleurs et travailleuses ont cumulé un temps partiel dans l'ESAT et un emploi à temps partiel en Entreprise Adaptée ?",
-        help_text="Ici, il ne faut pas comptabiliser par contrat mais par travailleur",
     )
     nb_worker_cumul_esat_mot = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name="combien de travailleurs et travailleuses ont cumulé un temps partiel dans l'ESAT avec un emploi à temps partiel en milieu ordinaire classique, privé ou public ?",
-        help_text="Ici, il ne faut pas comptabiliser par contrat mais par travailleur",
     )
 
     # ESATStep.WORKERS_LEFT
     nb_worker_left = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="en n-1, combien de travailleurs et travailleuses ont quitté l'ESAT ?"
+        null=True,
+        blank=True,
+        verbose_name="en n-1, combien de travailleurs et travailleuses ont quitté l'ESAT ?",
+        help_text="Nombre de travailleurs partis au cours de l'année N-1",
     )
     nb_worker_left_ea = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="combien ont quitté l'ESAT pour un emploi en entreprise adaptée ?"
+        null=True,
+        blank=True,
+        verbose_name="combien ont quitté l'ESAT pour un emploi en entreprise adaptée ?",
+        help_text="Y compris intérim",
     )
     nb_worker_left_private = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name="combien ont quitté l'ESAT pour un emploi dans le milieu ordinaire privé lucratif ?",
+        help_text="Y compris intérim",
     )
     nb_worker_left_public = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name="combien ont quitté l'ESAT pour un emploi dans le milieu ordinaire public ?",
+        help_text="Y compris intérim",
     )
     nb_worker_left_asso = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name="combien ont quitté l'ESAT pour un emploi dans le milieu ordinaire privé non lucratif (associations) ?",
+        help_text="Y compris intérim",
     )
     nb_worker_left_other_reason = models.PositiveSmallIntegerField(
         null=True,
@@ -356,11 +374,13 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name="parmi eux, combien ont réintégré un ESAT avec lequel vous aviez conclu une convention de retour ?",
+        help_text="Nombre de travailleurs",
     )
     nb_esat_agreement = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name="avec combien d'ESAT avez-vous conventionné pour garantir l’exercice du droit au retour ?",
+        help_text="Nombre d'ESAT",
     )
 
     # ESATStep.SUPPORT_HOURS
@@ -371,6 +391,7 @@ class ESATAnswer(Answer):
         max_digits=4,
         validators=[MinValueValidator(0)],
         verbose_name="quel était le nombre d’heures de soutien liées à l’activité professionnelle, dont en moyenne chaque travailleur a bénéficié (rémunérées et comprises dans le temps de travail) ?",
+        help_text="Nombre d'heures en moyenne par travailleur sur année n-1",
     )
     support_themes = models.TextField(null=True, blank=True, verbose_name="sur quelles thématiques principales ?")
 
@@ -385,12 +406,13 @@ class ESATAnswer(Answer):
         blank=True,
         validators=[MaxValueValidator(100)],
         verbose_name="quel a été le taux de votre contribution à l’OPCO Santé ou à l’ANFH ?",
-        help_text="En pourcentage de l’assiette de contribution",
+        help_text="en %",
     )
     nb_worker_formation_opco = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name="en n-1, combien de travailleurs et travailleuses de l'ESAT ont suivi une formation prise en charge par l'OPCO Santé ou par l’ANFH ?",
+        help_text="Nombre de travailleurs en file active",
     )
     opco_or_anfh_refusal = models.BooleanField(
         null=True,
@@ -401,6 +423,7 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name="au 31 décembre n-1, et depuis leur admission dans l'ESAT, combien de travailleurs et travailleuses ont utilisé leur CPF ?",
+        help_text="Nombre de travailleurs en file active",
     )
     cpf_unused_reason = models.TextField(
         null=True,
@@ -553,7 +576,9 @@ class ESATAnswer(Answer):
         blank=True,
         verbose_name="est-ce que le délégué ou la déléguée bénéficie d'un crédit d'heures chaque mois pour remplir sa mission ?",
     )
-    nb_delegate_hours = models.BooleanField(null=True, blank=True, verbose_name="si oui, précisez le nombre d'heures")
+    nb_delegate_hours = models.BooleanField(
+        null=True, blank=True, verbose_name="si oui, précisez le nombre d'heures", help_text="Nombre d'heures par mois"
+    )
     mix_qvt_in_place = models.BooleanField(
         null=True,
         blank=True,
@@ -565,7 +590,6 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name="en n-1, quel était le montant moyen de la prime d’intéressement (au sens de l’article R 243-6 du CASF) versée aux travailleurs et travailleuses?",
-        help_text="Possibilité de mettre 0",
     )
     mean_pct_esat_rem = models.PositiveSmallIntegerField(
         null=True,
@@ -620,6 +644,7 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name="quel est le budget annuel de l'ESAT pour les chèques vacances ?",
+        help_text="En euros",
     )
     gift_voucher = models.BooleanField(
         null=True,
@@ -627,7 +652,10 @@ class ESATAnswer(Answer):
         verbose_name="l'ESAT propose-t-il des chèques cadeaux aux travailleurs et travailleuses ?",
     )
     gift_voucher_annual_budget = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="quel est le budget annuel de l'ESAT pour les chèques cadeaux ?"
+        null=True,
+        blank=True,
+        verbose_name="quel est le budget annuel de l'ESAT pour les chèques cadeaux ?",
+        help_text="En euros",
     )
 
     # ESATStep.SUNDAY_WORK
@@ -672,7 +700,7 @@ class ESATAnswer(Answer):
         max_digits=4,
         validators=[MinValueValidator(0)],
         verbose_name="au 31 décembre, combien de postes de conseillers en parcours d'insertion ou chargé(e)s d'inclusion professionnelle sont dans vos effectifs ?",
-        help_text="On parle ici de professionnels formés et exclusifs sur la mission d’inclusion. Répondre ici en ETP.",
+        help_text="On parle ici de professionnels formés et exclusifs sur la mission d’inclusion. Répondre ici en ETP",
     )
     nb_insertion_dispo = models.DecimalField(
         null=True,
@@ -681,7 +709,7 @@ class ESATAnswer(Answer):
         max_digits=4,
         validators=[MinValueValidator(0)],
         verbose_name="au 31 décembre, combien de postes de conseillers en parcours d'insertion ou chargé(e)s d'inclusion professionnelle sont mis à disposition ou mutualisés ?",
-        help_text="On parle ici de professionnels formés et exclusifs sur la mission d’inclusion. Répondre ici en ETP.",
+        help_text="On parle ici de professionnels formés et exclusifs sur la mission d’inclusion. Répondre ici en ETP",
     )
     insertion_staff_funding = models.CharField(
         null=True,
@@ -695,7 +723,6 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name="quel était votre chiffre d'affaire annuel commercial tout confondu (productions propres, prestations de service, mises à disposition de travailleurs et travailleuses auprès d’utilisateurs) ?",
-        help_text="Entendre hors aide au poste de l’Etat au titre de la compensation de la rémunération garantie.",
     )
     annual_ca_production = models.PositiveIntegerField(
         null=True,
@@ -740,7 +767,7 @@ class ESATAnswer(Answer):
         blank=True,
         choices=BudgetState.choices,
         verbose_name="sur le résultat de clôture de votre Budget de Fonctionnement (Section d'Exploitation du Budget Social), étiez-vous :",
-        help_text="Il s’agit du résultat comptable de l'exercice",
+        help_text="Budget de fonctionnement dit aussi budget social",
     )
     budget_social_deficit = models.CharField(
         null=True,
@@ -765,7 +792,6 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name="quel a été le montant des investissements permettant de diversifier les activités proposées aux travailleurs et travailleuses, réalisés par l'ESAT en n-1 ?",
-        help_text="En lien le cas échéant avec le soutien de l’Etat via fonds d'intervention régional (FIR)",
     )
 
     # ESATStep.COMMENTS
