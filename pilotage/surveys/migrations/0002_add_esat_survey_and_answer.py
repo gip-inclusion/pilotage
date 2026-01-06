@@ -704,7 +704,7 @@ class Migration(migrations.Migration):
                 (
                     "nb_employee_apprentice",
                     models.PositiveSmallIntegerField(
-                        blank=True, null=True, verbose_name="parmi eux, combien ont signé un contrat d'apprentissage ?"
+                        blank=True, null=True, verbose_name="combien de travailleurs sont en contrat d'apprentissage ?"
                     ),
                 ),
                 (
@@ -718,13 +718,15 @@ class Migration(migrations.Migration):
                 (
                     "nb_employee_cdd",
                     models.PositiveSmallIntegerField(
-                        blank=True, null=True, verbose_name="parmi eux, combien ont signé un CDD ?"
+                        blank=True, null=True, verbose_name="combien de travailleurs ont signé un CDD ?"
                     ),
                 ),
                 (
                     "nb_employee_cdi",
                     models.PositiveSmallIntegerField(
-                        blank=True, null=True, verbose_name="parmi eux, combien ont signé un CDI ?"
+                        blank=True,
+                        null=True,
+                        verbose_name="pour les travailleurs et travailleuses ayant quitté l'ESAT pour un autre emploi, combien ont signé un CDI ?",
                     ),
                 ),
                 (
@@ -776,7 +778,7 @@ class Migration(migrations.Migration):
                 (
                     "nb_employee_interim",
                     models.PositiveSmallIntegerField(
-                        blank=True, null=True, verbose_name="parmi eux, combien ont signé en mission d'interim ?"
+                        blank=True, null=True, verbose_name="combien de travailleurs sont en missions Interim ?"
                     ),
                 ),
                 (
@@ -848,7 +850,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="parmi eux, combien ont signé un contrat de professionnalisation ?",
+                        verbose_name="combien de travailleurs sont en contrat de professionnalisation ?",
                     ),
                 ),
                 (
