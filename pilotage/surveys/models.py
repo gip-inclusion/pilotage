@@ -333,19 +333,21 @@ class ESATAnswer(Answer):
         verbose_name="combien ont quitté l'ESAT pour d'autres raisons ?",
     )
     nb_worker_cdi = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="parmi eux, combien ont signé un CDI ?"
+        null=True,
+        blank=True,
+        verbose_name="pour les travailleurs et travailleuses ayant quitté l'ESAT pour un autre emploi, combien ont signé un CDI ?",
     )
     nb_worker_cdd = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="parmi eux, combien ont signé un CDD ?"
+        null=True, blank=True, verbose_name="combien de travailleurs ont signé un CDD ?"
     )
     nb_worker_interim = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="parmi eux, combien ont signé en mission d'interim ?"
+        null=True, blank=True, verbose_name="combien de travailleurs sont en missions Interim ?"
     )
     nb_worker_prof = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="parmi eux, combien ont signé un contrat de professionnalisation ?"
+        null=True, blank=True, verbose_name="combien de travailleurs sont en contrat de professionnalisation ?"
     )
     nb_worker_apprentice = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="parmi eux, combien ont signé un contrat d'apprentissage ?"
+        null=True, blank=True, verbose_name="combien de travailleurs sont en contrat d'apprentissage ?"
     )
     nb_conv_exit_agreement = models.PositiveSmallIntegerField(
         null=True,
