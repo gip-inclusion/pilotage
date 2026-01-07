@@ -1,6 +1,7 @@
 {% extends "layouts/base.html" %}
 {% load django_bootstrap5 %}
 {% load markdown_extras %}
+{% load surveys %}
 
 {% block title %}Étude {{ survey.get_kind_display }} {{ survey.vintage }} - {{ block.super }}{% endblock %}
 
@@ -52,7 +53,12 @@
 
                                 {% csrf_token %}
 
-                                {% bootstrap_form form alert_error_type="all" %}
+                                {% bootstrap_form_errors form type="all" %}
+
+                                {% for field in form %}
+                                    {% label_with_info field labels_information %}
+                                    {% bootstrap_field field show_label="skip" %}
+                                {% endfor %}
 
                                 <div class="form-group text-end">
                                     {% if previous_step_url %}
