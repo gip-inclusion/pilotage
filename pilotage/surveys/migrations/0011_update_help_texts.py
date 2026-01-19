@@ -109,7 +109,7 @@ class Migration(migrations.Migration):
                 max_digits=4,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
-                verbose_name="combien de salarié(e)s ou d’agents publics (ESAT publics) ont travaillé dans l'ESAT ?",
+                verbose_name="Combien de salarié(e)s ou d’agents publics (ESAT publics) ont été employés dans l'ESAT ?",
             ),
         ),
         migrations.AlterField(
@@ -304,9 +304,9 @@ class Migration(migrations.Migration):
             name="nb_worker_new",
             field=models.PositiveSmallIntegerField(
                 blank=True,
-                help_text="En nombre de travailleurs (effectif physique) parmi les travailleurs admis en n-1",
+                help_text="En nombre de travailleurs (effectif physique) parmi ceux admis en n-1",
                 null=True,
-                verbose_name="quel était le nombre de travailleurs et travailleuses dans l'ESAT admis pour la première fois en milieu protégé ?",
+                verbose_name="quel était le nombre de travailleurs et travailleuses dans l'ESAT admis pour la première fois en milieu protégé de travail ?",
             ),
         ),
         migrations.AlterField(
@@ -324,9 +324,9 @@ class Migration(migrations.Migration):
             name="nb_worker_previous_mot",
             field=models.PositiveSmallIntegerField(
                 blank=True,
-                help_text="En nombre de travailleurs (effectif physique) parmi les travailleurs admis en n-1",
+                help_text="En nombre de travailleurs (effectif physique) parmi ceux admis en n-1",
                 null=True,
-                verbose_name="quel était le nombre de travailleurs et travailleuses dans l'ESAT ayant occupé antérieurement à leur admission un emploi en milieu ordinaire y compris adapté ?",
+                verbose_name="quel était le nombre de travailleurs et travailleuses dans l'ESAT ayant occupé antérieurement à leur admission un emploi en milieu ordinaire (y compris entreprise adapté) ?",
             ),
         ),
         migrations.AlterField(
@@ -334,7 +334,7 @@ class Migration(migrations.Migration):
             name="nb_worker_temporary",
             field=models.PositiveSmallIntegerField(
                 blank=True,
-                help_text="En nombre de travailleurs (effectif physique) parmi les travailleurs admis en n-1",
+                help_text="En nombre de travailleurs (effectif physique) parmi ceux admis en n-1",
                 null=True,
                 verbose_name="combien de travailleurs et travailleuses ont été admis temporairement dans l'ESAT pour remplacer des travailleurs absents pour maladie, pour suivre une action formation ou pour occuper un emploi à temps partiel ?",
             ),
@@ -344,7 +344,7 @@ class Migration(migrations.Migration):
             name="nb_worker_willing_mot",
             field=models.PositiveSmallIntegerField(
                 blank=True,
-                help_text="Nombre de travailleurs",
+                help_text="Nombre de travailleurs (effectif physique) en file active",
                 null=True,
                 verbose_name="combien de travailleurs de l'ESAT ont exprimé dans leur projet personnalisé leur volonté d’aller travailler en milieu ordinaire ?",
             ),

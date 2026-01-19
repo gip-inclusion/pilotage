@@ -353,7 +353,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="quel budget annuel avez-vous alloué au transport des travailleurs et travailleuses de leur domicile à l’ESAT (transport en commun et/ou navette et/ou taxi) en euro ?",
+                        verbose_name="quel budget annuel avez-vous alloué au transport des travailleurs et travailleuses de leur domicile à l’ESAT (transport en commun et/ou navette et/ou taxi) ?",
                     ),
                 ),
                 (
@@ -473,7 +473,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="est-ce que l'ESAT a acquitté une contribution pour la formation de vos travailleurs et travailleuses auprès de l’OPCO Santé ou de l’OPCA ANFH (pour les ESAT publics) ?",
+                        verbose_name="est-ce que l'ESAT a acquitté une contribution pour la formation des travailleurs et travailleuses auprès de l’OPCO Santé ou de l’OPCA ANFH (pour les ESAT publics) ?",
                     ),
                 ),
                 (
@@ -548,8 +548,8 @@ class Migration(migrations.Migration):
                     models.CharField(
                         blank=True,
                         choices=[
-                            ("TRAINING_ORGANIZATION", "par l'intermédiaire d'un organisme de formation"),
-                            ("INTERNALLY", "en interne"),
+                            ("TRAINING_ORGANIZATION", "Par l'intermédiaire d'un organisme de formation"),
+                            ("INTERNALLY", "En interne"),
                         ],
                         null=True,
                         verbose_name="est-ce que le délégué ou la déléguée a bénéficié d'une formation au cours de son mandat pour cette mission :",
@@ -651,7 +651,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="au 31 décembre n-1, quel était le montant moyen de la part rémunération garantie du travailleur prise en charge financièrement par l'ESAT (en pourcentage du SMIC)?",
+                        verbose_name="au 31 décembre n-1, quel était le montant moyen de la part rémunération garantie du travailleur prise en charge financièrement par l'ESAT ?",
                     ),
                 ),
                 (
@@ -670,7 +670,7 @@ class Migration(migrations.Migration):
                     models.BooleanField(
                         blank=True,
                         null=True,
-                        verbose_name="une instance mixte (salarié(e)s/travailleurs et travailleuses) sur la qualité de vie au travail (QVT), l’hygiène et la sécurité et l’évaluation des risques professionnels a-t-elle été mise en place ?",
+                        verbose_name="une instance mixte (salarié(e)s/travailleurs et travailleuses) sur la qualité de vie au travail (QVT), l’hygiène et la sécurité et l’évaluation des risques professionnels est-elle en place en année n-1 ?",
                     ),
                 ),
                 (
@@ -826,7 +826,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="quel était le nombre de travailleurs et travailleuses dans l'ESAT admis pour la première fois en milieu protégé ?",
+                        verbose_name="quel était le nombre de travailleurs et travailleuses dans l'ESAT admis pour la première fois en milieu protégé de travail ?",
                     ),
                 ),
                 (
@@ -834,7 +834,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="quel était le nombre de travailleurs et travailleuses dans l'ESAT ayant occupé antérieurement à leur admission un emploi en milieu ordinaire y compris adapté ?",
+                        verbose_name="quel était le nombre de travailleurs et travailleuses dans l'ESAT ayant occupé antérieurement à leur admission un emploi en milieu ordinaire (y compris entreprise adapté) ?",
                     ),
                 ),
                 (
@@ -866,7 +866,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="nombre de travailleurs et travailleuses ayant réintégrés l'ESAT",
+                        verbose_name="nombre de travailleurs et travailleuses ayant réintégré l'ESAT",
                     ),
                 ),
                 (
@@ -874,7 +874,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="nombre de travailleurs et travailleuses ayant intégrés un autre ESAT",
+                        verbose_name="nombre de travailleurs et travailleuses ayant intégré un autre ESAT",
                     ),
                 ),
                 (
@@ -882,7 +882,7 @@ class Migration(migrations.Migration):
                     models.PositiveSmallIntegerField(
                         blank=True,
                         null=True,
-                        verbose_name="nombre de travailleur et travailleuses ayant réalisé une activité dans un lieu au contact de la clientèle ?",
+                        verbose_name="nombre de travailleurs et travailleuses ayant réalisé une activité dans un lieu au contact de la clientèle ?",
                     ),
                 ),
                 (
@@ -933,7 +933,7 @@ class Migration(migrations.Migration):
                         decimal_places=1,
                         max_digits=4,
                         null=True,
-                        verbose_name="combien de salarié(e)s ou d’agents publics (ESAT publics) ont travaillé dans l'ESAT ?",
+                        verbose_name="Combien de salarié(e)s ou d’agents publics (ESAT publics) ont été employés dans l'ESAT ?",
                     ),
                 ),
                 (
@@ -1054,7 +1054,7 @@ class Migration(migrations.Migration):
                         blank=True,
                         null=True,
                         validators=[django.core.validators.MaxValueValidator(100)],
-                        verbose_name="combien de travailleur.euse.s de plus de 50 ans ?",
+                        verbose_name="combien de travailleurs ou travailleuses de plus de 50 ans ont travaillé dans l’ESAT en n-1 ?",
                     ),
                 ),
                 (
@@ -1108,9 +1108,9 @@ class Migration(migrations.Migration):
                     "uaat_inscription",
                     models.CharField(
                         blank=True,
-                        choices=[("YES", "Oui"), ("NO", "Non"), ("IN_PROGRESS", "en cours d'inscription")],
+                        choices=[("YES", "Oui"), ("NO", "Non"), ("IN_PROGRESS", "C'est en cours")],
                         null=True,
-                        verbose_name="etes-vous inscrit dans la démarche Un Avenir Après le Travail (UAAT) ?",
+                        verbose_name="Êtes-vous inscrit dans la démarche Un Avenir Après le Travail (UAAT) ?",
                     ),
                 ),
                 (
@@ -1253,7 +1253,7 @@ class Migration(migrations.Migration):
                     models.TextField(
                         blank=True,
                         null=True,
-                        verbose_name="nous arrivons à la fin du questionnaire - merci d'avoir pris le temps de le remplir.  Commentaires",
+                        verbose_name="nous arrivons à la fin du questionnaire. Ce champ libre vous permet d’apporter toute précision complémentaire, d’exprimer un doute concernant vos réponses ou de clarifier certaines informations si nécessaire. Merci de faire référence aux questions en utilisant leur identifiant (exemple : Rubrique “Aide à la mobilité”, Question 1), la donnée n’est pas disponible car nous n’avons pas l’information pour 2 des 5 travailleurs concernés.)",
                     ),
                 ),
             ],

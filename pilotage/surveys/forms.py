@@ -135,6 +135,14 @@ class ESATAnswerWorkersRightToReturnForm(ESATBaseForm):
 
 
 class ESATAnswerSupportHoursForm(ESATBaseForm):
+    # TODO: Check if we can only override the widget
+    support_themes = forms.MultipleChoiceField(
+        required=False,
+        label="Sur quelles thématiques principales ?",
+        choices=models.SupportThemes.choices,
+        widget=forms.CheckboxSelectMultiple(),
+    )
+
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -145,10 +153,6 @@ class ESATAnswerSupportHoursForm(ESATBaseForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["nb_support_hours"].widget.attrs["min"] = 0
-        if kwargs["editable"]:
-            self.fields["support_themes"].widget.attrs["placeholder"] = (
-                "Connaissance de soi et valorisation des compétences, accès aux droits, journée sportive"
-            )
 
 
 class ESATAnswerFormationsForm(ESATBaseForm):
@@ -173,7 +177,7 @@ class ESATAnswerFormationsForm(ESATBaseForm):
         super().__init__(*args, **kwargs)
         self.fields["pct_opco"].widget.attrs["max"] = 100
         if kwargs["editable"]:
-            self.fields["cpf_unused_reason"].widget.attrs["placeholder"] = "Nous n'avons eu aucune demande en ce sens"
+            self.fields["cpf_unused_reason"].widget.attrs["placeholder"] = "Formation non éligible"
             self.fields["formation_cpf"].widget.attrs["placeholder"] = "Permis de conduire"
             self.fields["formation_subject"].widget.attrs["placeholder"] = (
                 "Hygiène, communication bienveillante, savoir s'exprimer en public"
@@ -181,6 +185,20 @@ class ESATAnswerFormationsForm(ESATBaseForm):
 
 
 class ESATAnswerSkillsForm(ESATBaseForm):
+    # TODO: Check if we can only override the widget
+    skills_validation_type = forms.MultipleChoiceField(
+        required=False,
+        label="Quels ont été les types de dispositifs dont ont bénéficié les travailleurs et travailleuses de l'ESAT pour reconnaitre et développer leurs compétences ?",  # noqa: E501
+        choices=models.SkillsValidationType.choices,
+        widget=forms.CheckboxSelectMultiple(),
+    )
+    after_skills_validation = forms.MultipleChoiceField(
+        required=False,
+        label="A l’issue de cette reconnaissance ou validation, quelle a été la suite du parcours des travailleurs et travailleuses concerné(e)s ?",  # noqa: E501
+        choices=models.AfterSkillsValidation.choices,
+        widget=forms.CheckboxSelectMultiple(),
+    )
+
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -206,7 +224,6 @@ class ESATAnswerSkillsNotebookForm(ESATBaseForm):
         fields = [
             "skills_notebook",
             "skills_notebook_software_used",
-            "software_name",
             "software_financial_help",
             "software_financial_help_type",
         ]
@@ -219,6 +236,14 @@ class ESATAnswerSkillsNotebookForm(ESATBaseForm):
 
 
 class ESATAnswerRetirementForm(ESATBaseForm):
+    # TODO: Check if we can only override the widget
+    retirement_preparation_actions = forms.MultipleChoiceField(
+        required=False,
+        label="Quelles ont été les actions conduites par l'ESAT pour préparer les travailleurs et travailleuses au départ à la retraite (inscription dans la démarche Un Avenir Après le Travail, rendez-vous organisés avec la CARSAT, etc.) ?",  # noqa: E501
+        choices=models.RetirementPreparationActions.choices,
+        widget=forms.CheckboxSelectMultiple(),
+    )
+
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -241,11 +266,7 @@ class ESATAnswerLanguageAccessibilityForm(ESATBaseForm):
     # TODO: Check if we can only override the widget
     documents_falclist = forms.MultipleChoiceField(
         required=False,
-        label=(
-            "au 31 décembre n-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils "
-            "accessibles en FALC ou en communication alternative augmentée ? "
-            "(contrat d’accompagnement par le travail, livret d’accueil, règlement de fonctionnement, etc.)"
-        ),
+        label="Au 31 décembre n-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils accessibles en FALC ou en communication alternative augmentée ? (contrat d’accompagnement par le travail, livret d’accueil, règlement de fonctionnement, etc.)",  # noqa: E501
         choices=models.DocumentFALCList.choices,
         widget=forms.CheckboxSelectMultiple(),
     )
@@ -335,6 +356,14 @@ class ESATAnswerPartnershipAgreementsForm(ESATBaseForm):
 
 
 class ESATAnswerStaffForm(ESATBaseForm):
+    # TODO: Check if we can only override the widget
+    insertion_staff_funding = forms.MultipleChoiceField(
+        required=False,
+        label="Comment sont-ils financés ?",
+        choices=models.BudgetFunding.choices,
+        widget=forms.CheckboxSelectMultiple(),
+    )
+
     class Meta:
         model = models.ESATAnswer
         fields = [
@@ -375,8 +404,6 @@ class ESATAnswerSocialActivityBudgetForm(ESATBaseForm):
             "budget_social",
             "budget_social_deficit",
             "budget_social_excedent",
-            "budget_accessibility",
-            "budget_diversity",
         ]
 
 
