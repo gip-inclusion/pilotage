@@ -15,7 +15,8 @@
                             <li class="breadcrumb-item">
                                 <a href="{% url 'pilotage:home' %}">Accueil</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">Étude {{ survey.get_kind_display }} {{ survey.vintage }}</li>
+                            <li class="breadcrumb-item" aria-current="page">Étude {{ survey.get_kind_display }} {{ survey.vintage }}</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ title|capfirst }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -27,7 +28,7 @@
         <div class="s-title-01__container container">
             <div class="s-title-01__row row">
                 <div class="s-title-01__col col-12 col-lg-12">
-                    <h1>{{ title|capfirst }}</h1>
+                    <h1>Étude {{ survey.get_kind_display }} {{ survey.vintage }}</h1>
                 </div>
             </div>
         </div>
@@ -36,8 +37,9 @@
     <section class="s-section">
         <div class="s-section__container container">
             <div class="s-section__row row">
-                <div class="s-section__col col-12 col-xxl-8 col-xxxl-9 order-2 order-xxl-1">
+                <div class="s-section__col col-12 col-lg-8 order-last order-lg-first">
                     <div class="c-form mb-3 mb-md-4">
+                        <h2>{{ title|capfirst }}</h2>
                         {% if not form %}
                             {{ content|default_if_none:"" | markdown | safe }}
                             <div class="form-group text-end">
@@ -70,7 +72,7 @@
                         {% endif %}
                     </div>
                 </div>
-                <div class="s-section__col col-12 col-xxl-4 col-xxxl-3 order-1 order-xxl-2">
+                <div class="s-section__col col-12 col-lg-4 order-first order-lg-last">
                     <div class="c-box mb-3 mb-md-4">
                         <h2>Étapes du formulaire</h2>
                         <hr>

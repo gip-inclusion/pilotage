@@ -69,7 +69,7 @@ class Migration(migrations.Migration):
             field=models.PositiveSmallIntegerField(
                 blank=True,
                 null=True,
-                verbose_name="nombre de travailleur et travailleuses étant resté travailler dans les murs sans contact avec le public ou le MOT",
+                verbose_name="nombre de travailleurs et travailleuses étant resté travailler dans les murs sans contact avec le public ou le MOT",
             ),
         ),
         migrations.AddField(
