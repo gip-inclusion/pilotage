@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 null=True,
                 validators=[django.core.validators.MaxValueValidator(100)],
-                verbose_name="au 31 décembre n-1, quel était le montant moyen de la part rémunération garantie du travailleur prise en charge financièrement par l'ESAT (en pourcentage du SMIC)?",
+                verbose_name="au 31 décembre n-1, quel était le montant moyen de la part rémunération garantie du travailleur prise en charge financièrement par l'ESAT ?",
             ),
         ),
         migrations.AlterField(
@@ -53,7 +53,7 @@ class Migration(migrations.Migration):
                 max_digits=4,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
-                verbose_name="combien de salarié(e)s ou d’agents publics (ESAT publics) ont travaillé dans l'ESAT ?",
+                verbose_name="Combien de salarié(e)s ou d’agents publics (ESAT publics) ont été employés dans l'ESAT ?",
             ),
         ),
         migrations.AlterField(

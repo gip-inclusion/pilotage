@@ -129,8 +129,8 @@ class Migration(migrations.Migration):
             field=models.CharField(
                 blank=True,
                 choices=[
-                    ("TRAINING_ORGANIZATION", "par l'intermédiaire d'un organisme de formation"),
-                    ("INTERNALLY", "en interne"),
+                    ("TRAINING_ORGANIZATION", "Par l'intermédiaire d'un organisme de formation"),
+                    ("INTERNALLY", "En interne"),
                     ("DO_NOT_KNOW", "Je ne sais pas"),
                 ],
                 null=True,
@@ -162,11 +162,10 @@ class Migration(migrations.Migration):
                 choices=[
                     ("YES", "Oui"),
                     ("NO", "Non"),
-                    ("IN_PROGRESS", "en cours d'inscription"),
-                    ("DO_NOT_KNOW", "Je ne sais pas"),
+                    ("IN_PROGRESS", "C'est en cours"),
                 ],
                 null=True,
-                verbose_name="etes-vous inscrit dans la démarche Un Avenir Après le Travail (UAAT) ?",
+                verbose_name="Êtes-vous inscrit dans la démarche Un Avenir Après le Travail (UAAT) ?",
             ),
         ),
         migrations.AlterField(
