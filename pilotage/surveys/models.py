@@ -871,6 +871,9 @@ class ESATAnswer(Answer):
         verbose_name="nous arrivons à la fin du questionnaire. Ce champ libre vous permet d’apporter toute précision complémentaire, d’exprimer un doute concernant vos réponses ou de clarifier certaines informations si nécessaire. Merci de faire référence aux questions en utilisant leur identifiant (exemple : Rubrique “Aide à la mobilité”, Question 1), la donnée n’est pas disponible car nous n’avons pas l’information pour 2 des 5 travailleurs concernés.)",
     )
 
+    # Per-step feedback (stored as JSON: {"step-name": "feedback text", ...})
+    step_feedback = models.JSONField(null=True, blank=True, default=dict)
+
     class Meta:
         verbose_name = "réponse ESAT"
         verbose_name_plural = "réponses ESAT"

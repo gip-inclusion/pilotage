@@ -1,10 +1,70 @@
+import re
+
 from django import forms
+from django.utils.safestring import mark_safe
 
 from pilotage.itoutils.forms import EmptyPlaceholderFormMixin, LetteredLabelFormMixin
 from pilotage.surveys import models
 
 
-class ESATBaseForm(LetteredLabelFormMixin, EmptyPlaceholderFormMixin, forms.ModelForm):
+# Toggle this to enable/disable the per-step feedback field
+ENABLE_STEP_FEEDBACK = True
+
+
+class StepFeedbackFormMixin:
+    """
+    Mixin that adds a feedback text field to each survey step.
+
+    The feedback is stored in the model's `step_feedback` JSON field, keyed by step name.
+    To disable this feature, set ENABLE_STEP_FEEDBACK = False above.
+    """
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if not ENABLE_STEP_FEEDBACK:
+            return
+
+        step_name = self._get_step_name()
+        initial_feedback = ""
+        if self.instance and self.instance.step_feedback:
+            initial_feedback = self.instance.step_feedback.get(step_name, "")
+
+        self.fields["_step_feedback"] = forms.CharField(
+            required=False,
+            label=mark_safe('<hr class="my-4">❓ Vos retours et remarques sur cette étape du questionnaire'),
+            widget=forms.Textarea(attrs={"rows": 3, "placeholder": ""}),
+            initial=initial_feedback,
+        )
+
+    def _get_step_name(self):
+        """Derive step name from form class name (e.g., ESATAnswerOrganizationForm -> organization)."""
+        class_name = self.__class__.__name__
+        # Remove prefix (ESATAnswer) and suffix (Form)
+        match = re.match(r"ESATAnswer(.+)Form$", class_name)
+        if match:
+            step_part = match.group(1)
+            # Convert CamelCase to kebab-case (e.g., ActivityKind -> activity-kind)
+            step_name = re.sub(r"(?<!^)(?=[A-Z])", "-", step_part).lower()
+            return step_name
+        return "unknown"
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        if ENABLE_STEP_FEEDBACK and "_step_feedback" in self.cleaned_data:
+            step_name = self._get_step_name()
+            if instance.step_feedback is None:
+                instance.step_feedback = {}
+            feedback = self.cleaned_data["_step_feedback"]
+            if feedback:
+                instance.step_feedback[step_name] = feedback
+            elif step_name in instance.step_feedback:
+                del instance.step_feedback[step_name]
+        if commit:
+            instance.save()
+        return instance
+
+
+class ESATBaseForm(StepFeedbackFormMixin, LetteredLabelFormMixin, EmptyPlaceholderFormMixin, forms.ModelForm):
     def __init__(self, *args, editable, **kwargs):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
