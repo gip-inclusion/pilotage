@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 max_digits=3,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0), django.core.validators.MaxValueValidator(80)],
-                verbose_name="au 31 décembre n-1, quel était l’âge moyen des travailleurs et travailleuses accompagnés ?",
+                verbose_name="au 31 décembre n-1, quel était l'âge moyen des travailleurs et travailleuses accompagnés ?",
             ),
         ),
         migrations.AlterField(
@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
                 max_digits=3,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
-                verbose_name="au 31 décembre n-1, quelle était l’ancienneté moyenne des travailleurs et travailleuses accompagnés ?",
+                verbose_name="au 31 décembre n-1, quelle était l'ancienneté moyenne des travailleurs et travailleuses accompagnés ?",
             ),
         ),
         migrations.AlterField(
@@ -53,7 +53,7 @@ class Migration(migrations.Migration):
                 max_digits=4,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
-                verbose_name="Combien de salarié(e)s ou d’agents publics (ESAT publics) ont été employés dans l'ESAT ?",
+                verbose_name="combien de salarié(e)s ou d'agents publics (ESAT publics) ont été employés dans l'ESAT ?",
             ),
         ),
         migrations.AlterField(

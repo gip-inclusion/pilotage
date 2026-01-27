@@ -44,7 +44,7 @@ class Migration(migrations.Migration):
             field=models.PositiveSmallIntegerField(
                 blank=True,
                 null=True,
-                verbose_name="combien de conventions d'appui ont été signées dans l'année n-1 avec un employeur privé ou public pour accompagner la sortie et le parcours professionnel d’un travailleur en milieu ordinaire ?",
+                verbose_name="combien de conventions d'appui ont été signées dans l'année n-1 avec un employeur privé ou public pour accompagner la sortie et le parcours professionnel d'un travailleur en milieu ordinaire ?",
             ),
         ),
         migrations.AddField(
