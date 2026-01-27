@@ -184,9 +184,9 @@
                           <div class="flex-grow-1">
                               <p class="mb-0 mb-lg-3">
                                   <i aria-hidden="true" class="ri-arrow-down-line ri-2x text-pilotage"></i>
-                                  <span class="h1">31%</span>
+                                  <span class="h1">22%</span>
                               </p>
-                              <p>c’est le taux de candidatures acceptées en 2023 par les SIAE</p>
+                              <p>c’est le taux de candidatures acceptées en 2025 par les SIAE</p>
                           </div>
                           <div>
                               <a aria-label="Consulter les données sur les candidatures acceptées" class="btn btn-link ps-0 has-external-link" href="http://testserver/tableaux-de-bord/bilan-candidatures-iae/" target="_blank">Consulter ces données</a>
@@ -196,9 +196,9 @@
                           <div class="flex-grow-1">
                               <p class="mb-0 mb-lg-3">
                                   <i aria-hidden="true" class="ri-arrow-up-line ri-2x text-pilotage"></i>
-                                  <span class="h1">563 031</span>
+                                  <span class="h1">686 724</span>
                               </p>
-                              <p>c’est le nombre de candidatures orientées en 2023 vers les SIAE</p>
+                              <p>c’est le nombre de candidatures orientées en 2025 vers les SIAE</p>
                           </div>
                           <div>
                               <a aria-label="Consulter les données sur les candidatures orientées" class="btn btn-link ps-0 has-external-link" href="http://testserver/tableaux-de-bord/bilan-candidatures-iae/" target="_blank">Consulter ces données</a>
@@ -207,9 +207,9 @@
                       <div class="d-flex flex-column w-100">
                           <div class="flex-grow-1">
                               <p class="mb-0 mb-lg-3">
-                                  <span class="h1">107 466</span>
+                                  <span class="h1">112 378</span>
                               </p>
-                              <p>C'est le nombre de candidats à l'IAE sans candidature acceptée au 17 mars 2024.</p>
+                              <p>C'est le nombre de candidats à l'IAE sans candidature acceptée au 17 mars 2025.</p>
                           </div>
                           <div>
                               <a aria-label="Consulter les données sur les candidats à l'IAE sans candidatures acceptées" class="btn btn-link ps-0 has-external-link" href="http://testserver/tableaux-de-bord/bilan-candidatures-iae/" target="_blank">Consulter ces données</a>
