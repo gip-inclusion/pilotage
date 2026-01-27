@@ -21,9 +21,9 @@ class Migration(migrations.Migration):
             field=django.contrib.postgres.fields.ArrayField(
                 base_field=models.CharField(
                     choices=[
-                        ("NO_CHANGES", "Maintien sur l’activité professionnelle initiale au sein de l'ESAT"),
-                        ("OTHER_ACTIVITY", "Accès à d’autres activités professionnelles au sein de l'ESAT"),
-                        ("OTHER_ESAT", "Changement d’ESAT"),
+                        ("NO_CHANGES", "Maintien sur l'activité professionnelle initiale au sein de l'ESAT"),
+                        ("OTHER_ACTIVITY", "Accès à d'autres activités professionnelles au sein de l'ESAT"),
+                        ("OTHER_ESAT", "Changement d'ESAT"),
                         (
                             "ESRP",
                             "Accès à une formation via un établissement ou service de réadaptation professionnelle (ESRP)",
@@ -36,7 +36,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 null=True,
                 size=None,
-                verbose_name="a l’issue de cette reconnaissance ou validation, quelle a été la suite du parcours des travailleurs et travailleuses concerné(e)s ?",
+                verbose_name="a l'issue de cette reconnaissance ou validation, quelle a été la suite du parcours des travailleurs et travailleuses concerné(e)s ?",
             ),
         ),
         migrations.AlterField(
@@ -46,7 +46,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 help_text="En euros",
                 null=True,
-                verbose_name="quel budget annuel avez-vous alloué au transport des travailleurs et travailleuses de leur domicile à l’ESAT (transport en commun et/ou navette et/ou taxi) ?",
+                verbose_name="quel budget annuel avez-vous alloué au transport des travailleurs et travailleuses de leur domicile à l'ESAT (transport en commun et/ou navette et/ou taxi) ?",
             ),
         ),
         migrations.AlterField(
@@ -65,7 +65,7 @@ class Migration(migrations.Migration):
                 help_text="Le facile à lire et à comprendre (FALC) est une méthode qui a pour but de traduire un langage classique en un langage simplifié.",
                 null=True,
                 size=None,
-                verbose_name="au 31 décembre n-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils accessibles en FALC ou en communication alternative augmentée ? (contrat d’accompagnement par le travail, livret d’accueil, règlement de fonctionnement, etc.)",
+                verbose_name="au 31 décembre n-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils accessibles en FALC ou en communication alternative augmentée ? (contrat d'accompagnement par le travail, livret d'accueil, règlement de fonctionnement, etc.)",
             ),
         ),
         migrations.AlterField(
@@ -222,7 +222,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 help_text="en euros. Possibilité de mettre 0",
                 null=True,
-                verbose_name="en n-1, quel était le montant moyen de la prime d’intéressement (au sens de l’article R 243-6 du CASF) versée aux travailleurs et travailleuses?",
+                verbose_name="en n-1, quel était le montant moyen de la prime d'intéressement (au sens de l'article R 243-6 du CASF) versée aux travailleurs et travailleuses?",
             ),
         ),
         migrations.AlterField(
@@ -238,7 +238,7 @@ class Migration(migrations.Migration):
                         ("UAAT", "Inscription dans la démarche Un Avenir Après le Travail"),
                         (
                             "MEETING_SCHEDULED",
-                            "Organisation d’un RDV avec un professionnel compétent sur le sujet (Assistante sociale, RH, Directeur/-trice, etc.)",
+                            "Organisation d'un RDV avec un professionnel compétent sur le sujet (Assistante sociale, RH, Directeur/-trice, etc.)",
                         ),
                         ("PERSONAL_PLAN", "Inscription dans le projet de la personne"),
                         ("CAF", "Simulation de ressources auprès des services de la CAF"),

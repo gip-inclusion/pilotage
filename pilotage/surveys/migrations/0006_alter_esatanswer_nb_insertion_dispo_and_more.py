@@ -16,7 +16,7 @@ class Migration(migrations.Migration):
             field=models.DecimalField(
                 blank=True,
                 decimal_places=1,
-                help_text="On parle ici de professionnels formés et exclusifs sur la mission d’inclusion. Répondre ici en ETP.",
+                help_text="On parle ici de professionnels formés et exclusifs sur la mission d'inclusion. Répondre ici en ETP.",
                 max_digits=4,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
             field=models.DecimalField(
                 blank=True,
                 decimal_places=1,
-                help_text="On parle ici de professionnels formés et exclusifs sur la mission d’inclusion. Répondre ici en ETP.",
+                help_text="On parle ici de professionnels formés et exclusifs sur la mission d'inclusion. Répondre ici en ETP.",
                 max_digits=4,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
@@ -45,7 +45,7 @@ class Migration(migrations.Migration):
                 max_digits=4,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
-                verbose_name="quel était le nombre d’heures de soutien liées à l’activité professionnelle, dont en moyenne chaque travailleur a bénéficié (rémunérées et comprises dans le temps de travail) ?",
+                verbose_name="quel était le nombre d'heures de soutien liées à l'activité professionnelle, dont en moyenne chaque travailleur a bénéficié (rémunérées et comprises dans le temps de travail) ?",
             ),
         ),
     ]

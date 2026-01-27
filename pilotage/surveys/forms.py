@@ -254,7 +254,7 @@ class ESATAnswerSkillsForm(ESATBaseForm):
     )
     after_skills_validation = forms.MultipleChoiceField(
         required=False,
-        label="A l’issue de cette reconnaissance ou validation, quelle a été la suite du parcours des travailleurs et travailleuses concerné(e)s ?",  # noqa: E501
+        label="A l'issue de cette reconnaissance ou validation, quelle a été la suite du parcours des travailleurs et travailleuses concerné(e)s ?",  # noqa: E501
         choices=models.AfterSkillsValidation.choices,
         widget=forms.CheckboxSelectMultiple(),
     )
@@ -326,7 +326,7 @@ class ESATAnswerLanguageAccessibilityForm(ESATBaseForm):
     # TODO: Check if we can only override the widget
     documents_falclist = forms.MultipleChoiceField(
         required=False,
-        label="Au 31 décembre n-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils accessibles en FALC ou en communication alternative augmentée ? (contrat d’accompagnement par le travail, livret d’accueil, règlement de fonctionnement, etc.)",  # noqa: E501
+        label="Au 31 décembre n-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils accessibles en FALC ou en communication alternative augmentée ? (contrat d'accompagnement par le travail, livret d'accueil, règlement de fonctionnement, etc.)",  # noqa: E501
         choices=models.DocumentFALCList.choices,
         widget=forms.CheckboxSelectMultiple(),
     )
