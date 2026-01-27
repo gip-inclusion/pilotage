@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             field=models.PositiveIntegerField(
                 blank=True,
                 null=True,
-                verbose_name="quel était votre chiffre d'affaire annuel commercial tout confondu (productions propres, prestations de service, mises à disposition de travailleurs et travailleuses auprès d’utilisateurs) ?",
+                verbose_name="quel était votre chiffre d'affaire annuel commercial tout confondu (productions propres, prestations de service, mises à disposition de travailleurs et travailleuses auprès d'utilisateurs) ?",
             ),
         ),
         migrations.AlterField(
@@ -73,7 +73,7 @@ class Migration(migrations.Migration):
                 max_digits=3,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
-                verbose_name="au 31 décembre n-1, quelle était l’ancienneté moyenne des travailleurs et travailleuses accompagnés ?",
+                verbose_name="au 31 décembre n-1, quelle était l'ancienneté moyenne des travailleurs et travailleuses accompagnés ?",
             ),
         ),
         migrations.AlterField(
@@ -86,7 +86,7 @@ class Migration(migrations.Migration):
                 max_digits=3,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0), django.core.validators.MaxValueValidator(80)],
-                verbose_name="au 31 décembre n-1, quel était l’âge moyen des travailleurs et travailleuses accompagnés ?",
+                verbose_name="au 31 décembre n-1, quel était l'âge moyen des travailleurs et travailleuses accompagnés ?",
             ),
         ),
         migrations.AlterField(
@@ -109,7 +109,7 @@ class Migration(migrations.Migration):
                 max_digits=4,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
-                verbose_name="Combien de salarié(e)s ou d’agents publics (ESAT publics) ont été employés dans l'ESAT ?",
+                verbose_name="combien de salarié(e)s ou d'agents publics (ESAT publics) ont été employés dans l'ESAT ?",
             ),
         ),
         migrations.AlterField(
@@ -119,7 +119,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 help_text="Nombre d'ESAT",
                 null=True,
-                verbose_name="avec combien d'ESAT avez-vous conventionné pour garantir l’exercice du droit au retour ?",
+                verbose_name="avec combien d'ESAT avez-vous conventionné pour garantir l'exercice du droit au retour ?",
             ),
         ),
         migrations.AlterField(
@@ -128,7 +128,7 @@ class Migration(migrations.Migration):
             field=models.DecimalField(
                 blank=True,
                 decimal_places=1,
-                help_text="On parle ici de professionnels formés et exclusifs sur la mission d’inclusion. Répondre ici en ETP",
+                help_text="On parle ici de professionnels formés et exclusifs sur la mission d'inclusion. Répondre ici en ETP",
                 max_digits=4,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
@@ -141,7 +141,7 @@ class Migration(migrations.Migration):
             field=models.DecimalField(
                 blank=True,
                 decimal_places=1,
-                help_text="On parle ici de professionnels formés et exclusifs sur la mission d’inclusion. Répondre ici en ETP",
+                help_text="On parle ici de professionnels formés et exclusifs sur la mission d'inclusion. Répondre ici en ETP",
                 max_digits=4,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
@@ -158,7 +158,7 @@ class Migration(migrations.Migration):
                 max_digits=4,
                 null=True,
                 validators=[django.core.validators.MinValueValidator(0)],
-                verbose_name="quel était le nombre d’heures de soutien liées à l’activité professionnelle, dont en moyenne chaque travailleur a bénéficié (rémunérées et comprises dans le temps de travail) ?",
+                verbose_name="quel était le nombre d'heures de soutien liées à l'activité professionnelle, dont en moyenne chaque travailleur a bénéficié (rémunérées et comprises dans le temps de travail) ?",
             ),
         ),
         migrations.AlterField(
@@ -206,7 +206,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 help_text="Nombre de travailleurs en file active",
                 null=True,
-                verbose_name="en n-1, combien de travailleurs et travailleuses de l'ESAT ont suivi une formation prise en charge par l'OPCO Santé ou par l’ANFH ?",
+                verbose_name="en n-1, combien de travailleurs et travailleuses de l'ESAT ont suivi une formation prise en charge par l'OPCO Santé ou par l'ANFH ?",
             ),
         ),
         migrations.AlterField(
@@ -216,7 +216,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 help_text="Nombre de travailleurs parmi ceux ayant acté dans leur projet leur volonté d'aller vers le MOT",
                 null=True,
-                verbose_name="combien de travailleurs et travailleuses se sont inscrits comme demandeurs d’emploi à France Travail ?",
+                verbose_name="combien de travailleurs et travailleuses se sont inscrits comme demandeurs d'emploi à France Travail ?",
             ),
         ),
         migrations.AlterField(
@@ -286,7 +286,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 help_text="Nombre de personnes (effectif physique) accueillies en n-1",
                 null=True,
-                verbose_name="combien de personnes ont été accueillies par l'ESAT dans le cadre d’une mise en situation professionnelle (MISPE) prescrite par une MDPH ?",
+                verbose_name="combien de personnes ont été accueillies par l'ESAT dans le cadre d'une mise en situation professionnelle (MISPE) prescrite par une MDPH ?",
             ),
         ),
         migrations.AlterField(
@@ -296,7 +296,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 help_text="Nombre de personnes (effectif physique) accueillies en n-1",
                 null=True,
-                verbose_name="combien de personnes ont été accueillies par l'ESAT dans le cadre d’une mise en situation professionnelle (MISPE) prescrite par le réseau pour l'emploi (RPE) ?",
+                verbose_name="combien de personnes ont été accueillies par l'ESAT dans le cadre d'une mise en situation professionnelle (MISPE) prescrite par le réseau pour l'emploi (RPE) ?",
             ),
         ),
         migrations.AlterField(
@@ -346,7 +346,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 help_text="Nombre de travailleurs (effectif physique) en file active",
                 null=True,
-                verbose_name="combien de travailleurs de l'ESAT ont exprimé dans leur projet personnalisé leur volonté d’aller travailler en milieu ordinaire ?",
+                verbose_name="combien de travailleurs de l'ESAT ont exprimé dans leur projet personnalisé leur volonté d'aller travailler en milieu ordinaire ?",
             ),
         ),
         migrations.AlterField(
@@ -357,7 +357,7 @@ class Migration(migrations.Migration):
                 help_text="en %",
                 null=True,
                 validators=[django.core.validators.MaxValueValidator(100)],
-                verbose_name="quel a été le taux de votre contribution à l’OPCO Santé ou à l’ANFH ?",
+                verbose_name="quel a été le taux de votre contribution à l'OPCO Santé ou à l'ANFH ?",
             ),
         ),
         migrations.AlterField(
@@ -366,7 +366,7 @@ class Migration(migrations.Migration):
             field=models.PositiveSmallIntegerField(
                 blank=True,
                 null=True,
-                verbose_name="en n-1, quel était le montant moyen de la prime d’intéressement (au sens de l’article R 243-6 du CASF) versée aux travailleurs et travailleuses?",
+                verbose_name="en n-1, quel était le montant moyen de la prime d'intéressement (au sens de l'article R 243-6 du CASF) versée aux travailleurs et travailleuses?",
             ),
         ),
     ]

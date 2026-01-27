@@ -18,7 +18,7 @@ class ESATStep(TextChoices):
     INTRODUCTION = CommonStep.INTRODUCTION, "introduction"
     ORGANIZATION = "organization", "l'établissement"
     WORKERS_SUPPORTED = "workers-supported", "les travailleurs et travailleuses accompagné.e.s"
-    WORKERS_ENTRY = "workers-new", "les travailleurs et travailleuses admis.e.s dans l’année"
+    WORKERS_ENTRY = "workers-new", "les travailleurs et travailleuses admis.e.s dans l'année"
     ESTABLISHMENT_DISCOVERY = "establishment-discovery", "découverte de l'ESAT"
     ORDINARY_WORKING_ENVIRONMENT = "ordinary-working-environment", "volonté d'aller vers le milieu ordinaire"
     ORDINARY_WORKING_ENVIRONMENT_AND_CUSTOMERS_INVOLVEMENT = (
@@ -75,7 +75,7 @@ LABELS_INFORMATIONS = {
         "nb_worker_new": "Nous avons conscience que cette donnée peut-être difficile à obtenir. Dans ce cas, vous êtes invité à ne rien remplir et à préciser la situation dans la rubrique « Commentaires » disponible en fin de questionnaire.",  # noqa: E501
         "nb_worker_temporary": (
             "Les travailleurs absents pour maladie, congés, emploi à temps partiel, vacance de poste, ...<br>"
-            "Cette disposition vous permet de maintenir ainsi votre capacité d’activité en bénéficiant via l’ASP de l’annualisation de l’aide au poste."  # noqa: E501
+            "Cette disposition vous permet de maintenir ainsi votre capacité d'activité en bénéficiant via l'ASP de l'annualisation de l'aide au poste."  # noqa: E501
         ),
         "nb_worker_willing_mot": (
             "Formalisé à l'écrit dans leur projet personnalisé.<br>"
@@ -119,17 +119,17 @@ LABELS_INFORMATIONS = {
         ),
         "pct_opco": "Reportez-vous à votre bordereau de cotisation annuelle.",
         "nb_worker_cpf_unused": "Nous avons conscience que cette donnée peut-être difficile à obtenir. Dans ce cas, vous êtes invité à ne rien remplir et à préciser la situation dans la rubrique « Commentaires » disponible en fin de questionnaire.",  # noqa: E501
-        "nb_worker_intern_formation": "Sont exclues les formations animées par des organismes externes, même si celles-ci ont lieu dans les murs de l’ESAT. Sont aussi exclus les apprentissages délivrés par les moniteurs durant la production quotidienne.",  # noqa: E501
-        "nb_worker_autodetermination": "Les actions de sensibilisation à l’autodétermination doivent s’entendre comme des actions de formation ( prévu par les conventions OPCO Santé et OPCA ANFH).",  # noqa: E501
+        "nb_worker_intern_formation": "Sont exclues les formations animées par des organismes externes, même si celles-ci ont lieu dans les murs de l'ESAT. Sont aussi exclus les apprentissages délivrés par les moniteurs durant la production quotidienne.",  # noqa: E501
+        "nb_worker_autodetermination": "Les actions de sensibilisation à l'autodétermination doivent s'entendre comme des actions de formation ( prévu par les conventions OPCO Santé et OPCA ANFH).",  # noqa: E501
         "nb_worker_rae_rsfp": "Dont la RAE ou RSFP a été validée au cours de l'année",
         "nb_worker_vae": "Dont la VAE a été validée au cours de l'année",
         "documents_falclist": "Possible de répondre OUI si le document n'a été traduit que partiellement",
         "nb_worker_mobility_inclusion_card": "Nous avons conscience que cette donnée peut-être difficile à obtenir. Dans ce cas, vous êtes invité à ne rien remplir et à préciser la situation dans la rubrique « Commentaires » disponible en fin de questionnaire.",  # noqa: E501
-        "annual_ca": "Reportez vous au guide d’aide au remplissage pour des indications précises",
-        "annual_ca_production": "Reportez vous au guide d’aide au remplissage pour des indications précises",
-        "annual_ca_service": "Reportez vous au guide d’aide au remplissage pour des indications précises",
-        "annual_ca_mad": "Reportez vous au guide d’aide au remplissage pour des indications précises",
-        "pct_ca_public": "Reportez vous au guide d’aide au remplissage pour des indications précises",
+        "annual_ca": "Reportez vous au guide d'aide au remplissage pour des indications précises",
+        "annual_ca_production": "Reportez vous au guide d'aide au remplissage pour des indications précises",
+        "annual_ca_service": "Reportez vous au guide d'aide au remplissage pour des indications précises",
+        "annual_ca_mad": "Reportez vous au guide d'aide au remplissage pour des indications précises",
+        "pct_ca_public": "Reportez vous au guide d'aide au remplissage pour des indications précises",
         "budget_commercial": "Solde final après inclusion des aides au poste - relatif uniquement à la partie commerciale",  # noqa: E501
         "budget_diversity": "Il s'agit ici des investissements ayant permis à l'ESAT de diversifier ses activités (nouveaux outils de production, etc.)",  # noqa: E501
     }
