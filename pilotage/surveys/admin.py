@@ -69,8 +69,41 @@ class AnswerAdmin(admin.ModelAdmin):
         return False
 
 
+def _get_esat_question_fields():
+    """Compute the list of question fields and step names once."""
+    question_fields = []
+    step_names = []
+    for step in ESATStep:
+        if step in CommonStep:
+            continue
+        step_form_class = get_step_form_class(models.ESATAnswer, step)
+        question_fields.extend(step_form_class.Meta.fields)
+        step_names.append(step.value)
+    return question_fields, step_names
+
+
+_esat_question_fields, _esat_step_names = _get_esat_question_fields()
+
+
 @admin.register(models.ESATAnswer)
 class ESATAnswerAdmin(AnswerAdmin):
+    list_display = ("uid", "survey", "answered_count", "created_at", "updated_at")
+
+    @admin.display(description="Réponses")
+    def answered_count(self, obj):
+        answered = sum(
+            1
+            for field in _esat_question_fields
+            if (value := getattr(obj, field, None)) is not None and value != "" and value != []
+        )
+
+        feedback_answered = 0
+        if obj.step_feedback:
+            feedback_answered = sum(1 for step in _esat_step_names if obj.step_feedback.get(step))
+
+        total_fields = len(_esat_question_fields) + len(_esat_step_names)
+        return f"{answered + feedback_answered}/{total_fields}"
+
     def get_fieldsets(self, request, obj=None):
         steps_fieldsets = []
         for step in ESATStep:
