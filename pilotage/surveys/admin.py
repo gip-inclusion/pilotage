@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.text import capfirst
 
 from pilotage.surveys import models
-from pilotage.surveys.utils import get_step_form_class
+from pilotage.surveys.utils import get_step_form_class, get_step_informations
 from pilotage.surveys.views import CommonStep, ESATStep
 
 
@@ -71,6 +71,18 @@ class AnswerAdmin(admin.ModelAdmin):
 
 @admin.register(models.ESATAnswer)
 class ESATAnswerAdmin(AnswerAdmin):
+    list_display = ("uid", "survey", "answered_count", "created_at", "updated_at")
+
+    @admin.display(description="Réponses")
+    def answered_count(self, obj):
+        steps_informations = get_step_informations(ESATStep, obj, exclude=CommonStep)
+
+        # Count form's declared fields and feedbacks of each step
+        total_fields = sum(i["total"] for i in steps_informations.values()) + len(steps_informations)
+        total_answered = sum(i["filled"] for i in steps_informations.values()) + len(obj.step_feedback.keys())
+
+        return f"{total_answered}/{total_fields}"
+
     def get_fieldsets(self, request, obj=None):
         steps_fieldsets = []
         for step in ESATStep:
