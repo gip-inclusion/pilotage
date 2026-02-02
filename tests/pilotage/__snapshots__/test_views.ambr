@@ -174,7 +174,7 @@
           <div class="row mb-1 mb-md-3">
               <div class="col-12">
                   <h2 class="mb-0">Aperçu des connaissances apportées par les tableaux de bord</h2>
-                  <p class="fs-sm mb-3">Dernière mise à jour des données : 17 mars 2024</p>
+                  <p class="fs-sm mb-3">Dernière mise à jour des données : 21 janvier 2026</p>
               </div>
           </div>
           <div class="s-section__row row">
@@ -209,7 +209,7 @@
                               <p class="mb-0 mb-lg-3">
                                   <span class="h1">112 378</span>
                               </p>
-                              <p>C'est le nombre de candidats à l'IAE sans candidature acceptée au 17 mars 2025.</p>
+                              <p>C'est le nombre de candidats à l'IAE sans candidature acceptée au 21 janvier 2026.</p>
                           </div>
                           <div>
                               <a aria-label="Consulter les données sur les candidats à l'IAE sans candidatures acceptées" class="btn btn-link ps-0 has-external-link" href="http://testserver/tableaux-de-bord/bilan-candidatures-iae/" target="_blank">Consulter ces données</a>
