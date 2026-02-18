@@ -389,9 +389,7 @@
               </div>
               <div class="s-section__row row">
                   <div class="s-section__col col-12">
-                      <div class="js-tac-livestorm w-100" data-url="https://app.livestorm.co/itou/upcoming?limit=3" title="Événements La Plateforme de l'inclusion | Livestorm">
-                          <iframe allowfullscreen="" allowtransparency="" src="https://app.livestorm.co/itou/upcoming?limit=3" style="min-height:365px;" title="Événements des emplois de l'inclusion | Livestorm"></iframe>
-                      </div>
+                      <div class="js-tac-livestorm w-100" data-url="https://app.livestorm.co/itou/upcoming?limit=3" title="Événements La Plateforme de l'inclusion | Livestorm"></div>
                   </div>
               </div>
           </div>
