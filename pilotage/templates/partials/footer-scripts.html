@@ -1,6 +1,6 @@
 {% load static %}
 
-<script type="text/javascript" src="//cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@1.19.0/tarteaucitron.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@1.29.0/tarteaucitron.js"></script>
 <script type="text/javascript">
     tarteaucitron.init({
         "privacyUrl": "",
@@ -12,26 +12,31 @@
         "cookieName": "tarteaucitron",
         /* Cookie name */
         "orientation": "bottom",
-        /* Banner position (top - bottom) */
+        /* Banner position (top - bottom - middle - popup) */
+
         "groupServices": false,
         /* Group services by category */
         "showDetailsOnClick": true,
         /* Click to expand the description */
         "serviceDefaultState": "wait",
         /* Default state (true - wait - false) */
+
         "showAlertSmall": false,
         /* Show the small banner on bottom right */
         "cookieslist": false,
-        /* Show the cookie list */
-        "closePopup": false,
-        /* Show a close X on the banner */
+        /* Show the cookie list in a mini banner */
+        "cookieslistEmbed": false,
+        /* Show the cookie list on the control panel */
+
         "showIcon": true,
         /* Show cookie icon to manage cookies */
-        //"iconSrc": "", /* Optionnal: URL or base64 encoded image */
+        // "iconSrc": "", /* Optional: URL or base64 encoded image */
         "iconPosition": "BottomRight",
-        /* BottomRight, BottomLeft, TopRight and TopLeft */
+        /* Position of the icon between BottomRight, BottomLeft, TopRight and TopLeft */
+
         "adblocker": false,
         /* Show a Warning if an adblocker is detected */
+
         "DenyAllCta": true,
         /* Show the deny all button */
         "AcceptAllCta": true,
@@ -40,33 +45,81 @@
         /* HIGHLY RECOMMANDED Disable auto consent */
         "alwaysNeedConsent": false,
         /* Ask the consent for "Privacy by design" services */
+
         "handleBrowserDNTRequest": false,
         /* If Do Not Track == 1, disallow all */
+
         "removeCredit": true,
         /* Remove credit link */
         "moreInfoLink": true,
         /* Show more info link */
+
         "useExternalCss": true,
         /* If false, the tarteaucitron.css file will be loaded */
         "useExternalJs": false,
-        /* If false, the tarteaucitron.js file will be loaded */
-        //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
+        /* If false, the tarteaucitron.services.js file and lang files will be loaded */
+
+        // "cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for subdomain website */
+
         "readmoreLink": "",
-        /* Change the default readmore link */
+        /* Change the default readmore link pointing to tarteaucitron.io */
+
         "mandatory": true,
         /* Show a message about mandatory cookies */
         "mandatoryCta": true,
         /* Show the disabled accept button when mandatory on */
-        //"customCloserId": "", /* Optional a11y: Custom element ID used to open the panel */
+
+        // "customCloserId": "", /* Optional a11y: Custom element ID used to open the panel */
+
         "googleConsentMode": true,
         /* Enable Google Consent Mode v2 for Google ads and GA4 */
-        "partnersList": false /* Show the number of partners on the popup/middle banner */
+        "bingConsentMode": true,
+        /* Enable Bing Consent Mode for Clarity and Bing Ads */
+        "pianoConsentMode": true,
+        /* Enable Piano Analytics Consent Mode */
+        "pianoConsentModeEssential": false,
+        /* Load in Essential mode instead of opt-out by default */
+        "softConsentMode": false,
+        /* Soft consent mode (consent is required to load the services) */
+
+        "dataLayer": false,
+        /* Send an event to dataLayer with the services status */
+        "serverSide": false,
+        /* Server side only, tags are not loaded client side */
+
+        "partnersList": false /* Details the number of partners on the popup and middle banner */
     });
 </script>
 
 <script type="text/javascript">
-    tarteaucitron.user.googleFonts = ['Covered By Your Grace'];
-    (tarteaucitron.job = tarteaucitron.job || []).push('googlefonts');
+    // livestorm
+    tarteaucitron.services.livestorm = {
+        "key": "livestorm",
+        "type": "video",
+        "name": "Livestorm",
+        "uri": "https://livestorm.co/fr/politique-confidentialite",
+        "needConsent": true,
+        "cookies": [],
+        "js": function() {
+            "use strict";
+            tarteaucitron.fallback(['js-tac-livestorm'], function(x) {
+                var frame_title = tarteaucitron.fixSelfXSS(x.getAttribute("title") || 'livestorm iframe'),
+                    height = tarteaucitron.fixSelfXSS(x.getAttribute("height") || '365'),
+                    url = tarteaucitron.fixSelfXSS(x.getAttribute("data-url"));
+                return '<iframe title="' + frame_title + '" src="' + url + '" style="min-height:' + height + 'px;" allowtransparency allowfullscreen></iframe>';
+            });
+        },
+        "fallback": function() {
+            "use strict";
+            var id = 'livestorm';
+            tarteaucitron.fallback(['js-tac-livestorm'], function(elem) {
+                elem.style.width = elem.getAttribute('width');
+                elem.style.height = "265px";
+                return tarteaucitron.engage(id);
+            });
+        }
+    };
+    (tarteaucitron.job = tarteaucitron.job || []).push('livestorm');
 </script>
 
 {% if MATOMO_BASE_URL %}
