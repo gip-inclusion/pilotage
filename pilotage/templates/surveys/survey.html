@@ -56,7 +56,7 @@
                 <div class="c-form mb-3 mb-md-4">
                     <h2>{{ title|capfirst }}</h2>
                     {% if not form %}
-                        {{ content|default_if_none:"" | markdown | safe }}
+                        {{ content | markdown | safe }}
                         <div class="row">
                             <div class="col-12">
                                 <hr class="mb-3">
