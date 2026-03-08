@@ -63,6 +63,9 @@
                                 <div class="form-row align-items-center justify-content-end gx-3">
                                     {% if previous_step_url %}
                                         <div class="form-group col col-lg-auto order-1 order-lg-1">{% bootstrap_button "Retour" button_type="link" href=previous_step_url button_class="btn-outline-primary" %}</div>
+                                        {% if not next_step_url %}
+                                            <div class="form-group col col-lg-auto order-2 order-lg-2">{% bootstrap_button "Confirmer" button_type="link" href=start_url %}</div>
+                                        {% endif %}
                                     {% endif %}
                                     {% if next_step_url %}
                                         <div class="form-group col col-lg-auto order-2 order-lg-2">{% bootstrap_button "Suivant" button_type="link" href=next_step_url %}</div>
