@@ -24,3 +24,19 @@ def label_with_info(field, labels_information):
         label=field.label,
         info=info_html,
     )
+
+
+@register.simple_tag
+def completion_badge(step_information):
+    if not step_information.filled:
+        extra_classes = "bg-warning-lighter text-warning"
+    elif step_information.filled == step_information.total:
+        extra_classes = "bg-success-lighter text-success"
+    else:
+        extra_classes = "bg-info-lighter text-info"
+    return format_html(
+        '<span class="badge badge-xs {extra_classes} rounded-pill ms-2">{filled}/{total}</span>',
+        extra_classes=extra_classes,
+        filled=step_information.filled,
+        total=step_information.total,
+    )

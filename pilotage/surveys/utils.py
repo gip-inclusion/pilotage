@@ -1,3 +1,6 @@
+import dataclasses
+import typing
+
 from pilotage.surveys import forms as survey_forms
 
 
@@ -28,14 +31,34 @@ def get_previous_and_next_step(steps, current_step):
     return previous_step, next_step
 
 
-def get_step_informations(steps, answer, exclude=None):
+@dataclasses.dataclass(frozen=True)
+class StepInformations:
+    filled: int
+    total: int
+
+
+@dataclasses.dataclass(frozen=True)
+class StepsInformations:
+    data: dict[typing.Any, StepInformations]
+    total_fields: int
+    total_filled: int
+
+    def progress(self):
+        return int((self.total_filled / self.total_fields) * 100)
+
+
+def get_steps_informations(steps, answer, exclude=None):
     informations = {}
     for step in steps:
         if exclude and step in exclude:
             continue
         form_class = get_step_form_class(answer.__class__, step)
-        informations[step] = {
-            "filled": len({f for f in form_class.Meta.fields if getattr(answer, f) not in [None, "", []]}),
-            "total": len(form_class.Meta.fields),
-        }
-    return informations
+        informations[step] = StepInformations(
+            filled=len({f for f in form_class.Meta.fields if getattr(answer, f) not in [None, "", []]}),
+            total=len(form_class.Meta.fields),
+        )
+    return StepsInformations(
+        data=informations,
+        total_fields=sum(i.total for i in informations.values()),
+        total_filled=sum(i.filled for i in informations.values()),
+    )
