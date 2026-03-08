@@ -1,4 +1,3 @@
-
 from django import forms
 
 from pilotage.itoutils.forms import EmptyPlaceholderFormMixin, LetteredLabelFormMixin

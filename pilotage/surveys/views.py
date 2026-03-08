@@ -6,7 +6,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 
 from pilotage.surveys.models import ESATAnswer, Survey, SurveyKind
-from pilotage.surveys.utils import get_previous_and_next_step, get_step_form_class, get_step_informations
+from pilotage.surveys.utils import get_previous_and_next_step, get_step_form_class, get_steps_informations
 
 
 class CommonStep(enum.StrEnum):
@@ -210,7 +210,7 @@ def tunnel(request, *, survey_name, answer_uid, step):
             "survey": survey,
             "answer": answer,
             "title": step.label,
-            "steps_info": get_step_informations(steps_class, answer, exclude=CommonStep),
+            "steps_info": get_steps_informations(steps_class, answer, exclude=CommonStep),
             "next_step_url": next_step_url,
             "previous_step_url": previous_step_url,
             "current_step": step,
