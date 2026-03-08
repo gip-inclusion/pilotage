@@ -8,7 +8,7 @@ from pilotage.surveys.views import CommonStep, ESATStep
 
 @admin.register(models.Survey)
 class SurveyAdmin(admin.ModelAdmin):
-    list_display = ("name", "kind", "vintage", "is_open", "created_at", "updated_at")
+    list_display = ("name", "kind", "vintage", "is_open", "title", "created_at", "updated_at")
     list_filter = ("kind", "vintage")
     readonly_fields = ("name", "is_open", "created_at", "updated_at")
 
@@ -21,6 +21,7 @@ class SurveyAdmin(admin.ModelAdmin):
                     "kind",
                     "vintage",
                     "opening_period",
+                    "title",
                     "introduction",
                     "conclusion",
                 )

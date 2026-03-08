@@ -28,6 +28,7 @@ class Survey(models.Model):
     name = models.SlugField(verbose_name="nom", unique=True, editable=False)
     opening_period = DateTimeRangeField(verbose_name="période d'ouverture")
 
+    title = models.fields.CharField(null=True, blank=True, verbose_name="titre")
     introduction = models.fields.TextField(null=True, blank=True)
     conclusion = models.fields.TextField(null=True, blank=True)
 
