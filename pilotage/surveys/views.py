@@ -174,7 +174,15 @@ def tunnel(request, *, survey_name, answer_uid, step):
     previous_step, next_step = get_previous_and_next_step(steps_class, step)
     extra_context = {}
     if step in CommonStep:
-        extra_context["content"] = getattr(survey, step)
+        start_url = request.build_absolute_uri(
+            reverse(
+                "surveys:tunnel",
+                kwargs={"survey_name": survey.name, "answer_uid": answer.uid, "step": CommonStep.INTRODUCTION},
+            )
+        )
+        extra_context["content"] = (getattr(survey, step) or "").replace(
+            "{{START_URL}}", f"[{start_url}]({start_url})"
+        )
     else:
         form = get_step_form_class(answer_class, step)(
             instance=answer, data=request.POST or None, editable=survey.is_open
