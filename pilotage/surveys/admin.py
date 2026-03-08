@@ -78,8 +78,8 @@ class ESATAnswerAdmin(AnswerAdmin):
         steps_informations = get_step_informations(ESATStep, obj, exclude=CommonStep)
 
         # Count form's declared fields and feedbacks of each step
-        total_fields = sum(i["total"] for i in steps_informations.values()) + len(steps_informations)
-        total_answered = sum(i["filled"] for i in steps_informations.values()) + len(obj.step_feedback.keys())
+        total_fields = sum(i["total"] for i in steps_informations.values())
+        total_answered = sum(i["filled"] for i in steps_informations.values())
 
         return f"{total_answered}/{total_fields}"
 
@@ -89,34 +89,12 @@ class ESATAnswerAdmin(AnswerAdmin):
             if step in CommonStep:
                 continue
             step_form_class = get_step_form_class(models.ESATAnswer, step)
-            fields = list(step_form_class.Meta.fields) + [f"feedback_{step.value.replace('-', '_')}"]
             steps_fieldsets.append(
                 (
                     f"Données - {capfirst(step.label)}",
                     {
-                        "fields": fields,
+                        "fields": step_form_class.Meta.fields,
                     },
                 )
             )
         return super().get_fieldsets(request, obj) + tuple(steps_fieldsets)
-
-    def get_readonly_fields(self, request, obj=None):
-        readonly_fields = list(super().get_readonly_fields(request, obj))
-        for step in ESATStep:
-            if step in CommonStep:
-                continue
-            readonly_fields.append(f"feedback_{step.value.replace('-', '_')}")
-        return readonly_fields
-
-    def __getattr__(self, name):
-        if name.startswith("feedback_"):
-            step_name = name[9:].replace("_", "-")
-
-            def feedback_field(obj):
-                if obj and obj.step_feedback:
-                    return obj.step_feedback.get(step_name, "-")
-                return "-"
-
-            feedback_field.short_description = "❓ Retours"
-            return feedback_field
-        raise AttributeError(name)
