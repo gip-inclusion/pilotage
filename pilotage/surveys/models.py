@@ -113,12 +113,13 @@ class SupportHoursRange(TextChoices):
 
 
 class SupportThemes(TextChoices):
-    WORKSHOP_JOB_SEARCH = "WORKSHOP_JOB_SEARCH", "Atelier d'accompagnement à la recherche d'emplois"
-    WORKSHOP_WELLBEING = "WORKSHOP_WELLBEING", "Ateliers de prévention santé / bien-être au travail"
-    PROFESSIONAL_SUPPORT = "PROFESSIONAL_SUPPORT", "Soutien professionnel"
+    WORKSHOP_JOB_SEARCH = "WORKSHOP_JOB_SEARCH", "Atelier d'accompagnement à la recherche d'emploi"
+    WORKSHOP_WELLBEING = "WORKSHOP_WELLBEING", "Atelier de prévention santé / bien-être au travail"
+    PROFESSIONAL_SUPPORT = "PROFESSIONAL_SUPPORT", "Activité de soutien au parcours professionnel"
     CPF_OPENED = "CPF_OPENED", "Ouverture du Compte Professionnel de Formation"
     COMPANY_TOUR = "COMPANY_TOUR", "Visites dans les entreprises"
-    COMPANY_PREMISES_MORNING_TOUR = "COMPANY_PREMISES_MORNING_TOUR", "Matinées entreprises dans les locaux"
+    PREMISES_TOUR = "PREMISES_TOUR", "Visites des locaux de l’ESAT par les entreprises"
+    OTHER = OTHER_CHOICE
 
 
 class SkillsValidationType(TextChoices):

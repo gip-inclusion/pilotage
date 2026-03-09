@@ -47,7 +47,7 @@ nb_worker_reinteg,Nombre de travailleurs et travailleuses ayant réintégré l'E
 nb_worker_reinteg_other,Nombre de travailleurs et travailleuses ayant intégré un autre ESAT,Nombre de travailleurs (personnes physique) en file active,,Travailleurs qui ont réintégré un autre ESAT après avoir occupé un emploi en milieu ordinaire de travail (entreprise classique ou adaptée ou tout autre organisme public ou privé). Comptabiliser tous les retours même si pas de convention de retour avec l’ESAT.
 nb_esat_agreement,Avec combien d'ESAT avez-vous conventionné pour garantir l'exercice du droit au retour ?,Nombre d'ESAT,,
 nb_support_hours,"Quel était le nombre d'heures de soutien liées à l'activité professionnelle, dont en moyenne chaque travailleur a bénéficié (rémunérées et comprises dans le temps de travail) ?",Nombre d'heures en moyenne par travailleur sur année n-1,,
-support_themes,Sur quelles thématiques principales ?,,,
+support_themes,Sur quelles thématiques principales ?,,,Reportez vous au guide d’aide au remplissage pour vérifier ce qui entre dans la catégorie “autre”.
 contrib_opco,Est-ce que l'ESAT a acquitté une contribution pour la formation des travailleurs et travailleuses auprès de l'OPCO Santé ou de l'OPCA ANFH (pour les ESAT publics) ?,,,
 pct_opco,Quel a été le taux de votre contribution à l'OPCO Santé ou à l'ANFH ?,en %,,Reportez-vous à votre bordereau de cotisation annuelle.
 nb_worker_formation_opco,"En n-1, combien de travailleurs et travailleuses de l'ESAT ont suivi une formation prise en charge par l'OPCO Santé ou par l'ANFH ?",Nombre de travailleurs en file active,,
