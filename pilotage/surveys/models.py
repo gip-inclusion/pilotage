@@ -11,6 +11,7 @@ from django.utils.text import slugify
 
 from pilotage.itoutils.departments import DEPARTMENTS
 from pilotage.itoutils.validators import validate_finess, validate_siret
+from pilotage.surveys.utils import get_field_text
 
 
 class SurveyKind(models.TextChoices):
@@ -162,36 +163,40 @@ class RetirementPreparationActions(TextChoices):
 
 class ESATAnswer(Answer):
     # ESATStep.ORGANIZATION
-    esat_role = models.CharField(null=True, blank=True, verbose_name="quelle est votre fonction au sein de l'ESAT ?")
-    esat_name = models.CharField(null=True, blank=True, verbose_name="quel est le nom de votre ESAT ?")
+    esat_role = models.CharField(
+        null=True, blank=True, verbose_name=get_field_text("esat-2025", "esat_role", "verbose_name")
+    )
+    esat_name = models.CharField(
+        null=True, blank=True, verbose_name=get_field_text("esat-2025", "esat_name", "verbose_name")
+    )
     esat_siret = models.CharField(
         null=True,
         blank=True,
         max_length=14,
         validators=[validate_siret],
-        verbose_name="quel est le numéro SIRET de l'ESAT ?",
+        verbose_name=get_field_text("esat-2025", "esat_siret", "verbose_name"),
     )
     finess_num = models.CharField(
         null=True,
         blank=True,
         max_length=9,
         validators=[validate_finess],
-        verbose_name="quel est le numéro FINESS de l'établissement principal ?",
+        verbose_name=get_field_text("esat-2025", "finess_num", "verbose_name"),
     )
     managing_organization_name = models.CharField(
-        null=True, blank=True, verbose_name="quel est votre organisme gestionnaire ?"
+        null=True, blank=True, verbose_name=get_field_text("esat-2025", "managing_organization_name", "verbose_name")
     )
     esat_status = models.CharField(
         null=True,
         blank=True,
         choices=[("PUBLIC", "Public"), ("NON_PROFIT", "Privé sans but lucratif")],
-        verbose_name="quel est le statut de l'ESAT ?",
+        verbose_name=get_field_text("esat-2025", "esat_status", "verbose_name"),
     )
     esat_dept = models.CharField(
         null=True,
         blank=True,
         choices=DEPARTMENTS.items(),
-        verbose_name="quel est le département d'implantation de l'ESAT ?",
+        verbose_name=get_field_text("esat-2025", "esat_dept", "verbose_name"),
     )
 
     nb_places_allowed = models.DecimalField(
@@ -200,7 +205,7 @@ class ESATAnswer(Answer):
         decimal_places=1,
         max_digits=4,
         validators=[MinValueValidator(0)],
-        verbose_name="au 31 décembre n-1, quel était l'agrément fixé par l'ARS pour l'ESAT en nombre de places autorisées ?",
+        verbose_name=get_field_text("esat-2025", "nb_places_allowed", "verbose_name"),
     )
     nb_employee_worked = models.DecimalField(
         null=True,
@@ -208,8 +213,8 @@ class ESATAnswer(Answer):
         decimal_places=1,
         max_digits=4,
         validators=[MinValueValidator(0)],
-        verbose_name="combien de salarié(e)s ou d'agents publics (ESAT publics) ont été employés dans l'ESAT ?",
-        help_text="En équivalent temps plein (ETP), salariés ou agents publics encore en poste au 31/12/n-1 et ceux partis dans l'année",
+        verbose_name=get_field_text("esat-2025", "nb_employee_worked", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_employee_worked", "help_text"),
     )
     nb_employee_shared = models.DecimalField(
         null=True,
@@ -217,22 +222,22 @@ class ESATAnswer(Answer):
         decimal_places=1,
         max_digits=4,
         validators=[MinValueValidator(0)],
-        verbose_name="parmi eux, combien étaient mutualisés sur plusieurs ESAT ?",
-        help_text="En nombre de personnes",
+        verbose_name=get_field_text("esat-2025", "nb_employee_shared", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_employee_shared", "help_text"),
     )
 
     # ESATStep.WORKERS_SUPPORTED
     nb_worker_acc = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses avez-vous accompagné ?",
-        help_text="En nombre de travailleurs (effectif physique) en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_acc", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_acc", "help_text"),
     )
     nb_worker_half_time = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="parmi eux, combien de travailleurs et travailleuses étaient à temps partiel ?",
-        help_text="En nombre de travailleurs (effectif physique) en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_half_time", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_half_time", "help_text"),
     )
     mean_worker_age = models.DecimalField(
         null=True,
@@ -240,8 +245,8 @@ class ESATAnswer(Answer):
         decimal_places=1,
         max_digits=3,
         validators=[MinValueValidator(0), MaxValueValidator(80)],
-        verbose_name="au 31 décembre n-1, quel était l'âge moyen des travailleurs et travailleuses accompagnés ?",
-        help_text="En nombre d'années",
+        verbose_name=get_field_text("esat-2025", "mean_worker_age", "verbose_name"),
+        help_text=get_field_text("esat-2025", "mean_worker_age", "help_text"),
     )
     mean_seniority = models.DecimalField(
         null=True,
@@ -249,193 +254,193 @@ class ESATAnswer(Answer):
         decimal_places=1,
         max_digits=3,
         validators=[MinValueValidator(0)],
-        verbose_name="au 31 décembre n-1, quelle était l'ancienneté moyenne des travailleurs et travailleuses accompagnés ?",
-        help_text="En nombre d'années",
+        verbose_name=get_field_text("esat-2025", "mean_seniority", "verbose_name"),
+        help_text=get_field_text("esat-2025", "mean_seniority", "help_text"),
     )
 
     # ESATStep.WORKERS_ENTRY
     nb_worker_previous_mot = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="quel était le nombre de travailleurs et travailleuses dans l'ESAT ayant occupé antérieurement à leur admission un emploi en milieu ordinaire (y compris entreprise adapté) ?",
-        help_text="En nombre de travailleurs (effectif physique) parmi ceux admis en n-1",
+        verbose_name=get_field_text("esat-2025", "nb_worker_previous_mot", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_previous_mot", "help_text"),
     )
     nb_worker_new = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="quel était le nombre de travailleurs et travailleuses dans l'ESAT admis pour la première fois en milieu protégé de travail ?",
-        help_text="En nombre de travailleurs (effectif physique) parmi ceux admis en n-1",
+        verbose_name=get_field_text("esat-2025", "nb_worker_new", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_new", "help_text"),
     )
     nb_worker_temporary = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont été admis temporairement dans l'ESAT pour remplacer des travailleurs absents pour maladie, pour suivre une action formation ou pour occuper un emploi à temps partiel ?",
-        help_text="En nombre de travailleurs (effectif physique) parmi ceux admis en n-1",
+        verbose_name=get_field_text("esat-2025", "nb_worker_temporary", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_temporary", "help_text"),
     )
 
     # ESATStep.ESTABLISHMENT_DISCOVERY
     nb_worker_mispe_mdph = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de personnes ont été accueillies par l'ESAT dans le cadre d'une mise en situation professionnelle (MISPE) prescrite par une MDPH ?",
-        help_text="Nombre de personnes (effectif physique) accueillies en n-1",
+        verbose_name=get_field_text("esat-2025", "nb_worker_mispe_mdph", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_mispe_mdph", "help_text"),
     )
     nb_worker_mispe_rpe = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de personnes ont été accueillies par l'ESAT dans le cadre d'une mise en situation professionnelle (MISPE) prescrite par le réseau pour l'emploi (RPE) ?",
-        help_text="Nombre de personnes (effectif physique) accueillies en n-1",
+        verbose_name=get_field_text("esat-2025", "nb_worker_mispe_rpe", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_mispe_rpe", "help_text"),
     )
 
     # ESATStep.ORDINARY_WORKING_ENVIRONMENT
     nb_worker_willing_mot = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs de l'ESAT ont exprimé dans leur projet personnalisé leur volonté d'aller travailler en milieu ordinaire ?",
-        help_text="Nombre de travailleurs (effectif physique) en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_willing_mot", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_willing_mot", "help_text"),
     )
     nb_worker_ft_job_seekers = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses se sont inscrits comme demandeurs d'emploi à France Travail ?",
-        help_text="Nombre de travailleurs parmi ceux ayant acté dans leur projet leur volonté d'aller vers le MOT",
+        verbose_name=get_field_text("esat-2025", "nb_worker_ft_job_seekers", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_ft_job_seekers", "help_text"),
     )
 
     # ESATStep.ORDINARY_WORKING_ENVIRONMENT_AND_CUSTOMERS_INVOLVEMENT
     prescription_delegate = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="êtes-vous délégataire de prescription de PMSMP pour les travailleurs et travailleuses que vous accompagnez ?",
+        verbose_name=get_field_text("esat-2025", "prescription_delegate", "verbose_name"),
     )
     pmsmp_refused = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="avez-vous eu des refus de PMSMP par les organismes du réseau pour l'emploi (France Travail, Cap Emploi, Mission Locale) pour un ou plusieurs de vos travailleurs et travailleuses ?",
+        verbose_name=get_field_text("esat-2025", "pmsmp_refused", "verbose_name"),
     )
     nb_worker_pmsmp = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont effectué une PMSMP ?",
-        help_text="En nombre de travailleurs (effectif physique) en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_pmsmp", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_pmsmp", "help_text"),
     )
     nb_worker_service = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont réalisé une prestation de service auprès d'une entreprise, d'une collectivité publique ou de tout autre organisme, assurée avec ou un plusieurs salarié(e)s de l'ESAT ?",
-        help_text="En nombre de travailleurs (effectif physique) en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_service", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_service", "help_text"),
     )
     nb_worker_mad_indiv = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont réalisé une mise à disposition individuelle d'un employeur public ou privé ?",
-        help_text="En nombre de travailleurs (effectif physique) en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_mad_indiv", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_mad_indiv", "help_text"),
     )
     nb_worker_with_public = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="nombre de travailleurs et travailleuses ayant réalisé une activité dans un lieu au contact de la clientèle ?",
-        help_text="En nombre de travailleurs (effectif physique) en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_with_public", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_with_public", "help_text"),
     )
     nb_worker_only_inside = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="nombre de travailleurs et travailleuses étant resté travailler dans les murs sans contact avec le public ou le MOT",
-        help_text="En nombre de travailleurs (effectif physique) en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_only_inside", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_only_inside", "help_text"),
     )
     nb_worker_cumul_esat_ea = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont cumulé un temps partiel dans l'ESAT et un emploi à temps partiel en Entreprise Adaptée ?",
-        help_text="En nombre de travailleurs (effectif physique) en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_cumul_esat_ea", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_cumul_esat_ea", "help_text"),
     )
     nb_worker_cumul_esat_mot = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont cumulé un temps partiel dans l'ESAT avec un emploi à temps partiel en milieu ordinaire classique, privé ou public ?",
-        help_text="En nombre de travailleurs (effectif physique) en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_cumul_esat_mot", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_cumul_esat_mot", "help_text"),
     )
 
     # ESATStep.WORKERS_LEFT
     nb_worker_left = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="en n-1, combien de travailleurs et travailleuses ont quitté l'ESAT ?",
-        help_text="Nombre de travailleurs partis au cours de l'année n-1",
+        verbose_name=get_field_text("esat-2025", "nb_worker_left", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_left", "help_text"),
     )
     nb_worker_left_ea = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien ont quitté l'ESAT pour un emploi en entreprise adaptée ?",
-        help_text="Y compris intérim",
+        verbose_name=get_field_text("esat-2025", "nb_worker_left_ea", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_left_ea", "help_text"),
     )
     nb_worker_left_private = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien ont quitté l'ESAT pour un emploi dans le milieu ordinaire privé lucratif ?",
-        help_text="Y compris intérim",
+        verbose_name=get_field_text("esat-2025", "nb_worker_left_private", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_left_private", "help_text"),
     )
     nb_worker_left_asso = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien ont quitté l'ESAT pour un emploi dans le milieu ordinaire privé non lucratif (associations) ?",
-        help_text="Y compris intérim",
+        verbose_name=get_field_text("esat-2025", "nb_worker_left_asso", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_left_asso", "help_text"),
     )
     nb_worker_left_public = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien ont quitté l'ESAT pour un emploi dans le milieu ordinaire public ?",
-        help_text="Y compris intérim",
+        verbose_name=get_field_text("esat-2025", "nb_worker_left_public", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_left_public", "help_text"),
     )
     nb_worker_left_other_reason = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien ont quitté l'ESAT pour d'autres raisons ?",
+        verbose_name=get_field_text("esat-2025", "nb_worker_left_other_reason", "verbose_name"),
     )
     nb_worker_cdi = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="pour les travailleurs et travailleuses ayant quitté l'ESAT pour un autre emploi, combien ont signé un CDI ?",
+        verbose_name=get_field_text("esat-2025", "nb_worker_cdi", "verbose_name"),
     )
     nb_worker_cdd = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="combien de travailleurs ont signé un CDD ?"
+        null=True, blank=True, verbose_name=get_field_text("esat-2025", "nb_worker_cdd", "verbose_name")
     )
     nb_worker_interim = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="combien de travailleurs sont en missions Interim ?"
+        null=True, blank=True, verbose_name=get_field_text("esat-2025", "nb_worker_interim", "verbose_name")
     )
     nb_worker_prof = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="combien de travailleurs sont en contrat de professionnalisation ?"
+        null=True, blank=True, verbose_name=get_field_text("esat-2025", "nb_worker_prof", "verbose_name")
     )
     nb_worker_apprentice = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="combien de travailleurs sont en contrat d'apprentissage ?"
+        null=True, blank=True, verbose_name=get_field_text("esat-2025", "nb_worker_apprentice", "verbose_name")
     )
     nb_conv_exit_agreement = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de conventions d'appui sont actuellement en vigueur dans l'ESAT avec un employeur privé ou public pour accompagner la sortie et le parcours professionnel d'un travailleur en milieu ordinaire au 31/12/n-1 ?",
+        verbose_name=get_field_text("esat-2025", "nb_conv_exit_agreement", "verbose_name"),
     )
     nb_conv_exit_agreement_new = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de conventions d'appui ont été signées dans l'année n-1 avec un employeur privé ou public pour accompagner la sortie et le parcours professionnel d'un travailleur en milieu ordinaire ?",
+        verbose_name=get_field_text("esat-2025", "nb_conv_exit_agreement_new", "verbose_name"),
     )
     nb_worker_esrp = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont suivi une formation en établissement et service de réadaptation professionnelle (ESRP) ?",
+        verbose_name=get_field_text("esat-2025", "nb_worker_esrp", "verbose_name"),
     )
 
     # ESATStep.WORKERS_RIGHT_TO_RETURN
     nb_worker_reinteg = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="nombre de travailleurs et travailleuses ayant réintégré l'ESAT"
+        null=True, blank=True, verbose_name=get_field_text("esat-2025", "nb_worker_reinteg", "verbose_name")
     )
     nb_worker_reinteg_other = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="nombre de travailleurs et travailleuses ayant intégré un autre ESAT"
+        null=True, blank=True, verbose_name=get_field_text("esat-2025", "nb_worker_reinteg_other", "verbose_name")
     )
     nb_esat_agreement = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="avec combien d'ESAT avez-vous conventionné pour garantir l'exercice du droit au retour ?",
-        help_text="Nombre d'ESAT",
+        verbose_name=get_field_text("esat-2025", "nb_esat_agreement", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_esat_agreement", "help_text"),
     )
 
     # ESATStep.SUPPORT_HOURS
@@ -443,8 +448,8 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         choices=SupportHoursRange.choices,
-        verbose_name="quel était le nombre d'heures de soutien liées à l'activité professionnelle, dont en moyenne chaque travailleur a bénéficié (rémunérées et comprises dans le temps de travail) ?",
-        help_text="Nombre d'heures en moyenne par travailleur sur année n-1",
+        verbose_name=get_field_text("esat-2025", "nb_support_hours", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_support_hours", "help_text"),
     )
     support_themes = ArrayField(
         models.CharField(
@@ -452,71 +457,71 @@ class ESATAnswer(Answer):
         ),
         null=True,
         blank=True,
-        verbose_name="sur quelles thématiques principales ?",
+        verbose_name=get_field_text("esat-2025", "support_themes", "verbose_name"),
     )
 
     # ESATStep.FORMATIONS
     contrib_opco = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="est-ce que l'ESAT a acquitté une contribution pour la formation des travailleurs et travailleuses auprès de l'OPCO Santé ou de l'OPCA ANFH (pour les ESAT publics) ?",
+        verbose_name=get_field_text("esat-2025", "contrib_opco", "verbose_name"),
     )
     pct_opco = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         validators=[MaxValueValidator(100)],
-        verbose_name="quel a été le taux de votre contribution à l'OPCO Santé ou à l'ANFH ?",
-        help_text="en %",
+        verbose_name=get_field_text("esat-2025", "pct_opco", "verbose_name"),
+        help_text=get_field_text("esat-2025", "pct_opco", "help_text"),
     )
     nb_worker_formation_opco = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="en n-1, combien de travailleurs et travailleuses de l'ESAT ont suivi une formation prise en charge par l'OPCO Santé ou par l'ANFH ?",
-        help_text="Nombre de travailleurs en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_formation_opco", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_formation_opco", "help_text"),
     )
     opco_or_anfh_refusal = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="l'ESAT a –t-il fait l'objet d'un ou plusieurs refus de financement d'une formation par l'OPCO Santé ou l'ANFH ?",
+        verbose_name=get_field_text("esat-2025", "opco_or_anfh_refusal", "verbose_name"),
     )
     nb_worker_cpf_unused = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="au 31 décembre n-1, et depuis leur admission dans l'ESAT, combien de travailleurs et travailleuses ont utilisé leur CPF ?",
-        help_text="Nombre de travailleurs en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_cpf_unused", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_cpf_unused", "help_text"),
     )
     cpf_unused_reason = models.TextField(
         null=True,
         blank=True,
-        verbose_name="pour quelles raisons les travailleurs et travailleurs n'utilisent pas leur CPF ?",
+        verbose_name=get_field_text("esat-2025", "cpf_unused_reason", "verbose_name"),
     )
     formation_cpf = models.TextField(
         null=True,
         blank=True,
-        verbose_name="quelle a été la formation majoritairement suivie par les travailleurs et travailleuses de l'ESAT au titre de leur CPF ?",
+        verbose_name=get_field_text("esat-2025", "formation_cpf", "verbose_name"),
     )
     nb_worker_intern_formation = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont bénéficié d'au moins une formation animée en interne par les salarié(e)s de l'ESAT ?",
+        verbose_name=get_field_text("esat-2025", "nb_worker_intern_formation", "verbose_name"),
     )
     formation_subject = models.TextField(
-        null=True, blank=True, verbose_name="quels ont été les sujets des formation dispensés par l'ESAT ?"
+        null=True, blank=True, verbose_name=get_field_text("esat-2025", "formation_subject", "verbose_name")
     )
     autodetermination_formation = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="avez-vous mis en place une formation à l'autodétermination pour les travailleurs et travailleuses ?",
+        verbose_name=get_field_text("esat-2025", "autodetermination_formation", "verbose_name"),
     )
     nb_worker_autodetermination = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont bénéficié dans l'année d'une formation à l'autodétermination ?",
+        verbose_name=get_field_text("esat-2025", "nb_worker_autodetermination", "verbose_name"),
     )
     autodetermination_external_formation = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="la formation à l'autodétermination pour les travailleuses et travailleurs est-elle assurée par l'intermédiaire d'un organisme de formation ?",
+        verbose_name=get_field_text("esat-2025", "autodetermination_external_formation", "verbose_name"),
     )
 
     # ESATStep.SKILLS
@@ -524,32 +529,32 @@ class ESATAnswer(Answer):
         models.CharField(choices=SkillsValidationType.choices),
         null=True,
         blank=True,
-        verbose_name="quels ont été les types de dispositifs dont ont bénéficié les travailleurs et travailleuses de l'ESAT pour reconnaitre et développer leurs compétences ?",
+        verbose_name=get_field_text("esat-2025", "skills_validation_type", "verbose_name"),
     )
     nb_worker_rae_rsfp = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont bénéficié d'une RAE ou d'une RSFP ?",
+        verbose_name=get_field_text("esat-2025", "nb_worker_rae_rsfp", "verbose_name"),
     )
     nb_worker_vae = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="combien de travailleurs et travailleuses ont bénéficié d'une VAE ?"
+        null=True, blank=True, verbose_name=get_field_text("esat-2025", "nb_worker_vae", "verbose_name")
     )
     after_skills_validation = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="a l'issue de cette reconnaissance ou validation, quelle a été la suite du parcours des travailleurs et travailleuses concerné(e)s ?",
+        verbose_name=get_field_text("esat-2025", "after_skills_validation", "verbose_name"),
     )
 
     # ESATStep.DUODAYS
     nb_worker_duoday = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="en n-1, combien de travailleurs et travailleuses de l'ESAT ont participé à Duoday ?",
+        verbose_name=get_field_text("esat-2025", "nb_worker_duoday", "verbose_name"),
     )
     nb_employee_reverse_duoday = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="en n-1, combien de professionnels du milieu ordinaire ont participé à des Duoday inversés ?",
+        verbose_name=get_field_text("esat-2025", "nb_employee_reverse_duoday", "verbose_name"),
     )
 
     # ESATStep.SKILLS_NOTEBOOK
@@ -557,39 +562,41 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         choices=YesNoWIP.choices,
-        verbose_name="avez-vous mis en place un carnet de parcours et de compétences ?",
+        verbose_name=get_field_text("esat-2025", "skills_notebook", "verbose_name"),
     )
     software_financial_help = ArrayField(
         models.CharField(choices=SoftwareFinancialHelp.choices),
         null=True,
         blank=True,
-        verbose_name="l'ESAT a t-il bénéficié d'une aide financière pour mettre en place ce carnet et le cas échéant, acquérir un logiciel ?",
+        verbose_name=get_field_text("esat-2025", "software_financial_help", "verbose_name"),
     )
-    software_financial_help_type = models.TextField(null=True, blank=True, verbose_name="type d'aide")
+    software_financial_help_type = models.TextField(
+        null=True, blank=True, verbose_name=get_field_text("esat-2025", "software_financial_help_type", "verbose_name")
+    )
 
     # ESATStep.RETIREMENT
     retirement_preparation_actions = ArrayField(
         models.CharField(choices=RetirementPreparationActions.choices),
         null=True,
         blank=True,
-        verbose_name="quelles ont été les actions conduites par l'ESAT pour préparer les travailleurs et travailleuses au départ à la retraite (inscription dans la démarche Un Avenir Après le Travail, rendez-vous organisés avec la CARSAT, etc.) ?",
+        verbose_name=get_field_text("esat-2025", "retirement_preparation_actions", "verbose_name"),
     )
     retirement_preparation_nb_workers = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont bénéficié d'actions de préparation à la retraite, dans le cadre ou non d'Un Avenir Après le Travail ?",
+        verbose_name=get_field_text("esat-2025", "retirement_preparation_nb_workers", "verbose_name"),
     )
     uaat_inscription = models.CharField(
         null=True,
         blank=True,
         choices=YesNoWIP.choices,
-        verbose_name="êtes-vous inscrit dans la démarche Un Avenir Après le Travail (UAAT) ?",
+        verbose_name=get_field_text("esat-2025", "uaat_inscription", "verbose_name"),
     )
     pct_more_than50 = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         validators=[MaxValueValidator(100)],
-        verbose_name="combien de travailleurs ou travailleuses de plus de 50 ans ont travaillé dans l'ESAT en n-1 ?",
+        verbose_name=get_field_text("esat-2025", "pct_more_than50", "verbose_name"),
     )
 
     # ESATStep.LANGUAGE_ACCESSIBILITY
@@ -597,15 +604,15 @@ class ESATAnswer(Answer):
         models.CharField(choices=DocumentFALCList.choices),
         null=True,
         blank=True,
-        verbose_name="au 31 décembre n-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils accessibles en FALC ou en communication alternative augmentée ? (contrat d'accompagnement par le travail, livret d'accueil, règlement de fonctionnement, etc.)",
-        help_text="Le facile à lire et à comprendre (FALC) est une méthode qui a pour but de traduire un langage classique en un langage simplifié.",
+        verbose_name=get_field_text("esat-2025", "documents_falclist", "verbose_name"),
+        help_text=get_field_text("esat-2025", "documents_falclist", "help_text"),
     )
 
     # ESATStep.WORKING_CONDITIONS
     worker_delegate = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="en n-1, y-a-t-il dans l'ESAT un délégué/une déléguée des travailleurs élu(e) ?",
+        verbose_name=get_field_text("esat-2025", "worker_delegate", "verbose_name"),
     )
     worker_delegate_formation = models.CharField(
         null=True,
@@ -615,128 +622,128 @@ class ESATAnswer(Answer):
             ("INTERNALLY", "En interne"),
             NO_CHOICE,
         ],
-        verbose_name="est-ce que le délégué ou la déléguée a bénéficié d'une formation au cours de son mandat pour cette mission :",
+        verbose_name=get_field_text("esat-2025", "worker_delegate_formation", "verbose_name"),
     )
     nb_delegate_hours = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="est-ce que le délégué ou la déléguée bénéficie d'un crédit d'heures chaque mois pour remplir sa mission ?",
+        verbose_name=get_field_text("esat-2025", "nb_delegate_hours", "verbose_name"),
     )
     worker_delegate_hours_credit = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name="si oui, précisez le nombre d'heures", help_text="Nombre d'heures par mois"
+        null=True, blank=True, verbose_name=get_field_text("esat-2025", "worker_delegate_hours_credit", "verbose_name")
     )
     mix_qvt_in_place = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="une instance mixte (salarié(e)s/travailleurs et travailleuses) sur la qualité de vie au travail (QVT), l'hygiène et la sécurité et l'évaluation des risques professionnels est-elle en place en année n-1 ?",
+        verbose_name=get_field_text("esat-2025", "mix_qvt_in_place", "verbose_name"),
     )
 
     # ESATStep.PROFIT_SHARING
     profit_sharing_bonus = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="en n-1, quel était le montant moyen de la prime d'intéressement (au sens de l'article R 243-6 du CASF) versée aux travailleurs et travailleuses?",
-        help_text="en euros. Possibilité de mettre 0",
+        verbose_name=get_field_text("esat-2025", "profit_sharing_bonus", "verbose_name"),
+        help_text=get_field_text("esat-2025", "profit_sharing_bonus", "help_text"),
     )
     mean_pct_esat_rem = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         validators=[MaxValueValidator(100)],
-        verbose_name="au 31 décembre n-1, quel était le montant moyen de la part rémunération garantie du travailleur prise en charge financièrement par l'ESAT ?",
-        help_text="En % du SMIC",
+        verbose_name=get_field_text("esat-2025", "mean_pct_esat_rem", "verbose_name"),
+        help_text=get_field_text("esat-2025", "mean_pct_esat_rem", "help_text"),
     )
 
     # ESATStep.INSURANCE_POLICY
     foresight_in_place = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="est-ce que l'ESAT a contribué en n-1 à un régime de prévoyance au sens de l'article R 243-9 du CASF, avec compensation par l'Etat d'une partie de la contribution ?",
+        verbose_name=get_field_text("esat-2025", "foresight_in_place", "verbose_name"),
     )
     year_foresight_in_place = models.CharField(
         null=True,
         blank=True,
         choices=[(str(year), year) for year in range(timezone.localdate().year, 1900, -1)] + [DO_NOT_KNOW_CHOICE],
-        verbose_name="depuis quelle année ce régime de prévoyance est-il mis en œuvre dans l'ESAT ?",
+        verbose_name=get_field_text("esat-2025", "year_foresight_in_place", "verbose_name"),
     )
 
     # ESATStep.MOBILITY_PROGRAM
     annual_transport_budget = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="quel budget annuel avez-vous alloué au transport des travailleurs et travailleuses de leur domicile à l'ESAT (transport en commun et/ou navette et/ou taxi) ?",
-        help_text="En euros",
+        verbose_name=get_field_text("esat-2025", "annual_transport_budget", "verbose_name"),
+        help_text=get_field_text("esat-2025", "annual_transport_budget", "help_text"),
     )
     nb_worker_transport = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont bénéficié d'un transport proposé par l'ESAT? (transport en commun et/ou navette et/ou taxi)",
-        help_text="En nombre de travailleurs (effectif physique) en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_transport", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_transport", "help_text"),
     )
     nb_worker_mobility_inclusion_card = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont bénéficié de la carte mobilité inclusion ?",
-        help_text="En nombre de travailleurs (effectif physique) en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_mobility_inclusion_card", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_mobility_inclusion_card", "help_text"),
     )
     nb_worker_driving_licence = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont leur permis de conduire ?",
-        help_text="En nombre de travailleurs (effectif physique) en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_driving_licence", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_driving_licence", "help_text"),
     )
     nb_worker_code = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses ont le code ?",
-        help_text="En nombre de travailleurs (effectif physique) en file active",
+        verbose_name=get_field_text("esat-2025", "nb_worker_code", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_code", "help_text"),
     )
 
     # ESATStep.VOUCHERS
     holiday_voucher = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="l'ESAT propose-t-il des chèques vacances aux travailleurs et travailleuses ?",
+        verbose_name=get_field_text("esat-2025", "holiday_voucher", "verbose_name"),
     )
     holiday_voucher_annual_budget = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="quel est le budget annuel de l'ESAT pour les chèques vacances ?",
-        help_text="En euros",
+        verbose_name=get_field_text("esat-2025", "holiday_voucher_annual_budget", "verbose_name"),
+        help_text=get_field_text("esat-2025", "holiday_voucher_annual_budget", "help_text"),
     )
     gift_voucher = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="l'ESAT propose-t-il des chèques cadeaux aux travailleurs et travailleuses ?",
+        verbose_name=get_field_text("esat-2025", "gift_voucher", "verbose_name"),
     )
     gift_voucher_annual_budget = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="quel est le budget annuel de l'ESAT pour les chèques cadeaux ?",
-        help_text="En euros",
+        verbose_name=get_field_text("esat-2025", "gift_voucher_annual_budget", "verbose_name"),
+        help_text=get_field_text("esat-2025", "gift_voucher_annual_budget", "help_text"),
     )
 
     # ESATStep.SUNDAY_WORK
     nb_worker_worked_sunday = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name="combien de travailleurs et travailleuses de l'ESAT ont travaillé au moins un dimanche ou un jour férié en n-1 ?",
+        verbose_name=get_field_text("esat-2025", "nb_worker_worked_sunday", "verbose_name"),
     )
 
     # ESATStep.PARTNERSHIP_AGREEMENTS
     agreement_signed_ft = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="pour l'année n-1, une convention était-elle en vigueur avec France Travail",
+        verbose_name=get_field_text("esat-2025", "agreement_signed_ft", "verbose_name"),
     )
     agreement_signed_ea = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="pour l'année n-1, une convention était-elle en vigueur avec une Entreprise adaptée",
+        verbose_name=get_field_text("esat-2025", "agreement_signed_ea", "verbose_name"),
     )
     agreement_signed_dept_pae = models.BooleanField(
         null=True,
         blank=True,
-        verbose_name="pour l'année n-1, une convention était-elle en vigueur avec la plateforme accompagnée du département",
+        verbose_name=get_field_text("esat-2025", "agreement_signed_dept_pae", "verbose_name"),
     )
 
     # ESATStep.STAFF
@@ -746,8 +753,8 @@ class ESATAnswer(Answer):
         decimal_places=1,
         max_digits=4,
         validators=[MinValueValidator(0)],
-        verbose_name="au 31 décembre, combien de postes de conseillers en parcours d'insertion ou chargé(e)s d'inclusion professionnelle sont dans vos effectifs ?",
-        help_text="On parle ici de professionnels formés et exclusifs sur la mission d'inclusion. Répondre ici en ETP",
+        verbose_name=get_field_text("esat-2025", "nb_insertion_staff", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_insertion_staff", "help_text"),
     )
     nb_insertion_dispo = models.DecimalField(
         null=True,
@@ -755,57 +762,60 @@ class ESATAnswer(Answer):
         decimal_places=1,
         max_digits=4,
         validators=[MinValueValidator(0)],
-        verbose_name="au 31 décembre, combien de postes de conseillers en parcours d'insertion ou chargé(e)s d'inclusion professionnelle sont mis à disposition ou mutualisés ?",
-        help_text="On parle ici de professionnels formés et exclusifs sur la mission d'inclusion. Répondre ici en ETP",
+        verbose_name=get_field_text("esat-2025", "nb_insertion_dispo", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_insertion_dispo", "help_text"),
     )
     insertion_staff_funding = ArrayField(
         models.CharField(choices=BudgetFunding.choices),
         null=True,
         blank=True,
-        verbose_name="comment sont-ils financés ?",
+        verbose_name=get_field_text("esat-2025", "insertion_staff_funding", "verbose_name"),
     )
 
     # ESATStep.COMMERCIAL_OPERATION
     annual_ca = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name="quel était votre chiffre d'affaire annuel commercial tout confondu (productions propres, prestations de service, mises à disposition de travailleurs et travailleuses auprès d'utilisateurs) ?",
+        verbose_name=get_field_text("esat-2025", "annual_ca", "verbose_name"),
     )
     annual_ca_production = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name="quel était votre chiffre d'affaire annuel commercial en productions propres ?",
+        verbose_name=get_field_text("esat-2025", "annual_ca_production", "verbose_name"),
     )
     annual_ca_service = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name="quel était votre chiffre d'affaire annuel commercial en prestation de service ?",
+        verbose_name=get_field_text("esat-2025", "annual_ca_service", "verbose_name"),
     )
     annual_ca_mad = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name="quel est le montant annuel de votre chiffre d'affaires (Compte 706) issu exclusivement des contrats de mise à disposition de travailleurs et travailleuses handicapés (MAD) auprès d'utilisateurs tiers (entreprises, collectivités, associations) ?",
+        verbose_name=get_field_text("esat-2025", "annual_ca_mad", "verbose_name"),
     )
     pct_ca_public = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         validators=[MaxValueValidator(100)],
-        verbose_name="indiquez le pourcentage de votre chiffre d'affaires réalisé avec des clients du secteur public",
+        verbose_name=get_field_text("esat-2025", "pct_ca_public", "verbose_name"),
     )
     budget_commercial = models.CharField(
-        null=True, blank=True, choices=BudgetState.choices, verbose_name="sur le résultat net de la SEC, étiez-vous"
+        null=True,
+        blank=True,
+        choices=BudgetState.choices,
+        verbose_name=get_field_text("esat-2025", "budget_commercial", "verbose_name"),
     )
     budget_commercial_deficit = models.CharField(
         null=True,
         blank=True,
         choices=BudgetRange.choices,
-        verbose_name="de quel montant est-ce déficit ?",
+        verbose_name=get_field_text("esat-2025", "budget_commercial_deficit", "verbose_name"),
     )
     budget_commercial_excedent = models.CharField(
         null=True,
         blank=True,
         choices=BudgetRange.choices,
-        verbose_name="de quel montant est-cet excédant?",
+        verbose_name=get_field_text("esat-2025", "budget_commercial_excedent", "verbose_name"),
     )
 
     # ESATStep.SOCIAL_ACTIVITY_BUDGET
@@ -813,39 +823,39 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         choices=BudgetState.choices,
-        verbose_name="sur le résultat de clôture de votre Budget de Fonctionnement (Section d'Exploitation du Budget Social), étiez-vous :",
-        help_text="Budget de fonctionnement dit aussi budget social",
+        verbose_name=get_field_text("esat-2025", "budget_social", "verbose_name"),
+        help_text=get_field_text("esat-2025", "budget_social", "help_text"),
     )
     budget_social_deficit = models.CharField(
         null=True,
         blank=True,
         choices=BudgetRange.choices,
-        verbose_name="de quel montant est-ce déficit ?",
+        verbose_name=get_field_text("esat-2025", "budget_social_deficit", "verbose_name"),
     )
     budget_social_excedent = models.CharField(
         null=True,
         blank=True,
         choices=BudgetRange.choices,
-        verbose_name="de quel montant est-cet excédant?",
+        verbose_name=get_field_text("esat-2025", "budget_social_excedent", "verbose_name"),
     )
 
     # ESATStep.INVESTMENTS
     budget_accessibility = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name="quel a été le montant des investissements de mise aux normes de sécurité et d'accessibilité des installations réalisés par l'ESAT en n-1 ?",
+        verbose_name=get_field_text("esat-2025", "budget_accessibility", "verbose_name"),
     )
     budget_diversity = models.PositiveIntegerField(
         null=True,
         blank=True,
-        verbose_name="quel a été le montant des investissements permettant de diversifier les activités proposées aux travailleurs et travailleuses, réalisés par l'ESAT en n-1 ?",
+        verbose_name=get_field_text("esat-2025", "budget_diversity", "verbose_name"),
     )
 
     # ESATStep.COMMENTS
     comments = models.TextField(
         null=True,
         blank=True,
-        verbose_name="nous arrivons à la fin du questionnaire. Ce champ libre vous permet d'apporter toute précision complémentaire, d'exprimer un doute concernant vos réponses ou de clarifier certaines informations si nécessaire. Merci de faire référence aux questions en utilisant leur identifiant (exemple : Rubrique “Aide à la mobilité”, Question 1), la donnée n'est pas disponible car nous n'avons pas l'information pour 2 des 5 travailleurs concernés.)",
+        verbose_name=get_field_text("esat-2025", "comments", "verbose_name"),
     )
 
     # TODO: Delete the field when we don't need the date anymore

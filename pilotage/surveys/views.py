@@ -52,85 +52,6 @@ class ESATStep(TextChoices):
     CONCLUSION = CommonStep.CONCLUSION, "conclusion"
 
 
-LABELS_INFORMATIONS = {
-    ESATAnswer: {
-        "nb_employee_worked": (
-            "Inclus : CDI, CDD du 01/01 au 31/12 et salariés transversaux (comptable, qualité...).<br>"
-            "ETP : C'est la force de travail réelle. Un salarié à temps plein présent toute l'année vaut 1 ETP. Un salarié à 50% vaut 0,5 ETP"  # noqa: E501
-        ),
-        "nb_worker_acc": (
-            "Indiquez ici le nombre total de travailleurs (personnes physiques) ayant été sous contrat de soutien et d'aide par le travail (y compris les périodes d'essai et les mises à disposition) entre le 01/01 et le 31/12.<br>"  # noqa: E501
-            "Si un travailleur est parti en cours d'année, il doit être comptabilisé.<br>"
-            "Les stagiaires (MISP, PMSMP) ne sont pas comptabilisées ici."
-        ),
-        "mean_worker_age": (
-            "Même périmètre que la question précédente donc hors stagiaires.<br>"
-            "Calcul à faire sur les effectifs présents au 31/12/N-1"
-        ),
-        "mean_seniority": (
-            "Même périmètre que la question précédente donc hors stagiaires.<br>"
-            "Calcul à faire sur les effectifs présents au 31/12/N-1"
-        ),
-        "nb_worker_previous_mot": "Nous avons conscience que cette donnée peut-être difficile à obtenir. Dans ce cas, vous êtes invité à ne rien remplir et à préciser la situation dans la rubrique « Commentaires » disponible en fin de questionnaire.",  # noqa: E501
-        "nb_worker_new": "Nous avons conscience que cette donnée peut-être difficile à obtenir. Dans ce cas, vous êtes invité à ne rien remplir et à préciser la situation dans la rubrique « Commentaires » disponible en fin de questionnaire.",  # noqa: E501
-        "nb_worker_temporary": (
-            "Les travailleurs absents pour maladie, congés, emploi à temps partiel, vacance de poste, ...<br>"
-            "Cette disposition vous permet de maintenir ainsi votre capacité d'activité en bénéficiant via l'ASP de l'annualisation de l'aide au poste."  # noqa: E501
-        ),
-        "nb_worker_willing_mot": (
-            "Formalisé à l'écrit dans leur projet personnalisé.<br>"
-            "Volonté d'aller, à terme, vers un contrat de droit commun.<br>"
-            "Stages exclus. Calcul toujours en file active donc un travail parti au cours de l'année doit être comptabilisé."  # noqa: E501
-        ),
-        "nb_worker_ft_job_seekers": "Calcul toujours en file active donc un travail parti au cours de l'année doit être comptabilisé",  # noqa: E501
-        "prescription_delegate": "Sur année n-1",
-        "pmsmp_refused": "Sur année n-1",
-        "nb_worker_service": "Inclus : espaces verts, clôture, ...",
-        "nb_worker_with_public": (
-            "Inclus : blanchisserie, restaurant, cafétérie, recyclerie, ...<br>"
-            "Comptabiliser les travailleurs qui sont sur des postes où le contact avec la clientèle est clé (ne pas comptabiliser les travailleurs qui ont des contacts occasionnels - exemple ceux qui sont à la blanchisserie sans être à l'accueil de la blanchisserie)"  # noqa: E501
-        ),
-        "nb_worker_cumul_esat_ea": ("Ici, il ne faut pas comptabiliser par contrat mais par travailleur.<br>"),
-        "nb_worker_cumul_esat_mot": ("Ici, il ne faut pas comptabiliser par contrat mais par travailleur.<br>"),
-        "nb_worker_left": "Tous les départs (validés ou non pas la MDPH)",
-        "nb_worker_left_ea": "Calcul en nombre de travailleurs file active.",
-        "nb_worker_left_private": "Calcul en nombre de travailleurs file active.",
-        "nb_worker_left_public": "Calcul en nombre de travailleurs file active.",
-        "nb_worker_left_asso": "Calcul en nombre de travailleurs file active.",
-        "nb_worker_left_other_reason": (
-            "Total des travailleurs sortis - tous ceux sortis vers une entreprise adaptée ou le milieu ordinaire.<br>"
-            "Calcul en nombre de travailleurs file active."
-        ),
-        "nb_worker_cdi": "Calcul en nombre de travailleurs file active.",
-        "nb_worker_cdd": "Calcul en nombre de travailleurs file active.",
-        "nb_worker_interim": "Calcul en nombre de travailleurs file active.",
-        "nb_worker_prof": "Calcul en nombre de travailleurs file active.",
-        "nb_worker_apprentice": "Calcul en nombre de travailleurs file active.",
-        "nb_worker_esrp": "Calcul en nombre de travailleurs file active.",
-        "nb_worker_reinteg": "Travailleurs et travailleuses ont réintégré l'ESAT après avoir occupé un emploi en milieu ordinaire de travail (entreprise classique ou adaptée ou tout autre organisme public ou privé)",  # noqa: E501
-        "nb_worker_reinteg_other": (
-            "Travailleurs et travailleuses ont réintégré un autre ESAT après avoir occupé un emploi en milieu ordinaire de travail ? (entreprise classique ou adaptée ou tout autre organisme public ou privé).<br>"  # noqa: E501
-            "Comptabiliser tous les retours même si pas de convention de retour avec ESAT"
-        ),
-        "pct_opco": "Reportez-vous à votre bordereau de cotisation annuelle.",
-        "nb_worker_cpf_unused": "Nous avons conscience que cette donnée peut-être difficile à obtenir. Dans ce cas, vous êtes invité à ne rien remplir et à préciser la situation dans la rubrique « Commentaires » disponible en fin de questionnaire.",  # noqa: E501
-        "nb_worker_intern_formation": "Sont exclues les formations animées par des organismes externes, même si celles-ci ont lieu dans les murs de l'ESAT. Sont aussi exclus les apprentissages délivrés par les moniteurs durant la production quotidienne.",  # noqa: E501
-        "nb_worker_autodetermination": "Les actions de sensibilisation à l'autodétermination doivent s'entendre comme des actions de formation ( prévu par les conventions OPCO Santé et OPCA ANFH).",  # noqa: E501
-        "nb_worker_rae_rsfp": "Dont la RAE ou RSFP a été validée au cours de l'année",
-        "nb_worker_vae": "Dont la VAE a été validée au cours de l'année",
-        "documents_falclist": "Possible de répondre OUI si le document n'a été traduit que partiellement",
-        "nb_worker_mobility_inclusion_card": "Nous avons conscience que cette donnée peut-être difficile à obtenir. Dans ce cas, vous êtes invité à ne rien remplir et à préciser la situation dans la rubrique « Commentaires » disponible en fin de questionnaire.",  # noqa: E501
-        "annual_ca": "Reportez vous au guide d'aide au remplissage pour des indications précises",
-        "annual_ca_production": "Reportez vous au guide d'aide au remplissage pour des indications précises",
-        "annual_ca_service": "Reportez vous au guide d'aide au remplissage pour des indications précises",
-        "annual_ca_mad": "Reportez vous au guide d'aide au remplissage pour des indications précises",
-        "pct_ca_public": "Reportez vous au guide d'aide au remplissage pour des indications précises",
-        "budget_commercial": "Solde final après inclusion des aides au poste - relatif uniquement à la partie commerciale",  # noqa: E501
-        "budget_diversity": "Il s'agit ici des investissements ayant permis à l'ESAT de diversifier ses activités (nouveaux outils de production, etc.)",  # noqa: E501
-    }
-}
-
-
 def start(request, *, survey_name):
     survey = get_object_or_404(Survey.objects.open(), name=survey_name)  # Only open surveys can have new answers
     match survey.kind:
@@ -217,7 +138,6 @@ def tunnel(request, *, survey_name, answer_uid, step):
             "previous_step_url": previous_step_url,
             "current_step": step,
             "next_step": next_step,
-            "labels_information": LABELS_INFORMATIONS.get(answer_class),
             **extra_context,
         },
     )

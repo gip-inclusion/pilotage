@@ -1,7 +1,10 @@
+import csv
 import dataclasses
+import functools
+import pathlib
 import typing
 
-from pilotage.surveys import forms as survey_forms
+from django.utils.text import capfirst
 
 
 KNOWN_ACRONYM = {
@@ -12,6 +15,8 @@ KNOWN_ACRONYM = {
 
 
 def get_step_form_class(answer_class, step):
+    from pilotage.surveys import forms as survey_forms  # Import here because of circular import (`get_field_text()`)
+
     step_as_camel_case = (
         step.replace("-", " ").title().replace(" ", "") if step.upper() not in KNOWN_ACRONYM else step.upper()
     )
@@ -62,3 +67,27 @@ def get_steps_informations(steps, answer, exclude=None):
         total_fields=sum(i.total for i in informations.values()),
         total_filled=sum(i.filled for i in informations.values()),
     )
+
+
+@functools.cache
+def get_survey_specs(survey_name):
+    with pathlib.Path(__file__).parent.joinpath("specs", f"{survey_name}.csv").open() as f:
+        reader = csv.DictReader(f, delimiter=",")
+        return {r["field_name"]: r for r in reader}
+
+
+def _lower_first_letter(text):
+    return text[0].lower() + text[1:]
+
+
+def get_field_text(survey_name, field_name, text_id):
+    if text_id == "verbose_name":
+        text_id = "label"
+        transform = _lower_first_letter
+    else:
+        transform = capfirst
+
+    try:
+        return transform(get_survey_specs(survey_name)[field_name][f"field_{text_id}"])
+    except KeyError:
+        return None

@@ -2,6 +2,7 @@ from django import forms
 
 from pilotage.itoutils.forms import EmptyPlaceholderFormMixin, LetteredLabelFormMixin
 from pilotage.surveys import models
+from pilotage.surveys.utils import get_field_text
 
 
 class ESATBaseForm(LetteredLabelFormMixin, EmptyPlaceholderFormMixin, forms.ModelForm):
@@ -33,13 +34,23 @@ class ESATAnswerOrganizationForm(ESATBaseForm):
         self.fields["nb_employee_worked"].widget.attrs["min"] = 0
 
         if kwargs["editable"]:
-            self.fields["esat_role"].widget.attrs["placeholder"] = "Directrice d'ESAT"
-            self.fields["esat_name"].widget.attrs["placeholder"] = "ESAT Les pruniers"
-            self.fields["esat_siret"].widget.attrs["placeholder"] = "12002701600357"
-            self.fields["finess_num"].widget.attrs["placeholder"] = "123456789"
-            self.fields["managing_organization_name"].widget.attrs["placeholder"] = "ADAPEI16"
-            self.fields["nb_employee_shared"].widget.attrs["placeholder"] = (
-                "Exemples : fonctions support (comptabilité, ressources humaines, communication, etc.)"
+            self.fields["esat_role"].widget.attrs["placeholder"] = get_field_text(
+                "esat-2025", "esat_role", "placeholder"
+            )
+            self.fields["esat_name"].widget.attrs["placeholder"] = get_field_text(
+                "esat-2025", "esat_name", "placeholder"
+            )
+            self.fields["esat_siret"].widget.attrs["placeholder"] = get_field_text(
+                "esat-2025", "esat_siret", "placeholder"
+            )
+            self.fields["finess_num"].widget.attrs["placeholder"] = get_field_text(
+                "esat-2025", "finess_num", "placeholder"
+            )
+            self.fields["managing_organization_name"].widget.attrs["placeholder"] = get_field_text(
+                "esat-2025", "managing_organization_name", "placeholder"
+            )
+            self.fields["nb_employee_shared"].widget.attrs["placeholder"] = get_field_text(
+                "esat-2025", "nb_employee_shared", "placeholder"
             )
 
 
@@ -139,7 +150,7 @@ class ESATAnswerSupportHoursForm(ESATBaseForm):
     # TODO: Check if we can only override the widget
     support_themes = forms.MultipleChoiceField(
         required=False,
-        label="Sur quelles thématiques principales ?",
+        label=get_field_text("esat-2025", "support_themes", "label"),
         choices=models.SupportThemes.choices,
         widget=forms.CheckboxSelectMultiple(),
     )
@@ -174,10 +185,14 @@ class ESATAnswerFormationsForm(ESATBaseForm):
         super().__init__(*args, **kwargs)
         self.fields["pct_opco"].widget.attrs["max"] = 100
         if kwargs["editable"]:
-            self.fields["cpf_unused_reason"].widget.attrs["placeholder"] = "Formation non éligible"
-            self.fields["formation_cpf"].widget.attrs["placeholder"] = "Permis de conduire"
-            self.fields["formation_subject"].widget.attrs["placeholder"] = (
-                "Hygiène, communication bienveillante, savoir s'exprimer en public"
+            self.fields["cpf_unused_reason"].widget.attrs["placeholder"] = get_field_text(
+                "esat-2025", "cpf_unused_reason", "placeholder"
+            )
+            self.fields["formation_cpf"].widget.attrs["placeholder"] = get_field_text(
+                "esat-2025", "formation_cpf", "placeholder"
+            )
+            self.fields["formation_subject"].widget.attrs["placeholder"] = get_field_text(
+                "esat-2025", "formation_subject", "placeholder"
             )
 
 
@@ -185,7 +200,7 @@ class ESATAnswerSkillsForm(ESATBaseForm):
     # TODO: Check if we can only override the widget
     skills_validation_type = forms.MultipleChoiceField(
         required=False,
-        label="Quels ont été les types de dispositifs dont ont bénéficié les travailleurs et travailleuses de l'ESAT pour reconnaitre et développer leurs compétences ?",  # noqa: E501
+        label=get_field_text("esat-2025", "skills_validation_type", "label"),  # noqa: E501
         choices=models.SkillsValidationType.choices,
         widget=forms.CheckboxSelectMultiple(),
     )
@@ -213,7 +228,7 @@ class ESATAnswerSkillsNotebookForm(ESATBaseForm):
     # TODO: Check if we can only override the widget
     software_financial_help = forms.MultipleChoiceField(
         required=False,
-        label="L'ESAT a t-il bénéficié d'une aide financière pour mettre en place ce carnet et le cas échéant, acquérir un logiciel ?",  # noqa: E501
+        label=get_field_text("esat-2025", "software_financial_help", "label"),  # noqa: E501
         choices=models.SoftwareFinancialHelp.choices,
         widget=forms.CheckboxSelectMultiple(),
     )
@@ -229,14 +244,16 @@ class ESATAnswerSkillsNotebookForm(ESATBaseForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if kwargs["editable"]:
-            self.fields["software_financial_help_type"].widget.attrs["placeholder"] = "CNR"
+            self.fields["software_financial_help_type"].widget.attrs["placeholder"] = get_field_text(
+                "esat-2025", "software_financial_help_type", "placeholder"
+            )
 
 
 class ESATAnswerRetirementForm(ESATBaseForm):
     # TODO: Check if we can only override the widget
     retirement_preparation_actions = forms.MultipleChoiceField(
         required=False,
-        label="Quelles ont été les actions conduites par l'ESAT pour préparer les travailleurs et travailleuses au départ à la retraite (inscription dans la démarche Un Avenir Après le Travail, rendez-vous organisés avec la CARSAT, etc.) ?",  # noqa: E501
+        label=get_field_text("esat-2025", "retirement_preparation_actions", "label"),  # noqa: E501
         choices=models.RetirementPreparationActions.choices,
         widget=forms.CheckboxSelectMultiple(),
     )
@@ -253,8 +270,8 @@ class ESATAnswerRetirementForm(ESATBaseForm):
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
             if kwargs["editable"]:
-                self.fields["retirement_preparation_actions"].widget.attrs["placeholder"] = (
-                    "Avenir après le travail, RDV CARSAT"
+                self.fields["retirement_preparation_actions"].widget.attrs["placeholder"] = get_field_text(
+                    "esat-2025", "retirement_preparation_actions", "placeholder"
                 )
             self.fields["pct_more_than50"].widget.attrs["max"] = 100
 
@@ -263,7 +280,7 @@ class ESATAnswerLanguageAccessibilityForm(ESATBaseForm):
     # TODO: Check if we can only override the widget
     documents_falclist = forms.MultipleChoiceField(
         required=False,
-        label="Au 31 décembre n-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils accessibles en FALC ou en communication alternative augmentée ? (contrat d'accompagnement par le travail, livret d'accueil, règlement de fonctionnement, etc.)",  # noqa: E501
+        label=get_field_text("esat-2025", "documents_falclist", "label"),  # noqa: E501
         choices=models.DocumentFALCList.choices,
         widget=forms.CheckboxSelectMultiple(),
     )
@@ -354,7 +371,7 @@ class ESATAnswerStaffForm(ESATBaseForm):
     # TODO: Check if we can only override the widget
     insertion_staff_funding = forms.MultipleChoiceField(
         required=False,
-        label="Comment sont-ils financés ?",
+        label=get_field_text("esat-2025", "insertion_staff_funding", "label"),
         choices=models.BudgetFunding.choices,
         widget=forms.CheckboxSelectMultiple(),
     )
