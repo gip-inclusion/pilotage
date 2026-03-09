@@ -24,6 +24,7 @@ class ESATAnswerOrganizationForm(ESATBaseForm):
             "esat_dept",
             "nb_places_allowed",
             "nb_employee_worked",
+            "nb_employee_shared",
         ]
 
     def __init__(self, *args, **kwargs):
@@ -37,6 +38,9 @@ class ESATAnswerOrganizationForm(ESATBaseForm):
             self.fields["esat_siret"].widget.attrs["placeholder"] = "12002701600357"
             self.fields["finess_num"].widget.attrs["placeholder"] = "123456789"
             self.fields["managing_organization_name"].widget.attrs["placeholder"] = "ADAPEI16"
+            self.fields["nb_employee_shared"].widget.attrs["placeholder"] = (
+                "Exemples : fonctions support (comptabilité, ressources humaines, communication, etc.)"
+            )
 
 
 class ESATAnswerWorkersSupportedForm(ESATBaseForm):
@@ -44,9 +48,9 @@ class ESATAnswerWorkersSupportedForm(ESATBaseForm):
         model = models.ESATAnswer
         fields = [
             "nb_worker_acc",
+            "nb_worker_half_time",
             "mean_worker_age",
             "mean_seniority",
-            "nb_worker_half_time",
         ]
 
     def __init__(self, *args, **kwargs):
@@ -93,10 +97,8 @@ class ESATAnswerOrdinaryWorkingEnvironmentAndCustomersInvolvementForm(ESATBaseFo
             "nb_worker_pmsmp",
             "nb_worker_service",
             "nb_worker_mad_indiv",
-            "nb_worker_mad_collec",
             "nb_worker_with_public",
             "nb_worker_only_inside",
-            "pct_activity_outside",
             "nb_worker_cumul_esat_ea",
             "nb_worker_cumul_esat_mot",
         ]
@@ -109,8 +111,8 @@ class ESATAnswerWorkersLeftForm(ESATBaseForm):
             "nb_worker_left",
             "nb_worker_left_ea",
             "nb_worker_left_private",
-            "nb_worker_left_public",
             "nb_worker_left_asso",
+            "nb_worker_left_public",
             "nb_worker_left_other_reason",
             "nb_worker_cdi",
             "nb_worker_cdd",
@@ -129,7 +131,6 @@ class ESATAnswerWorkersRightToReturnForm(ESATBaseForm):
         fields = [
             "nb_worker_reinteg",
             "nb_worker_reinteg_other",
-            "nb_worker_other_esat_with_agreement",
             "nb_esat_agreement",
         ]
 
@@ -149,10 +150,6 @@ class ESATAnswerSupportHoursForm(ESATBaseForm):
             "nb_support_hours",
             "support_themes",
         ]
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields["nb_support_hours"].widget.attrs["min"] = 0
 
 
 class ESATAnswerFormationsForm(ESATBaseForm):
@@ -192,12 +189,6 @@ class ESATAnswerSkillsForm(ESATBaseForm):
         choices=models.SkillsValidationType.choices,
         widget=forms.CheckboxSelectMultiple(),
     )
-    after_skills_validation = forms.MultipleChoiceField(
-        required=False,
-        label="A l'issue de cette reconnaissance ou validation, quelle a été la suite du parcours des travailleurs et travailleuses concerné(e)s ?",  # noqa: E501
-        choices=models.AfterSkillsValidation.choices,
-        widget=forms.CheckboxSelectMultiple(),
-    )
 
     class Meta:
         model = models.ESATAnswer
@@ -219,11 +210,18 @@ class ESATAnswerDuodaysForm(ESATBaseForm):
 
 
 class ESATAnswerSkillsNotebookForm(ESATBaseForm):
+    # TODO: Check if we can only override the widget
+    software_financial_help = forms.MultipleChoiceField(
+        required=False,
+        label="L'ESAT a t-il bénéficié d'une aide financière pour mettre en place ce carnet et le cas échéant, acquérir un logiciel ?",  # noqa: E501
+        choices=models.SoftwareFinancialHelp.choices,
+        widget=forms.CheckboxSelectMultiple(),
+    )
+
     class Meta:
         model = models.ESATAnswer
         fields = [
             "skills_notebook",
-            "skills_notebook_software_used",
             "software_financial_help",
             "software_financial_help_type",
         ]
@@ -231,7 +229,6 @@ class ESATAnswerSkillsNotebookForm(ESATBaseForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if kwargs["editable"]:
-            self.fields["skills_notebook_software_used"].widget.attrs["placeholder"] = "WIKIKAP, Neopass"
             self.fields["software_financial_help_type"].widget.attrs["placeholder"] = "CNR"
 
 
@@ -248,8 +245,8 @@ class ESATAnswerRetirementForm(ESATBaseForm):
         model = models.ESATAnswer
         fields = [
             "retirement_preparation_actions",
-            "uaat_inscription",
             "retirement_preparation_nb_workers",
+            "uaat_inscription",
             "pct_more_than50",
         ]
 
@@ -284,8 +281,8 @@ class ESATAnswerWorkingConditionsForm(ESATBaseForm):
         fields = [
             "worker_delegate",
             "worker_delegate_formation",
-            "worker_delegate_hours_credit",
             "nb_delegate_hours",
+            "worker_delegate_hours_credit",
             "mix_qvt_in_place",
         ]
 
@@ -348,8 +345,6 @@ class ESATAnswerPartnershipAgreementsForm(ESATBaseForm):
         model = models.ESATAnswer
         fields = [
             "agreement_signed_ft",
-            "agreement_signed_cap_emploi",
-            "agreement_signed_ml",
             "agreement_signed_ea",
             "agreement_signed_dept_pae",
         ]

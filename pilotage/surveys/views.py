@@ -28,11 +28,11 @@ class ESATStep(TextChoices):
     WORKERS_LEFT = "workers-left", "les sorties"
     WORKERS_RIGHT_TO_RETURN = (
         "workers-right-to-return",
-        "exercice du droit au retour après avoir occupé un emploi en milieu ordinaire de travail",
+        "exercice du droit au retour",
     )
-    SUPPORT_HOURS = "support-hours", "heures de soutien"
+    SUPPORT_HOURS = "support-hours", "accompagnement médico-social"
     FORMATIONS = "formations", "formations"
-    SKILLS = "skills", "reconnaissance des compétences"
+    SKILLS = "skills", "développement et reconnaissance des compétences"
     DUODAYS = "duodays", "Duodays"
     SKILLS_NOTEBOOK = "skills-notebook", "carnet parcours et compétences"
     RETIREMENT = "retirement", "préparation à la retraite"
@@ -40,11 +40,11 @@ class ESATStep(TextChoices):
     WORKING_CONDITIONS = "working-conditions", "pouvoir d'agir sur les conditions de travail"
     PROFIT_SHARING = "profit-sharing", "rémunération et prime d'intéressement"
     INSURANCE_POLICY = "insurance-policy", "régime de prévoyance"
-    MOBILITY_PROGRAM = "mobility-program", "aide à la mobilité"
+    MOBILITY_PROGRAM = "mobility-program", "transports des travailleurs"
     VOUCHERS = "vouchers", "chèques vacances et chèques cadeaux"
     SUNDAY_WORK = "sunday-work", "travail le dimanche"
     PARTNERSHIP_AGREEMENTS = "partnership-agreements", "conventions de partenariats"
-    STAFF = "staff", "conseillers en parcours d'insertion ou chargé(e)s d'inclusion professionnelle"
+    STAFF = "staff", "conseillers en insertion professionnelle ou assimilé"
     COMMERCIAL_OPERATION = "commercial-operation", "section d'Exploitation Commerciale"
     SOCIAL_ACTIVITY_BUDGET = "social-activity-budget", "budget de fonctionnement ou budget social"
     INVESTMENTS = "investments", "investissements"
@@ -89,11 +89,6 @@ LABELS_INFORMATIONS = {
         "nb_worker_with_public": (
             "Inclus : blanchisserie, restaurant, cafétérie, recyclerie, ...<br>"
             "Comptabiliser les travailleurs qui sont sur des postes où le contact avec la clientèle est clé (ne pas comptabiliser les travailleurs qui ont des contacts occasionnels - exemple ceux qui sont à la blanchisserie sans être à l'accueil de la blanchisserie)"  # noqa: E501
-        ),
-        "pct_activity_outside": (
-            "Raisonner en nombre d'ateliers.<br>"
-            "Le nombre d'ateliers qui s'exercent hors les murs sur le nombre total d'ateliers proposés par l'ESAT.<br>"
-            "Ne pas tenir compte du nombre de personne, d'heures ou du chiffre d'affaire généré par chaque atelier."
         ),
         "nb_worker_cumul_esat_ea": ("Ici, il ne faut pas comptabiliser par contrat mais par travailleur.<br>"),
         "nb_worker_cumul_esat_mot": ("Ici, il ne faut pas comptabiliser par contrat mais par travailleur.<br>"),
