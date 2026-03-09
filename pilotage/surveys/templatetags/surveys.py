@@ -1,14 +1,16 @@
 from django import template
 from django.utils.html import format_html
 
+from pilotage.surveys.utils import get_field_text
+
 
 register = template.Library()
 
 
 @register.simple_tag
-def label_with_info(field, labels_information):
+def label_with_info(survey, field):
     info_html = ""
-    if info_text := labels_information.get(field.name):
+    if info_text := get_field_text(survey.name, field.name, "information"):
         info_html = format_html(
             (
                 '<i class="ri-information-line text-info ms-1" '

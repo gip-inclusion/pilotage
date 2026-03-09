@@ -100,7 +100,7 @@
                             {% bootstrap_form_errors form type="all" %}
 
                             {% for field in form %}
-                                {% label_with_info field labels_information %}
+                                {% label_with_info survey field %}
                                 {% bootstrap_field field show_label="skip" %}
                             {% endfor %}
 
