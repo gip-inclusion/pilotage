@@ -1,9 +1,9 @@
 field_name,field_label,field_help_text,field_placeholder,field_information
+finess_num,Quel est le numéro FINESS de l'établissement principal ?,,Exemple : 123456789,
 esat_role,Quelle est votre fonction au sein de l'ESAT ?,,Exemple : Directrice d'ESAT,
 esat_name,Quel est le nom de l’ESAT ?,,Exemple : ESAT Les pruniers,
 esat_siret,Quel est le numéro SIRET de l'ESAT ?,,Exemple : 12002701600357,
-finess_num,Quel est le numéro FINESS de l'établissement principal ?,,Exemple : 123456789,
-managing_organization_name,Quel est l’organisme gestionnaire ?,,Exemple : ADAPEI16,
+managing_organization_finess,Quel est le numéro FINESS de l’entité juridique de rattachement ?,,Exemple : 123456789,
 esat_status,Quel est le statut de l'ESAT ?,,,
 esat_dept,Quel est le département d'implantation de l'ESAT ?,,,
 nb_places_allowed,"Au 31 décembre n-1, quel était l'agrément fixé par l'ARS pour l'ESAT en nombre de places autorisées ?",,,

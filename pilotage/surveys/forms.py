@@ -1,8 +1,10 @@
 from django import forms
 
+from pilotage.itoutils.departments import department_from_postcode
 from pilotage.itoutils.forms import EmptyPlaceholderFormMixin, LetteredLabelFormMixin
 from pilotage.surveys import models
-from pilotage.surveys.utils import get_field_text
+from pilotage.surveys.models import ESATLegalStatus
+from pilotage.surveys.utils import get_field_text, get_finess_data
 
 
 class ESATBaseForm(LetteredLabelFormMixin, EmptyPlaceholderFormMixin, forms.ModelForm):
@@ -12,15 +14,68 @@ class ESATBaseForm(LetteredLabelFormMixin, EmptyPlaceholderFormMixin, forms.Mode
             field.disabled = True if not editable else field.disabled
 
 
+class ESATAnswerIdentificationForm(ESATBaseForm):
+    PUBLIC_LEGAL_FORM_CODE = {
+        "02",  # Département
+        "11",  # Etablissement Public Départemental d'Hospitalisation
+        "14",  # Etablissement Public Intercommunal d'Hospitalisation
+        "17",  # Centre Communal d'Action Sociale
+        "18",  # Etablissement Social et Médico-Social National
+        "19",  # Etablissement Social et Médico-Social Départemental
+        "21",  # Etablissement Social et Médico-Social Communal
+        "22",  # Etablissement Social et Médico-Social Intercommunal
+        "26",  # Autre Etablissement Public à Caractère Administratif
+        "28",  # Groupement d'Intérêt Public (G.I.P.)
+        "40",  # Régime Général de Sécurité Sociale
+    }
+
+    class Meta:
+        model = models.ESATAnswer
+        fields = ["finess_num"]
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        if kwargs["editable"]:
+            self.fields["finess_num"].widget.attrs["placeholder"] = get_field_text(
+                "esat-2025", "finess_num", "placeholder"
+            )
+
+    def save(self, commit=True):
+        if finess_data := get_finess_data().get(self.instance.finess_num):
+            if finess_data["name"]:
+                self.instance.esat_name = finess_data["name"]
+            if finess_data["siret"]:
+                self.instance.esat_siret = finess_data["siret"]
+            if finess_data["legal_finess"]:
+                self.instance.managing_organization_finess = finess_data["legal_finess"]
+            if finess_data["legal_form_code"]:
+                self.instance.esat_status = (
+                    ESATLegalStatus.PUBLIC
+                    if finess_data["legal_form_code"] in self.PUBLIC_LEGAL_FORM_CODE
+                    else ESATLegalStatus.NON_PROFIT
+                )
+            if finess_data["postal_code"]:
+                self.instance.esat_dept = department_from_postcode(finess_data["postal_code"])
+        return super().save(commit)
+
+
 class ESATAnswerOrganizationForm(ESATBaseForm):
+    LOCKED_FIELD_ON_FINESS_DATA = {
+        "name": "esat_name",
+        "siret": "esat_siret",
+        "legal_finess": "managing_organization_finess",
+        "legal_form_code": "esat_status",
+        "postal_code": "esat_dept",
+    }
+
     class Meta:
         model = models.ESATAnswer
         fields = [
             "esat_role",
             "esat_name",
             "esat_siret",
-            "finess_num",
-            "managing_organization_name",
+            "managing_organization_finess",
             "esat_status",
             "esat_dept",
             "nb_places_allowed",
@@ -43,15 +98,17 @@ class ESATAnswerOrganizationForm(ESATBaseForm):
             self.fields["esat_siret"].widget.attrs["placeholder"] = get_field_text(
                 "esat-2025", "esat_siret", "placeholder"
             )
-            self.fields["finess_num"].widget.attrs["placeholder"] = get_field_text(
-                "esat-2025", "finess_num", "placeholder"
-            )
-            self.fields["managing_organization_name"].widget.attrs["placeholder"] = get_field_text(
-                "esat-2025", "managing_organization_name", "placeholder"
+            self.fields["managing_organization_finess"].widget.attrs["placeholder"] = get_field_text(
+                "esat-2025", "managing_organization_finess", "placeholder"
             )
             self.fields["nb_employee_shared"].widget.attrs["placeholder"] = get_field_text(
                 "esat-2025", "nb_employee_shared", "placeholder"
             )
+
+        if finess_data := get_finess_data().get(self.instance.finess_num):
+            for finess_field, field in self.LOCKED_FIELD_ON_FINESS_DATA.items():
+                if finess_data.get(finess_field) and getattr(self.instance, field):
+                    self.fields[field].disabled = True
 
 
 class ESATAnswerWorkersSupportedForm(ESATBaseForm):
