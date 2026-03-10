@@ -96,6 +96,11 @@ class BudgetRange(TextChoices):
     MORE_THAN_500K = "MORE_THAN_500K", "Plus de 500k€"
 
 
+class ESATLegalStatus(TextChoices):
+    PUBLIC = "PUBLIC", "Public"
+    NON_PROFIT = "NON_PROFIT", "Privé sans but lucratif"
+
+
 class DocumentFALCList(TextChoices):
     CONTRACT = "CONTRACT", "Oui : contrat d'accompagnement par le travail"
     BOOKLET = "BOOKLET", "Oui : livret d'accueil"
@@ -163,6 +168,15 @@ class RetirementPreparationActions(TextChoices):
 
 
 class ESATAnswer(Answer):
+    # ESATStep.INTRODUCTION
+    finess_num = models.CharField(
+        null=True,
+        blank=True,
+        max_length=9,
+        validators=[validate_finess],
+        verbose_name=get_field_text("esat-2025", "finess_num", "verbose_name"),
+    )
+
     # ESATStep.ORGANIZATION
     esat_role = models.CharField(
         null=True, blank=True, verbose_name=get_field_text("esat-2025", "esat_role", "verbose_name")
@@ -177,20 +191,17 @@ class ESATAnswer(Answer):
         validators=[validate_siret],
         verbose_name=get_field_text("esat-2025", "esat_siret", "verbose_name"),
     )
-    finess_num = models.CharField(
+    managing_organization_finess = models.CharField(
         null=True,
         blank=True,
         max_length=9,
         validators=[validate_finess],
-        verbose_name=get_field_text("esat-2025", "finess_num", "verbose_name"),
-    )
-    managing_organization_name = models.CharField(
-        null=True, blank=True, verbose_name=get_field_text("esat-2025", "managing_organization_name", "verbose_name")
+        verbose_name=get_field_text("esat-2025", "managing_organization_finess", "verbose_name"),
     )
     esat_status = models.CharField(
         null=True,
         blank=True,
-        choices=[("PUBLIC", "Public"), ("NON_PROFIT", "Privé sans but lucratif")],
+        choices=ESATLegalStatus.choices,
         verbose_name=get_field_text("esat-2025", "esat_status", "verbose_name"),
     )
     esat_dept = models.CharField(

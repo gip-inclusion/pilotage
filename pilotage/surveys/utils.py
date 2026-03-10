@@ -91,3 +91,31 @@ def get_field_text(survey_name, field_name, text_id):
         return transform(get_survey_specs(survey_name)[field_name][f"field_{text_id}"])
     except KeyError:
         return None
+
+
+def clean_finess_field_quoting(value):
+    if not value:
+        return None
+    return value[2:-1]  # Remove starting `="` and ending `"`
+
+
+def parse_finess_fields(line):
+    return [clean_finess_field_quoting(field) for field in line.strip().split(";")]
+
+
+@functools.cache
+def get_finess_data():
+    data = {}
+    with pathlib.Path(__file__).parent.joinpath("data", "export_finess.csv").open(encoding="iso-8859-1") as f:
+        next(f)  # Drop headers, there are in utf-8 while the rest of the file is in iso-8859-1...
+        for line in f:
+            fields = parse_finess_fields(line)
+            data[fields[0]] = {
+                "finess": fields[0],
+                "siret": fields[1].replace(" ", "") if fields[1] else None,
+                "name": fields[3],
+                "postal_code": fields[7],
+                "legal_form_code": fields[14],
+                "legal_finess": fields[20],
+            }
+    return data

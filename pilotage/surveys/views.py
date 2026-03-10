@@ -16,6 +16,7 @@ class CommonStep(enum.StrEnum):
 
 class ESATStep(TextChoices):
     INTRODUCTION = CommonStep.INTRODUCTION, "introduction"
+    IDENTIFICATION = "identification", "identification"
     ORGANIZATION = "organization", "l'établissement"
     WORKERS_SUPPORTED = "workers-supported", "les travailleurs et travailleuses accompagné.e.s"
     WORKERS_ENTRY = "workers-new", "les travailleurs et travailleuses admis.e.s dans l'année"
