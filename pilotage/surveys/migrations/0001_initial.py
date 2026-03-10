@@ -1,7 +1,7 @@
-import uuid
-
 import django.db.models.deletion
 from django.db import migrations, models
+
+import pilotage.surveys.models
 
 
 class Migration(migrations.Migration):
@@ -29,7 +29,9 @@ class Migration(migrations.Migration):
             fields=[
                 (
                     "uid",
-                    models.UUIDField(default=uuid.uuid7, editable=False, primary_key=True, serialize=False),
+                    models.UUIDField(
+                        default=pilotage.surveys.models.uuid7, editable=False, primary_key=True, serialize=False
+                    ),
                 ),
                 (
                     "status",

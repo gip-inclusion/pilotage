@@ -15,3 +15,4 @@ httpx  # https://github.com/encode/httpx/
 Markdown  # https://python-markdown.github.io/
 PyJWT  # https://github.com/jpadilla/pyjwt
 sentry-sdk  # https://github.com/getsentry/sentry-python
+uuid_utils  # TODO: Remove once Python 3.14 works on clever

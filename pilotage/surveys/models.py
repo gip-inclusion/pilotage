@@ -1,6 +1,5 @@
 # FIXME: Remove the noqa once the verbose_name are confirmed
 # ruff: noqa: E501
-import uuid
 
 from django.contrib.postgres.fields import ArrayField, DateTimeRangeField
 from django.core.validators import MaxValueValidator, MinValueValidator
@@ -12,6 +11,14 @@ from django.utils.text import slugify
 from pilotage.itoutils.departments import DEPARTMENTS
 from pilotage.itoutils.validators import validate_finess, validate_siret
 from pilotage.surveys.utils import get_field_text
+
+
+def uuid7():
+    try:
+        from uuid import uuid7 as func
+    except ImportError:
+        from uuid_utils import uuid7 as func
+    return str(func())
 
 
 class SurveyKind(models.TextChoices):
@@ -54,7 +61,7 @@ class Survey(models.Model):
 
 
 class Answer(models.Model):
-    uid = models.UUIDField(primary_key=True, default=uuid.uuid7, editable=False)
+    uid = models.UUIDField(primary_key=True, default=uuid7, editable=False)
     survey = models.ForeignKey(Survey, on_delete=models.CASCADE, related_name="answers", verbose_name="enquête")
 
     created_at = models.DateTimeField(verbose_name="créé le", auto_now_add=True)
