@@ -54,9 +54,9 @@ django-appconf==1.2.0 \
     # via
     #   -r requirements/base.txt
     #   django-compressor
-django-bootstrap5==25.3 \
-    --hash=sha256:3d381a5329a1439ac3237456c28cc8170c62b4c56ad3564d57876ffc3d4c5e78 \
-    --hash=sha256:cc36f1a19d3200c0f5628c703320edb5c4e39e19bf17607fadf58ddb11828912
+django-bootstrap5==26.2 \
+    --hash=sha256:12331059c8230ba372ffaad990a706151e1ad8f721a870aa2e862cf6746f0d33 \
+    --hash=sha256:179af37c59f4e9b1070fc650f30961c5d903c2c0ad60280ad5b63ed394f68658
     # via -r requirements/base.txt
 django-compressor==4.6.0 \
     --hash=sha256:6e7b21020a0d86272c5e37000c33accc4ebeb77394a3dd86d775a09aae7aade4 \
@@ -198,7 +198,7 @@ pluggy==1.6.0 \
     --hash=sha256:7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3 \
     --hash=sha256:e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746
     # via pytest
-psycopg==3.3.1 \
+psycopg[binary]==3.3.1 \
     --hash=sha256:ccfa30b75874eef809c0fbbb176554a2640cc1735a612accc2e2396a92442fc6 \
     --hash=sha256:e44d8eae209752efe46318f36dd0fdf5863e928009338d736843bb1084f6435c
     # via -r requirements/base.txt
@@ -258,7 +258,9 @@ psycopg-binary==3.3.1 \
     --hash=sha256:f8ea017e58fa7fd8df1d9058ff0248e28f29312bf150a00114fc0ace8a800bfa \
     --hash=sha256:fca6d127fe48703ef9d2f392e4b8998677a197d088f3c0a8b370c1fd51d03aa0 \
     --hash=sha256:fda22ce8530236381ff79a674ebc319f1a224f2e39a44158774e55e1488f89b9
-    # via -r requirements/base.txt
+    # via
+    #   -r requirements/base.txt
+    #   psycopg
 pygments==2.19.2 \
     --hash=sha256:636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887 \
     --hash=sha256:86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b
