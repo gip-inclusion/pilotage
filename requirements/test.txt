@@ -198,7 +198,7 @@ pluggy==1.6.0 \
     --hash=sha256:7dcc130b76258d33b90f61b658791dede3486c3e6bfb003ee5c9bfb396dd22f3 \
     --hash=sha256:e920276dd6813095e9377c0bc5566d94c932c33b27a3e3945d8389c374dd4746
     # via pytest
-psycopg==3.3.1 \
+psycopg[binary]==3.3.1 \
     --hash=sha256:ccfa30b75874eef809c0fbbb176554a2640cc1735a612accc2e2396a92442fc6 \
     --hash=sha256:e44d8eae209752efe46318f36dd0fdf5863e928009338d736843bb1084f6435c
     # via -r requirements/base.txt
@@ -258,14 +258,16 @@ psycopg-binary==3.3.1 \
     --hash=sha256:f8ea017e58fa7fd8df1d9058ff0248e28f29312bf150a00114fc0ace8a800bfa \
     --hash=sha256:fca6d127fe48703ef9d2f392e4b8998677a197d088f3c0a8b370c1fd51d03aa0 \
     --hash=sha256:fda22ce8530236381ff79a674ebc319f1a224f2e39a44158774e55e1488f89b9
-    # via -r requirements/base.txt
+    # via
+    #   -r requirements/base.txt
+    #   psycopg
 pygments==2.19.2 \
     --hash=sha256:636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887 \
     --hash=sha256:86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b
     # via pytest
-pyjwt==2.11.0 \
-    --hash=sha256:35f95c1f0fbe5d5ba6e43f00271c275f7a1a4db1dab27bf708073b75318ea623 \
-    --hash=sha256:94a6bde30eb5c8e04fee991062b534071fd1439ef58d2adc9ccb823e7bcd0469
+pyjwt==2.12.1 \
+    --hash=sha256:28ca37c070cad8ba8cd9790cd940535d40274d22f80ab87f3ac6a713e6e8454c \
+    --hash=sha256:c74a7a2adf861c04d002db713dd85f84beb242228e671280bf709d765b03672b
     # via -r requirements/base.txt
 pytest==9.0.2 \
     --hash=sha256:711ffd45bf766d5264d487b917733b453d917afd2b0ad65223959f59089f875b \
