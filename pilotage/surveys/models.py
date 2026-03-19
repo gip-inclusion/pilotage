@@ -686,7 +686,7 @@ class ESATAnswer(Answer):
     )
 
     # ESATStep.MOBILITY_PROGRAM
-    annual_transport_budget = models.PositiveSmallIntegerField(
+    annual_transport_budget = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "annual_transport_budget", "verbose_name"),
@@ -723,7 +723,7 @@ class ESATAnswer(Answer):
         blank=True,
         verbose_name=get_field_text("esat-2025", "holiday_voucher", "verbose_name"),
     )
-    holiday_voucher_annual_budget = models.PositiveSmallIntegerField(
+    holiday_voucher_annual_budget = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "holiday_voucher_annual_budget", "verbose_name"),
@@ -734,7 +734,7 @@ class ESATAnswer(Answer):
         blank=True,
         verbose_name=get_field_text("esat-2025", "gift_voucher", "verbose_name"),
     )
-    gift_voucher_annual_budget = models.PositiveSmallIntegerField(
+    gift_voucher_annual_budget = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "gift_voucher_annual_budget", "verbose_name"),
