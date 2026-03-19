@@ -1,4 +1,7 @@
 from django.contrib import admin
+from django.db.models import Q
+from django.urls import reverse
+from django.utils.html import format_html
 from django.utils.text import capfirst
 
 from pilotage.surveys import models
@@ -70,9 +73,38 @@ class AnswerAdmin(admin.ModelAdmin):
         return False
 
 
+class FINESSFilledFilter(admin.SimpleListFilter):
+    title = "FINESS remplis"
+    parameter_name = "finess_filled"
+
+    def lookups(self, request, model_admin):
+        return (("yes", "Oui"), ("no", "Non"))
+
+    def queryset(self, request, queryset):
+        value = self.value()
+        finess_not_filled = Q(finess_num=None) | Q(finess_num="")
+        if value == "yes":
+            return queryset.exclude(finess_not_filled)
+        if value == "no":
+            return queryset.filter(finess_not_filled)
+        return queryset
+
+
 @admin.register(models.ESATAnswer)
 class ESATAnswerAdmin(AnswerAdmin):
-    list_display = ("uid", "survey", "answered_count", "created_at", "updated_at")
+    list_display = (
+        "uid",
+        "survey",
+        "answered_count",
+        "finess_num",
+        "esat_siret",
+        "esat_name",
+        "managing_organization_finess",
+        "created_at",
+        "updated_at",
+    )
+    search_fields = ("uid", "finess_num", "esat_siret", "esat_name", "managing_organization_finess")
+    list_filter = (FINESSFilledFilter, "esat_dept")
 
     @admin.display(description="Réponses")
     def answered_count(self, obj):
@@ -93,4 +125,13 @@ class ESATAnswerAdmin(AnswerAdmin):
                     },
                 )
             )
-        return super().get_fieldsets(request, obj) + tuple(steps_fieldsets)
+        links_fieldsets = tuple([("Liens utiles", {"fields": ("start_url",)})])
+        return super().get_fieldsets(request, obj) + links_fieldsets + tuple(steps_fieldsets)
+
+    @admin.display(description="URL d'entrée")
+    def start_url(self, obj):
+        url = reverse(
+            "surveys:tunnel",
+            kwargs={"survey_name": obj.survey.name, "answer_uid": obj.uid, "step": CommonStep.INTRODUCTION},
+        )
+        return format_html('<a href="{}">{}</a>', url, CommonStep.INTRODUCTION)
