@@ -68,9 +68,9 @@ django-cors-headers==4.9.0 \
     --hash=sha256:15c7f20727f90044dcee2216a9fd7303741a864865f0c3657e28b7056f61b449 \
     --hash=sha256:fe5d7cb59fdc2c8c646ce84b727ac2bca8912a247e6e68e1fb507372178e59e8
     # via -r requirements/base.txt
-django-datadog-logger==0.7.3 \
-    --hash=sha256:4361bb068a4b188fa14135398f9b747728464a291757e6adf8c95c9215dcd602 \
-    --hash=sha256:87838cd868f407e050831c536413de6b2ece31433b28c952c0fd90be1d66486a
+django-datadog-logger==0.9.0 \
+    --hash=sha256:502ccdf7684f29f4ca40c52ed1d03484236760abc71568f032d766aee42bc9bb \
+    --hash=sha256:8bdb40f5dc7c7a8095e301bbaf623dbdad4c141dadb4b9cdccfebc68df130f3a
     # via -r requirements/base.txt
 django-libsass==0.9 \
     --hash=sha256:5234d29100889cac79e36a0f44207ec6d275adfd2da1acb6a94b55c89fe2bd97 \
