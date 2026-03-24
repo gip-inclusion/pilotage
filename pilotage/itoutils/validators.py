@@ -7,7 +7,9 @@ from pilotage.itoutils.algorithms import check_luhn
 
 FINESS_RE = re.compile(
     r"""^
-    [013-8]\d|2[AB]|9[0-58]0\d{6}  # Continental departments and Mayotte
+    [013-8]\d{8}|2[1-9]\d{7} # Continental departments
+    |2[AB]\d{7} # Corsica
+    |9[0-58]0\d{6}  # Mayotte
     |970[1-5]\d{5}  # Other ultramarine departments
 $""",
     re.VERBOSE,
