@@ -9,7 +9,7 @@ from django.utils.html import format_html
 from django.utils.http import content_disposition_header
 from django.utils.text import capfirst
 
-from pilotage.itoutils.departments import get_department_to_region
+from pilotage.itoutils.departments import DEPARTMENTS, get_department_to_region
 from pilotage.surveys import models
 from pilotage.surveys.forms import ESATAnswerOrganizationForm
 from pilotage.surveys.models import ESATAnswer
@@ -176,14 +176,16 @@ class ESATAnswerAdmin(AnswerAdmin):
             if filled > data.get(obj.finess_num, {}).get("Réponses", -1):
                 data[obj.finess_num] = {
                     "FINESS": obj.finess_num,
-                    "ID": obj.pk,
                     "Réponses": filled,
-                    "Région": get_department_to_region().get(obj.esat_dept, ""),
+                    "Région": get_department_to_region().get(obj.esat_dept, "Autre"),
+                    "Département": DEPARTMENTS.get(obj.esat_dept, obj.esat_dept),
+                    "Nom": obj.esat_name,
+                    "SIRET": obj.esat_siret,
                 }
 
         rows = sorted(data.values(), key=lambda o: (o["Région"], o["FINESS"]))
 
-        writer = csv.DictWriter(response, fieldnames=["Région", "FINESS", "ID", "Réponses"])
+        writer = csv.DictWriter(response, fieldnames=["Région", "FINESS", "Département", "Nom", "SIRET", "Réponses"])
         writer.writeheader()
         writer.writerows(rows)
         return response
