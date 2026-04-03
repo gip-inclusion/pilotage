@@ -170,14 +170,15 @@ class ESATAnswerAdmin(AnswerAdmin):
             filled = get_steps_informations(ESATStep, obj, exclude=CommonStep).total_filled
             # Ignore answers with only FINESS and pre-filled data
             if filled == len(ESATAnswerOrganizationForm.LOCKED_FIELD_ON_FINESS_DATA) + 1:
-                continue
+                if all([getattr(obj, f) for f in ESATAnswerOrganizationForm.LOCKED_FIELD_ON_FINESS_DATA.values()]):
+                    continue
 
             if filled > data.get(obj.finess_num, {}).get("Réponses", -1):
                 data[obj.finess_num] = {
                     "FINESS": obj.finess_num,
                     "ID": obj.pk,
                     "Réponses": filled,
-                    "Région": get_department_to_region().get(obj.esat_dept),
+                    "Région": get_department_to_region().get(obj.esat_dept, ""),
                 }
 
         rows = sorted(data.values(), key=lambda o: (o["Région"], o["FINESS"]))
