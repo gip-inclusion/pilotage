@@ -10,8 +10,14 @@ from pilotage.surveys.utils import get_field_text, get_finess_data
 class ESATBaseForm(LetteredLabelFormMixin, EmptyPlaceholderFormMixin, forms.ModelForm):
     def __init__(self, *args, editable, **kwargs):
         super().__init__(*args, **kwargs)
-        for field in self.fields.values():
-            field.disabled = True if not editable else field.disabled
+        for field_name, field in self.fields.items():
+            if not editable:
+                field.disabled = True
+            else:
+                self.fields[field_name].widget.attrs["placeholder"] = get_field_text(
+                    "esat-2025", field_name, "placeholder"
+                )
+            print(field_name, field, self.fields[field_name].widget.attrs["placeholder"])
 
 
 class ESATAnswerIdentificationForm(ESATBaseForm):
@@ -32,14 +38,6 @@ class ESATAnswerIdentificationForm(ESATBaseForm):
     class Meta:
         model = models.ESATAnswer
         fields = ["finess_num"]
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        if kwargs["editable"]:
-            self.fields["finess_num"].widget.attrs["placeholder"] = get_field_text(
-                "esat-2025", "finess_num", "placeholder"
-            )
 
     def save(self, commit=True):
         if finess_data := get_finess_data().get(self.instance.finess_num):
@@ -87,23 +85,6 @@ class ESATAnswerOrganizationForm(ESATBaseForm):
         super().__init__(*args, **kwargs)
         self.fields["nb_places_allowed"].widget.attrs["min"] = 0
         self.fields["nb_employee_worked"].widget.attrs["min"] = 0
-
-        if kwargs["editable"]:
-            self.fields["esat_role"].widget.attrs["placeholder"] = get_field_text(
-                "esat-2025", "esat_role", "placeholder"
-            )
-            self.fields["esat_name"].widget.attrs["placeholder"] = get_field_text(
-                "esat-2025", "esat_name", "placeholder"
-            )
-            self.fields["esat_siret"].widget.attrs["placeholder"] = get_field_text(
-                "esat-2025", "esat_siret", "placeholder"
-            )
-            self.fields["managing_organization_finess"].widget.attrs["placeholder"] = get_field_text(
-                "esat-2025", "managing_organization_finess", "placeholder"
-            )
-            self.fields["nb_employee_shared"].widget.attrs["placeholder"] = get_field_text(
-                "esat-2025", "nb_employee_shared", "placeholder"
-            )
 
         if finess_data := get_finess_data().get(self.instance.finess_num):
             for finess_field, field in self.LOCKED_FIELD_ON_FINESS_DATA.items():
@@ -241,16 +222,6 @@ class ESATAnswerFormationsForm(ESATBaseForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["pct_opco"].widget.attrs["max"] = 100
-        if kwargs["editable"]:
-            self.fields["cpf_unused_reason"].widget.attrs["placeholder"] = get_field_text(
-                "esat-2025", "cpf_unused_reason", "placeholder"
-            )
-            self.fields["formation_cpf"].widget.attrs["placeholder"] = get_field_text(
-                "esat-2025", "formation_cpf", "placeholder"
-            )
-            self.fields["formation_subject"].widget.attrs["placeholder"] = get_field_text(
-                "esat-2025", "formation_subject", "placeholder"
-            )
 
 
 class ESATAnswerSkillsForm(ESATBaseForm):
@@ -298,13 +269,6 @@ class ESATAnswerSkillsNotebookForm(ESATBaseForm):
             "software_financial_help_type",
         ]
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        if kwargs["editable"]:
-            self.fields["software_financial_help_type"].widget.attrs["placeholder"] = get_field_text(
-                "esat-2025", "software_financial_help_type", "placeholder"
-            )
-
 
 class ESATAnswerRetirementForm(ESATBaseForm):
     # TODO: Check if we can only override the widget
@@ -326,10 +290,6 @@ class ESATAnswerRetirementForm(ESATBaseForm):
 
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
-            if kwargs["editable"]:
-                self.fields["retirement_preparation_actions"].widget.attrs["placeholder"] = get_field_text(
-                    "esat-2025", "retirement_preparation_actions", "placeholder"
-                )
             self.fields["pct_more_than50"].widget.attrs["max"] = 100
 
 
