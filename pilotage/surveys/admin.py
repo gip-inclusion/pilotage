@@ -181,11 +181,14 @@ class ESATAnswerAdmin(AnswerAdmin):
                     "Département": DEPARTMENTS.get(obj.esat_dept, obj.esat_dept),
                     "Nom": obj.esat_name,
                     "SIRET": obj.esat_siret,
+                    "FINESS parent": obj.managing_organization_finess,
                 }
 
         rows = sorted(data.values(), key=lambda o: (o["Région"], o["FINESS"]))
 
-        writer = csv.DictWriter(response, fieldnames=["Région", "FINESS", "Département", "Nom", "SIRET", "Réponses"])
+        writer = csv.DictWriter(
+            response, fieldnames=["Région", "FINESS", "FINESS parent", "Département", "Nom", "SIRET", "Réponses"]
+        )
         writer.writeheader()
         writer.writerows(rows)
         return response
