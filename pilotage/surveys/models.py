@@ -182,14 +182,21 @@ class ESATAnswer(Answer):
         max_length=9,
         validators=[validate_finess],
         verbose_name=get_field_text("esat-2025", "finess_num", "verbose_name"),
+        help_text=get_field_text("esat-2025", "finess_num", "help_text"),
     )
 
     # ESATStep.ORGANIZATION
     esat_role = models.CharField(
-        null=True, blank=True, verbose_name=get_field_text("esat-2025", "esat_role", "verbose_name")
+        null=True,
+        blank=True,
+        verbose_name=get_field_text("esat-2025", "esat_role", "verbose_name"),
+        help_text=get_field_text("esat-2025", "esat_role", "help_text"),
     )
     esat_name = models.CharField(
-        null=True, blank=True, verbose_name=get_field_text("esat-2025", "esat_name", "verbose_name")
+        null=True,
+        blank=True,
+        verbose_name=get_field_text("esat-2025", "esat_name", "verbose_name"),
+        help_text=get_field_text("esat-2025", "esat_name", "help_text"),
     )
     esat_siret = models.CharField(
         null=True,
@@ -197,6 +204,7 @@ class ESATAnswer(Answer):
         max_length=14,
         validators=[validate_siret],
         verbose_name=get_field_text("esat-2025", "esat_siret", "verbose_name"),
+        help_text=get_field_text("esat-2025", "esat_siret", "help_text"),
     )
     managing_organization_finess = models.CharField(
         null=True,
@@ -204,18 +212,21 @@ class ESATAnswer(Answer):
         max_length=9,
         validators=[validate_finess],
         verbose_name=get_field_text("esat-2025", "managing_organization_finess", "verbose_name"),
+        help_text=get_field_text("esat-2025", "managing_organization_finess", "help_text"),
     )
     esat_status = models.CharField(
         null=True,
         blank=True,
         choices=ESATLegalStatus.choices,
         verbose_name=get_field_text("esat-2025", "esat_status", "verbose_name"),
+        help_text=get_field_text("esat-2025", "esat_status", "help_text"),
     )
     esat_dept = models.CharField(
         null=True,
         blank=True,
         choices=DEPARTMENTS.items(),
         verbose_name=get_field_text("esat-2025", "esat_dept", "verbose_name"),
+        help_text=get_field_text("esat-2025", "esat_dept", "help_text"),
     )
 
     nb_places_allowed = models.DecimalField(
@@ -225,6 +236,7 @@ class ESATAnswer(Answer):
         max_digits=4,
         validators=[MinValueValidator(0)],
         verbose_name=get_field_text("esat-2025", "nb_places_allowed", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_places_allowed", "help_text"),
     )
     nb_employee_worked = models.DecimalField(
         null=True,
@@ -330,11 +342,13 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "prescription_delegate", "verbose_name"),
+        help_text=get_field_text("esat-2025", "prescription_delegate", "help_text"),
     )
     pmsmp_refused = models.BooleanField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "pmsmp_refused", "verbose_name"),
+        help_text=get_field_text("esat-2025", "pmsmp_refused", "help_text"),
     )
     nb_worker_pmsmp = models.PositiveSmallIntegerField(
         null=True,
@@ -414,46 +428,69 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "nb_worker_left_other_reason", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_left_other_reason", "help_text"),
     )
     nb_worker_cdi = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "nb_worker_cdi", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_cdi", "help_text"),
     )
     nb_worker_cdd = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name=get_field_text("esat-2025", "nb_worker_cdd", "verbose_name")
+        null=True,
+        blank=True,
+        verbose_name=get_field_text("esat-2025", "nb_worker_cdd", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_cdd", "help_text"),
     )
     nb_worker_interim = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name=get_field_text("esat-2025", "nb_worker_interim", "verbose_name")
+        null=True,
+        blank=True,
+        verbose_name=get_field_text("esat-2025", "nb_worker_interim", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_interim", "help_text"),
     )
     nb_worker_prof = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name=get_field_text("esat-2025", "nb_worker_prof", "verbose_name")
+        null=True,
+        blank=True,
+        verbose_name=get_field_text("esat-2025", "nb_worker_prof", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_prof", "help_text"),
     )
     nb_worker_apprentice = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name=get_field_text("esat-2025", "nb_worker_apprentice", "verbose_name")
+        null=True,
+        blank=True,
+        verbose_name=get_field_text("esat-2025", "nb_worker_apprentice", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_apprentice", "help_text"),
     )
     nb_conv_exit_agreement = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "nb_conv_exit_agreement", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_conv_exit_agreement", "help_text"),
     )
     nb_conv_exit_agreement_new = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "nb_conv_exit_agreement_new", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_conv_exit_agreement_new", "help_text"),
     )
     nb_worker_esrp = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "nb_worker_esrp", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_esrp", "help_text"),
     )
 
     # ESATStep.WORKERS_RIGHT_TO_RETURN
     nb_worker_reinteg = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name=get_field_text("esat-2025", "nb_worker_reinteg", "verbose_name")
+        null=True,
+        blank=True,
+        verbose_name=get_field_text("esat-2025", "nb_worker_reinteg", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_reinteg", "help_text"),
     )
     nb_worker_reinteg_other = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name=get_field_text("esat-2025", "nb_worker_reinteg_other", "verbose_name")
+        null=True,
+        blank=True,
+        verbose_name=get_field_text("esat-2025", "nb_worker_reinteg_other", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_reinteg_other", "help_text"),
     )
     nb_esat_agreement = models.PositiveSmallIntegerField(
         null=True,
@@ -477,6 +514,7 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "support_themes", "verbose_name"),
+        help_text=get_field_text("esat-2025", "support_themes", "help_text"),
     )
 
     # ESATStep.FORMATIONS
@@ -484,6 +522,7 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "contrib_opco", "verbose_name"),
+        help_text=get_field_text("esat-2025", "contrib_opco", "help_text"),
     )
     pct_opco = models.PositiveSmallIntegerField(
         null=True,
@@ -513,34 +552,43 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "cpf_unused_reason", "verbose_name"),
+        help_text=get_field_text("esat-2025", "cpf_unused_reason", "help_text"),
     )
     formation_cpf = models.TextField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "formation_cpf", "verbose_name"),
+        help_text=get_field_text("esat-2025", "formation_cpf", "help_text"),
     )
     nb_worker_intern_formation = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "nb_worker_intern_formation", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_intern_formation", "help_text"),
     )
     formation_subject = models.TextField(
-        null=True, blank=True, verbose_name=get_field_text("esat-2025", "formation_subject", "verbose_name")
+        null=True,
+        blank=True,
+        verbose_name=get_field_text("esat-2025", "formation_subject", "verbose_name"),
+        help_text=get_field_text("esat-2025", "formation_subject", "help_text"),
     )
     autodetermination_formation = models.BooleanField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "autodetermination_formation", "verbose_name"),
+        help_text=get_field_text("esat-2025", "autodetermination_formation", "help_text"),
     )
     nb_worker_autodetermination = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "nb_worker_autodetermination", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_autodetermination", "help_text"),
     )
     autodetermination_external_formation = models.BooleanField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "autodetermination_external_formation", "verbose_name"),
+        help_text=get_field_text("esat-2025", "autodetermination_external_formation", "help_text"),
     )
 
     # ESATStep.SKILLS
@@ -549,19 +597,25 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "skills_validation_type", "verbose_name"),
+        help_text=get_field_text("esat-2025", "skills_validation_type", "help_text"),
     )
     nb_worker_rae_rsfp = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "nb_worker_rae_rsfp", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_rae_rsfp", "help_text"),
     )
     nb_worker_vae = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name=get_field_text("esat-2025", "nb_worker_vae", "verbose_name")
+        null=True,
+        blank=True,
+        verbose_name=get_field_text("esat-2025", "nb_worker_vae", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_vae", "help_text"),
     )
     after_skills_validation = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "after_skills_validation", "verbose_name"),
+        help_text=get_field_text("esat-2025", "after_skills_validation", "help_text"),
     )
 
     # ESATStep.DUODAYS
@@ -569,11 +623,13 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "nb_worker_duoday", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_duoday", "help_text"),
     )
     nb_employee_reverse_duoday = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "nb_employee_reverse_duoday", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_employee_reverse_duoday", "help_text"),
     )
 
     # ESATStep.SKILLS_NOTEBOOK
@@ -582,15 +638,20 @@ class ESATAnswer(Answer):
         blank=True,
         choices=YesNoWIP.choices,
         verbose_name=get_field_text("esat-2025", "skills_notebook", "verbose_name"),
+        help_text=get_field_text("esat-2025", "skills_notebook", "help_text"),
     )
     software_financial_help = ArrayField(
         models.CharField(choices=SoftwareFinancialHelp.choices),
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "software_financial_help", "verbose_name"),
+        help_text=get_field_text("esat-2025", "software_financial_help", "help_text"),
     )
     software_financial_help_type = models.TextField(
-        null=True, blank=True, verbose_name=get_field_text("esat-2025", "software_financial_help_type", "verbose_name")
+        null=True,
+        blank=True,
+        verbose_name=get_field_text("esat-2025", "software_financial_help_type", "verbose_name"),
+        help_text=get_field_text("esat-2025", "software_financial_help_type", "help_text"),
     )
 
     # ESATStep.RETIREMENT
@@ -599,23 +660,27 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "retirement_preparation_actions", "verbose_name"),
+        help_text=get_field_text("esat-2025", "retirement_preparation_actions", "help_text"),
     )
     retirement_preparation_nb_workers = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "retirement_preparation_nb_workers", "verbose_name"),
+        help_text=get_field_text("esat-2025", "retirement_preparation_nb_workers", "help_text"),
     )
     uaat_inscription = models.CharField(
         null=True,
         blank=True,
         choices=YesNoWIP.choices,
         verbose_name=get_field_text("esat-2025", "uaat_inscription", "verbose_name"),
+        help_text=get_field_text("esat-2025", "uaat_inscription", "help_text"),
     )
     pct_more_than50 = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         validators=[MaxValueValidator(100)],
         verbose_name=get_field_text("esat-2025", "pct_more_than50", "verbose_name"),
+        help_text=get_field_text("esat-2025", "pct_more_than50", "help_text"),
     )
 
     # ESATStep.LANGUAGE_ACCESSIBILITY
@@ -632,6 +697,7 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "worker_delegate", "verbose_name"),
+        help_text=get_field_text("esat-2025", "worker_delegate", "help_text"),
     )
     worker_delegate_formation = models.CharField(
         null=True,
@@ -642,19 +708,25 @@ class ESATAnswer(Answer):
             NO_CHOICE,
         ],
         verbose_name=get_field_text("esat-2025", "worker_delegate_formation", "verbose_name"),
+        help_text=get_field_text("esat-2025", "worker_delegate_formation", "help_text"),
     )
     nb_delegate_hours = models.BooleanField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "nb_delegate_hours", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_delegate_hours", "help_text"),
     )
     worker_delegate_hours_credit = models.PositiveSmallIntegerField(
-        null=True, blank=True, verbose_name=get_field_text("esat-2025", "worker_delegate_hours_credit", "verbose_name")
+        null=True,
+        blank=True,
+        verbose_name=get_field_text("esat-2025", "worker_delegate_hours_credit", "verbose_name"),
+        help_text=get_field_text("esat-2025", "worker_delegate_hours_credit", "help_text"),
     )
     mix_qvt_in_place = models.BooleanField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "mix_qvt_in_place", "verbose_name"),
+        help_text=get_field_text("esat-2025", "mix_qvt_in_place", "help_text"),
     )
 
     # ESATStep.PROFIT_SHARING
@@ -677,12 +749,14 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "foresight_in_place", "verbose_name"),
+        help_text=get_field_text("esat-2025", "foresight_in_place", "help_text"),
     )
     year_foresight_in_place = models.CharField(
         null=True,
         blank=True,
         choices=[(str(year), year) for year in range(timezone.localdate().year, 1900, -1)] + [DO_NOT_KNOW_CHOICE],
         verbose_name=get_field_text("esat-2025", "year_foresight_in_place", "verbose_name"),
+        help_text=get_field_text("esat-2025", "year_foresight_in_place", "help_text"),
     )
 
     # ESATStep.MOBILITY_PROGRAM
@@ -722,6 +796,7 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "holiday_voucher", "verbose_name"),
+        help_text=get_field_text("esat-2025", "holiday_voucher", "help_text"),
     )
     holiday_voucher_annual_budget = models.PositiveIntegerField(
         null=True,
@@ -733,6 +808,7 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "gift_voucher", "verbose_name"),
+        help_text=get_field_text("esat-2025", "gift_voucher", "help_text"),
     )
     gift_voucher_annual_budget = models.PositiveIntegerField(
         null=True,
@@ -746,6 +822,7 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "nb_worker_worked_sunday", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_worked_sunday", "help_text"),
     )
 
     # ESATStep.PARTNERSHIP_AGREEMENTS
@@ -753,16 +830,19 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "agreement_signed_ft", "verbose_name"),
+        help_text=get_field_text("esat-2025", "agreement_signed_ft", "help_text"),
     )
     agreement_signed_ea = models.BooleanField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "agreement_signed_ea", "verbose_name"),
+        help_text=get_field_text("esat-2025", "agreement_signed_ea", "help_text"),
     )
     agreement_signed_dept_pae = models.BooleanField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "agreement_signed_dept_pae", "verbose_name"),
+        help_text=get_field_text("esat-2025", "agreement_signed_dept_pae", "help_text"),
     )
 
     # ESATStep.STAFF
@@ -796,45 +876,53 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "annual_ca", "verbose_name"),
+        help_text=get_field_text("esat-2025", "annual_ca", "help_text"),
     )
     annual_ca_production = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "annual_ca_production", "verbose_name"),
+        help_text=get_field_text("esat-2025", "annual_ca_production", "help_text"),
     )
     annual_ca_service = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "annual_ca_service", "verbose_name"),
+        help_text=get_field_text("esat-2025", "annual_ca_service", "help_text"),
     )
     annual_ca_mad = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "annual_ca_mad", "verbose_name"),
+        help_text=get_field_text("esat-2025", "annual_ca_mad", "help_text"),
     )
     pct_ca_public = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
         validators=[MaxValueValidator(100)],
         verbose_name=get_field_text("esat-2025", "pct_ca_public", "verbose_name"),
+        help_text=get_field_text("esat-2025", "pct_ca_public", "help_text"),
     )
     budget_commercial = models.CharField(
         null=True,
         blank=True,
         choices=BudgetState.choices,
         verbose_name=get_field_text("esat-2025", "budget_commercial", "verbose_name"),
+        help_text=get_field_text("esat-2025", "budget_commercial", "help_text"),
     )
     budget_commercial_deficit = models.CharField(
         null=True,
         blank=True,
         choices=BudgetRange.choices,
         verbose_name=get_field_text("esat-2025", "budget_commercial_deficit", "verbose_name"),
+        help_text=get_field_text("esat-2025", "budget_commercial_deficit", "help_text"),
     )
     budget_commercial_excedent = models.CharField(
         null=True,
         blank=True,
         choices=BudgetRange.choices,
         verbose_name=get_field_text("esat-2025", "budget_commercial_excedent", "verbose_name"),
+        help_text=get_field_text("esat-2025", "budget_commercial_excedent", "help_text"),
     )
 
     # ESATStep.SOCIAL_ACTIVITY_BUDGET
@@ -850,12 +938,14 @@ class ESATAnswer(Answer):
         blank=True,
         choices=BudgetRange.choices,
         verbose_name=get_field_text("esat-2025", "budget_social_deficit", "verbose_name"),
+        help_text=get_field_text("esat-2025", "budget_social_deficit", "help_text"),
     )
     budget_social_excedent = models.CharField(
         null=True,
         blank=True,
         choices=BudgetRange.choices,
         verbose_name=get_field_text("esat-2025", "budget_social_excedent", "verbose_name"),
+        help_text=get_field_text("esat-2025", "budget_social_excedent", "help_text"),
     )
 
     # ESATStep.INVESTMENTS
@@ -863,11 +953,13 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "budget_accessibility", "verbose_name"),
+        help_text=get_field_text("esat-2025", "budget_accessibility", "help_text"),
     )
     budget_diversity = models.PositiveIntegerField(
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "budget_diversity", "verbose_name"),
+        help_text=get_field_text("esat-2025", "budget_diversity", "help_text"),
     )
 
     # ESATStep.COMMENTS
@@ -875,6 +967,7 @@ class ESATAnswer(Answer):
         null=True,
         blank=True,
         verbose_name=get_field_text("esat-2025", "comments", "verbose_name"),
+        help_text=get_field_text("esat-2025", "comments", "help_text"),
     )
 
     # TODO: Delete the field when we don't need the date anymore
