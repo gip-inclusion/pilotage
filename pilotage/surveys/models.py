@@ -503,11 +503,11 @@ class ESATAnswer(Answer):
         blank=True,
         verbose_name=get_field_text("esat-2025", "opco_or_anfh_refusal", "verbose_name"),
     )
-    nb_worker_cpf_unused = models.PositiveSmallIntegerField(
+    nb_worker_cpf_used = models.PositiveSmallIntegerField(
         null=True,
         blank=True,
-        verbose_name=get_field_text("esat-2025", "nb_worker_cpf_unused", "verbose_name"),
-        help_text=get_field_text("esat-2025", "nb_worker_cpf_unused", "help_text"),
+        verbose_name=get_field_text("esat-2025", "nb_worker_cpf_used", "verbose_name"),
+        help_text=get_field_text("esat-2025", "nb_worker_cpf_used", "help_text"),
     )
     cpf_unused_reason = models.TextField(
         null=True,
