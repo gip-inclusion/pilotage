@@ -228,7 +228,7 @@ class ESATAnswerFormationsForm(ESATBaseForm):
             "pct_opco",
             "nb_worker_formation_opco",
             "opco_or_anfh_refusal",
-            "nb_worker_cpf_unused",
+            "nb_worker_cpf_used",
             "cpf_unused_reason",
             "formation_cpf",
             "nb_worker_intern_formation",
