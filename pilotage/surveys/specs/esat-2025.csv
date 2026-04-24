@@ -76,8 +76,8 @@ pct_more_than50,Combien de travailleurs ou travailleuses de plus de 50 ans ont t
 documents_falclist,"Au 31 décembre n-1, les principaux documents destinés aux travailleurs et travailleuses étaient-ils accessibles en FALC ou en communication alternative augmentée ? (contrat d'accompagnement par le travail, livret d'accueil, règlement de fonctionnement, etc.)",,,Possible de répondre OUI si le document n'a été traduit que partiellement
 worker_delegate,"En n-1, y-a-t-il dans l'ESAT un.e délégué.e des travailleurs élu.e ?",,,
 worker_delegate_formation,Est-ce que le délégué ou la déléguée a bénéficié d'une formation au cours de son mandat pour cette mission :,,,Cocher oui si le délégué a bénéficié d’une formation (quelle que soit la date de la formation au cours de son mandat)
-worker_delegate_hours_credit,"En n-1, est-ce que le délégué a bénéficié d'un crédit d'heures chaque mois pour remplir sa mission ?",,,
-nb_delegate_hours,"Si oui, précisez le nombre d'heures",Nombre d'heures par mois,,
+worker_delegate_hours_credit,"En n-1, est-ce que le délégué a bénéficié d'un crédit d'heures chaque mois pour remplir sa mission ?","Désolés, nous avons inversé les champs. Répondez cette question dans le champ d'avant (c)",,
+nb_delegate_hours,"Si oui, précisez le nombre d'heures","Nombre d'heures par mois. Désolés, nous avons inversé les champs. Répondez à cette question dans le champ d'après (d)",,
 mix_qvt_in_place,"En n-1, une instance mixte (salarié(e)s/travailleurs et travailleuses) sur la qualité de vie au travail (QVT), l'hygiène et la sécurité et l'évaluation des risques professionnels est-elle en place ?",,,
 profit_sharing_bonus,"En n-1, quel était le montant moyen de la prime d'intéressement (au sens de l'article R 243-6 du CASF) versée aux travailleurs et travailleuses?",En euros. Possibilité de mettre 0.,,
 mean_pct_esat_rem,"Au 31 décembre n-1, quel était le % moyen de rémunération directe du travailleur pris en charge par l'ESAT ?",En % du SMIC,,% qui ne peut être inférieur à 5% du SMIC
