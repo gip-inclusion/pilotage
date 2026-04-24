@@ -21,6 +21,16 @@ def uuid7():
     return str(func())
 
 
+def get_array_display_func(attr, enum):
+    def f(self):
+        values = getattr(self, attr)
+        if values:
+            return [enum(v).label for v in values]
+        return values
+
+    return f
+
+
 class SurveyKind(models.TextChoices):
     ESAT = "ESAT", "ESAT"
 
@@ -977,3 +987,12 @@ class ESATAnswer(Answer):
     class Meta:
         verbose_name = "réponse ESAT"
         verbose_name_plural = "réponses ESAT"
+
+    get_support_themes_display = get_array_display_func("support_themes", SupportThemes)
+    get_skills_validation_type_display = get_array_display_func("skills_validation_type", SkillsValidationType)
+    get_software_financial_help_display = get_array_display_func("software_financial_help", SoftwareFinancialHelp)
+    get_retirement_preparation_actions_display = get_array_display_func(
+        "retirement_preparation_actions", RetirementPreparationActions
+    )
+    get_documents_falclist_display = get_array_display_func("documents_falclist", DocumentFALCList)
+    get_insertion_staff_funding_display = get_array_display_func("insertion_staff_funding", BudgetFunding)
