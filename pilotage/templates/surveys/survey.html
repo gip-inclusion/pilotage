@@ -23,11 +23,13 @@
                                 <a href="{% url 'pilotage:home' %}">Accueil</a>
                             </li>
                             <li class="breadcrumb-item" aria-current="page">
-                                {% if survey.title %}
-                                    {{ survey.title }}
-                                {% else %}
-                                    Étude {{ survey.get_kind_display }} {{ survey.vintage }}
-                                {% endif %}
+                                <a href="{% url 'surveys:tunnel' survey_name=survey.name answer_uid=answer.uid step=CommonStep.INTRODUCTION %}">
+                                    {% if survey.title %}
+                                        {{ survey.title }}
+                                    {% else %}
+                                        Étude {{ survey.get_kind_display }} {{ survey.vintage }}
+                                    {% endif %}
+                                </a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">{{ title|capfirst }}</li>
                         </ol>
@@ -59,7 +61,13 @@
                                  aria-valuemax="{{ steps_info.total_fields }}"></div>
                         </div>
                         <p>
-                            <strong>Taux de remplissage</strong>: {{ steps_info.total_filled }}/{{ steps_info.total_fields }} questions
+                            <strong>Taux de remplissage</strong>: {{ steps_info.total_filled }}/{{ steps_info.total_fields }} questions.
+                            <a href="{% url 'surveys:summary' survey.name answer.uid %}"
+                               class="btn-link btn-ico ps-lg-0 has-external-link"
+                               target="_blank"
+                               aria-label="Voir le récapitulatif des questions et réponses (nouvel onglet)">
+                                <span>Voir le récapitulatif</span>
+                            </a>
                         </p>
                     </div>
                 </div>

@@ -13,6 +13,9 @@ class CommonStep(enum.StrEnum):
     INTRODUCTION = "introduction"
     CONCLUSION = "conclusion"
 
+    # Make the Enum work in Django's templates
+    do_not_call_in_templates = enum.nonmember(True)
+
 
 class ESATStep(TextChoices):
     INTRODUCTION = CommonStep.INTRODUCTION, "introduction"
@@ -139,6 +142,50 @@ def tunnel(request, *, survey_name, answer_uid, step):
             "previous_step_url": previous_step_url,
             "current_step": step,
             "next_step": next_step,
+            "CommonStep": CommonStep,
             **extra_context,
+        },
+    )
+
+
+def summary(request, *, survey_name, answer_uid):
+    # Here we also include closed surveys so the respondent can see their answers
+    survey = get_object_or_404(Survey, name=survey_name)
+    match survey.kind:
+        case SurveyKind.ESAT:
+            answer_class, steps_class = ESATAnswer, ESATStep
+        case _:
+            return HttpResponseNotFound()
+
+    answer = get_object_or_404(answer_class, uid=answer_uid)
+
+    steps_informations = get_steps_informations(steps_class, answer, exclude=CommonStep)
+    steps_data = []
+    for step, step_informations in steps_informations.data.items():
+        form = get_step_form_class(answer_class, step)(instance=answer, editable=False)
+        fields = {}
+        for field_name, form_field in form.fields.items():
+            get_display_func_name = f"get_{field_name}_display"
+            if hasattr(answer, get_display_func_name):
+                value = getattr(answer, get_display_func_name)()
+            else:
+                value = getattr(answer, field_name)
+            fields[form_field.label] = value if value not in [[], "", None] else None
+        steps_data.append(
+            {
+                "step": step,
+                "step_informations": step_informations,
+                "fields": fields,
+            }
+        )
+
+    return render(
+        request,
+        "surveys/summary.html",
+        context={
+            "survey": survey,
+            "answer": answer,
+            "steps_data": steps_data,
+            "CommonStep": CommonStep,
         },
     )
