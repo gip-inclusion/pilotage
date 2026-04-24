@@ -17,7 +17,6 @@ class ESATBaseForm(LetteredLabelFormMixin, EmptyPlaceholderFormMixin, forms.Mode
                 self.fields[field_name].widget.attrs["placeholder"] = get_field_text(
                     "esat-2025", field_name, "placeholder"
                 )
-            print(field_name, field, self.fields[field_name].widget.attrs["placeholder"])
 
 
 class ESATAnswerIdentificationForm(ESATBaseForm):
