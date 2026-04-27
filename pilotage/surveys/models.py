@@ -127,6 +127,7 @@ class DocumentFALCList(TextChoices):
 
 class SupportHoursRange(TextChoices):
     LESS_THAN_50 = "LESS_THAN_50", "Moins de 50 heures"
+    RANGE_50_100 = "RANGE_50_100", "Entre 50 et 100 heures"
     RANGE_100_150 = "RANGE_100_150", "Entre 100 et 150 heures"
     RANGE_150_200 = "RANGE_150_200", "Entre 150 et 200 heures"
     RANGE_200_250 = "RANGE_200_250", "Entre 200 et 250 heures"
