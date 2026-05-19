@@ -21,7 +21,7 @@ django==6.0.4 \
     --hash=sha256:14359c809fc16e8f81fd2b59d7d348e4d2d799da6840b10522b6edf7b8afc1da \
     --hash=sha256:8cfa2572b3f2768b2e84983cf3c4811877a01edb64e817986ec5d60751c113ac
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   django-appconf
     #   django-bootstrap5
     #   django-compressor
@@ -35,25 +35,25 @@ django-appconf==1.2.0 \
 django-bootstrap5==26.2 \
     --hash=sha256:12331059c8230ba372ffaad990a706151e1ad8f721a870aa2e862cf6746f0d33 \
     --hash=sha256:179af37c59f4e9b1070fc650f30961c5d903c2c0ad60280ad5b63ed394f68658
-    # via -r requirements/base.in
+    # via -r base.in
 django-compressor==4.6.0 \
     --hash=sha256:6e7b21020a0d86272c5e37000c33accc4ebeb77394a3dd86d775a09aae7aade4 \
     --hash=sha256:c7478feab98f3368780591f9ee28a433350f5277dd28811f7f710f5bc6dff3c0
     # via
-    #   -r requirements/base.in
+    #   -r base.in
     #   django-libsass
 django-cors-headers==4.9.0 \
     --hash=sha256:15c7f20727f90044dcee2216a9fd7303741a864865f0c3657e28b7056f61b449 \
     --hash=sha256:fe5d7cb59fdc2c8c646ce84b727ac2bca8912a247e6e68e1fb507372178e59e8
-    # via -r requirements/base.in
+    # via -r base.in
 django-datadog-logger==0.9.0 \
     --hash=sha256:502ccdf7684f29f4ca40c52ed1d03484236760abc71568f032d766aee42bc9bb \
     --hash=sha256:8bdb40f5dc7c7a8095e301bbaf623dbdad4c141dadb4b9cdccfebc68df130f3a
-    # via -r requirements/base.in
+    # via -r base.in
 django-libsass==0.9 \
     --hash=sha256:5234d29100889cac79e36a0f44207ec6d275adfd2da1acb6a94b55c89fe2bd97 \
     --hash=sha256:bfbbb55a8950bb40fa04dd416605f92da34ad1f303b10a41abc3232386ec27b5
-    # via -r requirements/base.in
+    # via -r base.in
 djangorestframework==3.17.1 \
     --hash=sha256:a6def5f447fe78ff853bff1d47a3c59bf38f5434b031780b351b0c73a62db1a5 \
     --hash=sha256:c3c74dd3e83a5a3efc37b3c18d92bd6f86a6791c7b7d4dff62bb068500e76457
@@ -69,10 +69,10 @@ httpcore==1.0.9 \
 httpx==0.28.1 \
     --hash=sha256:75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc \
     --hash=sha256:d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad
-    # via -r requirements/base.in
-idna==3.11 \
-    --hash=sha256:771a87f49d9defaf64091e6e6fe9c18d4833f140bd19464795bc32d966ca37ea \
-    --hash=sha256:795dafcc9c04ed0c1fb032c2aa73654d8e8c5023a7df64a53f39190ada629902
+    # via -r base.in
+idna==3.15 \
+    --hash=sha256:048adeaf8c2d788c40fee287673ccaa74c24ffd8dcf09ffa555a2fbb59f10ac8 \
+    --hash=sha256:ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc
     # via
     #   anyio
     #   httpx
@@ -90,11 +90,11 @@ libsass==0.23.0 \
 markdown==3.10.2 \
     --hash=sha256:994d51325d25ad8aa7ce4ebaec003febcce822c3f8c911e3b17c52f7f589f950 \
     --hash=sha256:e91464b71ae3ee7afd3017d9f358ef0baf158fd9a298db92f1d4761133824c36
-    # via -r requirements/base.in
+    # via -r base.in
 psycopg[binary]==3.3.1 \
     --hash=sha256:ccfa30b75874eef809c0fbbb176554a2640cc1735a612accc2e2396a92442fc6 \
     --hash=sha256:e44d8eae209752efe46318f36dd0fdf5863e928009338d736843bb1084f6435c
-    # via -r requirements/base.in
+    # via -r base.in
 psycopg-binary==3.3.1 \
     --hash=sha256:0d8340c59fa1aec1ad121b082443e4871d62c58b958cc089986860fd2d965c73 \
     --hash=sha256:0f6b7bc0d230932aed188b9cc44b6fc6d43e2ec1585903d09a2d15095731ee07 \
@@ -155,7 +155,7 @@ psycopg-binary==3.3.1 \
 pyjwt==2.12.1 \
     --hash=sha256:28ca37c070cad8ba8cd9790cd940535d40274d22f80ab87f3ac6a713e6e8454c \
     --hash=sha256:c74a7a2adf861c04d002db713dd85f84beb242228e671280bf709d765b03672b
-    # via -r requirements/base.in
+    # via -r base.in
 rcssmin==1.2.2 \
     --hash=sha256:0162c32ce946978edc834d4fba705ac5f9422d7f556f3264cc4fc67c7ee39171 \
     --hash=sha256:0519a25f4af4221dcec652b2fe2e35d2a2465d7d68c2d529d47ef164e767942b \
@@ -305,7 +305,7 @@ rjsmin==1.2.5 \
 sentry-sdk==2.58.0 \
     --hash=sha256:688d1c704ddecf382ea3326f21a67453d4caa95592d722b7c780a36a9d23109e \
     --hash=sha256:c1144d947352d54e5b7daa63596d9f848adf684989c06c4f5a659f0c85a18f6f
-    # via -r requirements/base.in
+    # via -r base.in
 sqlparse==0.5.5 \
     --hash=sha256:12a08b3bf3eec877c519589833aed092e2444e68240a3577e8e26148acc7b1ba \
     --hash=sha256:e20d4a9b0b8585fdf63b10d30066c7c94c5d7a7ec47c889a2d83a3caa93ff28e
@@ -337,4 +337,4 @@ uuid-utils==0.14.1 \
     --hash=sha256:ce6743ba194de3910b5feb1a62590cd2587e33a73ab6af8a01b642ceb5055862 \
     --hash=sha256:da2234387b45fde40b0fedfee64a0ba591caeea9c48c7698ab6e2d85c7991533 \
     --hash=sha256:fc27638c2ce267a0ce3e06828aff786f91367f093c80625ee21dad0208e0f5ba
-    # via -r requirements/base.in
+    # via -r base.in
