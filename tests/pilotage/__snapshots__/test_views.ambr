@@ -950,7 +950,7 @@
                               <p>Je travaille pour la DGEFP, la DIHAL, la DRIHL, une DREETS ou une DDETS</p>
                           </div>
                           <div class="card-footer text-end">
-                              <a class="btn btn-ico btn-link stretched-link" href="https://emplois.inclusion.beta.gouv.fr/login/labor_inspector" target="_blank">
+                              <a class="btn btn-ico btn-link stretched-link" href="https://emplois.inclusion.beta.gouv.fr/accounts/login" target="_blank">
                                   <span>Accéder à mes statistiques</span>
                                   <i aria-hidden="true" class="ri-external-link-line ri-lg"></i>
                               </a>
@@ -966,7 +966,7 @@
                               <p>Je travaille pour un Conseil Départemental, France Travail, une Mission locale, un Cap emploi ou au sein d’une structure de l’accueil de l’hébergement et de l’insertion</p>
                           </div>
                           <div class="card-footer text-end">
-                              <a class="btn btn-ico btn-link stretched-link" href="https://emplois.inclusion.beta.gouv.fr/login/prescriber" target="_blank">
+                              <a class="btn btn-ico btn-link stretched-link" href="https://emplois.inclusion.beta.gouv.fr/accounts/login" target="_blank">
                                   <span>Accéder à mes statistiques</span>
                                   <i aria-hidden="true" class="ri-external-link-line ri-lg"></i>
                               </a>
@@ -982,7 +982,7 @@
                               <p>Je travaille pour une SIAE, un réseau de l’IAE</p>
                           </div>
                           <div class="card-footer text-end">
-                              <a class="btn btn-ico btn-link stretched-link" href="https://emplois.inclusion.beta.gouv.fr/login/employer" target="_blank">
+                              <a class="btn btn-ico btn-link stretched-link" href="https://emplois.inclusion.beta.gouv.fr/accounts/login" target="_blank">
                                   <span>Accéder à mes statistiques</span>
                                   <i aria-hidden="true" class="ri-external-link-line ri-lg"></i>
                               </a>
