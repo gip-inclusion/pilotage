@@ -157,9 +157,9 @@ iniconfig==2.3.0 \
     --hash=sha256:c76315c77db068650d49c5b56314774a7804df16fee4402c1f19d6d15d8c4730 \
     --hash=sha256:f631c04d2c48c52b84d0d0549c99ff3859c98df65b3101406327ecc7d53fbf12
     # via pytest
-jsbeautifier==1.15.4 \
-    --hash=sha256:5bb18d9efb9331d825735fbc5360ee8f1aac5e52780042803943aa7f854f7592 \
-    --hash=sha256:72f65de312a3f10900d7685557f84cb61a9733c50dcc27271a39f5b0051bf528
+jsbeautifier==2.0.1 \
+    --hash=sha256:45603b2097410feee8d3a6ef8ad5a8e0a0e89f347331888a97e46f332ce8d953 \
+    --hash=sha256:e70bad11b394d538139e05b02ace5706a0125c580a1ec9f8599cb75bf609e6f7
     # via
     #   cssbeautifier
     #   djlint
@@ -798,7 +798,6 @@ six==1.17.0 \
     # via
     #   cssbeautifier
     #   html5lib
-    #   jsbeautifier
     #   python-dateutil
 soupsieve==2.8.4 \
     --hash=sha256:e121fd02e975c695e4e9e8774a5ee35d74714b59307868dcc5319ad2d9e3328e \
