@@ -29,9 +29,9 @@ click==8.4.2 \
     --hash=sha256:9a6cea6e60b17ebe0a44c5cc636d94f09bd66142c1cd7d8b4cd731c4917a15f6 \
     --hash=sha256:e6f9f66136c816745b9d65817da91d61d957fb16e02e4dcd0552553c5a197b76
     # via djlint
-cssbeautifier==2.0.1 \
-    --hash=sha256:ed3bd34a1db4649a49278e69090343ec61c741d4bbfc0b8d0c3e071cc7278cc6 \
-    --hash=sha256:f6102c0589c85be3c1a016cee76ee3661ee4bd5da88d48a5f8708bfaf663ae26
+cssbeautifier==2.0.3 \
+    --hash=sha256:14650d9c8a47adcb80a7697a866a3921fe0332ef74a92e1039d09086aa0c5001 \
+    --hash=sha256:2c2fd129342561029de86b1744efa231c9fafe26023dbc988a1deb0ca0f5c845
     # via djlint
 django==6.0.7 \
     --hash=sha256:2998503fc083124fb58037084bfa00de323c7c743f05f1b4284e77bff0ab8890 \
