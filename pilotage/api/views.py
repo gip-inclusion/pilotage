@@ -90,7 +90,7 @@ QUERIES = {
                 ["field", 62710, {"base-type": "type/*"}],  # Publics
                 ["field", 62700, {"base-type": "type/Text"}],  # Commune
                 ["field", 62696, {"base-type": "type/Text"}],  # Code Postal
-                ["field", 62686, {"base-type": "type/Text"}],  # Code Insee
+                ["field", 72773, {"base-type": "type/Text"}],  # Code Commune Insee
                 ["field", 62683, {"base-type": "type/Text"}],  # Adresse
                 ["field", 62681, {"base-type": "type/Float"}],  # Longitude
                 ["field", 62699, {"base-type": "type/Float"}],  # Latitude
@@ -98,7 +98,7 @@ QUERIES = {
             ],
             "filter": [
                 "starts-with",
-                ["field", 62686, {"base-type": "type/Text"}],
+                ["field", 72773, {"base-type": "type/Text"}],
                 "000",  # Default to no-matchs
                 {"case-sensitive": False},
             ],
@@ -115,7 +115,7 @@ QUERIES = {
                 ["field", 62721, {"base-type": "type/Text"}],  # Nom
                 ["field", 62716, {"base-type": "type/Text"}],  # Commune
                 ["field", 62730, {"base-type": "type/Text"}],  # Code Postal
-                ["field", 62719, {"base-type": "type/Text"}],  # Code Insee
+                ["field", 72776, {"base-type": "type/Text"}],  # Code Commune Insee
                 ["field", 62718, {"base-type": "type/Text"}],  # Adresse
                 ["field", 62711, {"base-type": "type/Float"}],  # Longitude
                 ["field", 62715, {"base-type": "type/Float"}],  # Latitude
@@ -123,7 +123,7 @@ QUERIES = {
             ],
             "filter": [
                 "starts-with",
-                ["field", 62719, {"base-type": "type/Text"}],
+                ["field", 72776, {"base-type": "type/Text"}],
                 "000",  # Default to no-matchs
                 {"case-sensitive": False},
             ],
