@@ -45,11 +45,11 @@
         </div>
     </section>
 
-    {% include 'sections/testimonial.html' %}
+    {% include "sections/testimonial.html" %}
 {% endblock %}
 
 
 {% block js %}
     {{ block.super }}
-    {% include 'partials/footer-scripts.html' with hasIframeResizer=True %}
+    {% include "partials/footer-scripts.html" with hasIframeResizer=True %}
 {% endblock %}
