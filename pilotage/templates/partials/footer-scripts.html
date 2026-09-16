@@ -1,7 +1,7 @@
 {% load static %}
 
-<script type="text/javascript" src="//cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@1.29.0/tarteaucitron.js"></script>
-<script type="text/javascript">
+<script src="//cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@1.29.0/tarteaucitron.js"></script>
+<script>
     tarteaucitron.init({
         "privacyUrl": "",
         /* Privacy policy url */
@@ -91,7 +91,7 @@
     });
 </script>
 
-<script type="text/javascript">
+<script>
     // livestorm
     tarteaucitron.services.livestorm = {
         "key": "livestorm",
@@ -123,7 +123,7 @@
 </script>
 
 {% if MATOMO_BASE_URL %}
-    <script type="text/javascript">
+    <script>
         window._mtm = window._mtm || [];
         window._mtm.push(["HeatmapSessionRecording::disable"]);
         window._mtm.push({
@@ -159,7 +159,7 @@
 {% if hasIframeResizerFromOther %}
     <!-- hasIframeResizerFromOther -->
     <script src="{% static "vendor/iframe-resizer/iframeResizer.contentWindow.min.js" %}"></script>
-    <script src="{{hasIframeResizerFromOther}}/iframeResizer.js"></script>
+    <script src="{{ hasIframeResizerFromOther }}/iframeResizer.js"></script>
     <script>
         window.iFrameResizer = {
             targetOrigin: "{{ request.build_absolute_uri }}"
