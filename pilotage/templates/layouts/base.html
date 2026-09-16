@@ -52,7 +52,7 @@
         <noscript>
             <div class="alert alert-danger" role="status">Javascript doit être activé pour pouvoir assurer l'affichage correct de la page (recherche géographique par exemple).</div>
         </noscript>
-        <nav role="navigation" aria-label="Accès rapide" tabindex="1" class="visually-hidden">
+        <nav role="navigation" aria-label="Accès rapide" tabindex="-1" class="visually-hidden">
             <ul>
                 <li>
                     <a href="#nav-primary">Aller au menu principal</a>
@@ -80,7 +80,7 @@
         </div>
         {% block js %}
             {% import_static_js_theme_inclusion %}
-            {% include 'partials/footer-scripts.html' %}
+            {% include "partials/footer-scripts.html" %}
         {% endblock %}
     </body>
 </html>
