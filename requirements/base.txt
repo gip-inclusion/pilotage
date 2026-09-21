@@ -303,9 +303,9 @@ rjsmin==1.2.5 \
     --hash=sha256:fc534e7cda5c6997d8c2f0148f38686a64d8b6d388f07e0718d99b6e0900b10e \
     --hash=sha256:ff23e1f405b32732d1c6697dc67e74062fb7cdfda8aae73ed63d19df3ec284e3
     # via django-compressor
-sentry-sdk==2.69.1 \
-    --hash=sha256:2d2556d9a14db548982b914cbed2a2dc07b6e55d941a620752f89a2afccfd78d \
-    --hash=sha256:f9284b417540b0784b994fa021eb6f1e30ae1cce593d83541274d03c93966eff
+sentry-sdk==2.69.2 \
+    --hash=sha256:25bc0a6c55bba0b83398212a7247f4f9f3190f189a1909b68e4807ef4b785895 \
+    --hash=sha256:b4d8915a526e626b0b14a2925907554b722d3b8e3e3781570fc35791712af323
     # via -r requirements/base.in
 sqlparse==0.6.0 \
     --hash=sha256:113c35c75365ab9cc9c7231d68c6428fb11c085fc8e9eb1ad659b7ddbf6cd2b9 \
