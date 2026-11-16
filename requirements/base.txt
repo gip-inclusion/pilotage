@@ -36,9 +36,9 @@ django-bootstrap5==26.4 \
     --hash=sha256:252aba43c7bc3bde363a77bc7d0cf27c7b337afe30dfd32e90bce8961c505198 \
     --hash=sha256:33b6b13096ac22220a84615f389886df19b49508b1e5a6360dd26e8b7b5606fe
     # via -r requirements/base.in
-django-compressor==4.6.0 \
-    --hash=sha256:6e7b21020a0d86272c5e37000c33accc4ebeb77394a3dd86d775a09aae7aade4 \
-    --hash=sha256:c7478feab98f3368780591f9ee28a433350f5277dd28811f7f710f5bc6dff3c0
+django-compressor==4.7.0 \
+    --hash=sha256:c9fd24ef08c0525a9f65241d3b3154c0824d77e2de5e1d9d213b94496d0f4e03 \
+    --hash=sha256:efcd895467e41251b775fbfa440dd06db61c01e6c503ff93cfc10e2772c3fa2a
     # via
     #   -r requirements/base.in
     #   django-libsass
