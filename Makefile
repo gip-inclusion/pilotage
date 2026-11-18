@@ -72,9 +72,3 @@ test: $(VIRTUAL_ENV)
 snapshot: $(VIRTUAL_ENV)
 	pytest --snapshot-update $(TARGET)
 
-# Deployment
-# =============================================================================
-.PHONY: deploy_prod
-
-deploy_prod:
-	git fetch origin && git push origin origin/staging:main  # Deploy by pushing the latest `staging` to `main`
